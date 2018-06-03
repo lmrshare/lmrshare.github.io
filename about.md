@@ -5,13 +5,11 @@ title: About me
 
 <h3> Current Status </h3>  
 
-就职腾讯，职位研究员.
-
-从读研到工作先后接触过的领域或做过的任务有：MRI、Face Alignment、TTS
+就职于腾讯，职位研究员.
 
 <h3> The Blogs </h3>  
 
-以前整理的笔记散落在各个地方，不规矩不说，并且非常不利于自己内化。鉴于此，今后会在博客上记录下学习、工作笔记。
+以前做的笔记散落在各个地方，杂乱无章，这非常不利于我形成知识体系。鉴于此，今后会在博客上记录下学习、工作笔记。
 
 <h3>Person Info </h3>
 
@@ -29,13 +27,13 @@ __Research Interests__: Machine Learning, Magnetic Resonance Imaging, Computer V
 
 <h3>Papers </h3>
 
-[[1]An Efficient Method Utilizing Temporal Correlationship for Real-time Face Alignment(2017)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/FGR2018.pdf)
+[[1] An Efficient Method Utilizing Temporal Correlationship for Real-time Face Alignment(2017)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/FGR2018.pdf)
 
-[[2]联合局部和全局稀疏表示的磁共振图像重建方法(2017)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/Global_and_Local.pdf)
+[[2] 联合局部和全局稀疏表示的磁共振图像重建方法(2017)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/Global_and_Local.pdf)
 
-[[3]Online dynamic cardiac imaging based on the elastic-net model(2016)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/store-EN-1485088443-2860.pdf)
+[[3] Online dynamic cardiac imaging based on the elastic-net model(2016)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/store-EN-1485088443-2860.pdf)
 
-[[4]MR image reconstruction from under-sampled measurements using local and global sparse representations(2015)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/UQ377192.pdf)
+[[4] MR image reconstruction from under-sampled measurements using local and global sparse representations(2015)](https://github.com/lmrshare/lmrshare.github.io/blob/master/papers/UQ377192.pdf)
 
 
 
