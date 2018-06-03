@@ -1,7 +1,7 @@
 # Basic
 title: Mengranlin
 subtitle: Personal Website
-description: Welcome~
+description: Welcome
 # 头像里面的标题
 avatarTitle: Mengranlin
 # 头像里面的描述
@@ -30,9 +30,9 @@ blog_button:
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: All notes, description: archive, url: '/archive'}   
+    - {title: All, description: archive, url: '/archive'}   
     - {title: Tags, description: tags, url: '/tags'}      
-    - {title: About me, description: about, url: '/about'}      
+    - {title: About, description: about, url: '/about'}      
     
 
 # Pagination
