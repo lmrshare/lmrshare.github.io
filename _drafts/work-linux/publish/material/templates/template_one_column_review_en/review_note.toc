@@ -1,0 +1,123 @@
+\contentsline {section}{\numberline {1}Chapter 1}{6}{section.1}
+\contentsline {subsection}{\numberline {1.1}Path induction implies based path induction, \S 1.12.2}{6}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Exercise 1.3}{7}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Exercise 1.5}{8}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Exercise 1.6}{10}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Exercise 1.8}{11}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Exercise 1.10}{12}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Exercise 1.13}{14}{subsection.1.7}
+\contentsline {section}{\numberline {2}Chapter 2}{14}{section.2}
+\contentsline {subsection}{\numberline {2.1}Theorem 2.7.2}{14}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Comment after Corollary 2.7.3}{14}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Theorem 2.7.4}{15}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Commutative diagram summarizing \S \S \ 2.9 and 2.10}{15}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Function Extensionality Axiom (\S 2.9)}{16}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Part 1}{16}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Part 2}{17}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}Part 3}{17}{subsubsection.2.5.3}
+\contentsline {subsection}{\numberline {2.6}Definition of the map \textsf {happly} in (2.9.2)}{18}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Display preceding (2.9.5)}{18}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Lemma 2.9.7}{19}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Proof of Theorem 2.11.1}{20}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Proof of Theorem 2.12.5}{21}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Double induction in \S 2.13}{21}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}Section 2.14.1}{22}{subsection.2.12}
+\contentsline {subsubsection}{\numberline {2.12.1}Use of Theorem 2.7.4}{22}{subsubsection.2.12.1}
+\contentsline {subsubsection}{\numberline {2.12.2}A general comment}{22}{subsubsection.2.12.2}
+\contentsline {subsection}{\numberline {2.13}Exercise 2.7}{23}{subsection.2.13}
+\contentsline {subsection}{\numberline {2.14}Exercise 2.10}{24}{subsection.2.14}
+\contentsline {subsection}{\numberline {2.15}Exercise 2.14}{24}{subsection.2.15}
+\contentsline {section}{\numberline {3}Chapter 3}{25}{section.3}
+\contentsline {subsection}{\numberline {3.1}Proof of Lemma 3.1.8}{25}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Theorem 3.2.2}{25}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Proof of Lemma 3.3.4}{26}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Contractibility (\S 3.11)}{26}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Proof of Lemma 3.11.4}{27}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Proof of Lemma 3.11.8}{27}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Exercise 3.5}{27}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Exercise 3.6}{28}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}Exercise 3.7}{28}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}Exercise 3.9}{29}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}Exercise 3.17}{30}{subsection.3.11}
+\contentsline {subsection}{\numberline {3.12}Exercise 3.18}{30}{subsection.3.12}
+\contentsline {section}{\numberline {4}Chapter 4}{31}{section.4}
+\contentsline {subsection}{\numberline {4.1}Proof of Lemma 4.1.2}{31}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Proof of Lemma 4.2.11}{33}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Proof of Lemma 4.7.3}{34}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Proof of Theorem 4.7.6}{34}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Proof of Lemma 4.8.1}{34}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Proof of Lemma 4.8.2}{35}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Proof of Theorem 4.8.3}{35}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Proof of Theorem 4.8.4}{37}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Exercise 4.4}{38}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}Exercise 4.5}{41}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.11}Exercise 4.6 (iii)}{41}{subsection.4.11}
+\contentsline {section}{\numberline {5}Chapter 5}{42}{section.5}
+\contentsline {subsection}{\numberline {5.1}Induction principle for W-types (\S 5.3)}{42}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Second bullet of \S 5.6}{43}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Before Remark 5.6.3}{43}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Displays (5.6.4)--(5.6.7)}{44}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Proof of Theorem 5.8.2}{45}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Proof of Theorem 5.8.4 (iii)}{45}{subsection.5.6}
+\contentsline {section}{\numberline {6}Chapter 6}{45}{section.6}
+\contentsline {subsection}{\numberline {6.1}Display (6.2.2)}{45}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Lemma 6.4.1}{46}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Proof of Corollary 6.4.3}{46}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Proof of Lemma 6.5.1}{47}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Section 6.8}{47}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Section 6.9}{49}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Notion of quotient (beginning of \S 6.10)}{50}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Proof of Theorem 6.10.6}{50}{subsection.6.8}
+\contentsline {subsection}{\numberline {6.9}Lemma 6.10.8}{50}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}After Lemma 6.12.1}{51}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}Exercise 6.9}{52}{subsection.6.11}
+\contentsline {section}{\numberline {7}Chapter 7}{53}{section.7}
+\contentsline {subsection}{\numberline {7.1}Theorem 7.1.8}{53}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}First proof of Theorem 7.2.2}{53}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Lemma 7.2.8}{54}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Induction principle for n-truncations (\S 7.3)}{54}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Defining quotients via truncations}{55}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}Proof of Theorem 7.3.2}{55}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.7}Proof of Theorem 7.3.5}{56}{subsection.7.7}
+\contentsline {subsection}{\numberline {7.8}Proof of Theorem 7.3.12}{56}{subsection.7.8}
+\contentsline {subsection}{\numberline {7.9}Paths between cocones}{57}{subsection.7.9}
+\contentsline {subsection}{\numberline {7.10}Definition 7.4.7}{58}{subsection.7.10}
+\contentsline {subsection}{\numberline {7.11}Equality (7.4.11)}{59}{subsection.7.11}
+\contentsline {subsection}{\numberline {7.12}Definition 7.5.1}{59}{subsection.7.12}
+\contentsline {subsection}{\numberline {7.13}Proof of Lemma 7.5.10}{60}{subsection.7.13}
+\contentsline {subsection}{\numberline {7.14}Proof of Lemma 7.5.11}{60}{subsection.7.14}
+\contentsline {subsection}{\numberline {7.15}Comment before Lemma 7.5.12}{60}{subsection.7.15}
+\contentsline {subsection}{\numberline {7.16}Lemma 7.6.5}{60}{subsection.7.16}
+\contentsline {section}{\numberline {8}Chapter 8}{61}{section.8}
+\contentsline {subsection}{\numberline {8.1}Proof of Theorem 8.2.1}{61}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Proof of Lemma 8.3.2 and Corollary 8.4.8}{61}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Lemma 8.5.9}{61}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Theorem 8.5.11}{63}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Proof of Definition 8.6.5}{63}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.6}Lemma 8.6.10}{63}{subsection.8.6}
+\contentsline {subsection}{\numberline {8.7}Proof of Theorem 8.6.4}{64}{subsection.8.7}
+\contentsline {subsection}{\numberline {8.8}Proofs of Theorem 8.8.1 and Corollary 8.8.2}{66}{subsection.8.8}
+\contentsline {subsection}{\numberline {8.9}Proof of Corollary 8.8.5}{66}{subsection.8.9}
+\contentsline {subsubsection}{\numberline {8.9.1}First part}{66}{subsubsection.8.9.1}
+\contentsline {subsubsection}{\numberline {8.9.2}Second part}{67}{subsubsection.8.9.2}
+\contentsline {subsection}{\numberline {8.10}Exercise 8.7}{67}{subsection.8.10}
+\contentsline {section}{\numberline {9}Chapter 9}{68}{section.9}
+\contentsline {subsection}{\numberline {9.1}Theorem 9.2.5}{68}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Lemma 9.2.8}{69}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Lemma 9.3.2}{71}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.4}Proof of Lemma 9.4.9}{72}{subsection.9.4}
+\contentsline {section}{\numberline {10}Chapter 10}{73}{section.10}
+\contentsline {subsection}{\numberline {10.1}A Lemma}{73}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Before Lemma 10.1.1}{73}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Proof of Lemma 10.1.13}{74}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}The induction principle for \textsf {acc} (\S 10.3)}{75}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}Lemma 10.3.7}{75}{subsection.10.5}
+\contentsline {subsection}{\numberline {10.6}Lemma 10.3.8}{76}{subsection.10.6}
+\contentsline {subsection}{\numberline {10.7}Lemma 10.3.12}{77}{subsection.10.7}
+\contentsline {subsection}{\numberline {10.8}Theorem 10.4.4}{77}{subsection.10.8}
+\contentsline {section}{\numberline {11}Chapter 11}{77}{section.11}
+\contentsline {subsection}{\numberline {11.1}The definition of \textbf Q (\S 11.1)}{77}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}\S 11.2.1}{78}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Corollary to Lemma 11.2.2}{78}{subsection.11.3}
+\contentsline {subsection}{\numberline {11.4}Proof of Theorem 11.2.12}{78}{subsection.11.4}
+\contentsline {section}{\numberline {12}Appendix A}{78}{section.12}
