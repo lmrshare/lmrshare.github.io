@@ -1,0 +1,33 @@
+The notes of the papers are in the form,eg:
+
+Amin Jourabloo, Xiaoming Liu:
+Pose-Invariant Face Alignment via CNN-Based Dense 3D Model Fitting.
+International Journal of Computer Vision 124(2): 187-203 (2017)
+
+1.What is the problem?
+2.Why is the problem interesting?
+3.Why is the problem unsolved?
+4.What is the authors' idea?
+5.Inspiration or Un-tackled skills
+6.Accumulation(尤其注意Discussion部分)
+
+My summary(200 words)
+-------
+尽量和你看过的文献进行比较,这个工作需要仔细的思考，因此，每周要总结的论文必须经过严格筛选，在周末
+进行文献总结。
+总结的目的：
+1.提醒自己看过这篇文章（本领域）:需要写个比较长的总结
+2.将来写文章需要引用：注重文章之间的联系
+3.知识宽度：言简意赅
+总结的注意事项：
+1.如果你发现自己还是在用原文的语言，只是用词上有细微的改变，或许你还没有完全弄懂这项研究。
+2.开始了解一个领域要通过Review 文章，Review文章也是你应该可以模仿的。
+3.角度：问题与方法的对应，方法与数据的对应，研究结论的可推广性
+4.写的review就是一本书，应该对你的写作中的每个环节都要有帮助
+5.Mendeley只是一个索引数据库和重命名工具，标记在原文中进行
+6.云盘同步，Mendeley进行索引管理，包括重命名、建立mendeley上的文件夹，原始pdf上做笔记
+，主要包括打标记，同时在review中创建条目并记录笔记。
+ps:
+1.看文献时，第一件事就是在mendeley上打星标来表示这篇文章我看过了
+2.一个项目对应一个review，项目初期筛选出50篇，项目结束后文献300篇左右
+3.轻整理，重搜索

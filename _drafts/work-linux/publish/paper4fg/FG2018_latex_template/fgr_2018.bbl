@@ -1,0 +1,176 @@
+\begin{thebibliography}{10}
+
+\bibitem{wagner2012toward}
+A.~Wagner, J.~Wright, A.~Ganesh, Z.~Zhou, H.~Mobahi, and Y.~Ma, ``Toward a
+  practical face recognition system: Robust alignment and illumination by
+  sparse representation,'' {\em IEEE Transactions on Pattern Analysis and
+  Machine Intelligence}, vol.~34, no.~2, pp.~372--386, 2012.
+
+\bibitem{roth2015unconstrained}
+J.~Roth, Y.~Tong, and X.~Liu, ``Unconstrained 3d face reconstruction,'' in {\em
+  Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition}, pp.~2606--2615, 2015.
+
+\bibitem{roth2016adaptive}
+J.~Roth, Y.~Tong, and X.~Liu, ``Adaptive 3d face reconstruction from
+  unconstrained photo collections,'' in {\em Proceedings of the IEEE Conference
+  on Computer Vision and Pattern Recognition}, pp.~4197--4206, 2016.
+
+\bibitem{jourabloo2015attribute}
+A.~Jourabloo, X.~Yin, and X.~Liu, ``Attribute preserved face
+  de-identification,'' in {\em Biometrics (ICB), 2015 International Conference
+  on}, pp.~278--285, IEEE, 2015.
+
+\bibitem{guo2016dynamic}
+Y.~Guo, G.~Zhao, and M.~Pietik{\"a}inen, ``Dynamic facial expression
+  recognition with atlas construction and sparse representation,'' {\em IEEE
+  Transactions on Image Processing}, vol.~25, no.~5, pp.~1977--1992, 2016.
+
+\bibitem{hu2014robust}
+Q.~Hu, X.~Peng, P.~Yang, F.~Yang, and D.~N. Metaxas, ``Robust multi-pose facial
+  expression recognition,'' in {\em Pattern Recognition (ICPR), 2014 22nd
+  International Conference on}, pp.~1782--1787, IEEE, 2014.
+
+\bibitem{vogler2007best}
+C.~Vogler, Z.~Li, A.~Kanaujia, S.~Goldenstein, and D.~Metaxas, ``The best of
+  both worlds: Combining 3d deformable models with active shape models,'' in
+  {\em Computer Vision, 2007. ICCV 2007. IEEE 11th International Conference
+  on}, pp.~1--7, IEEE, 2007.
+
+\bibitem{ren2014face}
+S.~Ren, X.~Cao, Y.~Wei, and J.~Sun, ``Face alignment at 3000 fps via regressing
+  local binary features,'' in {\em Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition}, pp.~1685--1692, 2014.
+
+\bibitem{tecootes1994active}
+C.~TECootes and A.~Lanitis, ``Active shape models: Evaluation of a
+  multi-resolution method for improving image search,'' in {\em Proc. British
+  Machine Vision Conference}, pp.~327--338, 1994.
+
+\bibitem{edwards1998interpreting}
+G.~J. Edwards, C.~J. Taylor, and T.~F. Cootes, ``Interpreting face images using
+  active appearance models,'' in {\em Automatic Face and Gesture Recognition,
+  1998. Proceedings. Third IEEE International Conference on}, pp.~300--305,
+  IEEE, 1998.
+
+\bibitem{matthews2004active}
+I.~Matthews and S.~Baker, ``Active appearance models revisited,'' {\em
+  International journal of computer vision}, vol.~60, no.~2, pp.~135--164,
+  2004.
+
+\bibitem{valstar2010facial}
+M.~Valstar, B.~Martinez, X.~Binefa, and M.~Pantic, ``Facial point detection
+  using boosted regression and graph models,'' in {\em Computer Vision and
+  Pattern Recognition (CVPR), 2010 IEEE Conference on}, pp.~2729--2736, IEEE,
+  2010.
+
+\bibitem{dollar2010cascaded}
+P.~Doll{\'a}r, P.~Welinder, and P.~Perona, ``Cascaded pose regression,'' in
+  {\em Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference
+  on}, pp.~1078--1085, IEEE, 2010.
+
+\bibitem{cao2014face}
+X.~Cao, Y.~Wei, F.~Wen, and J.~Sun, ``Face alignment by explicit shape
+  regression,'' {\em International Journal of Computer Vision}, vol.~107,
+  no.~2, pp.~177--190, 2014.
+
+\bibitem{xiong2013supervised}
+X.~Xiong and F.~De~la Torre, ``Supervised descent method and its applications
+  to face alignment,'' in {\em Proceedings of the IEEE conference on computer
+  vision and pattern recognition}, pp.~532--539, 2013.
+
+\bibitem{tzimiropoulos2015project}
+G.~Tzimiropoulos, ``Project-out cascaded regression with an application to face
+  alignment,'' in {\em Proceedings of the IEEE Conference on Computer Vision
+  and Pattern Recognition}, pp.~3659--3667, 2015.
+
+\bibitem{kazemi2014one}
+V.~Kazemi and J.~Sullivan, ``One millisecond face alignment with an ensemble of
+  regression trees,'' in {\em Proceedings of the IEEE Conference on Computer
+  Vision and Pattern Recognition}, pp.~1867--1874, 2014.
+
+\bibitem{burgos2013robust}
+X.~P. Burgos-Artizzu, P.~Perona, and P.~Doll{\'a}r, ``Robust face landmark
+  estimation under occlusion,'' in {\em Proceedings of the IEEE International
+  Conference on Computer Vision}, pp.~1513--1520, 2013.
+
+\bibitem{sagonas2013300}
+C.~Sagonas, G.~Tzimiropoulos, S.~Zafeiriou, and M.~Pantic, ``300 faces
+  in-the-wild challenge: The first facial landmark localization challenge,'' in
+  {\em Proceedings of the IEEE International Conference on Computer Vision
+  Workshops}, pp.~397--403, 2013.
+
+\bibitem{shen2015first}
+J.~Shen, S.~Zafeiriou, G.~G. Chrysos, J.~Kossaifi, G.~Tzimiropoulos, and
+  M.~Pantic, ``The first facial landmark tracking in-the-wild challenge:
+  Benchmark and results,'' in {\em Proceedings of the IEEE International
+  Conference on Computer Vision Workshops}, pp.~50--58, 2015.
+
+\bibitem{peng2016sequential}
+X.~Peng, J.~Huang, and D.~N. Metaxas, ``Sequential face alignment via
+  person-specific modeling in the wild,'' in {\em Proceedings of the IEEE
+  Conference on Computer Vision and Pattern Recognition Workshops},
+  pp.~107--116, 2016.
+
+\bibitem{decarlo2000optical}
+D.~Decarlo and D.~Metaxas, ``Optical flow constraints on deformable models with
+  applications to face tracking,'' {\em International Journal of Computer
+  Vision}, vol.~38, no.~2, pp.~99--127, 2000.
+
+\bibitem{wettum2017facial}
+Y.~Wettum, ``Facial landmark tracking on a mobile device,'' {B.S.} thesis,
+  University of Twente, 2017.
+
+\bibitem{sanchez2016cascaded}
+E.~S{\'a}nchez-Lozano, B.~Martinez, G.~Tzimiropoulos, and M.~Valstar,
+  ``Cascaded continuous regression for real-time incremental face tracking,''
+  in {\em European Conference on Computer Vision}, pp.~645--661, Springer,
+  2016.
+
+\bibitem{sung2009adaptive}
+J.~Sung and D.~Kim, ``Adaptive active appearance model with incremental
+  learning,'' {\em Pattern recognition letters}, vol.~30, no.~4, pp.~359--367,
+  2009.
+
+\bibitem{asthana2014incremental}
+A.~Asthana, S.~Zafeiriou, S.~Cheng, and M.~Pantic, ``Incremental face alignment
+  in the wild,'' in {\em Proceedings of the IEEE Conference on Computer Vision
+  and Pattern Recognition}, pp.~1859--1866, 2014.
+
+\bibitem{peng2015piefa}
+X.~Peng, S.~Zhang, Y.~Yang, and D.~N. Metaxas, ``Piefa: Personalized
+  incremental and ensemble face alignment,'' in {\em Proceedings of the IEEE
+  International Conference on Computer Vision}, pp.~3880--3888, 2015.
+
+\bibitem{wright2009robust}
+J.~Wright, A.~Y. Yang, A.~Ganesh, S.~S. Sastry, and Y.~Ma, ``Robust face
+  recognition via sparse representation,'' {\em IEEE transactions on pattern
+  analysis and machine intelligence}, vol.~31, no.~2, pp.~210--227, 2009.
+
+\bibitem{perakis20133d}
+P.~Perakis, G.~Passalis, T.~Theoharis, and I.~A. Kakadiaris, ``3d facial
+  landmark detection under large yaw and expression variations,'' {\em IEEE
+  transactions on pattern analysis and machine intelligence}, vol.~35, no.~7,
+  pp.~1552--1564, 2013.
+
+\bibitem{breiman2001random}
+L.~Breiman, ``Random forests,'' {\em Machine learning}, vol.~45, no.~1,
+  pp.~5--32, 2001.
+
+\bibitem{le2012interactive}
+V.~Le, J.~Brandt, Z.~Lin, L.~Bourdev, and T.~S. Huang, ``Interactive facial
+  feature localization,'' in {\em European Conference on Computer Vision},
+  pp.~679--692, Springer, 2012.
+
+\bibitem{belhumeur2013localizing}
+P.~N. Belhumeur, D.~W. Jacobs, D.~J. Kriegman, and N.~Kumar, ``Localizing parts
+  of faces using a consensus of exemplars,'' {\em IEEE transactions on pattern
+  analysis and machine intelligence}, vol.~35, no.~12, pp.~2930--2940, 2013.
+
+\bibitem{sagonas2013semi}
+C.~Sagonas, G.~Tzimiropoulos, S.~Zafeiriou, and M.~Pantic, ``A semi-automatic
+  methodology for facial landmark annotation,'' in {\em Proceedings of the IEEE
+  Conference on Computer Vision and Pattern Recognition Workshops},
+  pp.~896--903, 2013.
+
+\end{thebibliography}

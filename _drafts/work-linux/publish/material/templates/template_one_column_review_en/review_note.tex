@@ -1,0 +1,3150 @@
+                            % HoTT Reading Notes a
+% !TEX encoding = UTF-8 Unicode
+% http://goo.gl/Dz6r8g
+% https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit
+% https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes/edit/master/HoTT_Reading_Notes_a.tex
+% https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes/blob/master/HoTT_Reading_Notes_a.tex 
+% http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes
+% https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit?usp=sharing
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage[a4paper]{geometry}
+%\usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
+\usepackage{comment}
+\usepackage{datetime}
+\usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
+\usepackage[all]{xy}
+\usepackage{graphicx}
+%\usepackage{showkeys}%%\usepackage{showlabels}
+\addtolength{\parskip}{.5\baselineskip}
+%\renewcommand{\baselinestretch}{1.1}
+%\pagestyle{empty}
+\newcommand{\nc}{\newcommand}
+\nc{\mbb}{\mathbb}\nc{\bb}{\mathbb}
+\nc{\mbf}{\mathbf}\nc{\mb}{\mathbf}
+\nc{\mc}{\mathcal}
+\nc{\msf}{\mathsf}\nc{\ms}{\mathsf}
+\nc{\acc}{\ms{acc}}
+\nc{\ack}{\ms{ack}}
+\nc{\alp}{\alpha}\nc{\al}{\alpha}\nc{\gka}{\alpha}
+\nc{\ap}{\ms{ap}}
+\nc{\apd}{\ms{apd}}
+\nc{\base}{\ms{base}}\nc{\ba}{\ms{base}}
+\nc{\bet}{\beta}\nc{\gkb}{\beta}
+\nc{\boucle}{\ms{loop}}\nc{\Loop}{\ms{loop}}\nc{\lo}{\ms{loop}}
+\nc{\bu}{\bullet}
+\nc*{\cc}{\raisebox{-3pt}{\scalebox{2}{$\cdot$}}}
+\nc{\centre}{\ms{center}}\nc{\Center}{\ms{center}}\nc{\cen}{\ms{center}}\nc{\ce}{\ms{center}}
+\nc{\ci}{\circ}
+\nc{\code}{\ms{code}}\nc{\cod}{\ms{code}}\nc{\decode}{\ms{decode}}\nc{\encode}{\ms{encode}}
+\nc{\de}{:\equiv}
+\nc{\dr}{\right}\nc{\ga}{\left}
+\nc{\ds}{\displaystyle}
+\nc{\ep}{\varepsilon}
+\nc{\eq}{\equiv}
+\nc{\ev}{\ms{ev}}
+\nc{\fib}{\ms{fib}}
+\nc{\funext}{\ms{funext}}\nc{\fu}{\ms{funext}}
+\nc{\gam}{\gamma}
+\nc{\glue}{\ms{glue}}\nc{\gl}{\ms{glue}}
+\nc{\happly}{\ms{happly}}\nc{\ha}{\ms{happly}}
+\nc{\id}{\ms{id}}
+\nc{\ima}{\ms{im}}%\nc{\im}{\ms{im}}
+\nc{\inc}{\subseteq}
+\nc{\ind}{\ms{ind}}
+\nc{\inl}{\ms{inl}}
+\nc{\inr}{\ms{inr}}
+\nc{\isContr}{\ms{isContr}}\nc{\co}{\ms{isContr}}\nc{\iC}{\ms{isContr}}\nc{\ic}{\ms{isContr}}
+\nc{\isequiv}{\ms{isequiv}}\nc{\iseq}{\ms{isequiv}}\nc{\ieq}{\ms{isequiv}}
+\nc{\ishae}{\ms{ishae}}\nc{\ish}{\ms{ishae}}\nc{\ih}{\ms{ishae}}
+\nc{\isProp}{\ms{isProp}}\nc{\prop}{\ms{isProp}}\nc{\iP}{\ms{isProp}}\nc{\ip}{\ms{isProp}}
+\nc{\isSet}{\ms{isSet}}\nc{\isS}{\ms{isSet}}\nc{\iss}{\ms{isSet}}\nc{\iS}{\ms{isSet}}\nc{\is}{\ms{isSet}}
+\nc{\lam}{\lambda}%\nc{\la}{\lambda}
+\nc{\LEM}{\ms{LEM}}\nc{\lem}{\ms{LEM}}\nc{\LE}{\ms{LEM}}
+\nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
+\nc{\Map}{\ms{Map}}
+\nc{\merid}{\ms{merid}}\nc{\meri}{\ms{merid}}\nc{\mer}{\ms{merid}}\nc{\me}{\ms{merid}}
+\nc{\N}{\bb N}
+\nc{\na}{\ms{nat}}
+\nc{\nn}{\noindent}
+\nc{\one}{\mb1}
+\nc{\oo}{\operatorname}
+\nc{\pd}{\prod}
+\nc{\ps}{\mc P}
+\nc{\pa}{\ms{pair}^=}
+\nc{\ph}{\varphi}
+\nc{\ppmap}{\ms{ppmap}}
+\nc{\pr}{\ms{pr}}
+\nc{\Prop}{\ms{Prop}}
+\nc{\qinv}{\ms{qinv}}\nc{\qin}{\ms{qinv}}\nc{\qi}{\ms{qinv}}
+\nc{\rec}{\ms{rec}}
+\nc{\refl}{\ms{refl}}%\nc{\re}{\ms{refl}}
+\nc{\seg}{\ms{seg}}
+\nc{\Set}{\ms{Set}}
+\nc{\sm}{\scriptstyle}
+\nc{\sms}{\ms s}
+\nc{\sq}{\square}
+\nc{\suc}{\ms{succ}}\nc{\su}{\ms{succ}}
+\nc{\tb}{\textbf}
+\nc{\then}{\Rightarrow}
+\nc{\tms}{\ms t}
+\nc{\tx}{\text}
+\nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
+\nc{\two}{\mb2}
+\nc{\Type}{\text-\ms{Type}}\nc{\type}{\text-\ms{Type}}\nc{\ty}{\text-\ms{Type}}
+\nc{\U}{\mc U}%\nc{\V}{\mc V}
+\nc{\ua}{\ms{ua}}
+\nc{\uniq}{\ms{uniq}}
+\nc{\univalence}{\ms{univalence}}
+\nc{\vide}{\varnothing}
+\nc{\ws}{\ms{sup}}
+\nc{\zero}{\mb0}
+\title{HoTT Reading Notes}
+\author{Pierre-Yves Gaillard}
+\date{\today, \currenttime}
+\begin{document}
+% $$\text{mathbf }\mb1,\text{ pmb }\pmb1,\text{ boldsymbol }\boldsymbol1$$ \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+
+\maketitle%\nn\today, \currenttime
+
+\nn This text is available at 
+
+\nn\href{http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes}{http://iecl.univ-lorraine.fr/$\sim$Pierre-Yves.Gaillard/HoTT/ReadingNotes}
+
+%\nn\href{http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes}{http://iecl.univ-lorraine.fr/\textasciitilde Pierre-Yves.Gaillard/HoTT/ReadingNotes}
+
+\nn\href{https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes}{https://github.com/Pierre-Yves-Gaillard/HoTT\_Reading\_Notes}
+
+\nn\href{http://goo.gl/Dz6r8g}{http://goo.gl/Dz6r8g}
+
+This is an informal set of comments on the HoTT Book:
+
+\nn\href{http://homotopytypetheory.org/book}{http://homotopytypetheory.org/book}
+
+This is a work in progress. John Dougherty's text 
+
+\nn\href{https://github.com/jdoughertyii/hott-exercises}{https://github.com/jdoughertyii/hott-exercises}
+
+\nn has been most helpful.
+
+\tableofcontents
+
+%%
+
+\section{Chapter 1}
+
+\subsection{Path induction implies based path induction, \S1.12.2}%\label{69}
+
+Let us show that path induction implies based path induction. Let $A$ be a type, let $a:A$, let 
+$$
+C_0:\prod_{x:A}\ (a=x)\to\U,
+$$ 
+and let $c_0:C_0(a,\refl_a)$. We must find an 
+\begin{equation}\label{pi1}
+f:\pd_{x:A}\ \pd_{p:a=x}\ C_0(x,p)
+\end{equation} 
+such that 
+\begin{equation}\label{pi2}
+f(a,\refl_a)\eq c_0.
+\end{equation} 
+
+Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
+\begin{equation}\label{pi3}
+D(x,y,p):\eq\pd_{C:\pd_{z:A}(x=z)\to\U}C(x,\refl_x)\to C(y,p)
+\end{equation} 
+and $d:\pd_{x:A}D(x,x,\refl_x)$ by 
+\begin{equation}\label{pi4}
+d(x,C,c):\eq c. 
+\end{equation} 
+By path induction we get a 
+\begin{equation}\label{pi5}
+g:\pd_{x,y:A}\ \pd_{p:x=y}\ D(x,y,p)
+\end{equation} 
+such that 
+\begin{equation}\label{pi6}
+g(x,x,\refl_x)\eq d(x)
+\end{equation} 
+for all $x:A$. We set 
+\begin{equation}\label{pi7}
+f(x,p):\eq g(a,x,p,C_0,c_0)
+\end{equation} 
+for $x:A$ and $p:a=x$. 
+
+We prove \eqref{pi1}. Let $x:A,\ p:a=x$. We must show $f(x,p):C_0(x,p)$. By \eqref{pi7} it suffices to show 
+\begin{equation}\label{pi8}
+g(a,x,p,C_0,c_0):C_0(x,p).
+\end{equation} 
+Judgment \eqref{pi5} implies $g(a,x,p):D(a,x,p)$. Now \eqref{pi3} implies \eqref{pi8}. This proves \eqref{pi1}. 
+
+To prove \eqref{pi2}, observe 
+$$
+f(a,\refl_a)\overset{\text{(a)}}\eq g(a,a,\refl_a,C_0,c_0)\overset{\text{(b)}}\eq d(a,C_0,c_0)\overset{\text{(c)}}\eq c_0,
+$$ 
+where (a) follows from \eqref{pi7}, (b) follows from \eqref{pi6}, and (c) follows from \eqref{pi4}. $\sq$
+
+%
+
+\subsection{Exercise 1.3} 
+
+\emph{Statement.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
+
+\nn\emph{Solution.} It suffices to handle $\Sigma$-types. 
+
+\nn(a) We assume that, for all type family $B:A\to\U$ we have a map 
+$$
+\pr_1:\left(\sum_{a:A}\ B(a)\right)\to A
+$$ 
+and a dependent function 
+$$
+\pr_2:\prod_{x:\sum_{a:A}B(a)}\ B(\pr_1(x))
+$$
+satisfying
+\begin{equation}\label{131}
+\pr_1(a,b)\equiv a,\quad\pr_2(a,b)\equiv b
+\end{equation}
+for all $a:A$ and all $b:B(a)$.
+
+\nn(b) We also assume that, for all type family $B:A\to\U$ we have a dependent function 
+$$
+\uniq_{\sum_{a:A}B(a)}:\prod_{x:\sum_{a:A}B(a)}\big((\pr_1(x),\pr_2(x))=x\big)
+$$ 
+such that 
+\begin{equation}\label{132}
+\uniq_{\sum_{a:A}B(a)}(a,b)\equiv\refl_{(a,b)}
+\end{equation}
+for all $a:A$ and all $b:B(a)$. 
+
+\nn(c) We define
+$$
+\ind_{\sum_{a:A}B(a)}:\prod_{C:\left(\sum_{a:A}B(a)\right)\to\U} 
+\left(\prod_{a:A}\ \prod_{b:B(a)}\ C((a,b))\right) 
+\to\prod_{x:\sum_{a:A}B(a)}\ C(x)
+$$
+thanks to the transport principle, which is indeed a concept from Chapter~2, by
+\begin{equation}\label{133}
+\ind_{\sum_{a:A}B(a)}(C,g,x):\equiv\left(\uniq_{\sum_{a:A}B(a)}(x)\right)_\star\Big(g\big(\pr_1(x)\big)\big(\pr_2(x)\big)\Big).
+\end{equation}
+(d) We must prove 
+$$
+\ind_{\sum_{a:A}B(a)}(C,g,(a,b))\equiv g(a)(b)
+$$
+for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} and \eqref{133}. $\sq$
+
+%%
+
+\subsection{Exercise 1.5}
+
+\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\mb2}\rec_\mb2(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
+
+\nn\emph{Solution.} Recall that we have 
+$$
+\rec_\mb2:\prod_{C:\U}\ C\to C\to\mb2\to C,\quad\rec_\mb2(C,c_0,c_1,0_\mb2):\eq c_0,\quad\rec_\mb2(C,c_0,c_1,1_\mb2):\eq c_1.
+$$
+We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mb2,a)$, and we define $\inr$ similarly. Let $C:(A+B)\to\U$ be given, and put 
+$$
+A':\equiv\prod_{a:A}\ C(\inl(a)),\quad B':\equiv\prod_{b:B}\ C(\inr(b)).
+$$
+We must define 
+$$
+\ind_{A+B}(C):A'\to B'\to\prod_{x:A+B}\ C(x).
+$$ 
+Let $g_0\!:\!A',\ g_1\!:\!B'$ be given. We must define 
+$$
+\ind_{A+B}(C,g_0,g_1):\prod_{x:A+B}\ C(x).
+$$ 
+Set $T:\equiv\rec_\mb2(\U,A,B):\mb2\to\U$. We define $D:\mb2\to\U$ by 
+$$
+D(n):\equiv\prod_{u:T(n)}\ C((n,u)).
+$$ 
+Note that $D(0_\mb2)\equiv A'$ and $D(1_\mb2)\equiv B'$. Recall that 
+$$
+\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n:\mb2}\ D(n).
+$$ 
+In particular we have 
+$$
+\ind_\mb2(D,g_0,g_1):\prod_{n:\mb2}\ \prod_{u:T(n)}\ C((n,u))
+$$ 
+with 
+$$
+\ind_\mb2(D,g_0,g_1)(0_\mb2):\eq g_0,\quad\ind_\mb2(D,g_0,g_1)(1_\mb2):\eq g_1.
+$$
+Since 
+$$
+\ind_{\sum_{n:\mb2}T(n)}(C):\left(\prod_{n:\mb2}\ \prod_{u:T(n)}\ C((n,u))\right)\to\prod_{x:A+B}\ C(x),
+$$ 
+we can put 
+$$
+\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mb2}T(n)}(C,\ind_\mb2(D,g_0,g_1)).
+$$ 
+We must check 
+\begin{equation}\label{15a}
+\ind_{A+B}(C,g_0,g_1,(0_\mb2,a))\equiv g_0(a),
+\end{equation}
+\begin{equation}\label{15b}
+\ind_{A+B}(C,g_0,g_1,(1_\mb2,b))\equiv g_1(b).
+\end{equation} 
+We have 
+\begin{align*}
+\ind_{A+B}(C,g_0,g_1,(0_\mb2,a))&\equiv\ind_{\sum_{n:\mb2}T(n)}\big(C,\ind_\mb2(D,g_0,g_1),(0_\mb2,a)\big)\\ 
+&\equiv\ind_\mb2(D,g_0,g_1)(0_\mb2)(a)\\ 
+&\equiv g_0(a),
+\end{align*}
+the three definitional equalities following respectively from the definitions of the dependent functions
+$$
+\ind_{A+B},\quad\ind_{\sum_{n:\mb2}T(n)},\quad\ind_\mb2.
+$$ 
+This proves \eqref{15a}. The proof of \eqref{15b} is similar. $\square$
+
+%%
+
+\subsection{Exercise 1.6}
+
+\emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\mb2}\rec_\mb2(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
+
+\nn\emph{Solution.} As above set $T:\equiv\rec_\mb2(\U,A,B)$, so that $T:\mb2\to\U$ and 
+$$
+A\times B:\equiv\prod_{n:\mb2}\ T(n).
+$$ 
+Recall that we have
+$$
+\ind_\mb2(T):A\to B\to A\times B.
+$$ 
+For $a\!:\!A,\ b\!:\!B$ we abbreviate $\ind_\mb2(T,a,b)$ by $(a,b)$; in particular we have 
+$$
+(a,b):A\times B,\quad(a,b)(0_\mb2)\equiv a,\quad(a,b)(1_\mb2)\equiv b.
+$$ 
+Let $C:(A\times B)\to\U$. We must define 
+$$
+\ind_{A\times B}(C):\left(\prod_{a:A}\ \prod_{b:B}\ C((a,b))\right)\to\prod_{u:A\times B}\ C(u).
+$$ 
+Let $u:A\times B$ and define $D:\mb2\to\U$ by 
+$$
+D(n):\equiv\Big(\big(u(0_\mb2),u(1_\mb2)\big)(n)=u(n)\Big),
+$$ 
+and recall that 
+$$
+\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n:\mb2}\ D(n),
+$$ 
+and that 
+$$
+\funext:\left(\prod_{n:\mb2}\ D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
+$$ 
+Setting $\al:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)},\refl_{u(1_\mb2)})$, we get 
+$$
+\al:\prod_{n:\mb2}\ D(n),\quad\funext(\al):\big(u(0_\mb2),u(1_\mb2)\big)=u,
+$$
+$$
+\funext(\al)_\star:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
+$$
+In particular we can set
+$$
+\ind_{A\times B}(C,g,u):\equiv\funext(\al)_\star\Big(g\big(u(0_\mb2)\big)\big(u(1_\mb2)\big)\Big).
+$$
+
+To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
+$$
+\al:\prod_{n:\mb2}\ \Big((a,b)(n)=(a,b)(n)\Big).
+$$ 
+It is easy to prove $\al(n)=\refl_{(a,b)(n)}$ by induction. This gives 
+$$
+\ind_{A\times B}(C,g,(a,b))=g(a)(b),
+$$ 
+as required. $\square$
+
+%%
+
+\subsection{Exercise 1.8}
+
+\emph{Statement.} Define multiplication and exponentiation using $\rec_\N$. Verify that $$(\N,+,0,\times,1)$$ is a semiring using only $\ind_\N$. You will probably also need to use symmetry and transitivity of equality, Lemmas 2.1.1 and 2.1.2.
+
+\nn\emph{Solution.} We put 
+$$
+mn:\equiv\rec_\N(\ \N\to\N\ ,\ \lam n.0\ ,\ \lam m.\lam g.\lam n.n+g(n)\ ,\ m\ ,\ n\ ),
+$$
+$$
+n^m:\equiv\rec_\N(\ \N\to\N\ ,\ \lam n.1\ ,\ \lam m.\lam g.\lam n.ng(n)\ ,\ m\ ,\ n\ ).
+$$ 
+We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring. $\sq$
+
+For the reader's convenience we briefly recall the definition of the recursor for $\N$:
+$$
+\rec_\N:\prod_{C:\U}\ C\to(\N\to C\to C)\to\N\to C,
+$$
+
+$$\rec_\N(C,c_0,c_s,0):\eq c_0,$$
+
+$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
+
+%%
+
+\subsection{Exercise 1.10}
+
+\emph{Statement.} Show that the Ackermann function $\ack:\N\to\N\to\N$ is definable using only $\rec_\N$ satisfying the following equations:
+\begin{equation}\label{1101}
+\ack(0,n)\equiv\su(n),
+\end{equation}
+\begin{equation}\label{1102}
+\ack(\su(m),0)\equiv\ack(m,1),
+\end{equation}
+\begin{equation}\label{1103}
+\ack(\su(m),\su(n))\equiv\ack(m,\ack(\su(m),n)).
+\end{equation}
+
+\nn\emph{Solution.} I have used John Dougherty's text 
+
+\nn\href{https://github.com/jdoughertyii/hott-exercises}{https://github.com/jdoughertyii/hott-exercises}
+
+We try to solve Equation 
+\begin{equation}\label{ack1}
+\ack:\equiv\rec_\N(C,c_0,c_s)
+\end{equation}
+for 
+$$
+C:\U,\quad c_0:C,\quad c_s:\N\to C\to C.
+$$ 
+We get $C:\equiv(\N\to\N)$. In view of \eqref{1101}, evaluation of \eqref{ack1} at 0 gives $c_0\equiv\su$, so that we get 
+\begin{equation}\label{ack1b}
+\ack:\equiv\rec_\N(\N\to\N,\su,c_s).
+\end{equation}
+Let $i:\N,f:\N\to\N$. It suffices to solve Equation 
+\begin{equation}\label{ack2}
+c_s(i,f):\equiv\rec_\N(D(i,f),d_0(i,f),d_s(i,f))
+\end{equation}
+for 
+$$
+D(i,f):\U,\quad d_0(i,f):D(i,f),\quad d_s(i,f):\N\to D(i,f)\to D(i,f).
+$$ 
+
+\nn As we have $c_s(i,f):\N\to\N$ and $\rec_\N(D(i,f),d_0(i,f),d_s(i,f)):\N\to D(i,f)$, we set $D(i,f):\equiv\N$, so that we get 
+\begin{equation}\label{ack2b}
+c_s(i,f):\equiv\rec_\N(\N,d_0(i,f),d_s(i,f))
+\end{equation} 
+with 
+$$
+d_0(i,f):\N,\quad d_s(i,f):\N\to\N\to\N.
+$$ 
+We have 
+%
+$$\ack(\su(m))$$
+$$\overset{\text{(a)}}\equiv\rec_\N(\N\to\N,\su,c_s,\su(m))$$
+$$\equiv c_s(m,\rec_\N(\N\to\N,\su,c_s,m))$$
+$$\overset{\text{(b)}}\equiv c_s(m,\ack(m))$$
+$$\overset{\text{(c)}}\equiv\rec_\N(\N,d_0(m,\ack(m)),d_s(m,\ack(m))),$$ 
+where (a) and (b) follow from \eqref{ack1b}, and (c) follows from \eqref{ack2b}. In view of \eqref{1102}, evaluating 
+\begin{equation}\label{acsu}
+\ack(\su(m))\eq\rec_\N(\N,d_0(m,\ack(m)),d_s(m,\ack(m)))
+\end{equation} 
+at 0 gives $d_0(m,\ack(m))\equiv\ack(m)(1)$, prompting us to set $d_0(i,f):\equiv f(1)$, so that \eqref{ack2b} becomes 
+\begin{equation}\label{ack2c}
+c_s(i,f):\equiv\rec_\N(\N,f(1),d_s(i,f))
+\end{equation} 
+and \eqref{acsu} becomes
+\begin{equation}\label{acsu2}
+\ack(\su(m))\equiv\rec_\N\Big(\N,\ack(m,1),d_s\big(m,\ack(m)\big)\Big).
+\end{equation} 
+We have 
+$$\ack(m)\big(\ack(\su(m),n)\big)$$ 
+$$\overset{\text{(a)}}\equiv\ack(\su(m),\su(n))$$ 
+$$\overset{\text{(b)}}\equiv\rec_\N\big(\N,\ack(m,1),d_s(m,\ack(m)),\su(n)\big)$$ 
+$$\equiv d_s\big(m,\ack(m)\big)\bigg(n,\rec_\N\Big(\N,\ack(m,1),d_s\big(m,\ack(m)\big),n\Big)\bigg)$$ 
+$$\overset{\text{(c)}}\equiv d_s\big(m,\ack(m)\big)\Big(n,\ack\big(\su(m),n\big)\Big),$$ 
+where (a) follows from \eqref{1103}, and (b) and (c) follow from \eqref{acsu2}. This prompts us to set $d_s(i,f)(x,y):\equiv f(y)$. Abbreviating $d_s(i,f)$ by $f'$, we get  
+$$
+\ack:\equiv\rec_\N(\N\to\N,\su,c_s)
+$$ 
+with 
+$$ 
+c_s(i,f)\equiv\rec_\N(\N,f(1),f')
+$$ 
+and 
+$$ 
+i:\N,\quad f:\N\to\N,\quad f':\N\to\N\to\N,\quad f'(x,y):\equiv f(y),
+$$ 
+that is
+$$
+\ack:\eq\rec_\N\Big(\N\to\N,\su,\lam i.\lam f.\rec_\N\big(\N,f(1),\lam x.\lam y.f(y)\big)\Big).\ \sq
+$$ 
+
+%%
+
+\subsection{Exercise 1.13}
+
+\emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
+
+\nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\inr)(g\ci\inl).$ Putting $B:\equiv\mb0$ gives the desired result. $\sq$
+
+%%
+
+\section{Chapter 2}
+
+\subsection{Theorem 2.7.2}\label{272}
+
+Recall that $P:A\to\U$ is a type family over a type $A$, and that $w,w':\sum_{a:A}P(a)$. Theorem 2.7.2 can also be stated as follows: 
+
+The map 
+$$
+(w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}\ \big(p_\star(\pr_2(w))=\pr_2(w')\big)
+$$ 
+defined 
+$$
+r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
+$$ 
+admits an inverse 
+\begin{equation}\label{273}
+\pa:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\ \big(p_\star(\pr_2(w))=\pr_2(w')\big)\right)\to(w=w').
+\end{equation}
+
+We often write $\pa_P$ for $\pa$ to stress the dependence on the type family $P:A\to\U$. 
+
+%%
+
+\subsection{Comment after Corollary 2.7.3}
+
+In the above context, we have the propositional computation rules 
+$$
+\ap_{\pr_1}(\pa(p,q))=p,
+$$
+$$
+\apd_{\pr_2}(\pa(p,q))=q
+$$
+for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}(p_\star(\pr_2(w))=\pr_2(w'))$, and the propositional uniqueness principle 
+$$
+r=\pa(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
+$$ 
+for $r:w=w'$. 
+
+%%
+
+\subsection{Theorem 2.7.4}\label{274}
+
+We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. Recall that we have type families $P:A\to\U$ and $Q:(\sum_{a:A}P(a))\to\U$. Let us set 
+$$
+Q'(a):\eq\sum_{u:P(a)}\ Q(a,u)
+$$ 
+for $a:A$, let us abbreviate $\tr$ by $\tms$, and let us write $\pa_P$ instead of $\pa$ (see~\eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Recall that $p:x=y$ is a path in $A$, that $u:P(x)$ and $z:Q(x,u)$, so that $(u,z):Q'(x)$. Here is the rewriting:
+
+\begin{equation}\label{ld}
+\tms^{Q'}(p,(u,z))=\Bigg(\tms^P(p,u),\tms^Q\bigg(\pa_P\Big(p,\refl_{\tms^P(p,u)}\Big),z\bigg)\Bigg).
+\end{equation}
+
+The key step to check that the above equality is well-typed is the judgment 
+$$
+\pa_P\Big(p,\refl_{\tms^P(p,u)}\Big):(x,u)=_{\sum_{a:A}P(a)}\big(y,\tms^P(p,u)\big).
+$$ 
+
+For the reader's convenience, we rewrite \eqref{273} more explicitly as 
+$$
+\pa_P:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(\tms^P(p,\pr_2(w))=\pr_2(w')\big)\right)\to(w=w'),
+$$ 
+so that we have $\pa_P(p,q):w=w'$ if and only if 
+$$
+p:\pr_1(w)=\pr_1(w')\quad\text{and}\quad q:\tms^P(p,\pr_2(w))=\pr_2(w').
+$$
+
+%%
+
+\subsection{Commutative diagram summarizing \S\S\ 2.9 and 2.10}\label{209210}
+
+Let $f,g:\pd_{a:A}B(a)$, where $B:A\to\U$ is a type family. Recall that 
+$$
+(f\sim g):\eq\pd_{a:A}\ (f(a)=g(a)).
+$$ 
+For $a:A$ we have the commutative diagram
+
+$$
+\xymatrix{
+\boxed{f=g}\ar[ddr]_{\ev'_a}\ar@<2pt>[rr]^\ha&&\boxed{f\sim g}\ar[ddl]^{\ev_a}\ar@<2pt>[ll]^\fu\\ \\
+&\boxed{f(a)=g(a)}}
+$$ 
+where $\ev_a$ is the obvious map ($\ev$ stands for \emph{evaluation}), and $\ev'_a$ is defined by $\ev'_a:\eq\ev_a\ci\ha$.
+
+For $A,B:\U$ we have the commutative diagram
+
+$$
+\xymatrix{
+\boxed{A=B}\ar[ddr]_{\tr^{X\mapsto X}}\ar@<2pt>[rr]^{\ms{idtoeqv}}&&\boxed{A\simeq B}\ar[ddl]^{\pr_1}\ar@<2pt>[ll]^\ua\\ \\
+&\boxed{A\to B}}
+$$
+
+The key point is of course the fact that, in each of the two above diagrams, the horizontal maps are inverses.
+
+%%
+
+\subsection{Function Extensionality Axiom (\S2.9)}
+
+The comments below have been inspired by Lemma 6.3.2 in the HoTT Book. 
+
+\subsubsection{Part 1}
+
+\begin{comment}
+
+% old
+
+Let $f,g:A\to B$ be two maps between two types, and let $h:f\sim g$ be a homotopy from $f$ to $g$. Define $h':A\to I\to B$ by
+\begin{equation}\label{fea1}
+h'(a,0):\eq f(a),\quad h'(a, 1):\eq g(a),\quad h'(a,\seg):=h(a).
+\end{equation} 
+($I$ is the interval, with the three constructors $0_I\!:\!I,\ 1_I\!:\!I,\ \seg\!:\!0_I=1_I$. 
+See beginning of \S6.3 in the book.) Next define $h'':I\to A\to B$ by 
+$$
+h''(i,a):\eq h'(a,i).
+$$ 
+
+\end{comment}
+
+Let $B:A\to\U$ be a type family over a type $A$, let $f,g:\pd_{a:A}B(a)$ be two dependent functions, and let $h:f\sim g$ be a homotopy from $f$ to $g$. Define $h':\pd_{a:A}(I\to B(a))$ by
+\begin{equation}\label{fea1}
+h'(a,0_I):\eq f(a),\quad h'(a,1_I):\eq g(a),\quad h'(a,\seg):=h(a).
+\end{equation} 
+($I$ is the interval, with the three constructors $0_I\!:\!I,\ 1_I\!:\!I,\ \seg\!:\!0_I=1_I$. 
+See beginning of \S6.3 in the book.) Next define $h'':I\to\pd_{a:A}B(a)$ by 
+$$
+h''(i,a):\eq h'(a,i).
+$$
+
+Let $a:A$. We claim 
+\begin{equation}\label{fea2}
+\ha(h''(\seg),a)=h'(a,\seg).
+\end{equation} 
+Let $p:i=j$ be a path in $I$. It suffices to show $\ha(h''(p),a)=h'(a,p)$, and even, by path induction, $\ha(h''(\refl_i),a)=h'(a,\refl_i)$. But we have 
+$$
+\ha(h''(\refl_i),a)=\ha(\refl_f,a)=\refl_{f(a)}=h'(a,\refl_i).
+$$ 
+This proves \eqref{fea2}. Obviously \eqref{fea1} and \eqref{fea2} imply 
+\begin{equation}\label{fea3}
+\ha(h''(\seg),a)=h(a).
+\end{equation} 
+
+\subsubsection{Part 2}
+
+We denote the function extensionality axiom by $\ms{FEA}$, and we introduce an axiom which we call $\ms{FEA'}$ and which is clearly implied by $\ms{FEA}$, and we'll prove in Part~3 that $\ms{FEA'}$ implies $\ms{FEA}$. $\ms{FEA'}$ says that for all loop $\ell:f=f$ we have 
+\begin{equation}\label{fea'}
+\ms{FEA'}:\ga(\pd_{a:A}\ (\ha(\ell,a)=\refl_{f(a)})\dr)\to(\ell=\refl_f).
+\end{equation}
+
+In Part~2 we admit $\ms{FEA}$ (and thus $\ms{FEA'}$). Let $h:f\sim g$. We claim 
+\begin{equation}\label{fea4}
+\boxed{\fu(h)=h''(\seg)}
+\end{equation} 
+Let $a:A$. By $\ms{FEA}$ and path induction we can assume 
+\begin{equation}\label{fea5}
+h(a)\eq\refl_{f(a)}.
+\end{equation} 
+By $\ms{FEA}$ again, it suffices to show 
+$$
+\refl_{f(a)}=\ha(h''(\seg),a).
+$$ 
+But this follows from \eqref{fea5} and \eqref{fea3}. This proves \eqref{fea4}. 
+
+\subsubsection{Part 3}
+
+Recall that $\ms{FEA}$ stands for ``function extensionality axiom'' and $\ms{FEA'}$ is defined in \eqref{fea'}. We prove 
+\begin{equation}\label{fea'a}
+\boxed{\ms{FEA'}\text{ implies } \ms{FEA}}
+\end{equation}
+as follows. We assume $\ms{FEA'}$. Let $h,h',h''$ be as in Part~1, and set 
+\begin{equation}\label{fea6}
+\fu(h):\eq h''(\seg).
+\end{equation} 
+We claim 
+\begin{equation}\label{fea7}
+\fu\ci\ha=\id_{f=g}.
+\end{equation} 
+Let 
+\begin{equation}\label{fea8}
+h:\eq\ha(\refl_f).
+\end{equation} 
+By path induction and \eqref{fea6} it suffices to show $h''(\seg)=\refl_f$. Let $a:A$. By $\ms{FEA'}$ it even suffices to show $\ha(h''(\seg),a)=\refl_{f(a)}$. But this follows from \eqref{fea3} and \eqref{fea8}. This proves \eqref{fea7}. 
+We claim 
+\begin{equation}\label{fea9}
+\ha\ci\fu=\id_{f\sim g}.
+\end{equation} 
+Let $h:f\sim g$. We must show $\ha(\fu(h))=h$. Let $a:A$. By $\ms{FEA'}$ it suffices to show $\ha(\fu(h),a)=h(a)$. But this follows from \eqref{fea6} and \eqref{fea3}. This proves \eqref{fea9}. Now \eqref{fea7} and \eqref{fea9} imply \eqref{fea'a}. 
+
+%%
+
+\subsection{Definition of the map \textsf{happly} in (2.9.2)}
+
+The map 
+$$
+\happly:(f=g)\to\prod_{a:A}\ \big(f(a)=g(a)\big)
+$$ 
+for $f,g:\prod_{x:A}B(x)$ is defined in the obvious way by path induction. If 
+$$
+e:\prod_{x:A}\ \left(\prod_{y:A}\ B(y)\right)\to B(x)
+$$ 
+is the evaluation, \emph{i.e.} $e(x)(f):\eq f(x)$, then we have, again by path induction, 
+$$
+\happly(p)(x)=\ap_{e(x)}(p)
+$$ 
+for $p:f=g$ and $x:A$. 
+
+%%
+
+\subsection{Display preceding (2.9.5)}
+
+Note that $(p^{-1})_\star(a)$ and $\tr^A(p^{-1},a)$ designate the same object, and that we have 
+$$
+\pa(p^{-1},\refl_{(p^{-1})_\star(a)}):(x_2,a)=_{\sum_{x:X}A(x)}\big(x_1,(p^{-1})_\star(a)\big).
+$$ 
+
+%% 
+
+\subsection{Lemma 2.9.7}
+
+% old version
+% https://docs.google.com/document/d/197ZjivVJusz2215MEB2JCDhvx6Y4YDs-vAkmr5oyJcY/edit
+
+In this Section we abbreviate $\tr$ by $\tms$. Let 
+$$
+A:X\to\U,\quad B:\prod_{x:X}\ A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}\ A(x)\right)\to\U,\quad B':X\to\U
+$$ 
+be type families such that $\widehat B(w):\eq B(\pr_1(w),\pr_2(w))$ for all $w:\sum_{x:X}A(x)$, and 
+$$
+B'(x):\eq\pd_{a:A(x)}\ B(x,a)
+$$ 
+for all $x:X$; let 
+$$
+p:x=_Xy,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\tms^A(p);
+$$ 
+and define 
+$$
+h:\pd_{a:A(x)}\ B(y,p_\star a)
+$$ 
+by setting 
+\begin{equation}\label{ha}
+h(a):\eq\tms^{\widehat B}\Big(\pa_A\big(p,\refl_{p_\star a}\big),f(a)\Big)
+\end{equation}
+for all $a:A(x)$. 
+
+Here are more details about \eqref{ha}: We write $\pa_A$ for $\pa$ to stress the fact that the pairing is taken with respect to the type family $A$. Recall that $\pa$ is defined in \eqref{273} p.~\pageref{273}, and note that we have 
+$$
+\pa_A\big(p,\refl_{p_\star a}\big):(x,a)=_{\sum_{x:X}A(x)}(y,p_\star a).
+$$
+\textbf{Claim:} \emph{The maps}
+\begin{equation}\label{297}
+\xymatrix{
+\Big(\tms^{B'}(p,f)\sim g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
+\end{equation}
+\emph{defined below are inverses.}
+
+\nn\emph{Proof.} We define $k:\tms^{B'}(p,f)\ci p_\star\sim h$ by induction on the path $p:x=y$. For $a':A(y)$ let 
+$$
+r(a'):\tms^{B'}(p,f)(a')=\tms^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)
+$$ 
+and 
+$$
+s(a'):g\Big(p_\star\ (p^{-1})_\star\ a'\Big)=g(a')
+$$ 
+be the obvious paths. We now define $u$ and $v$ in \eqref{297} as follows. For $\al:\tms^{B'}(p,f)\sim g$ and $a:A(x)$ we define $u(\al)(a):h(a)=g(p_\star a)$ by 
+$$ 
+u(\al)(a):\eq k(a)^{-1}\cc\al(p_\star a), 
+$$ 
+and for $\beta:h\sim g\ci p_\star$ we define $v(\beta):\tms^{B'}(p,f)\sim g$ by 
+$$
+v(\beta)(a'):\eq r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a').
+$$ 
+
+The claim is easily proved by induction on the path $p:x=y$. $\square$
+
+The path 
+$$
+r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a'):\tms^{B'}(p,f)(a')=g(a')
+$$ 
+above is the composite of the paths
+\begin{align*}
+\tms^{B'}(p,f)(a')&\xymatrix{\ar@1{=}[r]^{r(a')}&}\tms^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
+&\xymatrix{\ar@1{=}[rr]^{k((p^{-1})_\star a')}&&}h\Big((p^{-1})_\star\ a'\Big)\\ 
+&\xymatrix{\ar@1{=}[rr]^{\beta((p^{-1})_\star a')}&&}g\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
+&\xymatrix{\ar@1{=}[r]^{s(a')}&}g(a').
+\end{align*}
+
+%%
+
+\subsection{Proof of Theorem 2.11.1}\label{2111}
+
+Let $f:A\to B$ be invertible, and let $a,a':A$. We must show that 
+$$
+\ap_f:(a=a')\to (fa=fa')
+$$ 
+is invertible.
+
+Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be an inverse to $f$, let $\beta:g\ci f=\id_A$, and define 
+$$
+\varphi:(gfa=gfa')\to(a=a')\quad\text{by}\quad\varphi(q):\equiv\beta_a^{-1}\cc q\cc\beta_{a'}.
+$$ 
+Note, as in the book, that the equality $\varphi\ci\ap_g\ci\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
+
+Step 2. Since $\varphi$ is invertible (see Example 2.4.8 in the book), $\ap_g\ci\ap_f$ is also invertible, and so is, by symmetry, $\ap_f\ci\ap_g$. Exercise 4.5 (see \S\ref{45} p.~\pageref{45}) implies that $\ap_f$ and $\ap_g$ are invertible. $\sq$
+
+%%
+
+\subsection{Proof of Theorem 2.12.5}
+
+The equality 
+$$
+\encode(\inl(a),\decode(\inl(a),c))=c
+$$ 
+for $c:a_0=a$ can be proved by based path induction. $\sq$
+
+%%
+
+% old version, double induction https://docs.google.com/document/d/1L3FlutAY-CUiJ2jZylDNRHeWjxBFxnx2a_7QLJJwbeI/edit
+
+\subsection{Double induction in \S2.13}
+
+\nn\textbf{Claim.} \emph{For any type family $C:\N\to\N\to\U$, any dependent functions}
+$$
+g:\prod_{n:N}\ C(0,n),\quad h:\prod_{m:N}\ C(\su(m),0),
+$$
+$$
+k:\prod_{m,n:N}\ C(m,n)\to C(\su(m),\su(n)),
+$$ 
+\emph{there is a dependent function $f:\prod_{m,n:\N}C(m,n)$ satisfying}
+$$
+f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv k(m,n,f(m,n))
+$$ 
+\emph{for all} $m,n:\N$.
+
+\nn\emph{Proof.} Define $C':\N\to\U$ by 
+$$
+C'(m):\eq\prod_{n:\N}\ C(m,n).
+$$ 
+Let $m:\N$ and $x:C'(m)$, and define $c_s(m,x):C'(\su(m))$ by 
+$$
+c_s(m,x)(0):\eq h(m),\quad c_s(m,x)(\su(n)):\eq k(m,n,x(n)).
+$$ 
+As  
+$$
+c_s:\prod_{m:\N}\ C'(m)\to C'(\su(m)),
+$$ 
+we can define $f:\pd_{m:\N}\ C'(m)$ by 
+$$
+f(0):\eq g,\quad f(\su(m)):\eq c_s(m,f(m)).
+$$ 
+We leave the end of the proof to the reader. $\square$
+
+%%
+
+\subsection{Section 2.14.1}
+
+\subsubsection{Use of Theorem 2.7.4}
+
+% old version
+% https://docs.google.com/document/d/1PA3JFqvxt3lhpQtuaX3i_aQJ9ROR91oNSkp6qyqtrU0/edit
+
+We apply Theorem 2.7.4 (see \S\ref{274} p.~\pageref{274}) to \S2.14.1 of the book by defining $P:\U\to\U$ by $P(A):\eq(A\to A\to A)$, by defining 
+$$
+Q:\left(\sum_{A:\U}\ P(A)\right)\to\U
+$$ 
+by 
+$$
+Q(A,m):\eq\prod_{x,y,z:A}\ \big(m(x,m(y,z))=m(m(x,y),z)\big),
+$$ 
+and by defining $Q':\U\to\U$ by 
+$$ 
+Q'(A):\eq\sum_{m:P(A)}\ Q(A,m).
+$$  
+In the notation of \S\ref{274} p.~\pageref{274} the last display of Theorem 2.7.4 (see \eqref{ld} p.~\pageref{ld}) now reads 
+$$
+\tms^{Q'}(p,(m,a))=\Bigg(\tms^P(p,m),\tms^Q\bigg(\pa_P\Big(p,\refl_{\tms^P(p,m)}\Big),a\bigg)\Bigg)
+$$ 
+with $p:\eq\ua(e)$. $\sq$
+
+\subsubsection{A general comment}
+
+The main purpose of \S2.14.1 is to obtain the formulas
+$$
+m'(b_1,b_2)=e(m(e^{-1}(b_1),e^{-1}(b_2)))
+$$ 
+and
+\begin{equation*}
+  \begin{aligned}
+    m'(m'(b_1,b_2),b_3)
+    &= e(m(e^{-1}(m'(b_1,b_2)),e^{-1}(b_3))) \\
+    &= e(m(e^{-1}(e(m(e^{-1}(b_1),e^{-1}(b_2)))),e^{-1}(b_3))) \\
+    &= e(m(m(e^{-1}(b_1),e^{-1}(b_2)),e^{-1}(b_3))) \\
+    &= e(m(e^{-1}(b_1),m(e^{-1}(b_2),e^{-1}(b_3)))) \\
+    &= e(m(e^{-1}(b_1),e^{-1}(e(m(e^{-1}(b_2),e^{-1}(b_3)))))) \\
+    &= e(m(e^{-1}(b_1),e^{-1}(m'(b_2,b_3)))) \\
+    &= m'(b_1,m'(b_2,b_3)).
+\end{aligned}
+\end{equation*}
+(We refer the reader to the book for the precise notation. The above chain of equalities is preceded by the sentence ``Moreover, though we do not show the proof, one can calculate that the induced proof that $m'$ is associative \dots\ is equal to a function sending $b_1,b_2,b_3:B$ to a path given by the following steps''. The main ingredient is Theorem 2.7.4 --- see \S\ref{274} p.~\pageref{274}.)
+
+It seems to me one could argue as follows: state the above two formulas, check that they are well-typed, check that they hold when $A\eq B$ and $p$ is reflexivity, conclude by path induction that they hold in general.
+
+%%
+
+% old version 
+% https://docs.google.com/document/d/1fCStKUsmwYEZa7PnzmJcaWzCDNJ6TZySTKZPlUcGKA4/edit
+
+\subsection{Exercise 2.7}
+
+\emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
+
+\nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). Let $B:A\to\U$, and let us denote respectively by $\al$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
+$$
+\pd_{z,w:\sum_{a:A}B(a)}\ \left(\xymatrix@1{
+(z=w)\ \ar@<2pt>[r]^(.27)\al&\ds\sum_{p:\pr_1(z)=\pr_1(w)}p_\star \pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
+$$ 
+Note that the expression $\beta(z,w)$ has the same meaning as the expression $\pa$ introduced in the book just before Theorem 2.7.4. Let $B':A'\to\U$ and set similarly 
+$$
+\pd_{z',w':\sum_{a':A'}B'(a')}\left(\xymatrix@1{
+(z'=w')\ \ar@<2pt>[r]^(.27){\al'}&\ds\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star \pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
+$$ 
+Let $g:A\to A',\ h:\prod_{a:A}\ B(a)\to B'(g(a))$. Cleary, there is a map 
+$$
+f:\left(\sum_{a:A}\ B(a)\right)\to\sum_{a':A'}\ B'(a')
+$$ 
+satisfying $f(a,b)\equiv (g(a),h(a,b))$ for all $a:A$ and all $b:B(a)$. 
+
+Let 
+$$
+z,w:\sum_{a:A}\ B(a);\quad p:\pr_1(z)=\pr_1(w);\quad q:p_\star \pr_2(z)=\pr_2(w).
+$$ 
+We claim 
+\begin{equation}\label{e27}
+\ap_f\big(\beta(z,w,p,q)\big)=\beta'\big(f(z),f(w),\ap_g(p),\apd_h(q)\big).
+\end{equation}
+
+\nn\emph{Proof of \eqref{e27}.} For $z$ and $w$ as above, and $r:z=w$ set 
+$$
+p(r):\eq\pr_1(\al(z,w,r)),\quad q(r):\eq\pr_2(\al(z,w,r)).
+$$ 
+Then we can prove 
+\begin{equation}\label{e27b}
+\ap_f\big(\beta(z,w,p(r),q(r))\big)=\beta'\big(f(z),f(w),\ap_g(p(r)),\apd_h(q(r))\big)
+\end{equation}
+by induction on $r$. Clearly \eqref{e27b} implies \eqref{e27}. $\sq$
+
+%%
+
+\subsection{Exercise 2.10}\label{210}
+
+The result of Exercise 2.10 can be stated as follows:
+
+\emph{If $B:A\to\U$ and $C:(\sum_{a:A}B(a))\to\U$ are type families, then the maps
+$$
+\xymatrix{
+\ds\ga(\sum_{a:A}\ \sum_{b:B(a)}\ C((a,b))\dr)\ar@<2pt>[r]^(.55)f&\ds\ga(\sum_{z:\sum_{a:A}B(a)}C(z)\dr)\ar@<2pt>[l]^(.45)g}
+$$ 
+defined by 
+$$
+f(a,b,c):\eq((a,b),c),\quad g(z,c):\eq(\pr_1 z,\pr_2z,c)
+$$ 
+are inverses.}
+
+The proof is straightforward.
+
+%%
+
+\subsection{Exercise 2.14}
+
+\emph{Statement.} Suppose we add to type theory the \emph{equality reflection rule} which says that if there is an element $p:x=y$, then in fact $x\equiv y$. Prove that for any $p:x=x$ we have $p\equiv\refl_x$. (This implies that every type is a \emph{set} in the sense to be introduced in \S3.1; see \S7.2.)
+
+\nn\emph{Solution.} Let $p:x=y$. We have $p:x=x$ by the equality reflection rule, and $p=\refl_x$ by path induction. $\sq$
+
+%Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $y\equiv x$ by the equality reflection rule. $\sq$
+
+%%
+
+\section{Chapter 3}
+
+\subsection{Proof of Lemma 3.1.8}\label{318}
+
+Recall the statement: 
+
+\emph{If $A$ is a set (that is, $\isSet(A)$ is inhabited), then $A$ is a 1-type.} 
+
+Here is a slightly different wording of the proof:
+
+Suppose $f:\isSet(A)$ and let $x,y:A$. For any $p,q:x=y$ we have $f(p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
+$$
+r=f(p,q)^{-1}\cc f(p,q')
+$$ 
+by path induction on $r$. $\sq$
+
+%%
+
+\subsection{Theorem 3.2.2} 
+
+Recall the statement:
+
+\nn\emph{It is not the case that for all $A:\U$ we have $\neg\neg A\to A$.}
+
+Here is a minor variant. Set 
+$$
+F:\eq\prod_{A:\U}\ \neg\neg A\to A,\qquad G:\eq\prod_{A:\U}\ \lV\mb2=A\rV\to A.
+$$ 
+It suffices to prove $F\to G$ and $\neg G$. 
+
+\nn\emph{Proof of} $F\to G$. Given $f:F$ we must define $g:G$. It suffices define 
+$$
+h:\lV\mb2=A\rV\to\neg\neg A
+$$ 
+for $A:\U$, and to set $g(A,u):\eq f(A,h(u))$. It suffices in turn to define 
+$$
+h':(\mb2=A)\to\neg\neg A.
+$$ 
+To do this, we set $h'(p,k):\eq k(\tr^{X\mapsto X}(p,0_{\mbf2}))$ for all $k:\neg A$. 
+
+\nn\emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book. $\square$
+
+The (limited) interest of this comment is that, given a type $B$, it might be easier to prove $B\to G$ than to prove $B\to F$ (or to prove $B\to\mbf0$ directly). 
+
+%%
+
+\subsection{Proof of Lemma 3.3.4}%\label{334}
+
+Recall the statement of Lemma 3.3.4: \emph{Every mere proposition is a set.} In the proof of Lemma 3.1.8 in \S\ref{318} above we derived the conclusion that $x=y$ is a set using only the assumption that $x=y$ is a mere proposition.
+
+%%
+
+\subsection{Contractibility (\S3.11)}\label{311}
+
+% old version
+% https://docs.google.com/document/d/1u03Hc4479119LIX9PQfbjI0XlasKmSNN8WzEXUTeRBE/edit
+
+For the reader's convenience we paste below most of the statements in \S3.11 of the book.
+
+\nn\tb{Definition 3.11.1.} A type $A$ is \tb{contractible}, or a \tb{singleton}, if there is $a:A$, called the \tb{center of contraction}, such that $a=x$ for all $x:A$. We denote the specified path $a=x$ by $\ms{contr}_x$.
+
+In other words, the type $\isContr(A)$ is defined to be
+$$
+\isContr(A):\eq\sum_{a:A}\ \pd_{x:A}\ (a=x).
+$$
+
+\nn\tb{Lemma 3.11.3.} \emph{For a type $A$, the following are logically equivalent}
+\begin{enumerate}
+\item $A$ \emph{is contractible in the sense of Definition 3.11.1.
+\item $A$ is a mere proposition, and there is a point} $a:A$.
+\item $A=\mb1$.
+\end{enumerate}
+
+\nn\tb{Lemma 3.11.4.} \emph{For any type $A$, the type $\isContr(A)$ is a mere proposition.}
+
+\nn\tb{Corollary 3.11.5.} \emph{If $A$ is contractible, then so is} $\isContr(A)$.
+
+\nn\tb{Lemma 3.11.6.} \emph{If $P:A\to\U$ is a type family such that each $P(a)$ is contractible, then $\pd_{x:A}P(x)$ is contractible.}
+
+Of course, if $A$ is equivalent to $B$ and $A$ is contractible, then so is $B$. More generally, it suffices for $B$ to be a \emph{retract} of $A$. By definition, a \tb{retraction} is a function $r:A\to B$ such that there exists a function $s:B\to A$, called its \tb{section}, and a homotopy $\ep:\pd_{y:B}(r(s(y))=y)$; then we say that $B$ is a \tb{retract} of $A$.
+
+\nn\tb{Lemma 3.11.7.} \emph{If $B$ is a retract of $A$, and $A$ is contractible, then so is} $B$.
+
+\nn\tb{Lemma 3.11.8.} \emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible.}
+
+When this happens, it can allow us to simplify a complicated construction up to equivalence, using the informal principle that contractible data can be freely ignored. This principle consists of many lemmas, most of which we leave to the reader; the following is an example.
+
+\nn\tb{Lemma 3.11.9.} \emph{Let $P:A\to\U$ be a type family.}
+\begin{enumerate}
+\item \emph{If each $P(x)$ is contractible, then $\sum_{x:A}P(x)$ is equivalent to $A$.
+\item If $A$ is contractible and $a:A$, then $\sum_{x:A} P(x)$ is equivalent to} $P(a)$.
+\end{enumerate}
+
+\nn\tb{Lemma 3.11.10.} \emph{A type $A$ is a mere proposition if and only if for all $x,y:A$, the type $x=_Ay$ is contractible.}
+
+%%
+
+\subsection{Proof of Lemma 3.11.4} 
+
+Recall the statement (see \S\ref{311}): \emph{For any type $A$, the type $\isContr(A)$ is a mere proposition.}
+
+Here is a minor variant of the proof:
+
+Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 (see \S\ref{311} above) implies $A=\mb1$, and thus 
+$$
+\isContr(A)=\left(\sum_{a:\mb1}\ \prod_{x:\mb1}\ (a=x)\right)=\left(\sum_{a:\mb1}\ \prod_{x:\mb1}\ \mb1\right)=\left(\sum_{a:\mb1}\ \mb1\right)=\mb1.\ \sq
+$$
+
+%%
+
+\subsection{Proof of Lemma 3.11.8} 
+
+Recall the statement (see \S\ref{311}): 
+
+\nn\emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible.}
+
+Here is a minor variant of the proof:
+
+We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}(a=x)$ by based path induction. $\sq$
+
+%%
+
+\subsection{Exercise 3.5}
+
+\emph{Statement.} Show that $\isProp(A)\simeq(A\to\isContr(A))$. 
+
+\nn\emph{Solution.} Recall the definitions: 
+$$
+\isProp(A):\eq\prod_{a,b:A}\ (a=b),\quad\isContr(A):\eq\sum_{a:A}\ \prod_{b:A}\ (a=b).
+$$
+
+By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 (see \S\ref{311} p.~\pageref{311}) the type $A\to\isContr(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\isContr(A)$ are logically equivalent. 
+
+We define 
+$$
+u:\isProp(A)\to(A\to\isContr(A)),\quad v:(A\to\isContr(A))\to\isProp(A)
+$$ 
+by 
+$$
+u(f,a):\eq(a,f(a)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cc\pr_2(g(a))(b).\ \sq
+$$
+
+%%
+
+\subsection{Exercise 3.6}\label{e36}
+
+\emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
+
+\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\inl(a_1)=\inl(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\inr(a_1')=\inr(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\inl(a)=\inr(a')$. Let $f:\mb0\to(\inl(a)=\inr(a'))$, and note that $f(a'(a)):\inl(a)=\inr(a')$. $\sq$
+
+%%
+
+\subsection{Exercise 3.7}
+
+\emph{Statement.} Show that if $A$ and $B$ are mere propositions and $\neg(A\times B)$, then $A+B$ is also a mere proposition.
+
+\emph{Proof.} %We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is inhabited. We claim that $A+B$ is a mere proposition. 
+It suffices to prove $x=y$ in the following cases:
+
+(a) $x=\inl(a),\ y=\inl(a')$,
+
+(b) $x=\inr(b),\ y=\inr(b')$,
+
+(c) $x=\inl(a),\ y=\inr(b)$.
+
+\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:(A\times B)\to\mb0$ and $g:\mb0\to(\inl(a)=\inr(b))$. We get $g(f(a,b)):\inl(a)=\inr(b)$.\ $\sq$
+
+%%
+
+\subsection{Exercise 3.9}
+
+We admit the Law of Excluded Middle $\LEM$ defined in (3.4.1) by 
+$$
+\LEM:\prod_{A:\U}\ \isProp(A)\to(A+\neg A),
+$$ 
+and we want to prove 
+\begin{equation}\label{e39}
+\left(\sum_{A:\U}\ \isProp(A)\right)\simeq\mb2.
+\end{equation}
+\emph{Proof of \eqref{e39}.} By Lemma 3.3.2 we have 
+$$
+f_1:\prod_{A:\U}\ \isProp(A)\to A\to(A=\mb1). 
+$$ 
+It is easy to see that we have 
+$$
+f_2:\prod_{A:\U}\ \neg A\to(A=\mb0). 
+$$ 
+Define 
+$$
+f_3:\prod_{A:\U}\ \isProp(A)\to(A+\neg A)\to((A=\mb1)+(A=\mb0))
+$$ 
+by 
+$$
+f_3(A,p,\inl(a)):\eq\inl(f_1(A,p,a)),\qquad f_3(A,p,\inr(a')):\eq\inr(f_2(A,a')).
+$$ 
+Define 
+$$
+f_4:\prod_{A:\U}\ \isProp(A)\to\big((A=\mb1)+(A=\mb0)\big)
+$$ 
+by 
+$$
+f_4(A,p):\eq f_3(A,p,\LEM(A,p)).
+$$ 
+In view of $f_4$ we can define 
+$$
+f_5:\left(\sum_{A:\U}\ \isProp(A)\right)\to\mb2
+$$ 
+by 
+$$
+f_5(A,p):\eq
+\begin{cases}
+1_\mb2&\text{if }A=\mb1\\
+0_\mb2&\text{if }A=\mb0.
+\end{cases}
+$$ 
+Let $p_0:\isProp(\mb0)$ and $p_1:\isProp(\mb1)$, and define 
+$$
+f_6:\mb2\to\sum_{A:\U}\ \isProp(A)
+$$ 
+by $f_6(0_\mb2):\eq(\mb0,p_0)$ and $f_6(1_\mb2):\eq(\mb1,p_1)$.
+
+It is straightforward to check that $f_5\ci f_6=\id_\mb2$. 
+
+Let $A:\U$ and $p:\isProp(A)$. It suffices to show 
+\begin{equation}\label{f6f5}
+f_6(f_5(A,p))=(A,p).
+\end{equation}
+In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\mb1$ or if $A=\mb0$, which is easy. $\square$ 
+
+Note that the Law of Excluded Middle $\LEM$ is equivalent to 
+$$
+\LEM':\prod_{A:\U}\ \isProp(A)\to\big((A=\mb1)+(A=\mb0)\big).
+$$ 
+
+%%
+
+\subsection{Exercise 3.17}\label{317}
+
+Here is a slightly more precise statement:
+
+\emph{Show that the rules for the propositional truncation given in \S3.7 of the book are sufficient to imply the following induction principle: given $B:\lV A\rV\to\Prop$ and $f:\prod_{a:A}B(\lv a\rv)$, there is a $g:\prod_{x:\lV A\rV}B(x)$ such that $g(\lv a\rv)=f(a)$ for all $a:A$.}
+
+\nn\emph{Proof.} Let $p:\ip(\lV A\rV)$ (\emph{i.e.} $p(x,y):x=y$ for all $x,y:\lV A\rV$), and let $x:\lV A\rV$. The map $h:A\to B(x)$ defined by 
+$$
+h(a):\eq p(\lv a\rv,x)_\star(f(a))
+$$ 
+induces a map $k:\lV A\rV\to B(x)$ such that $k(\lv a\rv)\eq h(a)$ for all $a:A$, and we can set $g(x):\eq k(x)$ for all $x:\lV A\rV$. This yields 
+$$
+g(\lv a\rv)\eq k(\lv a\rv)\eq h(a)\eq p(\lv a\rv,\lv a\rv)_\star(f(a))=f(a)
+$$ 
+for all $a:A$. $\sq$
+
+%%
+
+\subsection{Exercise 3.18}
+
+\emph{Statement.} Show that the law of excluded middle (3.4.1) and the law of double negation (3.4.2) are logically equivalent.
+
+Recall that the law of excluded middle $\LEM$ defined in (3.4.1) by 
+$$
+\LEM:\prod_{A:\U}\ \isProp(A)\to(A+\neg A),
+$$ 
+and that the law of double negation is defined in (3.4.2) by 
+$$
+\prod_{A:\U}\ \isProp(A)\to(\neg\neg A\to A).
+$$ 
+
+\nn\emph{Proof of the Statement.} To prove that the law of excluded middle implies the law of double negation, we assume that the types 
+$$
+\isProp(A),\quad A+\neg A,\quad \neg\neg A
+$$ 
+are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mb0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
+
+To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By Exercise 3.6 (see \S\ref{e36} p.~\pageref{e36} above), $A+\neg A$ is also a mere proposition, and thus, by double negation, there is a map $\neg\neg(A+\neg A)\to(A+\neg A)$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\ci\inr)(x'\ci\inl)$. $\sq$
+
+%%
+
+\section{Chapter 4}
+
+\subsection{Proof of Lemma 4.1.2}
+
+For the reader's convenience we paste the statement and proof of Lemma 4.1.2:
+
+\nn\tb{Lemma 4.1.2.} \emph{Suppose we have a type $A$ with $a:A$ and $q:a=a$ such that
+\begin{enumerate}
+\item[(i)] The type $a=a$ is a set.%\label{item:autohtpy1}
+\item[(ii)] For all $x:A$ we have $\lV a=x\rV$.%\label{item:autohtpy2}
+\item[(iii)] For all $p:a=a$ we have $p\cc q=q\cc p$.%\label{item:autohtpy3}
+\end{enumerate}
+Then there exists $f:\pd_{x:A}(x=x)$ with} $f(a)=q$.\bigskip
+
+\nn\emph{Proof.} Let $g:\pd_{x:A}\lV a=x\rV$ be as given by~(ii). First we observe that each type $x=_Ay$ is a set. For since being a set is a mere proposition, we may apply the induction principle of propositional truncation, and assume that $g(x)=\lv p\rv$ and $g(y)=\lv p'\rv$ for $p:a=x$ and $p':a=y$. In this case, composing with $p$ and $p'^{-1}$ yields an equivalence $(x=y)\simeq(a=a)$. But $a=a$ is a set by~(i), so $x=y$ is also a set.
+
+Now, we would like to define $f$ by assigning to each $x$ the path $g(x)^{-1}\cc q\cc g(x)$, but this does not work because $g(x)$ does not inhabit $a=x$ but rather $\lV a=x\rV$, and the type $x=x$ may not be a mere proposition, so we cannot use induction on propositional truncation. Instead we can apply the technique mentioned in \S3.9: we characterize uniquely the object we wish to construct. Let us define, for each $x:A$, the type
+$$
+B(x):\eq\sum_{r:x=x}\ \pd_{s:a=x}\ (r=s^{-1}\cc q\cc s).
+$$
+We claim that $B(x)$ is a mere proposition for each $x:A$. Since this claim is itself a mere proposition, we may again apply induction on truncation and assume that $g(x)= \lv p\rv$ for some $p:a=x$. Now suppose given $(r,h)$ and $(r',h')$ in $B(x)$; then we have
+$$
+h(p)\cc h'(p)^{-1}:r=r'.
+$$
+It remains to show that $h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types (\S\S2.9 and 2.11), reduces to showing
+$$
+h(s)=h(p)\cc h'(p)^{-1}\cc h'(s)
+$$
+for any $s:a=x$. But each side of this is an equality between elements of $x=x$, so it follows from our above observation that $x=x$ is a set.
+
+Thus, each $B(x)$ is a mere proposition; we claim that $\pd_{x:A}B(x)$. Given $x:A$, we may now invoke the induction principle of propositional truncation to assume that $g(x)= \lv p\rv$ for $p:a=x$. We define $r:\eq p^{-1}\cc q\cc p$; to inhabit $B(x)$ it remains to show that for any $s:a=x$ we have $r=s^{-1}\cc q\cc s$. Manipulating paths, this reduces to showing that $q\cc (p\cc s^{-1}) = (p\cc s^{-1}) \cc q$. But this is just an instance of~(iii). $\sq$
+
+Let us denote by $(\star)$ the claim 
+
+\nn\emph{$h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
+$$
+h(s)=h(p)\cc h'(p)^{-1}\cc h'(s)
+$$ 
+for any $s:a=x$}
+
+\nn in the proof of Lemma 4.1.2 (see above). We make three observations:
+
+\nn\tb{(1)} The fact that $(\star)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). 
+
+\nn\tb{(2)} The statement $(\star)$ itself follows from the lemma below, which is easily proved by path induction:
+
+\nn\textbf{Lemma.} \emph{Let $A$ be a type; let $a,x:A$; let $q:a=a$; let $P:(x=x)\to\U$ be defined by} 
+$$
+P(r):\equiv\prod_{s:a=x}\ (r=s^{-1}\cc q\cc s);
+$$ 
+\emph{and let} 
+$$
+r,r':x=x,\qquad t:r=r',\qquad h:P(r),\qquad s:a=x.
+$$ 
+\emph{Then} 
+$$
+\transport^P(t,h)(s)=t^{-1}\cc h(s).\ \sq
+$$ 
+
+\nn\tb{(3)} Let us spell out the end of the proof. Recall that $B(x)$ is defined by
+$$
+B(x):\eq\sum_{r:x=x}\ \pd_{s:a=x}\ (r=s^{-1}\cc q\cc s).
+$$ 
+Let $k:\prod_{x:A}B(x)$, and set $f(x):\eq\pr_1(k(x))$ for all $x:A$. We must show 
+$$
+\text{(a) }f:\pd_{x:A}\ (x=x)\quad\text{and}\quad\text{(b) }f(a)=q.
+$$ 
+Claim (a) is clear. Let us prove (b). By assumption (iii) of Lemma 4.1.2 (see above), there is a $u:\pd_{s:a=a}(q=s^{-1}\cc q\cc s)$. In particular we have $(q,u):B(a)$. As $B(a)$ is a mere proposition, this implies $k(a)=(q,u)$, and thus $f(a)=q$. $\sq$
+
+%To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}\ B(x)$. $\sq$
+
+%%
+
+\begin{comment}
+
+\subsection{Lemma 4.2.9}
+
+Let $f:A\to B$. Recall the statement of Lemma 4.2.9: 
+
+If $f$ is invertible, then $\ms{linv}(f)$ and $\ms{rinv}(f)$ are contractible. 
+
+The following slightly stronger statement is an immediate consequence of Exercise 4.5 (see \S\ref{45} p.~\pageref{45} below): 
+
+If $\ell,r:B\to A$ are respectively a left inverse of $f$ and a right inverse of $f$, then $f$ admits an inverse $i:B\to A$, and we have $\ell=i=r$.
+
+\end{comment}
+
+%%
+
+\subsection{Proof of Lemma 4.2.11}\label{4211}
+
+Use also Theorem 2.15.7. 
+
+For the reader's convenience we paste the statement of Theorem 2.15.7:
+
+Suppose suppose we have a type $X$ and type families $A:X\to\U$ and $P:\pd_{x:X}A(x)\to\U$. Then we have a function
+\begin{equation}\label{eq:sigma-ump-map}
+\ga(\pd_{x:X}\ \sum_{a:A(x)}P(x,a)\dr)\to
+\ga(\sum_{g:\pd_{x:X}A(x)}\ \ \pd_{x:X}P(x,g(x))\dr).
+\end{equation}
+defined by $f\mapsto(\pr_1\ci f,\pr_2\ci f)$.
+
+\nn\tb{Theorem 2.15.7.} \emph{\eqref{eq:sigma-ump-map} is an equivalence.}
+
+%%
+
+\subsection{Proof of Lemma 4.7.3}
+
+I would replace ``applying a version of Lemma 3.11.9'' with ``using based path induction''.
+
+%%
+
+\subsection{Proof of Theorem 4.7.6}
+
+Let us check Equivalence $(\star)$ in the proof of Theorem 4.7.6: Recalling that we are given type families $P,Q:A\to\U$, a dependent function $f:\pd_{a:A}P(a)\to Q(a)$, a path $p:a=x$ in $A$, and a $v:Q(x)$, set 
+$$
+R(a,p):\equiv\sum_{u:P(a)}\ \Big(p_\star\big(f(a,u)\big)=v\Big).
+$$ 
+
+\nn\tb{Claim:}
+$$
+\ga(\sum_{a:A}\ \sum_{p:a=x}\ R(a,p)\dr)\overset{(\text a)}{\simeq}
+\ga(\sum_{z:\sum_{a:A}(a=x)}R(z)\dr)\overset{(\text b)}{\simeq}
+R(x,\refl_x).
+$$
+
+\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). Equivalence (b) follows from \S\ref{311} p.~\pageref{311}. $\sq$
+
+%%
+
+\subsection{Proof of Lemma 4.8.1}\label{481}
+
+Recall the statement:
+
+\emph{For any type family $B:A\to\U$, the fiber of $\pr_1:(\sum_{x:A}B(x))\to A$ over $a:A$ is equivalent to $B(a)$:}
+$$
+\fib_{\pr_1}(a)\simeq B(a).
+$$
+
+\nn\emph{Proof.} We have
+$$\fib_{\pr_1}(a):\eq\sum_{u:\sum_{x:A}B(x)}(\pr_1(u)=a)$$
+
+$$\overset{\text{(a)}}\simeq\sum_{x:A}\ \sum_{b:B(x)}\ (x=a)\simeq\sum_{x:A}\ \sum_{p:x=a}\ B(x)$$
+
+$$\overset{\text{(b)}}\simeq\sum_{z:\sum_{x:A}(x=a)}\ B(\pr_1(z))\overset{\text{(c)}}\simeq B(\pr_1(a,\refl_a))\eq B(a),$$ 
+
+\nn where (a) and (b) follow from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}), and (c) follows from \S\ref{311} p.~\pageref{311}. $\sq$
+
+%%
+
+\subsection{Proof of Lemma 4.8.2}\label{482}
+
+Here is a minor variant to the proof of Lemma 4.8.2. Recall the statement:
+
+\emph{For any function $f:A\to B$, we have} $A\simeq\sum_{b:B}\fib_f(b)$.
+
+Recall Definition 4.2.4: \emph{The fiber of a map $f:A\to B$ over a point $b:B$ is} 
+$$
+\fib_f(b):\eq\sum_{a:A}\ (f(a)=b).
+$$ 
+In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have 
+\begin{equation}\label{paq}
+p_\star(a,q)=(a,q\cc p).
+\end{equation}
+
+Set 
+$$
+C:\eq\sum_{b:B}\ \fib_f(b):\eq\sum_{b:B}\ \sum_{a:A}\ (f(a)=b).
+$$ 
+We must show $A\simeq C$. Define $g:A\to C$ and $h:C\to A$ by 
+$$
+g(a):\eq(f(a),a,\refl_{f(a)}),\qquad h(b,a,p):\eq a.
+$$ 
+We claim that $g$ and $h$ are inverses. It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\refl_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}. $\square$
+
+%%
+
+\subsection{Proof of Theorem 4.8.3}
+
+For the reader's convenience we paste the statement and proof of Theorem 4.8.3:
+
+\nn\tb{Theorem 4.8.3.} \emph{For any type $B$ there is an equivalence}
+$$
+\chi:\ga(\sum_{A:\U}\ (A\to B)\dr)\simeq(B\to\U).
+$$
+
+\nn\emph{Proof.} We have to construct quasi-inverses
+\begin{align*}
+\chi&:\ga(\sum_{A:\U}(A\to B)\dr)\to B\to\U\\
+\psi&:(B\to\U)\to\ga(\sum_{A:\U}(A\to B)\dr).
+\end{align*}
+We define $\chi$ by $\chi((A,f),b):\eq\fib_f(b)$, and $\psi$ by $\psi(P):\eq((\sum_{b:B} P(b)),\pr_1)$. 
+
+Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\ci\chi\simeq\id$. 
+
+\nn(a) Let $P:B\to\U$. By Lemma 4.8.1 (see \S\ref{481} p.~\pageref{481}), $\fib_{\pr_1}(b)\simeq P(b)$ for any $b:B$, so it follows immediately that $P\simeq\chi(\psi(P))$.
+
+\nn(b) Let $f:A\to B$ be a function. We have to find a path
+$$
+\ga(\sum_{b:B}\ \fib_f(b),\,\pr_1\dr)=(A,f).
+$$ 
+First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}), we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\refl_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{294} below), we have $\ua(e)_\star(\pr_1)=\pr_1\ci e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\ci e^{-1}\eq f$. $\sq$
+
+Here are some details about the last sentence of the above proof: 
+
+Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\tms$ we have 
+\begin{equation}\label{294}
+\tms^{A\to B}(p,f,x)=\tms^B(p,f(\tms^A(p^{-1},x)))
+\end{equation}
+for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
+
+Let the notation of \S\ref{482} above be in force. Let $\pr_1:C\to B$ be the first projection. We must show 
+\begin{equation}\label{2}
+(C,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
+\end{equation} 
+By \S\ref{482} we have an equivalence $e:C\simeq A$. Set $g:\eq\pr_1(e^{-1})$ (here of course $\pr_1$ denotes the first projection $(A\simeq C)\to(A\to C)$). Set also $q:\equiv\ua(e)$, so that we get $q:C=A$. We claim 
+\begin{equation}\label{3}
+q_\star(\pr_1)=f.
+\end{equation} 
+By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Let the notation of \eqref{294} be in force. In particular, the computation rule for univalence stated right after Remark 2.10.4 in the book reads 
+\begin{equation}\label{cru}
+\tms^I(q^{-1})=g,
+\end{equation}
+and \eqref{3} becomes 
+$$
+\tms^{I\to D}(q,\pr_1)=f.
+$$ 
+Let $a:A$. We must show 
+$$
+\tms^{I\to D}(q,\pr_1,a)=f(a).
+$$ 
+We get 
+$$
+\tms^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\tms^D(q,\pr_1(\tms^I(q^{-1},a)))\overset{\text{(b)}}=\tms^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
+$$ 
+where (a) follows from \eqref{294}, (b) follows from \eqref{cru}, (c) follows from Lemma 2.3.5 in the book (see below), and (d) follows from the definition of $g$. $\sq$
+
+\nn\tb{Lemma 2.3.5.} \emph{If $P:A\to\U$ is defined by $P(x):\eq B$ for a fixed $B:\U$, then for any $x,y:A$ and $p:x=y$ and $b:B$ we have a path}
+$$
+\ms{transportconst}^B_p(b):\tr^P(p,b)=b.
+$$
+
+%%
+
+\subsection{Proof of Theorem 4.8.4}
+
+Here is the statement:
+
+\nn\emph{Let $f:A\to B$ be a function. Then the diagram
+$$
+\xymatrix{
+A\ar[r]^-{\theta_f}\ar[d]_{f}&\U_\bullet\ar[d]^{\pr_1}\\
+B\ar[r]_{\chi(A,f)} &\U}
+$$ 
+is a pullback square (see Exercise 2.11). Here the function $\theta_f$ is defined by}
+$$
+\theta_f(a):\eq\Big(\fib_f\big(f(a)\big),\big(a,\refl_{f(a)}\big)\Big).
+$$
+
+I don't understand the proof of the equivalence 
+\begin{equation}\label{484}
+A\simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ (\fib_f(b)=X)
+\end{equation}
+at the beginning of the proof of Theorem 4.8.4. Here is how I would present things. 
+
+\nn\tb{Claim.} \emph{For any type $A$ we have} 
+\begin{equation}\label{asimeq}
+A\simeq\sum_{X:\U}\ \big(X\times(X=A)\big).
+\end{equation}
+\emph{Proof.} Write $\tms$ for ``transport''. Set $C:\eq\sum_{X:\U}\big(X\times(X=A)\big)$, and define 
+$$
+f:A\to C,\qquad g:C\to A
+$$ 
+by 
+$$
+f(a):\eq(A,a,\refl_A),\qquad g(B,b,p):\eq\tms^{X\mapsto X}(p,b).
+$$ 
+
+\nn We have $g(f(a))\eq a$ for all $a:A$. Let $(B,b,p):C$. We have 
+$$
+f(g(B,b,p))=(A,\tms^{X\mapsto X}(p,b),\refl_A)
+$$ 
+and we must show 
+$$
+(B,b,p)=(A,\tms^{X\mapsto X}(p,b),\refl_A).
+$$
+By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) it suffices to verify 
+$$
+\tms^{X\mapsto X\times(X=A)}(p,(b,p))=(\tms^{X\mapsto X}(p,b),\refl_A).
+$$ 
+By Theorem 2.6.4 it suffices to prove $\tms^{X\mapsto(X=A)}(p,p)=\refl_A$. But this follows from Lemma 2.11.2. $\square$
+
+Going back to the beginning of the proof of Theorem 4.8.4, we get 
+$$
+A\simeq\ga(\sum_{b:B}\ \fib_f(b)\dr)\simeq\ga(\sum_{b:B}\ \sum_{X:\U}\ \Big(X\times\big(X=\fib_f(b)\big)\Big)\dr)
+$$
+$$
+\simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ (\fib_f(b)=X),
+$$ 
+the first equivalence following from Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}), the second one from \eqref{asimeq}, and the third one being straightforward. This proves \eqref{484}. $\sq$
+
+%%
+
+\subsection{Exercise 4.4}
+
+\emph{Statement.} (The unstable octahedral axiom.) Suppose $f:A\to B$ and $g:B\to C$ and $b:B$.
+
+\nn(i) Show that there is a natural map $\fib_{g\ci f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_{g(b)})$ is equivalent to $\fib_f(b)$.
+
+\nn(ii) Show that $\fib_{g\ci f}(c)\simeq\sum_{w:\fib_g(c)}\fib_f(\pr_1w)$.
+
+\nn\emph{Solution.} (i) Let $b:B$. We define $h:\fib_{g\ci f}(g(b))\to\fib_g(g(b))$, that is
+$$
+h:\ga(\sum_{x:A}\ \big(g(f(x))=g(b)\big)\dr)\to\sum_{y:B}\ (g(y)=g(b)),
+$$ 
+by $h(x,p):\eq(f(x),p)$ for $x:A$ and $p:g(f(x))=g(b)$. We get 
+
+$$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}(g(f(x))=g(b))}\big(h(w)=(b,\refl_{g(b)})\big)$$ 
+
+$$=\sum_{x:A}\ \sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
+
+\nn by Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). For each $x:A$ we have
+
+$$\sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
+
+$$\overset{\text{(a)}}=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\transport^{\lam(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
+
+$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\ap_g(q)^{-1}\cc p=\refl_{g(b)}\big)$$ 
+
+$$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}\ \big(p=\ap_g(q)\big)$$ 
+
+$$\overset{\text{(b)}}=\sum_{q:f(x)=b}\ \mb1$$
+
+$$\overset{\text{(c)}}=(f(x)=b),$$ 
+
+\nn where (a) follows from Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), and (b) and (c) follow from \S\ref{311} p.~\pageref{311}.
+
+\nn(ii) We have 
+
+$$\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)$$ 
+
+$$\eq\sum_{w:\sum_{y:B}(g(y)=c)}\ \sum_{x:A}\ \big(f(x)=\pr_1w\big)$$ 
+
+$$\overset{\text{(a)}}=\sum_{y:B}\ \sum_{q:g(y)=c}\ \sum_{x:A}\ \big(f(x)=y\big)$$ 
+
+$$=\sum_{x:A}\ \sum_{y:B}\ (g(y)=c)\times(f(x)=y).$$ 
+
+\nn where (a) follows from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). For each $x:A$ we check that the maps 
+
+$$\ph:\left(\sum_{y:B}\ (g(y)=c)\times(f(x)=y)\right)\to\big(g(f(x))=c\big)$$ 
+
+\nn and 
+
+$$\psi:\big(g(f(x))=c\big)\to\sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$ 
+
+\nn defined by 
+
+$$\ph(y,q,p):\eq\ap_g(p)\cc q,\quad\psi(r):\eq\big(f(x),r,\refl_{f(x)}\big)$$ 
+
+\nn are inverses. This gives 
+
+$$\left(\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ \Big(g(f(x))=c\Big)\right)=\fib_{g\ci f}(c),$$
+
+\nn where the last equality follows from \S\ref{311} p.~\pageref{311}.
+
+%%
+
+\subsection{Exercise 4.5}\label{45}
+
+\emph{Statement.} Prove that equivalences satisfy the 2-out-of-6 property: given $f:A\to B$ and $g:B\to C$ and $h:C\to D$, if $g\ci f$ and $h\ci g$ are equivalences, so are $f,g,h$, and $h\ci g\ci f$. Use this to give a higher-level proof of Theorem 2.11.1.
+
+\nn\emph{Solution.} Let $(g\ci f)^{-1}$ be an inverse of $g\ci f$ and $(h\ci g)^{-1}$ an inverse of $h\ci g$. Setting $k:\eq f\ci(g\ci f)^{-1}$, we get 
+\begin{equation}\label{45a}
+g\ci k=\id_C
+\end{equation}
+and
+\begin{align*}
+k&:\eq f\ci (g\ci f)^{-1}\\
+&=\big((h\ci g)^{-1}\ci h\ci g\big)\ci f\ci (g\ci f)^{-1}\\
+&=(h\ci g)^{-1}\ci h\ci\big(g\ci f\ci (g\ci f)^{-1}\big)\\
+&=(h\ci g)^{-1}\ci h,
+\end{align*}
+which implies 
+\begin{equation}\label{45b}
+k\ci g=(h\ci g)^{-1}\ci h\ci g=\id_B.
+\end{equation} 
+Now \eqref{45a} and \eqref{45b} show that $g$ is invertible. The end of the exercise is straightforward. For the higher-level proof of Theorem 2.11.1, see \S\ref{2111}. $\sq$
+
+%%
+
+\subsection{Exercise 4.6 (iii)}
+
+\emph{Statement.} For $A,B:\U$, define
+$$
+\ms{idtoqinv}_{A,B}:(A=B)\to\sum_{f:A\to B}\qinv(f)
+$$
+by path induction in the obvious way. Let $\qinv$-$\univalence$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\ms{idtoqinv}_{A,B}$ has an inverse.
+
+\nn(i) Show that $\qinv$-$\univalence$ can be used instead of univalence in the proof of function extensionality in $\S$4.9.
+
+\nn(ii) Show that $\qinv$-$\univalence$ can be used instead of univalence in the proof of Theorem 4.1.3.
+
+\nn(iii) Show that $\qinv$-$\univalence$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\isequiv$ is essential in the statement of univalence.
+
+\nn\emph{Solution.} Recall that, given a map $f:A\to B$, the type $\qinv(f)$ is defined by 
+\begin{equation}\label{qinv}
+\qinv(f):\eq\sum_{g:B\to A}\ (f\ci g)\sim\id_B)\times(g\ci f)\sim\id_A)
+\end{equation}
+(see beginning of Chapter~4 in the book), and that $\ishae(f)$ is defined by 
+\begin{equation}\label{ishae}
+\ishae(f):\eq\sum_{g:B\to A}\ \sum_{\eta:g\ci f\sim\id_A}\ \sum_{\ep:f\ci g\sim\id_B}\ \pd_{x:A}\ f(\eta x)=\ep(fx)
+\end{equation}
+(see beginning of Definition 4.2.1 in the book). (Recall that $\ishae(f)$ stands for ``$f$ is a half-adjoint equivalence''.) 
+
+We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\qinv(f)$ is a mere proposition. 
+
+For any types $A$ and $B$ we put 
+$$
+(A\simeq B):\equiv\sum_{f:A\to B}\ishae(f),\quad(A\backsimeq B):\equiv\sum_{f:A\to B}\qinv(f).
+$$ 
+By Theorem 4.2.3 and the comment preceding it, there are dependent functions 
+$$
+i:\prod_{A,B:\U}\ \prod_{f:A\to B}\ishae(f)\to\qinv(f),\quad p:\prod_{A,B:\U}\ \prod_{f:A\to B}\ \qinv(f)\to\ishae(f).
+$$ 
+For all $A,B:\U$ let $e(A,B):(A=B)\to(A\backsimeq B)$ be the natural map (which we assume to admit an inverse).
+
+Claim: if $f:A\to B$ and $x:\qinv(f)$, then $i(A,B,f,p(A,B,f,x))=x$.
+ 
+Since $(f,x):A\backsimeq B$, we can assume by $\qinv$-univalence and path induction that 
+$$
+B\equiv A,\quad f\equiv\id_A,\quad x\equiv e(A,A,\refl_A),
+$$ 
+and the claim follows easily from the definition of $i,p$ and $e$.
+
+For $f:A\to B$ and $x,y:\qinv(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\ishae(f)$ is a mere proposition, and the claim implies $x=y$, as required. $\sq$
+
+%% 
+
+\section{Chapter 5}
+
+\subsection{Induction principle for W-types (\S5.3)}%\label{69}
+
+Let $W:\eq\underset{a:A}{\ms W}\ B(a)$ be a W-type. Recall the following: 
+
+We have a constructor 
+$$
+\ws:\prod_{a:A}\ \left(B(a)\to W\right)\to W, 
+$$ 
+and the induction principle can be stated as follows:
+
+We assume the recurrence 
+$$
+r:\prod_{a:A}\ (B(a)\to W)\to(B(a)\to E)\to E
+$$ 
+if we are given a type $E:\U$ (case~1), and 
+$$
+r:\prod_{a:A}\ \prod_{f:B(a)\to W}\ \left(\prod_{b:B(a)}\ E(f(b))\right)\to E(\ws(a,f))
+$$ 
+if we are given a type family $E:W\to\U$ (case~2). 
+
+The solution $s$ to the above recurrence is a function $s:W\to E$ in case~1 and a dependent function $s:\prod_{w:W}E(w)$ in case~2. In both cases the computation rule 
+$$
+s(\ws(a,f))=r(a,f,s\ci f)
+$$ 
+holds for all $a:A$ and all $f:B(a)\to W$.
+
+%%
+
+\subsection{Second bullet of \S5.6}%\label{69}
+
+This is about the comment containing the second bullet of \S5.6 of the book:
+$$
+k:((D\to\Prop)\to\Prop)\to D.
+$$ 
+The recursion principle can be stated as follows: Given 
+$$
+f:((D\to\Prop)\to\Prop)\to A,
+$$ 
+we get $g:D\to A$ such that $g(k(\theta))\eq f(\theta)$ for all $\theta:(D\to\Prop)\to\Prop$.
+
+%%
+
+\subsection{Before Remark 5.6.3}%\label{69}
+
+Just before Remark 5.6.3 we read:
+
+\nn\guillemotleft This is a contradiction: no proposition can be equivalent to its negation. (Supposing $P\Leftrightarrow\neg P$, if $P$, then $\neg P$, and so $\mbf0$; hence $\neg P$, but then $P$, and so $\mbf0$.)\guillemotright
+
+Here are some more details about the above parenthesis:
+
+If $B:A\to\U$ is a type family over a type $A$, then we have a codiagonal map 
+\begin{equation}\label{563}
+(\lam f.\lam a.f(a,a)):\left(A\to\pd_{a:A}\ B(a)\right)\to\pd_{a:A}\ B(a).
+\end{equation} 
+In the particular case when $B:\U$ is constant, the above type becomes 
+$$
+(A\to A\to B)\to(A\to B).
+$$ 
+If we assume further $A\eq P$ and $B\eq\mb0$, we get a map $g:(P\to\neg P)\to\neg P$. Recall that we want to prove $(P\Leftrightarrow\neg P)\to\mb0$. In view of $g$, our assumption $P\to\neg P$ implies $\neg P$ (and $\neg P$ clearly implies $\mb0$ under our assumption $P\Leftrightarrow\neg P$). $\sq$
+
+%%
+
+\subsection{Displays (5.6.4)--(5.6.7)}%\label{69}
+
+As Display (5.6.4) of the book, which reads 
+$$
+c:(A\to W)\to(B\to C\to W)\to D\to W\to W,
+$$ 
+can be rewritten as 
+$$
+c:(A\to W)\to((B\times C)\to W)\to D\to(\mb1\to W)\to W,
+$$ 
+we can (and do) assume that the constructor $c$ has the form 
+$$
+c:(A\to W)\to B\to W.
+$$ 
+The recurrence takes the form 
+$$
+r:(A\to W)\to(A\to P)\to B\to P
+$$ 
+(see (5.6.5) in the book) if $P:\U$, and 
+$$
+r:\prod_{\al:A\to W}\ \left(\prod_{a:A}\ P(\al(a))\right)\to\prod_{b:B}\ P(c(\al,b)).
+$$ 
+(see (5.6.7) in the book) if $P:W\to\U$. The solution $s$ to the recurrence $r$ satisfies in both cases the computation rule
+$$
+s(c(\al,b))\eq r(\al,s\ci\al,b)
+$$ 
+for all $\al:A\to W$ and all $b:B$ (see (5.6.6) in the book).
+
+%%
+
+\subsection{Proof of Theorem 5.8.2}\label{582}
+
+Here is a minor rewriting of the proof of the fact that $\ppmap(R,S)$ is a mere proposition in implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2: 
+
+Let 
+$$
+f,g:\prod_{b:A}\ R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
+$$ 
+so that 
+$$
+(f,p),(g,q):\ppmap(R,S).
+$$ 
+It suffices to prove $(f,p)=(g,q)$. Setting 
+$$
+D(b,r):\eq(f(b,r)=g(b,r)),\quad d:\eq p\cc q^{-1},
+$$ 
+we get $h:f\sim g$ %$$h:\prod_{b:A}\ \prod_{r:R(b)}\ (f(b,r)=g(b,r))$$ 
+with $h(a_0,r_0)=p\cc q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying 
+$$
+t_\star(p)=h(a_0,r_0)^{-1}\cc p=(p\cc q^{-1})^{-1}\cc p=q.\ \sq
+$$
+
+%% 
+
+\subsection{Proof of Theorem 5.8.4 (iii)}
+
+By Theorem 2.15.7 (see \S\ref{4211} p.~\pageref{4211}) the type 
+$$
+\sum_{g:\prod_{(a,b:A)}R(a,b)\to S(a,b)}\quad\prod_{a:A}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big)
+$$ 
+is equivalent to the type
+$$
+\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big).\ \sq
+$$
+
+%%%
+
+\section{Chapter 6}
+
+\subsection{Display (6.2.2)}
+
+If $P$ is a type family over a type $A$, if $f:\pd_{a:A}P(a)$ is a dependent function, and if $p:x=y$ is a path in $A$, then we have 
+$$
+\apd_f(p):f(x)=^P_pf(y),
+$$ 
+i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
+
+%%
+
+\subsection{Lemma 6.4.1}
+
+Recall the statement of the lemma: \emph{The type $\mbb S^1$ satisfies} $\boucle\neq\refl_{\base}$. 
+
+This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4 (which says that every mere proposition is a set), that $\mbb S^1$ is not a mere proposition, and thus, by \S\ref{311} p.~\pageref{311}, that $\mbb S^1$ is not contractible.
+
+%%
+
+\subsection{Proof of Corollary 6.4.3} % old version: https://docs.google.com/document/d/1wShljhC0168axzA7ucAfvL1Xme5AuXp6i0fhwKzM2xQ/edit
+
+For the reader's convenience we paste the statement and the proof of Corollary 6.4.3:
+
+\nn\tb{Corollary 6.4.3.} \emph{If the type $\mbb S^1$ belongs to some universe $\U$, then $\U$ is not a 1-type.}
+
+\nn\emph{Proof.} The type $\mbb S^1=\mbb S^1$ in $\U$ is, by univalence, equivalent to the type $\mbb S^1\simeq\mbb S^1$ of auto\-equivalences of $\mbb S^1$, so it suffices to show that $\mbb S^1\simeq\mbb S^1$ is not a set. For this, it suffices to show that its equality type $\id_{\mbb S^1}=_{(\mbb S^1=\mbb S^1)}\id_{\mbb S^1}$ is not a mere proposition. Since being an equivalence is a mere proposition, this type is equivalent to $\id_{\mbb S^1}=_{(\mbb S^1\to\mbb S^1)}\id_{\mbb S^1}$. But by function extensionality, this is equivalent to $\pd_{x:\mbb S^1}(x=x)$, which as we have seen in Lemma 6.4.2 contains two unequal elements. $\sq$
+
+The proof of Corollary 6.4.3 uses the following claim:
+
+\nn\tb{Claim.} \emph{Let $A$ and $B$ be types; let  
+$$
+\ph_1:(A\simeq B)\to(A\to B),\quad\ph_2:\prod_{u:A\simeq B}\ishae(\ph_1(u))
+$$ 
+be the first and second projection (see \eqref{ishae} p.~\pageref{ishae} for the definition of $\ishae$); and let $u,v:A\simeq B$. Then the map 
+\begin{equation}\label{apph}
+\ap_{\ph_1}:(u=v)\to(\ph_1(u)=\ph_1(v))
+\end{equation}
+is invertible.}
+
+\nn\emph{Proof.} By Theorem 4.4.5 it suffices to show that the fibers of \eqref{apph} are contractible. Set 
+$$
+C:\eq\sum_{p:\ph_1(u)=\ph(v)}\Big(p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)\Big)
+$$ 
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\ci f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 (see \S\ref{481} p.~\pageref{481}) the latter is equivalent to 
+\begin{equation}\label{psp2u}
+p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v).
+\end{equation}  
+As $\ishae(f)$ is contractible by Theorem 4.2.13, the results of \S\ref{311} p.~\pageref{311} imply that it is a mere proposition, and Lemma 3.3.4 (which says that every mere proposition is a set) implies that it is a set. In particular \eqref{psp2u} is contractible. $\sq$
+
+%%
+
+\subsection{Proof of Lemma 6.5.1}
+
+The sentence containing the first display follows from Theorem 2.11.3.
+
+%%
+
+\subsection{Section 6.8}
+
+Here is the \emph{recursion principle} for the pushout 
+$$
+\boxed{Z:\eq A\sqcup^CB}
+$$ 
+attached to the diagram 
+$$
+\xymatrix{
+C\ar[rr]^g\ar[dd]_f&&B\ar[dd]^{\inr}\\ \\ 
+A\ar[rr]_{\inl}\ar@{=>}[uurr]^{\gl}&&Z,
+}
+$$ 
+where $\gl$ is a homotopy from $\inl\ci f$ to $\inr\ci g$: 
+
+Given 
+$$
+\al:A\to D,\quad\beta:B\to D,\quad\gamma:\al\ci f\sim\beta\ci g
+$$ 
+there is an $s:Z\to D$ such that 
+$$
+s\ci\inl\eq\al,\quad s\ci\inr\eq\beta,\quad\ap_s(\gl(c))=\gamma(c)
+$$ 
+for all $c:C$.
+
+Here is the \emph{induction principle}: Let $D:Z\to\U$ be a type family, let 
+$$
+\al:\prod_{a:A}\ D(\inl(a)),\quad\beta:\prod_{b:B}\ D(\inr(b)),
+$$
+$$
+\gamma:\prod_{c:C}\ \Big(\al\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big)\Big).
+$$ 
+Then there is an $s:\prod_{z:Z}D(z)$ such that 
+$$
+s\ci\inl\equiv\al,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
+$$ 
+for all $c:C$. 
+
+Here is the \emph{uniqueness principle}: Let $h,h':Z\to D$ and 
+$$
+\al:\prod_{a:A}\ \Big(h\big(\inl(a)\big)=h'\big(\inl(a)\big)\Big),\quad\beta:\prod_{b:B}\ \Big(h\big(\inr(b)\big)=h'\big(\inr(b)\big)\Big),
+$$
+$$
+\gamma:\prod_{c:C}\ \ga(\al\big(f(c)\big)=^{z\mapsto(h(z)=h'(z))}_{\glue(c)}\beta\big(g(c)\big)\dr).
+$$ 
+Then there is an $s:\prod_{z:Z}\ \big(h(z)=h'(z)\big)$ such that 
+$$
+s\ci\inl\equiv\al,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
+$$ 
+for all $c:C$.  
+$$
+\star
+$$
+
+In the proof of Lemma 6.8.2 let us display the definition of $t\ci c_{\sqcup}:\ms{cocone}_{\mc D}(E)$ and of $\sms(c):Z\to E$: 
+$$
+t\ci c_{\sqcup}:\eq(t\ci\inl,t\ci\inr,\ap_t\ci\gl),
+$$ 
+$$
+\sms(c)\ci\inl:\eq i,\quad\sms(c)\ci\inr :\eq j,\quad\ap_{\sms(c)}\ci\gl:=h.
+$$ 
+
+\nn(Recall: $t:Z\to E,\ c=(i,j,h):\ms{cocone}_{\mc D}(E)$.)
+
+Some more details about the end of the proof of Lemma 6.8.2:
+
+Set $u:\eq\sms(t\ci c_\sqcup)$, and let $z:Z,\ x:C$. We want to show $u=t$ using the uniqueness principle. This easily reduces to verifying that 
+$$
+\refl_{t(\inl(f(x)))}=_{\gl(x)}^{z\mapsto(u(z)=t(z))}\refl_{t(\inr(g(x)))},
+$$ 
+or, equivalently, 
+$$
+\transport^{z\mapsto(u(z)=t(z))}(\gl(x),\refl_{t(\inl(f(x)))})=\refl_{t(\inr(g(x)))},
+$$ 
+is inhabited. We have, for $z_1,z_2:Z,\ p:z_1=z_2$ and $q:u(z_1)=t(z_1)$, 
+$$
+\transport^{z\mapsto(u(z)=t(z))}(p,q)=\ap_u(p)^{-1}\cc q\cc\ap_t(p).
+$$ 
+(The above formula is easily proved by induction on $p$.) Hence it suffices to show $\ap_u(\gl(x))=\ap_t(\gl(x))$. But this follows immediately from the definition of $u.\ \sq$
+
+%%
+
+\subsection{Section 6.9}\label{69}
+
+The induction principle for $\lVert A\rVert$ is stated as follows:
+
+\nn``Given any $B:\lVert A\rVert\to\U$ together with
+\begin{itemize}
+\item a function $g:\prod_{a:A}B(\lvert a\rvert)$, and
+\item for any $x,y:\lVert A\rVert$ and $u:B(x)$ and $v:B(y)$, a dependent path $q:u=^B_{p(x,y)}v$, where $p(x,y)$ is the path coming from the second constructor of $\lVert A\rVert$,
+\end{itemize}
+there exists 
+$$
+f:\prod_{x:\lVert A\rVert}\ B(x)
+$$ 
+such that $f(\lvert a\rvert)\equiv g(a)$ for $a:A$, and also another computation rule. However, because there can be at most one function between any two mere propositions (up to homotopy), this induction principle is not really useful (see also Exercise 3.17\footnote{See \S\ref{317} p.~\pageref{317}.}).''
+
+Let us spell out the last sentence above.
+
+We can rewrite the second premise as
+
+\nn($\star$) for any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
+
+Consider the condition
+
+\nn($\star\star$) for any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
+
+We claim
+\begin{equation}\label{***}
+(\star)\iff(\star\star).
+\end{equation}
+
+\nn\emph{Proof of \eqref{***}.} Indeed, assume ($\star$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
+$$
+u=(\refl_x)_\star(u)=p(x,x)_\star(u)=v,
+$$ 
+the second and third paths being respectively $\ap_{s\mapsto s_\star(u)}(r)$ and $q(x,x,u,v)$. This proves ($\star\star$). The converse is clear. $\square$
+
+We have in particular the following induction principle:
+
+Given any $P:\lVert A\rVert\to\Prop$ together with a function $f:\prod_{a:A}P(\lvert a\rvert)$, there exists $g:\prod_{x:\lVert A\rVert}P(x)$ such that $g(\lvert a\rvert)\equiv f(a)$ for $a:A$.
+
+%%
+
+\subsection{Notion of quotient (beginning of \S6.10)}\label{610}
+
+We shall define quotients via truncations in \S\ref{qvt} below.
+
+%%
+
+\subsection{Proof of Theorem 6.10.6}%\label{6106}
+
+Recall the statement of Theorem 6.10.6: 
+
+\emph{For any equivalence relation $R$ on $A$, the type $A/\!\!/R$ is equivalent to the set-quotient} $A/R$.
+
+The proof uses implicitly the fact that $A/\!\!/R$ is a set. This fact follows immediately from Theorems 7.1.8, 7.1.9 and 7.1.11 (see below) of the book. The reader can check that the proof of Theorem 6.10.6 doesn't use Theorems 7.1.8, 7.1.9 and 7.1.11.
+
+For the reader's convenience we paste the statement of Theorems 7.1.8, 7.1.9 and 7.1.11:
+
+\nn\tb{Theorem 7.1.8.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If $A$ is an $n$-type and for all $a:A$, $B(a)$ is an $n$-type, then so is $\sum_{x:A}B(x)$.}
+
+\nn\tb{Theorem 7.1.9.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If for all $a:A$, $B(a)$ is an $n$-type, then so is $\pd_{x : A}B(x)$.}
+
+\nn\tb{Theorem 7.1.11.} \emph{For any $n\geq-2$, the type $n\Type$ is an $(n+1)$-type.}
+
+%%
+
+\subsection{Lemma 6.10.8}\label{6108}
+
+Here is a corollary to Lemma 6.10.8:
+
+\nn\emph{In the setting of Lemma 6.10.8, let us write $q'$ for the map from $A$ to $(A/\!\!\sim)$ denoted by $q$ in Lemma 6.10.8. Then there are inverse maps $f$ and $g$ such that the following diagram commutes:}
+$$
+\xymatrix{
+&A\ar[ld]_q\ar[rd]^{q'}\\ 
+A/\!\!\sim\ar@<2pt>[rr]^f&&(A/\!\!\sim)\ar@<2pt>[ll]^g}
+$$ 
+
+%%
+
+\subsection{After Lemma 6.12.1}
+
+Let us spell out the induction principle for the higher inductive type $W$ defined right after Lemma 6.12.1:
+
+Recall that we are given $f,g:B\to A$, and that the constructors defining $W$ are 
+$$
+\ms c:A\to W,\quad\ms p:\pd_{b:B}\ \Big(\ms c(f(b))=\ms c(g(b))\Big).
+$$ 
+Given a type family $P:W\to\U$, the solution $s:\pd_{w:W}P(w)$ to the recurrences 
+$$
+h:\pd_{a:A}\ P(\ms c(a)),\quad q:\pd_{b:B}\ \Big(h(f(b))=^P_{\ms p(b)}h(g(b))\Big)
+$$ 
+satisfies the computation rules 
+$$
+s(\ms c(a)):\eq h(a),\quad\apd_s(\ms p(b)):=q(b)
+$$ 
+for all $a:A$ and all $b:B$. 
+
+We now spell out the induction principle for the higher inductive type $\widetilde W$ defined right before Lemma 6.12.2 (\emph{the Flattening Lemma}): 
+
+First recall the following:
+
+We suppose, in addition to the above items, 
+\begin{itemize}
+\item $C:A\to\U$ is a family of types over $A$, and
+\item $D:\pd_{b:B}C(f(b))\simeq C(g(b))$ is a family of equivalences over $B$,
+\end{itemize}
+we define a type family $P:W\to\U$ recursively by
+$$
+P(\ms c(a)):\eq C(a),\quad P(\ms p(b)):=\ua(D(b)),
+$$ 
+and we let $\widetilde W$ be the higher inductive type generated by
+\begin{itemize}
+\item $\widetilde{\ms c}:\pd_{a:A}C(a)\to\widetilde W$ and
+\item $\widetilde{\ms p}:\pd_{b:B}\pd_{y:C(f(b))}\Big(\widetilde{\ms c}(f(b),y)=_{\widetilde W}\widetilde{\ms c}(g(b),D(b)(y))\Big)$.
+\end{itemize}
+
+Then the induction principle for the higher inductive type $\widetilde W$ takes the following form: 
+
+If 
+$$
+Q:\ga(\sum_{x:W}\ P(x)\dr)\to\U
+$$ 
+is a type family, then the solution 
+$$
+k:\pd_{z:\sum_{w:W}P(w)}Q(z)
+$$ 
+to the recurrences 
+$$
+c:\pd_{a:A}\ \pd_{x:C(a)}\ Q(\widetilde{\ms c}(a,x))
+$$ 
+and
+$$
+p:\pd_{b:B}\ \pd_{y:C(f(b))}\bigg(\widetilde{\ms p}(b,y)_\star\,c\Big(f(b),y\Big)=c\Big(g(b),D(b)(y)\Big)\bigg)
+$$ 
+satisfies 
+$$
+k(\widetilde{\ms c}(a,x))\eq c(a,x)
+$$ 
+for all $a:A$ and all $x:C(a)$, as well as 
+$$
+\apd_k(\widetilde{\ms p}(b,y))=p(b,y)
+$$ 
+for all $b:B$ and all $y:C(f(b))$. 
+
+%%
+
+\subsection{Exercise 6.9}
+
+% previous version https://docs.google.com/document/d/1KuFlAOuigg8siZvzZ8Ofe24VzrhBMv6-vxqSafXzssQ/edit
+
+Recall the statement:
+
+\emph{Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2):\mb2\to\mb2$ is the nonidentity automorphism.}
+
+Recall that the Law of Excluded Middle is defined in (3.4.1) by 
+$$
+\LEM:\prod_{A:\U}\ \isProp(A)\to(A+\neg A).
+$$ 
+
+I learned the following argument from Jason Gross; see 
+
+\nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
+
+Let $A$ be a type. We must define $f(A):A\to A$. We set 
+$$
+C:\eq\sum_{f:A\to A}\ \isequiv(f)\times\neg(f=\id_A).
+$$ 
+In particular we have the first projection $\pr_1:C\to A\to A$. By \S\ref{311} p.~\pageref{311} we also have 
+$$
+g:\prod_{B:\U}\ \isProp(\isContr(B)).
+$$ 
+We define 
+$$
+h_0:\neg\isContr(C)\to A\to A,\qquad\quad h_1:\isContr(C)\to A\to A
+$$ 
+by setting $h_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and by letting $h_1(x)$ be the first projection of the center of $x$, for all $x:\isContr(C)$. This induces a map 
+$$
+h:\big(\isContr(C)+\neg\isContr(C)\big)\to A\to A.
+$$ 
+We finally set 
+$$
+f(A):\eq h\Big(\LEM\big(\isContr(C),g(C)\big)\Big).
+$$
+It is straightforward to check that this definition does the job. $\square$
+
+%%
+
+\section{Chapter 7}
+
+\subsection{Theorem 7.1.8}\label{718}
+
+Here is a corollary to Theorem 7.1.8: 
+
+\emph{The fibers of a map between $n$-types are $n$-types.}
+
+For the reader's convenience we paste the statement of Theorem 7.1.8:
+
+\nn\tb{Theorem 7.1.8.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If $A$ is an $n$-type and for all $a:A$, $B(a)$ is an $n$-type, then so is $\sum_{x:A}B(x)$.}
+
+%%
+
+\subsection{First proof of Theorem 7.2.2}
+
+We must prove  
+
+\nn\tb{Claim.} \emph{If $R:X\to X\to\Prop$ is a mere relation on a type $X$ and we have 
+$$
+\rho:\pd_{x:X}\ R(x,x),\quad f:\pd_{x,y:X}\ R(x,y)\to(x=y),
+$$ 
+then $X$ is a set.}
+
+\nn\emph{Proof.} We prove 
+\begin{equation}\label{722}
+f(x,x,\rho(x))\cc p=f(x,y,\transport^{R(x)}(p,\rho(x)))
+\end{equation}  
+for $p:x=y$ by path induction. For $q:x=y$ we have 
+\begin{align*}
+q&=f(x,x,\rho(x))^{-1}\cc f(x,y,\transport^{R(x)}(q,\rho(x)))\\
+&=f(x,x,\rho(x))^{-1}\cc f(x,y,\transport^{R(x)}(p,\rho(x)))\\
+&=p,
+\end{align*} 
+where the second equality follows from the fact that $R(x,y)$ is a mere proposition, and the other equalities follow from \eqref{722}. $\sq$
+
+%%
+
+\subsection{Lemma 7.2.8}
+
+Recall the statement of Lemma 7.2.8;
+
+\nn\emph{Given $n\ge-1$ and $X:\U$. If, given any inhabitant of $X$ it follows that $X$ is an $n$-type, then $X$ is an $n$-type.}
+
+\nn\emph{Proof.} Set $A:\eq X$ and 
+$$
+B(a):\eq\pd_{x:X}\ \ms{is\text-}(n-1)\ms{\text-type}(a=x)
+$$ 
+in the definition of the codiagonal map \eqref{563} p.~\pageref{563}. $\sq$
+
+%%
+
+% old version
+% https://docs.google.com/document/d/1asAmtnpls7Q6M_ilqBV9XGvZr9aAtOj5YyznFGFjHpE/edit
+
+\subsection{Induction principle for n-truncations (\S7.3)}
+
+Recall that $A$ is an arbitrary type and that $n:\N$ satisfies $n\ge-1$.
+
+We spell out the induction principle for the higher inductive type $\lV A\rV_n$.
+
+Let $\lV A\rV_n$ be defined by the three constructors 
+$$
+c_1:A\to \lV A\rV_n,\quad c_2:(B\to \lV A\rV_n)\to \lV A\rV_n,\quad c_3:\pd_{d:B\to \lV A\rV_n}\ \pd_{b:B}\ \big(d(b)=c_2(d)\big).
+$$ 
+Let $P:\lV A\rV_n\to\U$ be a type family. We say that a dependent function $f:\pd_{w:\lV A\rV_n}P(w)$ solves the three recurrences 
+$$
+r_1:\pd_{a:A}\ P(c_1(a)),
+$$ 
+$$
+r_2:\pd_{d:B\to \lV A\rV_n}\ \left(\pd_{b:B}\ P(d(b))\right)\to P(c_2(d)),
+$$
+
+$$
+r_3:\pd_{d:B\to \lV A\rV_n}\ \pd_{e:\pd_{b:B}\ P(d(b))}\ \pd_{b:B}\ \ga(e(b)=^P_{c_3(d,b)}r_2(d,e)\dr)
+$$ 
+if the computation rules
+$$
+f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad\apd_f(c_3(d,b))=r_3(d,f\ci d,b)
+$$ 
+hold for all $a:A$, all $d:B\to \lV A\rV_n$ and all $b:B$. 
+
+(In the book the last two computational rules are omitted.)
+
+%%
+
+\subsection{Defining quotients via truncations}\label{qvt}
+
+Let $R:A\to A\to\Prop$ be a mere relation on a type $A$. Let $A/'R$ be the higher inductive type whose constructors are 
+$$
+q':A\to A/'R,\quad c:\pd_{a,b:A}\ R(a,b)\to(q'(a)=q'(b)).
+$$ 
+In particular, the induction principle reads as follows: Given a type family $P:A/'R\to\U$, we say that a dependent function $f:\pd_{x:A/'R}P(x)$ satisfies the recurrences 
+$$
+r:\pd_{a:A}\ P(q'(a)),\quad s:\pd_{a,b:A}\ \pd_{u:R(a,b)}\ \Big(r(a)=^P_{c(a,b,u)}r(b)\Big)
+$$ 
+if the computation rules 
+$$
+f(q'(a))\eq r(a),\quad\apd_f(c(a,b,u))=s(a,b,u)
+$$ 
+hold for all $a,b:A$ and all $u:R(a,b)$. 
+
+Now we can define the quotient $A/R$ by $A/R:\eq\lV A/'R\rV_0$. 
+
+%%
+
+\subsection{Proof of Theorem 7.3.2}
+
+\tb{Claim.} \emph{Let $n\ge-1$ and let $A$ be a type. Then $A$ is an $n$-type if and only if the type 
+$$
+\Map_\star\big((\mbb S^{n+1},\base),(A,a)\big)
+$$ 
+is contractible for all $a:A$.}
+
+\nn\emph{Proof.} Use Theorem 7.2.9 (see below) and the equivalence 
+$$
+\Map_\star\big((\mbb S^{n+1},\base),(A,a)\big)\simeq\Omega^{n+1}(A,a)
+$$ 
+at the end of \S6.5 of the book. $\square$
+
+We verify the existence of $u$ and $v$ in the proof of Theorem 7.3.2 as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r))$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
+$$
+M:\eq\Map_\star\Big(\big(\mbb S^{n+1},\base\big),\big(P(h(r)),u\big)\Big).
+$$ 
+Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$. $\sq$
+
+For the reader's convenience we paste the statement of Theorem 7.2.9:
+
+\nn\tb{Theorem 7.2.9.} \emph{For every $n\ge-1$, a type $A$ is an $n$-type if and only if $\Omega^{n+1}(A,a)$ is contractible for all $a:A$.}
+
+%%
+
+\subsection{Proof of Theorem 7.3.5}
+
+Theorem 7.3.5 (see below) can also be proved by path induction.
+
+For the reader's convenience we paste the statement of Theorem 7.3.5:
+
+\nn\tb{Theorem 7.3.5.} \emph{Given $f,g:A\to B$ and a homotopy $h:f\sim g$, there is an induced homotopy $\lV h\rV_n:\lV f\rV_n\sim\lV g\rV_n$ such that the composite
+\begin{equation}\label{735}
+\xymatrix@C=50pt{
+\lv f(a)\rv_n\ar@{=}[r]^{\na^f_n(a)^{-1}}&
+\lV f\rV_n(\lv a\rv_n)\ar@{=}[r]^{\lV h\rV_n(\lv a\rv_n)}&
+\lV g\rV_n(\lv a\rv_n)\ar@{=}[r]^{\na^g_n(a)}&
+\lv g(a)\rv_n}
+\end{equation}
+is equal to $\ap_{\lv-\rv_n}(h(a))$.}
+
+%%
+
+\subsection{Proof of Theorem 7.3.12}
+
+The proof uses various times the principle of double induction for $n$-truncation, principle which we spell out here.
+
+Recall the simple induction principle:
+
+To each couple $(P,f)$ with $P:\lVert A\rVert_n\to n\Type$ and $f:\prod_{x:A}P(\lvert x\rvert_n)$ is attach a section $f':\prod_{u:\lVert A\rVert_n}P(u)$ satisfying $f'(\lvert x\rvert_n)\equiv f(x)$ for all $x:A$.
+
+The double induction principle says:
+
+To each couple $(P,f)$ with $$P:\lVert A\rVert_n\to\lVert A\rVert_n\to n\Type$$ and $f:\prod_{x,y:A}P(\lvert x\rvert_n,\lvert y\rvert_n)$ is attach a section $f'':\prod_{u,v:\lVert A\rVert_n}P(u,v)$ satisfying $f''(\lvert x\rvert_n,\lvert y\rvert_n)\equiv f(x,y)$ for all $x,y:A$.
+
+We derive the double induction principle from the simple induction principle as follows. From 
+$$
+f:\prod_{x:A}\ \left(\prod_{y:A}\ P(\lvert x\rvert_n,\lvert y\rvert_n)\right)
+$$ 
+we get 
+$$
+f':\prod_{u:\lVert A\rVert_n}\ \left(\prod_{y:A}\ P(u,\lvert y\rvert_n)\right)
+$$ 
+satisfying $f'(\lvert x\rvert_n)(y)\equiv f(x,y)$ for all $x,y:A$. From $f'(u):\prod_{y:A}P(u,\lvert y\rvert_n)$ we get $f'(u)':\prod_{v:\lVert A\rVert_n}P(u,v)$ satisfying $f'(u)'(\lvert y\rvert_n)\equiv f'(u,y)$ for all $u:\lVert A\rVert_n$ and all $y:A$. As we have 
+$$
+f'(\lvert x\rvert_n)'(\lvert y\rvert_n)\equiv f'(\lvert x\rvert_n)(y)\equiv f(x,y) 
+$$ 
+for all $x,y:A$, we can set $f''(u,v):\eq f'(u)'(v)$ for all $u,v:\lVert A\rVert_n$. $\sq$
+
+It seems to me that the equality 
+$$
+\encode(\decode(\lvert p\rvert_n))=\lvert p\rvert_n
+$$ 
+can be proved by path induction on $p:x=y$.
+
+%%
+
+\subsection{Paths between cocones}\label{742}
+
+The following observation might be made just after Definition 7.4.2: 
+
+If $(i,j,h)$ and $(i',j',h')$ are cocones under $\mc D$ with base $D$, then a path $(i,j,h)=(i',j',h')$ is given by attaching to each $c:C$ a path $p(c):i(f(c))=i'(f(c))$, a path $q(c):j(g(c))=j'(g(c))$, and a path $r(c):p(c)\cc h'(c)=h(c)\cc q(c)$: 
+$$
+\xymatrix{
+i(f(c))\ar@{=}[r]^{h(c)}\ar@{=}[d]_{p(c)}&j(g(c))\ar@{=}[d]^{q(c)}\\ 
+i'(f(c))\ar@{=}[r]_{h'(c)}&j'(g(c)).}
+$$
+
+%%
+
+\subsection{Definition 7.4.7}\label{747}
+
+The setting can be summarized by the diagram 
+$$
+\xymatrix{C\ar[r]^g\ar[d]_f&B\ar[d]^j\\ A\ar[r]_i\ar@{=>}[ur]^h&D,}
+$$ 
+where the double arrow represents a homotopy $h:i\ci f\sim j\ci g$.
+
+Definition 7.4.7 contains the judgment 
+$$
+\lV h\rV_n:\lV i\rV_n\ci\lV f\rV_n\sim\lV j\rV_n\ci\lV g\rV_n.
+$$ 
+(See \eqref{735} p.~\pageref{735}.) In fact we have $\lV h\rV_n:\lV i\ci f\rV_n\sim\lV j\ci g\rV_n$. Here is a fix. 
+
+Given the commutative diagram
+$$
+\xymatrix{
+A\ar[r]^f\ar[d]&B\ar[r]^g\ar[d]&C\ar[d]\\
+\lV A\rV_n\ar[r]_{\lV f\rV_n}&\lV B\rV_n\ar[r]_{\lV g\rV_n}&\lV C\rV_n,}
+$$ 
+where the vertical maps are the obvious ones, we define 
+$$
+\ph_n^{g,f}:\lV g\rV_n\ci\lV f\rV_n\sim\lV g\ci f\rV_n
+$$ 
+by the commutative square 
+$$
+\xymatrix{
+\lV g\rV_n\lV f\rV_n\lv a\rv_n\ar@{=}[d]_{\ph_n^{g,f}(\lv a\rv_n)}\ar@{=}[rrr]^{\ap_{\lV g\rV_n}(\na_n^fa)}&&&
+\lV g\rV_n\lv fa\rv_n\ar@{=}[d]^{\na_n^g(fa)}\\
+\lV gf\rV_n\lv a\rv_n\ar@{=}[rrr]_{\na_n^{gf}(a)}&&&\lv gfa\rv_n,}
+$$ 
+that is, we set 
+$$
+\ph_n^{g,f}(\lv a\rv_n):\eq\ap_{\lV g\rV_n}(\na_n^fa)\cc\na_n^g(fa)\cc(\na_n^{gf}(a))^{-1}.
+$$ 
+(We assume $a:A$, and omit most of the parenthesis.)
+
+Going back to Definition 7.4.7, we may define $\lV c\rV_n$ as being $(\lV i\rV_n,\lV j\rV_n,h'_n)$, where $h'_n$ is the homotopy obtained by composing the three homotopies
+$$
+\lV i\rV_n\ci\lV f\rV_n\overset{\ph_n^{i,f}}{\sim}\lV i\ci f\rV_n\overset{\lV h\rV_n}{\sim}\lV j\ci g\rV_n\overset{(\ph_n^{j,g})^{-1}}{\sim}\lV j\rV_n\ci\lV g\rV_n.
+$$
+
+%%
+
+\subsection{Equality (7.4.11)}
+
+The setting can be summarized by the diagram 
+$$
+\xymatrix{C\ar[r]^g\ar[d]_f&B\ar[d]^j\\ A\ar[r]_i\ar@{=>}[ur]^h&D,}
+$$ 
+where the double arrow represents a homotopy $h:i\ci f\sim j\ci g$. Equality (7.4.11) reads $\lv-\rv^D_n\ci c=\lV c\rV_n\ci\lv-\rv^{\mc D}_n$, and, by \S\ref{742} p.~\pageref{742}, is equivalent to
+\begin{equation}\label{7411}
+\Big(\lv-\rv^D_n\ci i\ ,\ \lv-\rv^D_n\ci j\ ,\ \ap_{\lv-\rv^D_n}\ci h\Big)
+=
+\Big(\lV i\rV_n\ci\lv-\rv^A_n\ ,\ \lV j\rV_n\ci\lv-\rv^B_n\ ,\ k\Big),
+\end{equation}
+where $k$ is the homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$ such that $k(z)$ is, for all $z:C$, the composite path
+$$
+\xymatrix{
+\lV i\rV\lv fz\rv&&
+\lV i\rV\lV f\rV\lv z\rv\ar@{=}[ll]_{\ap_{\lV i\rV}(\na^fz)^{-1}}\ar@{=}[rr]^{h'\lv z\rv}&&
+\lV j\rV\lV g\rV\lv z\rv\ar@{=}[rr]^{\ap_{\lV j\rV}(\na^gz)}&&
+\lV j\rV\lv gz\rv.}
+$$ 
+(Here and in the sequel of this section we drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis.) In turn, \eqref{7411} is equivalent to the commutativity of the diagram %below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.)
+%where $k$ is some homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$. In turn, the above equality is equivalent to the commutativity of the diagram below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.) 
+$$ 
+\xymatrix{
+\lV i\rV\lv fz\rv\ar@{=}[d]_{\refl}\ar@{=}[rrrrrr]^{kz}&&&&&&\lV j\rV\lv gz\rv\ar@{=}[d]^{\refl}\\
+\lV i\rV\lv fz\rv\ar@{=}[d]_{\na^i(fz)}&&
+\lV i\rV\lV f\rV\lv z\rv\ar@{=}[ll]_{\ap_{\lV i\rV}(\na^fz)^{-1}}\ar@{=}[d]_{\ph^{\lV i\rV,\lV f\rV}(\lv z\rv)}\ar@{=}[rr]^{h'\lv z\rv}&&
+\lV j\rV\lV g\rV\lv z\rv\ar@{=}[d]^{\ph^{\lV j\rV,\lV g\rV}(\lv z\rv)}\ar@{=}[rr]^{\ap_{\lV j\rV}(\na^gz)}&&
+\lV j\rV\lv gz\rv\ar@{=}[d]^{\na^j(gz)}\\
+%
+\lv ifz\rv&&\lV if\rV\lv z\rv\ar@{=}[rr]_{\lV h\rV\lv z\rv}\ar@{=}[ll]^{\na^{if}(z)^{-1}}&&\lV jg\rV\lv z\rv\ar@{=}[rr]_{\na^{jg}(z)}&&\lv jgz\rv\\ 
+\lv ifz\rv\ar@{=}[u]^{\refl}\ar@{=}[rrrrrr]_{\ap_{\lv-\rv}(hz)}&&&&&&\lv jgz\rv\ar@{=}[u]_{\refl}}
+$$ 
+for all $z:C$. The upper rectangle commutes by definition of $k$, the small squares commute by \S\ref{747} above, and the lower rectangle commutes by Lemma 7.3.5 in the book (see \eqref{735} p.~\pageref{735}).
+
+%%
+
+\subsection{Definition 7.5.1}\label{751}
+
+The following observation, which is an immediate consequence of Corollary 7.3.7, can be made right after Definition 7.5.1:
+
+\nn\emph{Let $A$ be a type and let $n:\N$. Then $A$ is contractible if and only if $A$ is an $n$-connected $n$-type.}
+
+%%
+
+\subsection{Proof of Lemma 7.5.10}
+
+Here is the statement of Lemma 7.5.10:
+
+\nn\tb{Lemma 7.5.10.} \emph{Let $B$ be an $n$-type and let $f:A\to B$ be a function. Then the induced function $g:\lV A\rV_n\to B$ is an equivalence if and only if $f$ is $n$-connected.}
+
+Here is a pasting of the proof given in the book, proof to which the two parenthesis has been added: 
+
+\nn\emph{Proof.} By Corollary 7.5.8, $\vert-\vert_n$ is $n$-connected. Thus, since $f=g\ci\vert-\vert_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is invertible (see \S\ref{751} above).
+
+%%
+
+\subsection{Proof of Lemma 7.5.11}
+
+The sentence 
+
+\nn``Then $P$ is a family of $(n-1)$-types and we have $P(a_0)$; hence we have $\prod_{(a:A)}P(a)$ since $a_0:\mb1\to A$ is $(n-1)$-connected''
+
+\nn follows from Lemma 7.5.7, implication (i) $\Rightarrow$ (iii), in the book.
+
+%%
+
+\subsection{Comment before Lemma 7.5.12}\label{7512}
+
+The comment
+
+\nn\emph{In particular, a pointed type $(A, a_0)$ is $0$-connected if and only if $a_0:\mb1\to A$ is surjective, which is to say} $\pd_{x:A}\lV x= a_0\rV$
+
+\nn before Lemma 7.5.12 implies that the pointed circle $(\mbb S^1,\ms{base})$ is 0-connected.
+
+%%
+
+\subsection{Lemma 7.6.5}
+
+In the last display of the statement of Lemma 7.6.5, the identification $\overline{E}(H,a)$ is a path in the fiber $\fib_{h_2}(h_1(g_1(a)))$ of $h_2$ over $h_1(g_1(a))$.
+
+%%%
+
+\section{Chapter 8}
+
+%\subsection{Proof of Corollary 8.1.11}
+
+%The claim ``since $\bb Z$ is a set, $\Omega^{n-1}(\bb Z)$ is contractible'' follows from Theorem 7.2.7.%Theorems 7.1.7 (cumulativity of $n$-types) and 7.2.7.
+
+%%
+
+\subsection{Proof of Theorem 8.2.1}
+
+The equality $\lVert\lVert A\rVert_{n+1}\rVert_n=\lVert A\rVert_n$ follows from Lemma 7.3.15.
+
+%%
+
+\subsection{Proof of Lemma 8.3.2 and Corollary 8.4.8}
+
+The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the proof of Lemma 8.3.2 follows from Corollary 7.3.14. A similar argument is used in the proof of Corollary 8.4.8. The proof of Corollary 8.4.8 also uses Lemma 7.3.15.
+
+%%
+
+\subsection{Lemma 8.5.9}%\label{7511}
+
+Recall the statement:
+
+\nn\tb{Lemma 8.5.9.} \emph{The operation of join is associative: if $A$, $B$ and $C$ are three types then we have an equivalence} $(A*B)*C\simeq A*(B*C)$.
+
+\nn\tb{Claim.} \emph{For all $a\!:\!A,\ b\!:\!B,\ c\!:\!C$ there is a path
+$$
+\glue(a,\inl(b))^{-1}\cc\glue(a,\inr(c))=\inr(\glue(b,c))
+$$ 
+in} $\inr(\inl(b))=_{A*(B*C)}\inr(\inr(c))$.
+
+\nn\emph{Proof of the claim.} Define $P:B*C\to\U$ by $P(x):\eq(\inl(a)=_{A*(B*C)}\inr(x))$. We get successively 
+$$
+\glue(a,-):\pd_{x:B*C}P(x),
+$$ 
+$$
+\apd_{\glue(a,-)}(\glue(b,c)):\glue(a,\inl(b))=^P_{\glue(b,c)}\glue(a,\inr(c)),
+$$ 
+$$
+\apd_{\glue(a,-)}(\glue(b,c)):\tr^P(\glue(b,c),\glue(a,\inl(b)))=\glue(a,\inr(c)),
+$$ 
+and thus 
+\begin{align*}
+\glue(a,\inl(b))\cc\inr(\glue(b,c))&=\tr^P(\glue(b,c),\glue(a,\inl(b)))\\
+&=\glue(a,\inr(c)),
+\end{align*} 
+where the last path is $\apd_{\glue(a,-)}(\glue(b,c)).\ \sq$
+
+The proof below differs from the proof in the book only by a few details.
+
+\nn\emph{Proof of Lemma 8.5.9.} We define a map $f:(A*B)*C\to A*(B*C)$ by induction. We first need to define $f\circ\inl:A*B\to A*(B*C)$ and $f\circ\inr:C\to A*(B*C)$, which will be done by induction, and then 
+\begin{equation}\label{ftab}
+\ap_f\circ\glue:\pd_{t:(A*B)\times C}f(\inl(\pr_1(t)))=f(\inr(\pr_2(t))),
+\end{equation}  
+which will be done by induction on the first component of $t$. 
+
+First we define $f\circ\inl:A*B\to A*(B*C)$ and $f\circ\inr:C\to A*(B*C)$ by 
+$$
+(f\circ\inl)(\inl(a))):\eq\inl(a),
+$$ 
+$$
+(f\circ\inl)(\inr(b))):\eq\inr(\inl(b)),
+$$ 
+\begin{equation}\label{fabbb}
+(f\circ\inl)(\glue(a,b)):=\glue(a,\inl(b)),
+\end{equation}
+$$
+f(\inr(c)):\eq\inr(\inr(c)).
+$$
+
+We start the definition of \eqref{ftab}. 
+
+Let $c:C$ and define $Q:A*B\to\U$ by 
+$$
+Q(x):\eq\Big(f(\inl(x))=_{A*(B*C)}f(\inr(c))\Big),
+$$ 
+that is,
+$$
+Q(x):\eq\Big(f(\inl(x))=_{A*(B*C)}\inr(\inl(b))\Big).
+$$
+We first define 
+\begin{equation}\label{defofg}
+g:\pd_{x:A*B}Q(x).
+\end{equation}
+Let $a:A$ and define $g_1(a):Q(a)$, that is
+$$
+g_1(a):\inl(a)=_{A*(B*C)}\inr(\inr(c)),
+$$ 
+by $g_1(a):\eq\glue(a,\inr(c))$. Let $b:B$ and define $g_2(b):Q(b)$, that is
+$$
+g_2(b):\inr(\inl(b))=_{A*(B*C)}\inr(\inr(c)),
+$$ 
+by $g_2(b):\eq\inr(\glue(b,c))$. Let $a\!:\!A,\ b\!:\!B$ and define 
+$$
+g_3(a,b):g_1(a)=^Q_{\glue(a,b)}g_2(b),
+$$ 
+that is 
+$$
+g_3(a,b):\glue(a,\inr(c))=^Q_{\glue(a,b)}\inr(\glue(b,c)),
+$$ 
+that is 
+$$
+g_3(a,b):\tr^Q(\glue(a,b),\glue(a,\inr(c)))=\inr(\glue(b,c)),
+$$ 
+as being the composite of the paths 
+$$
+\tr^Q(\glue(a,b),\glue(a,\inr(c)))=f(\inl(\glue(a,b)^{-1}))\cc\glue(a,\inr(c))
+$$ 
+$$
+=\glue(a,\inl(b))^{-1}\cc\glue(a,\inr(c))=\inr(\glue(b,c)),
+$$ 
+where the last two paths are respectively given by \eqref{fabbb} and the claim. Then we get a dependent function $g$ as in \eqref{defofg} satisfying 
+$$
+g(\inl(a))\eq g_1(a),\quad g(\inr(b))\eq g_2(b),\quad \apd_g(\glue(a,b))=g_3(a,b)
+$$ 
+for all $a:A$ and all $b:B$. 
+
+We can set $f(\glue(x,c)):=g(x)$ for all $x:A*B$, so that $f(\glue(t))$ is now defined for all $t:(A*B)\times C$. This completes the definition of \eqref{ftab}.
+
+We get our desired map $f:(A*B)*C\to A*(B*C)$. Similarly, we can define a map $h:A*(B*C)\to(A*B)*C$, and checking that $f$ and $h$ are inverse to each other is a long and tedious but essentially straightforward computation. $\sq$
+
+%%
+
+\subsection{Theorem 8.5.11}%\label{8511}
+
+The proof of Theorem 8.5.11 uses implicitly the 0-connectedness of the circle $\mbb S^1$, 0-connectedness which has been observed in \S\ref{7512} p.~\pageref{7512} above.
+
+%%
+
+\subsection{Proof of Definition 8.6.5}%\label{7511}
+
+The penultimate sentence of the proof of Definition 8.6.5 is
+
+\nn``To show that it is a family of equivalences, since being an equivalence is a mere proposition and $x_0:1\to X$ is (at least) $(-1)$-connected, it suffices to assume $x_1$ is $x_0$.''
+
+\nn This follows from Lemma 8.6.1 (even from Lemma 7.5.7).
+
+%%
+
+\subsection{Lemma 8.6.10}%\label{7511}
+
+Recall the statement:
+
+\nn\tb{Lemma 8.6.10.} \emph{Let $A:\U$, $B:A\to \U$, and $C:\pd_{a:A} B(a)\to\U$, and also $a_1,a_2:A$ with $m:a_1=a_2$ and $b:B(a_2)$. Then the function
+$$
+\tr^{\widehat C}(\pa_B(m,t),-):C(a_1,\tr^B(m^{-1},b))\to C(a_2,b),
+$$ 
+where $t:\tr^B(m,\tr^B(m^{-1},b))=b$ is the obvious coherence path and $\widehat C:(\sum_{a:A}B(a))\to\U$ is the uncurried form of $C$, is equal to the equivalence obtained by univalence from the composite 
+\begin{align*}
+C(a_1,\tr^B(m^{-1},b))
+&=\tr^{\lam a.(B(a)\to\U)}(m,C(a_1))(b)\\
+&=C(a_2,b),
+\end{align*} 
+where the paths are respectively given by (2.9.4) and} $\happly(\apd_C(m),b)$. 
+
+(I have written $\pa_B$ instead of $\pa$ to stress the fact that this operation is taken with respect to the type family $B$.)
+
+Here is a minor rephrasing: 
+
+\nn\emph{If $p:C(a_1,\tr^B(m^{-1},b))=C(a_2,b)$ is the above path, then we have a path
+$$
+\tr^{Z\mapsto Z}(p)=\tr^{\widehat C}(\pa_B(m,t)).
+$$ 
+in} $
+C(a_1,\tr^B(m^{-1},b))\to C(a_2,b).$
+
+%%
+
+\subsection{Proof of Theorem 8.6.4}%\label{7511}
+
+Theorem 8.6.4 is proved just before the statement of Corollary 8.6.14. The last display of the proof contains eight underscores; denote them by $u_1,\dots,u_8$. We read, after the display:
+
+\nn``\dots the underscore ought to be filled in with suitable coherence paths. Here the first step is functoriality of transport, the second invokes (8.6.12), and the third invokes (8.6.11) (with transport moved to the other side). Thus we have the same first component as the left-hand side of (8.6.13). We leave it to the reader to verify that the coherence paths all cancel, giving reflexivity in the second component.''
+
+To fill in the underscores, we introduce the following notation: If $p:y_1=y_2$ and $q:N=y_1$ are paths in $\Sigma X$, we denote by 
+$$
+\al(p,q):\tr^{N=-}(p,q)=q\cc p%£
+$$ 
+the obvious path in $N=y_2$. If $y_1\eq N$ and $q\eq\refl_N$, we define 
+$$
+\bet(p):\tr^{N=-}(p,\refl_N)=p
+$$ 
+by $\bet(p):\eq\al(p,\refl_N)\cc\omega$, where $\omega:\refl_N\cc p=p$ is the obvious path in $N=y_2$. We also denote by 
+$$
+\gam:\me(x_0)\cc\me(x_0)^{-1}=\refl_N
+$$ 
+the obvious path in $N=N$. 
+
+The underscores $u_1,\dots,u_8$ can be chosen as follows:
+
+$$u_1:\eq\beta(\me(x_1)\cc\me(x_0)^{-1}),\quad u_2:\eq u_5:\eq\gam,$$ 
+
+$$u_3:\eq u_6:\eq\al(\me(x_0)^{-1},\me(x_1)),\quad u_4:\eq\bet(\me(x_1)),$$ 
+
+$$u_7:\eq\refl_{\me(x_1)},\quad u_8:\eq\refl_{\me(x_1)\cc\me(x_0)^{-1}}.$$ 
+
+\nn In other words, abbreviating $\tr^{\hat\code}$ by $\ms t$, $\me$ by $\ms m$, $\pa$ by $\ms p$, $\refl$ by $\ms r$, we get 
+
+$$\ms t\Bigg(\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\bet\Big(\ms m(x_1)\cc\ms m(x_0)^{-1}\Big)\bigg),\bigg\lv(x_0,\gam)\bigg\rv_{2n}\Bigg)$$ 
+
+$$=\ms t\Bigg(\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg),\ms t\bigg(\ms p\Big(\ms m(x_1),\bet\big(\ms m(x_1)\big)\Big),\Big\lv(x_0,\gam)\Big\rv_{2n}\bigg)\Bigg)$$ 
+
+$$=\ms t\Bigg(\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg),\bigg\lv(x_1,\ms r_{\ms m(x_1)})\bigg\rv_{2n}\Bigg)$$ 
+
+$$=\big\lv(x_1,\ms r_{\ms m(x_1)\cc\ms m(x_0)^{-1}})\big\rv_{2n}.$$
+
+For the reader's convenience we spell out the following judgments:
+
+$$\code(N,p):\eq\ga\lV\sum_{x:X}\Big(\ms m(x)\cc\ms m(x_0)^{-1}=p\Big)\dr\rV_{2n}$$
+
+\nn for $p:N=N$,
+
+$$\lv(x_0,\gam)\rv_{2n}:\code(N,\ms r_N),$$ 
+
+$$\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\bet\Big(\ms m(x_1)\cc\ms m(x_0)^{-1}\Big)\bigg):(N,\ms r_N)=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$
+
+$$\ms p\bigg(\ms m(x_1),\bet\Big(\ms m(x_1)\Big)\bigg):(N,\ms r_N)=(S,\ms m(x_1)),$$
+
+$$\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg):(S,\ms m(x_1))=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$ 
+
+$$\code(S,q):\eq\ga\lV\sum_{x:X}\Big(\ms m(x)=q\Big)\dr\rV_{2n}$$
+
+\nn for $q:N=S$,
+
+$$\lv(x_1,\ms r_{\ms m(x_1)}))\rv_{2n}:\code(S,\ms m(x_1)),$$ 
+
+$$\lv(x_1,\ms r_{\ms m(x_1)\cc\ms m(x_0)^{-1}}))\rv_{2n}:\code(N,\ms m(x_1)\cc\ms m(x_0)^{-1}).$$
+
+%%
+
+\subsection{Proofs of Theorem 8.8.1 and Corollary 8.8.2}
+
+The assertions ``hence $\lV f(a)=b\rV_{-1}$'' in the proof of Theorem 8.8.1 and ``hence $\lV x=y\rV_{-1}$'' in the proof of Corollary 8.8.2 follow from Theorem 7.3.12.
+
+%%
+
+\subsection{Proof of Corollary 8.8.5}
+
+\subsubsection{First part}
+
+The first part of the proof of Corollary 8.8.5 uses implicitly the following fact:
+
+\nn\emph{If $C$ is a pointed type and $k,n:\N$ satisfy $0\le k\le n$, then we have} 
+$$
+\pi_k(C)=\pi_k(\lV C\rV_n).
+$$
+\emph{Proof.} We have 
+$$
+\pi_k(C)=\Omega^k(\lV C\rV_k)=\Omega^k(\lV\lV C\rV_n\rV_k)=\pi_k(\lV C\rV_n),
+$$ 
+the three equalities resulting respectively from Corollary 7.3.14, Lemma 7.3.15 and Corollary 7.3.14 again. $\sq$
+
+Let us spell out the proof of the contractibility of $\lV\fib_f(f(a))\rV_n$. Lemma 7.3.15 yields 
+$$
+\lV\lV\fib_f(f(a))\rV_n\rV_0=\lV\fib_f(f(a))\rV_0,
+$$ 
+and we already know that $\lV\fib_f(f(a))\rV_0$ is contractible. As a result, $\lV\fib_f(f(a))\rV_n$ is 0-connected, and Corollary 8.8.4 implies that $\lV\fib_f(f(a))\rV_n$ is contractible. $\sq$
+
+\subsubsection{Second part}
+
+In the second part of the proof of Corollary 8.8.5, the assertion ``therefore $\lV b=f(a)\rV_{-1}$'' follows from Theorem 7.3.12.
+
+%%
+
+\subsection{Exercise 8.7}
+
+\emph{Statement.} Define a \textbf{pointed equivalence} to be a pointed map whose underlying function is an equivalence.
+\begin{enumerate}
+\item Show that the type of pointed equivalences between pointed types $(X,x_0)$ and $(Y,y_0)$ is equivalent to $(X,x_0)=_{\U_\bullet}(Y,y_0)$.
+\item Reformulate the notion of pointed equivalence in terms of a pointed quasi-inverse and pointed homotopies, in one of the coherent styles from Chapter~4.
+\end{enumerate}
+\emph{Solution.} It might help the reader to take a look at \S\ref{209210} p.~\pageref{209210} above. The first idea would be to define the type $(X,x_0)\simeq(Y,y_0)$ as being
+$$
+\sum_{f:(X,x_0)\to(Y,y_0)}\ \ieq(\pr_1(f)),
+$$ 
+but we prefer the equivalent definition
+$$
+((X,x_0)\simeq(Y,y_0)):\eq\sum_{f_1:X\to Y}\ \ieq(f_1)\times(f_1(x_0)=y_0).
+$$ 
+We shall define the maps $a,b$ and $c$ in the diagram 
+$$
+\xymatrix{
+\boxed{(X,x_0)=(Y,y_0)}\ar[d]_{\pr_1}\ar@<2pt>[r]^a&\boxed{(X,x_0)\simeq(Y,y_0)}\ar@<2pt>[l]^b\ar[d]\ar[d]^c\\ 
+\boxed{X=Y}&\boxed{X\simeq Y}}
+$$ 
+We define $a$ by path induction in the obvious way. We define $c$ by the formula 
+$$
+c(f_1,u,f_0):\eq(f_1,u).
+$$ 
+We define $b$ by setting 
+$$
+b(f_1,u,f_0):\eq\Big(\ua(f_1,u),\ q(f_1,u)\cc f_0\Big),
+$$ 
+where $q(f_1,u)$ is the obvious path from $p_{1\star}(x_0)$ to $f_1(x_0)$ in $Y$. We claim that $a$ and $b$ are inverse. We prove 
+$$
+b\ci a=\id_{(X,x_0)=(Y,y_0)}
+$$ 
+by path induction. Let us check 
+$$
+a\ci b=\id_{(X,x_0)\simeq(Y,y_0)}.
+$$ 
+Let $(f_1,u,f_0):(X,x_0)\simeq(Y,y_0)$. We must show 
+\begin{equation}\label{af1}
+a\Big(\ua(f_1,u),\ q(f_1,u)\cc f_0\Big)=(f_1,u,f_0).
+\end{equation} 
+Defining $p_1:X=Y$ by $p_1:\eq\ua(f_1,u)$, Equality~\eqref{af1} is equivalent to 
+$$
+a\bigg(p_1,\ q\Big(\ms{idtoeqv}(p_1)\Big)\cc f_0\bigg)=(p_1,f_0),
+$$ 
+which is easily proved by path induction on $p_1$.
+
+%%%
+
+\section{Chapter 9}
+
+\subsection{Theorem 9.2.5}
+
+In the penultimate paragraph of the proof of Theorem 9.2.5, one can also argue by path induction.
+
+%%
+
+\subsection{Lemma 9.2.8}\label{928}
+
+To prove Lemma 9.3.2 (see \S\ref{932} below) the following two lemmas might be useful. (Lemma~1 below is a mild generalization of Lemma 9.2.8.)
+
+\nn\tb{Lemma 1.} \emph{In the diagram below, $A,B,C,D$ are precategories; $F,G:A\to B$, $H,K:C\to D$ and $L:B\to C$ are functors; $\gamma:F\to G$ and $\delta:H\to K$ are natural transformations:
+%$$\xymatrix{&&\ar[dd]_\delta&\ar[ll]_H&&&&\ar[dd]_\gamma&\ar[ll]_F\\ D&&&&C&B\ar[l]_L&&&&&A.\\ &&&\ar[ll]^K&&&&&\ar[ll]^G}$$ 
+$$
+\begin{array}{ccccccc}
+&H&&&&F\\
+&\leftarrow&&L&&\leftarrow\\
+D&\delta\downarrow&C&\leftarrow&B&\gamma\downarrow&A,\\
+&\leftarrow&&&&\leftarrow\\
+&K&&&&G
+\end{array}
+$$
+We have, in the above setting,}
+\begin{equation}\label{928a}
+(\delta LG)(HL\gamma)=(KL\gamma)(\delta LF).
+\end{equation}
+
+\nn\emph{Proof.} It suffices to check componentwise: at $a:A$ we have
+\begin{align*}
+((\delta LG)(HL\gamma))_a
+&\eq(\delta LG)_a(HL\gamma)_a\\
+&\eq\delta_{LGa}\ci HL(\gamma_a)\\
+&=KL(\gamma_a)\ci\delta_{LFa}&\text{by naturality of $\delta$}\\
+&\eq(KL\gamma)_a\ci(\delta LF)_a\\
+&\eq((KL\gamma)(\delta LF))_a.\ \sq
+\end{align*}
+
+Equality \eqref{928a} can be illustrated by the commutative square 
+$$
+\xymatrix{
+HLF\ar[rrr]^{(HL\gamma)}\ar[d]_{(\delta LF)}&&&HLG\ar[d]^{(\delta LG)}\\ 
+KLF\ar[rrr]_{(KL\gamma)}&&&KLG.}
+$$ 
+\tb{Lemma 2.} \emph{In the diagram below, $A,B,C,D$ are precategories; $F:A\to B$, $G,H,K:B\to C$ and $L:C\to D$ are functors; $\al:G\to H$ and $\beta:H\to K$ are natural transformations:
+$$
+\xymatrix{
+&&&\ar[ll]_K\\ \\
+D&C\ar[l]_L&\ar[uu]_\beta&B\ar[ll]_(.6)H&A.\ar[l]_F\\ \\
+&&\ar[uu]_\al&\ar[ll]^G}
+$$ 
+We have, in the above setting,}
+\begin{equation}\label{928b}
+(L\beta F)(L\al F)=L(\beta\al)F.
+\end{equation}
+\emph{Proof.} It suffices to check componentwise: at $a:A$ we have
+\begin{align*}
+((L\beta F)(L\al F))_a
+&\eq(L\beta F)_a(L\al F)_a\\
+&\eq L(\beta_{Fa})\ci L(\al_{Fa})\\
+&=L(\beta_{Fa}\ci\al_{Fa})\\
+&=L((\beta\al)_{Fa})\\ 
+&=(L(\beta\al)F)_a.\ \sq
+\end{align*}
+
+%%
+
+\newpage
+
+\subsection{Lemma 9.3.2}\label{932}
+
+In the notation of \S\ref{928} above, the diagrams and equalities below (which follow from \eqref{928a} above) will help us verify the equality $\delta\gamma=1_G$ in the proof of Lemma 9.3.2:
+
+%In the notation of \S\ref{928} above, the following diagrams and equalities (which follow from \eqref{928a} above) may help the reader:
+
+$$
+\begin{array}{ccccccc}
+&1_A&&&&FG\\
+&\leftarrow&&G'&&\leftarrow\\
+A&\eta\downarrow&A&\leftarrow&B&\ep\downarrow&B,\\
+&\leftarrow&&&&\leftarrow\\
+&GF&&&&1_B
+\end{array}
+$$ 
+
+\begin{equation}\label{928c}
+(\eta\ G'\ 1_B)(1_A\ G'\ \ep)=(GF\ G'\ \ep)(\eta\ G'\ FG),
+\end{equation}
+
+$$
+\xymatrix{
+G'FG\ar[rrr]^{(1_A\ G'\ \ep)}\ar[d]_{(\eta\ G'\ FG)}&&&G'\ar[d]^{(\eta\ G'\ 1_B)}\\ 
+GFG'FG\ar[rrr]_{(GF\ G'\ \ep)}&&&GFG',}
+$$
+
+%\newpage
+
+$$
+\begin{array}{ccccccc}
+&FG'&&&&FG\\
+&\leftarrow&&1_B&&\leftarrow\\
+B&\ep'\downarrow&B&\leftarrow&B&\ep\downarrow&B,\\
+&\leftarrow&&&&\leftarrow\\
+&1_B&&&&1_B
+\end{array}
+$$
+
+\begin{equation}\label{928d}
+(\ep'\ 1_B\ 1_B)(FG'\ 1_B\ \ep)=(1_B\ 1_B\ \ep)(\ep'\ 1_B\ FG),
+\end{equation}
+
+$$
+\xymatrix{
+FG'FG\ar[rrr]^{(FG'\ 1_B\ \ep)}\ar[d]_{(\ep'\ 1_B\ FG)}&&&FG'\ar[d]^{(\ep'\ 1_B\ 1_B)}\\ 
+FG\ar[rrr]_{(1_B\ 1_B\ \ep)}&&&1_B,}
+$$ 
+
+\newpage
+
+$$
+\begin{array}{ccccccc}
+&1_A&&&&1_A\\
+&\leftarrow&&1_A&&\leftarrow\\
+A&\eta\downarrow&A&\leftarrow&A&\eta'\downarrow&A,\\
+&\leftarrow&&&&\leftarrow\\
+&GF&&&&G'F
+\end{array}
+$$
+
+\begin{equation}\label{928e}
+(\eta\ 1_A\ G'F)(1_A\ 1_A\ \eta')=(GF\ 1_A\ \eta')(\eta\ 1_A\ 1_A),
+\end{equation}
+
+$$
+\xymatrix{
+1_A\ar[rrr]^{(1_A\ 1_A\ \eta')}\ar[d]_{(\eta\ 1_A\ 1_A)}&&&G'F\ar[d]^{(\eta\ 1_A\ G'F)}\\ 
+GF\ar[rrr]_{(GF\ 1_A\ \eta')}&&&GFG'F.}
+$$ 
+
+%\newpage
+
+%Here are more details about the verification of the equality $\delta\gamma=1_G$ in the proof of Lemma 9.3.2: 
+
+Here is the verification of the equality $\delta\gamma=1_G$ in the proof of Lemma 9.3.2 announced at the beginning of this section: 
+\begin{align*}
+\delta\gamma &\eq(G\ep')(\eta G')(G'\ep)(\eta'G)\\
+&=(G\ep')(G F G'\ep)(\eta G' F G)(\eta'G)&\text{by \eqref{928c}}\\
+&=G\,(\ep'\,(FG'\ep))\,((\eta G'F)\,\eta')\,G&\text{by \eqref{928b}}\\
+&=G\,(\ep\,(\ep'FG))\,((GF\eta')\,\eta)\,G&\text{by \eqref{928d} and \eqref{928e}}\\
+&=G\,(\ep\,(\ep'F))\,((F\eta')\,\eta)\,G&\text{by \eqref{928b}}\\
+&=(G\ep)(\ep' F)(F\eta')(\eta G)\\
+&=(G\ep)(\eta G)&\text{by $\ \Delta_1$}\\
+&=1_G&\text{by $\Delta_2$,}
+\end{align*} 
+where $\Delta_1$ and $\Delta_2$ denote the first and second triangle identity.
+
+%%
+
+\subsection{Proof of Lemma 9.4.9}
+
+$\bu$ The following observation, which could be made just before Definition 9.2.3, is used in the proof of Lemma 9.4.9.
+
+\emph{In the setting of Definition 9.2.1, let $p:F_0=G_0$; for each $a:A_0$ let $p_a:Fa=Ga$ be the induced path; let $a,a':A_0$; and define $P:(A_0\to B_0)\to\U$ by $P(f):\eq(\hom_A(a,a')\to\hom_B(fa,fa'))$. Then we have} 
+$$
+p_\star(F_{a,a'})(g)=\ms{idtoiso}(p_{a'})\ci F_{a,a'}(g)\ci\ms{idtoiso}((p_a)^{-1})
+$$ 
+\emph{for all $g:\hom_A(a,a')$.}
+
+\nn$\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the \emph{other} triangle identity, which we have seen in Chapter 4 is equivalent to (9.4.11)'' refers (I think) to Lemma 4.2.2.
+
+%%%
+
+\section{Chapter 10}
+
+\subsection{A Lemma}\label{imfmp}
+
+Recall the notion of image (Definition 7.6.3 of the book):
+
+\nn\tb{Definition 7.6.3.} Let $f:A\to B$ be a function. The $n$\tb{-image} of $f$ is defined as
+$$
+\ima_n(f):\eq\sum_{b:B}\ \lV\fib_f(b)\rV_n.
+$$ 
+When $n=-1$, we write simply $\ima(f)$ and call it the \tb{image} of $f$.
+
+The following lemma, whose proof is straightforward, will be used in \S\ref{1011} below.
+
+\nn\tb{Lemma.} \emph{Let $f:A\to B$ be a map. Assume that $B$ is a set. Then $\ima(f)$ is a mere proposition if and only if $f(a)=f(a')$ for all $a,a':A$.}
+
+\nn\emph{Proof.} Suppose $\ima(f)$ is a mere proposition and let $a,a':A$. As 
+$$
+\Big(f(a),\lv(a,\refl_{f(a)})\rv\Big),\Big(f(a'),\lv(a',\refl_{f(a')})\rv\Big):\ima(f),
+$$ 
+we have $f(a)=f(a')$. Conversely, assume $f(a)=f(a')$ for all $a,a':A$. Let $x,x':\ima(f)$. We claim $x=x'$. We may suppose $x\eq(b,u),x'\eq(b',u')$ (obvious notation). It suffices to show $b=b'$. As $b=b'$ is a mere proposition, we may assume $u\eq\lv(a,p)\rv$ and $u'\eq\lv(a',p'))\rv$ with 
+$$
+a,a':A,\quad p:f(a)=b,\quad p':f(a')=b'.
+$$ 
+This implies $b=b'$, as required. $\sq$
+
+%%
+
+\subsection{Before Lemma 10.1.1}\label{1011}
+
+This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of $f$, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It is clear from the context that $A$ and $B$ are sets.) Let us show that this obvious candidate is the good one. By Lemma 4.8.2 of the book (see \S\ref{482} p.~\pageref{482}) it suffices to prove the following statement:
+
+\emph{If $B:A\to\Set$ is a set family over a set $A$ and $\sim$ is the equivalence relation on $\sum_{a:A}B(a)$ defined by 
+$$
+(a,b)\sim(a',b')\text{ if and only if }a=a',
+$$ 
+then the resulting quotient satisfies}
+$$
+\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim\quad=\quad\sum_{a:A}\ \lV B(a)\rV.
+$$
+
+\nn\emph{Proof.} Let us define a map 
+$$
+h:\left(\sum_{a:A}\ \lV B(a)\rV\right)\quad\to\quad\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim.
+$$ 
+
+It suffices to define, keeping $a_0:A$ fixed, the object $h(a_0,\beta)$ for all $\beta:\lV B(a_0)\rV$. Define 
+$$
+f:B(a_0)\to\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
+$$ 
+by $f(b):\eq q(a_0,b)$ for all $b:B(a_0)$, and let 
+$$
+\tilde f:B(a_0)\to\ima(f),\quad\pr_1:\ima(f)\to\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
+$$ 
+be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). The lemma in \S\ref{imfmp} above implies that $\ima(f)$ is a mere proposition. As a result, $\tilde f$ induces a map $g:\lV B(a_0)\rV\to\ima(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
+
+We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is invertible. $\square$
+
+%%
+
+\subsection{Proof of Lemma 10.1.13}
+
+To prove the equality $\me_\star(\tau(N))=\tau(S)$, one can use the following lemma, whose proof is straightforward:
+
+\nn\tb{Lemma.} \emph{Let $P:A\to B\to\U$ be a type family, define $Q:A\to\U$ by 
+$$
+Q(a):\eq\prod_{b:B}\ P(a,b),
+$$ 
+let $p:a=a'$ be a path in $A$, let $f:Q(a)$, and let $b:B$. Then we have} 
+$$
+\tr^Q(p,f)(b)=\tr^{P(-,b)}(p,f(b)).
+$$
+
+%%
+
+\subsection{The induction principle for \textsf{acc} (\S10.3)}
+
+Here is a first particular case of the general induction principle for $\acc$:
+
+If we have a type family $P:A\to\U$ and %\begin{equation}\label{1032}
+$$
+f:\prod_{a:A}\ \left(\prod_{b:A}\ (b<a)\to\acc(b)\times P(b)\right)\to P(a),%\end{equation}
+$$ 
+then we get 
+$$
+g:\prod_{a:A}\ \acc(a)\to P(a)
+$$
+with
+$$
+g\big(a,\acc_<(a,\pr_1\ci u)\big)\eq f\bigg(a\ ,\ \lam b.\lam l.\Big(\pr_1 u(b,l)\ ,\ g\big(b,\pr_1 u(b,l)\big)\Big)\bigg)
+$$
+for all $a:A$ and all $u:\prod_{b:A}\ (b<a)\to\acc(b)\times P(b)$. 
+
+Here is a second particular case:
+
+If $<$ is well-founded, if we have a type family $P:A\to\U$, and if we have 
+\begin{equation}\label{103}
+f:\prod_{a:A}\ \left(\prod_{b:A}\ (b<a)\to P(b)\right)\to P(a),
+\end{equation} 
+then we get $g:\prod_{a:A}P(a)$ with $g(a)\eq f(a,\lam b.\lam l.g(b))$ for all $a:A$.
+
+(We are using Lemma 10.3.2 of the book.)
+
+%%
+
+\subsection{Lemma 10.3.7}%\label{s1037}
+
+Here is a minor variant:
+
+\nn\emph{Suppose $P$ is a set and we have a function $h:(P\to\Prop)\to P$. Then if $<$ is a well-founded relation on $A$, there is a function $g:A\to P$ such that for all $a:A$ we have} 
+$$
+g(a)\eq h\ga(\{g(b)\ \vert\ b<a\}\dr),
+$$ 
+\emph{where $\{g(b)\ \vert\ b<a\}:P\to\Prop$ maps $p:P$ to} 
+$$
+\exists\ (b:A)\ .\ (g(b)=p)\ \wedge\ (b<a).
+$$ 
+\emph{Proof.} We shall use the induction principle containing Display~\eqref{103} above. Define 
+$$
+f:\pd_{a:A}\ \ga(\pd_{b:A}\ (b<a)\to P\dr)\to P
+$$ 
+by 
+$$
+f(a,s):\eq h(\{s(b,l)\ \vert\ l:b<a\}),
+$$ 
+where $\{s(b,l)\ \vert\ l:b<a\}:P\to\Prop$ maps $p:P$ to 
+$$
+\exists\ (b:A)\ .\ \exists\ (l:b<a)\ .\ s(b,l)=p.
+$$ 
+We get 
+$$
+g(a)\eq f(a,\lam b.\lam l.g(b))\eq h(\{g(b)\ \vert\ b<a\}).\ \sq
+$$ 
+
+%%
+
+\subsection{Lemma 10.3.8}
+
+Recall the statement: 
+
+\nn\emph{Assuming excluded middle, $<$ is well-founded if and only if every nonempty subset $B:\mc P(A)$ merely has a minimal element.} 
+
+Here is a slightly different phrasing of the proof.
+
+\nn\emph{Proof.} Suppose first $<$ is well-founded and $A$ has no minimal element. That is, for any $a:A$ there merely exists a $b:A$ with $b<a$. We shall show $A=\mbf0$. We first claim 
+\begin{equation}\label{10312}
+\prod_{a:A}\ \left(\prod_{a':A}\ (a'<a)\to\mbf0\right)\to\mbf0.
+\end{equation}
+Let $a:A$ and $s:\prod_{a':A}(a'<a)\to\mbf0$. It suffices to prove $\mbf0$. As observed above, there is a $b:A$ and an $l:b<a$, yielding $s(b,l):\mbf0$. This proves \eqref{10312}. Then $\prod_{a:A}\mbf0$, that is $A\to\mbf0$, follows by well-founded induction, and implies $A=\mbf0$. 
+
+Now suppose that each nonempty subset merely has a minimal element, and assume that an inaccessible $a_0:A$ merely exists. As it suffices to prove $\mbf0$, we can assume that $a_0$ exists purely, and that it is minimal for the property of being inaccessible, which means that we have an $h:\prod_{b:A}(b<a_0)\to\acc(b)$, yielding $\acc_<(a_0,h):\mbf0$, as required. $\square$
+
+%%
+
+\subsection{Lemma 10.3.12}
+
+Recall the statement: \emph{Any simulation is injective}.
+
+Here is a slightly different phrasing of the proof:
+
+\nn\emph{Proof.} We prove by well-founded induction on $a:A$ that for any $b:A$, if $f(a)=f(b)$ then $a=b$. The inductive hypothesis for $a:A$ says that for any $a'<a$, and any $b:A$, if $f(a')=f(b)$ then $a'=b$.
+
+Suppose $f(a)=f(b)$; we must show $a=b$. By extensionality, it suffices to show that for any $c:A$ we have $(c<a)\Leftrightarrow(c<b)$. 
+
+If $c<a$, then $f(c)<f(a)$ by Definition 10.3.11(i) (see \S\ref{311} p.~\pageref{311}). Hence $f(c)<f(b)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<b$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<b$. 
+
+If $c<b$, then $f(c)<f(b)$ by Definition 10.3.11(i). Hence $f(c)<f(a)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<a$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<a$. $\sq$
+
+%%
+
+\subsection{Theorem 10.4.4}
+
+In the proof of Theorem 10.4.4 the notation $\{f(x)\ \vert\ P(x)\}$, introduced after Lemma 10.1.6, is used a lot.
+
+%%%
+
+\section{Chapter 11}
+
+\subsection[The definition of \tb Q (\S11.1)]{The definition of $\mbb Q$ (\S11.1)}
+
+The type $\mbb Q$ is defined in \S11.1 as $\mbb Q:\eq(\mbb Z\times\mbb N)/\approx$, where $\approx$ is defined by 
+$$
+(u,a)\approx(v,b):\eq(u(b+1)=v(a+1)).
+$$ 
+One may add something like ``We leave it to the reader to check that $\approx$ is an equivalence relation''.
+
+%%
+
+\subsection{\S11.2.1}
+
+The following observation could be made just before Lemma 11.2.2: 
+
+\nn\emph{For $x,y:\mbb R_d$ the inequality $x<y$ implies $x\neq y$. Moreover the map $f:\mbb Q\to\mbb R_d$, $q\mapsto(L_q,U_q)$ satisfies}
+$$
+f(q)<f(r)\iff q<r\quad\text{and}\quad f(q)\le f(r)\iff q\le r.
+$$ 
+
+%%
+
+\subsection{Corollary to Lemma 11.2.2}\label{1122}
+
+If $q,r:\mbb Q$ and $q<r$ and $x:\mbb R_d$, then we merely have $q<x$ or $x<r$ by locatedness.
+
+\subsection{Proof of Theorem 11.2.12}
+
+The claim ``Since $q+2\ep<r-2\ep$ merely $L_{x_\ep}(q+2\ep)$ or $U_{x_\ep}(q-2\ep)$'' follows from \S\ref{1122} above.
+
+%%
+
+\section{Appendix A}
+
+It seems to me that the expression $\lam x.b$ is defined in two conflicting ways, firstly at the beginning of A.1, and secondly in the last sentence of A.2.4. 
+
+\end{document}
