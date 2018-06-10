@@ -36,6 +36,18 @@ tag: Bundle
     1. commit前diff一下，确定代码有没有冲突
     2. 如果commit之前没diff, 我一般会在push之后git log，然后git show
 
+### 正确上网:
+
+这次是通过可达的代理来正确上网的, 命令如下:
+
+    $: ssh -L <localport>:remotehost:<remoteport> username@remotehost
+    $: export https_proxy=socks4://127.0.0.1:8080
+    $: export http_proxy=socks4://127.0.0.1:8080
+    $: export ftp_proxy=socks4://127.0.0.1:8080
+    $: export ssl_proxy=socks4://127.0.0.1:8080
+
+设置完`https_proxy`后, 浏览器选择socks4之后就可以正确上网了.
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
