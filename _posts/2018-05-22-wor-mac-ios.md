@@ -228,6 +228,95 @@ ___ref:___
 
 - [1. strong属性与weak属性的区别](https://www.jianshu.com/p/f9e5b3f9c088)
 
+### 12. storyboard和xib
+
+
+### 13. ios的黑魔盒
+
+`class_getInstanceMethod(Class _Nullable cls, SEL _Nonnull name)`该函数会根据`sel`返回`objc_method`结构体指针，只要`sel`对应的`IMP`不发生改变，这个结构体指针就不会变，验证如下：
+
+验证一：
+
+```
+Method originMethod = class_getInstanceMethod([self class], orginSel);
+Method originMethod1 = class_getInstanceMethod([self class], orginSel);
+
+NSLog(@"originMethod: %p", originMethod);
+NSLog(@"originMethod1: %p", originMethod);
+if (class_addMethod([self class], orginSel, method_getImplementation(overrideMethod) , method_getTypeEncoding(originMethod))) 
+{
+    originMethod = class_getInstanceMethod([self class], orginSel);
+    NSLog(@"originMethod: %p", originMethod);
+}
+
+```
+
+输出：
+
+```
+2018-06-20 22:12:23.357897+0800 HookDemo[7962:540915] originMethod: 0x1acfcacb0
+2018-06-20 22:12:23.358423+0800 HookDemo[7962:540915] originMethod1: 0x1acfcacb0
+2018-06-20 22:12:23.358687+0800 HookDemo[7962:540915] originMethod: 0x10099ee28
+
+```
+
+验证二：
+
+```
+Method originMethod = class_getInstanceMethod([self class], orginSel);
+Method originMethod1 = class_getInstanceMethod([self class], orginSel);
+
+NSLog(@"originMethod: %p", originMethod);
+NSLog(@"originMethod1: %p", originMethod);
+
+class_replaceMethod([self class], orginSel, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
+
+originMethod = class_getInstanceMethod([self class], orginSel);
+NSLog(@"originMethod: %p", originMethod);
+```
+
+输出：
+```
+2018-06-20 22:20:29.814846+0800 HookDemo[8004:543573] originMethod: 0x1acfcacb0
+2018-06-20 22:20:29.815427+0800 HookDemo[8004:543573] originMethod1: 0x1acfcacb0
+2018-06-20 22:20:29.815481+0800 HookDemo[8004:543573] originMethod: 0x135d76068
+```
+
+通过这两个验证实验可知，只要`IMP`发生变化，就会返回不同的`objc_method`结构体指针。接下来我要从`IMP`角度来验证加深对`class_getInstanceMethod`的理解，代码如下：
+
+```
+IMP impl1 = method_getImplementation(originMethod);
+IMP impl2 = nil;
+IMP impl3 = nil;
+if (class_addMethod([self class], orginSel, method_getImplementation(overrideMethod) , method_getTypeEncoding(originMethod)))         
+{
+
+    impl2 = method_getImplementation(originMethod);
+    originMethod = class_getInstanceMethod([self class], orginSel);
+    impl3 = method_getImplementation(originMethod);
+}
+NSLog(@"impl1 %@ impl2", (impl1 == impl2) ? @"==" : @"!=");
+NSLog(@"impl2 %@ impl3", (impl2 == impl3) ? @"==" : @"!=");
+```
+
+输出：
+
+```
+2018-06-20 22:34:33.720940+0800 HookDemo[8068:548091] originMethod: 0x1acfcacb0
+2018-06-20 22:34:33.721653+0800 HookDemo[8068:548091] impl1 == impl2
+2018-06-20 22:34:33.721701+0800 HookDemo[8068:548091] impl2 != impl3
+```
+
+输出结果间接验证了：只要`IMP`发生变化，就会返回不同的`objc_method`结构体指针`originMethod`，这里可以将`class_getInstanceMethod`的实现原理理解为:
+
+* __根据`SEL`和`IMP`来创建`objc_method`对象，并返回地址，如：`originMethod`__
+
+另外有一点要注意：
+
+* __执行`class_addMethod`或者`class_replaceMethod`这种可以改变`IMP`的函数后并不会直接改变`originMethod`所指向的对象(从`impl1 == impl2`可以看出)__
+
+position
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
