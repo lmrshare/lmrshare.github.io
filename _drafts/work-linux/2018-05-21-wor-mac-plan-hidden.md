@@ -141,13 +141,13 @@ ___Highlight:___
 >*  Xcode中对项目的配置, 联调
 >*  shell常用操作
 ##### Wed Jun 20 23:22:11 CST 2018
->* 先把动规的思路看了
->* 先尽量把这个代码看了[longest Palindromic substring](https://leetcode.com/problems/longest-palindromic-substring/discuss), 实在看不懂再确定下是不是这些代码是基于动规的
 >* [刨根问底：对于 self = [super init] 的思考](https://www.jianshu.com/p/9b36e1b636d8)
 >* ios层做 libevent这种等级的操作这么容易, c++应该要写一些代码，一般会用libevent库。所以我的问题就是查libevent是啥玩意, c++怎么实现
 >* ios打点
 >* C++有没有类似ios黑魔法的玩意儿
 >* [scale jittering的工作原理是什么---VGG Net的数据增强策略](https://arxiv.org/pdf/1409.1556v6.pdf)
+>* 看work_tmp/ui下的文章
+>* palindromic substring的所有思路整理完、coding、看比较好的解法
 
 
 ### <a name="Idea"></a>Idea
