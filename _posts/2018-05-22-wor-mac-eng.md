@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "网易云音乐的英语电台"
+title: "网易云音乐的英语电台-spoken language"
 date: 2018-05-01 
 description: "English"
 tag: English
@@ -99,7 +99,41 @@ ___I had spent two months worrying about it and I was glad to get it off my ches
 
 我已经担心这件事情两个月了，终于能一吐而快了。
 
+### 4. 下一支舞，我就不跳了
 
+
+___Okay. Well, you’ll forgive us, Pepper, if we sit out your next few brunches?___
+
+如果日后你的几场早午餐聚会，我们俩不去了的话，那Pepper你会原谅我们的吧？
+
+>* brunch 早午餐
+
+___ I'm tired, so I think I'll sit out the next dance.___
+
+我累了，所以我想，下一支舞，我就不跳了。这里的sit out意思是: 停止做某事一段时间.
+
+___The only thing I can do is keep quiet and sit this one out.___
+
+我目前能做的就是保持安静，等这事儿结束。 这里的sit out意思是: "If you sit something out, you wait for it to finish, without taking any action."
+
+ ___I know it's boring, but we're just going to have to sit it out.___
+
+我知道这很无趣，但是咱们得在这坚持到结束。
+
+___The company's management is prepared to sit out the strike rather than agree to union demands.___
+
+面对这次罢工，这家公司的管理层决定，静观其变不做任何处理，而不是同意工会的要求。
+
+ ___Oh, please play with us. Don't sit it out. I'm tired of playing cards, so I think I'll sit out this game.___
+
+ 来呀，跟我们一起玩呗，别不参与呀. 打牌我玩腻了，这个游戏我就还是不参加了吧。
+
+ sit out 意思总结:
+
+ >* 不参加
+ >* 停止做某事一段时间
+ >* 等待结束、不采取任何行动
+ >* 坚持以待结束
 
 <br>
 
