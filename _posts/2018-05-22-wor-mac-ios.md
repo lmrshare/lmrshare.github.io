@@ -315,7 +315,43 @@ NSLog(@"impl2 %@ impl3", (impl2 == impl3) ? @"==" : @"!=");
 
 * __执行`class_addMethod`或者`class_replaceMethod`这种可以改变`IMP`的函数后并不会直接改变`originMethod`所指向的对象(从`impl1 == impl2`可以看出)__
 
-position
+
+### Singleton与多线程
+
+预备知识:
+
+singleton的三个基本要素:
+
+>* 静态成员pInstance
+>* 静态函数Instance
+>* private或protected(可用于继承的场景)构造函数
+
+二元锁/互斥量: 被锁住的代码块是一个执行单元, 只有完整的执行完了, 别的线程才能执行, 所以不存在两个线程同时进入这个代码块.
+
+多线程singleton:
+
+>* 构造函数私有、静态函数访问唯一的实例(普通单例不是线程安全, 多线程下存在多次判断为NULL进而多次new对象的情况)
+>* 将分配资源的地方即new对象加锁, 以达到线程安全.(这样加锁, 每一次进入静态函数的时候都会加锁, 我们希望的是: 仅第一次产生实例时才加锁, 非NULL时直接return)
+
+position: 后续结合proj-experience中的代码把笔记补充完整
+
+### NSData
+
+NSData是用来包装数据的, NSData存储的是二进制数据, 屏蔽了数据之间的差异, 文本、音频、图像等数据都可用NSData来存储.
+
+___注___: 代码见-(void)test_NSDATA*.
+
+### iOS 文件目录
+
+iphone沙盒模型的四个文件夹分别是documents，tmp，app，Library.
+
+沙盒目录即home目录.
+
+position_c: NSFileManager
+
+___注___: 代码见-(void)test_iosfiledir.
+
+-[[1]ios文件目录](https://www.jianshu.com/p/572edba1ff9d)
 
 <br>
 
