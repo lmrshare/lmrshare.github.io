@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Notes of C traps and pitfalls
+title: "Notes of C traps and pitfalls"
 date: 2018-08-11 
 description: "Notes about C traps and pitfalls."
 tag: Computer Basises
@@ -60,7 +60,7 @@ will be set to zero.
 >* setbuf (stdout, buf): it tells the I/O library that all output written to stdout should henceforth use buf as an output buffer, and that
 output directed to stdout should not actually be written until buf becomes full or until the programmer
 directs it to be written by calling fflush. The appropriate size for such a buffer is defined as BUFSIZ in
-<stdio.h>.  
+"stdio.h"
 
 #### The Preprocessor
 
@@ -219,5 +219,7 @@ void printneg (n, p)
 ### Review:
 
 There are too many details I did not care befor, and I will review them frequently from now on.
+
+<br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2018/06/today/) 
