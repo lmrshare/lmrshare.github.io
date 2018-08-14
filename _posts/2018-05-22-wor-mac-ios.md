@@ -347,7 +347,13 @@ iphone沙盒模型的四个文件夹分别是documents，tmp，app，Library.
 
 沙盒目录即home目录.
 
-position_c: NSFileManager
+position_c1: NSFileManager
+
+### Mac App开发
+
+___分发Mac App:___
+
+
 
 ___注___: 代码见-(void)test_iosfiledir.
 
