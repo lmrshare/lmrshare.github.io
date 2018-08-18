@@ -21,7 +21,7 @@ tag: Research
 
 ### <a name="Gradient-Descent"></a>梯度下降(Gradient Descent---GD)
 
-&emsp;&emsp;无约束极值问题可以被描述为: $ min f(x), X \in E^n $. 假设目标函数具有一阶连续偏导数, 并存在极小值点$ X^* $, 以$ X^k $作为对极小值点的第$ k $次近似, 那么第$ k+1 $次近似可被描述为 $ X^{k+1} = X^k + \lambda P^k$, 注意, 这里的步长$ \lambda $和方向向量$ P^k $都是不知道的, 而我们接下来阐述的GD算法就是对$ \lambda $和$ P^k $进行求解的一种方法. 接下来, 本文通过三部分来介绍GD求解算法: 1) 通过一阶泰勒级数展开来对方向向量进行___理论分析___; 2) 在该理论分析的基础上引出GD中所使用的方向向量$ P^{*}$ 3) 介绍集中求步长$ \lambda $的方法.
+&emsp;&emsp;无约束极值问题可以被描述为: $ min f(x), X \in E^n $. 假设目标函数具有一阶连续偏导数, 并存在极小值点$ X^* $, 以$ X^k $作为对极小值点的第$ k $次近似, 那么第$ k+1 $次近似可被描述为 $ X^{k+1} = X^k + \lambda P^k$, 注意, 这里的步长$ \lambda $和方向向量$ P^k $都是不知道的, 而我们接下来阐述的GD算法就是对$ \lambda $和$ P^k $进行求解的一种方法. 接下来, 本文通过三部分来介绍GD求解算法: 1) 通过一阶泰勒级数展开来对方向向量进行___理论分析___; 2) 在该理论分析的基础上引出GD中所使用的方向向量$ P^{*}$ 3) 介绍几种求步长$ \lambda $的方法.
 
 ___1). 泰勒级数理论分析:___
 
@@ -31,11 +31,61 @@ ___1). 泰勒级数理论分析:___
 
 其中, 高阶项$ o(\lambda) $满足: $ \lim_{\lambda \rightarrow 0} \frac{o(\lambda)}{\lambda} = 0 $
 
-也就是说, 在$ \lambda $充分小的时候, 我们可以忽略高阶分量的影响, 只需要考虑$ \lambda \nabla f(X^k)^T P^k $. 我们发现, 只要$ \nabla f(X^k)^T P^k < 0$就可以保证目标函数向极小值迈进, 即: $ f(X^k + \lambda P^k) < f(X^k) $. 至此, 理论分析结束, 从这个分析中我们要注意一点: 分析并没有给出具体的$ P^k $求解, 而是从微分的角度告诉我们向 __哪些__ 方向走是ok的.
+也就是说, 在$ \lambda $充分小的时候, 我们可以忽略高阶分量的影响, 只需要考虑$ \lambda \nabla f(X^k)^T P^k $. 我们发现, 只要$ \nabla f(X^k)^T P^k < 0$就可以保证目标函数向极小值迈进, 即: $ f(X^k + \lambda P^k) < f(X^k) $. 至此, 理论分析结束, 从这个分析中我们要注意一点: 分析并没有给出具体的$ P^k $求解, 而是从微分的角度告诉我们向 __哪些__ 方向走是ok的. 我觉得很多时候我们不会记得住复杂的细节, 所以看完一段理论后最好能总结成一句话或者绘制一个图片, 哪怕是没那么严谨的. 这里我给出的一句话总结就是: "梯度方向的钝角区域可改善结果".
 
 ___2). GD的方向向量:___
 
+&emsp;&emsp;如前文所述, 泰勒级数分析没有给出具体的方向向量$ P^k $. 本节给出GD方法求得的方向向量, 同样, 先抛出结论: 沿$ P^k = -\nabla f(X^k) $ 方向行走可以使函数值下降最快. 负梯度方向也就意味着该钝角是$ {180}^o $, 接下来, 我们验证这个结论.
+
+我们在前文提到, 只要$ \nabla f(X^k)^T P^k < 0$就可以保证目标函数向极小值迈进, 由向量的内积我们可得到:
+
+$  \nabla f(X^k)^T P^k = \left \|  \nabla f(X^k)  \right \| \cdot \left \| P^k \right \| {cos}^\theta $
+
+式中,$ \theta $为向量$ \nabla f(X^k) $与$ P^k $的夹角. 当$ \theta = {180}^o, {cos}^\theta = -1$时$  \nabla f(X^k)^T P^k$最小. 此时$  \nabla f(X^k) $与$P^k$方向相反, 从而前面提到的结论得证明. 结合1)与2)我们得到这样的结论: 在$ X^k $ 的附近 __充分小__ 的距离内, 只要沿着$X^k $的梯度$ \nabla f(X^k) $反方向迈进, 可以使函数值下降最快, 这就是我们常听到的___向梯度反方向走下降最快的理论解释. 至此, 我们确定了方向向量$P^k$, 为了更新对极值点的估计, 我们还要确定步长$\lambda$.
+
+
+___3). 步长$\lambda$的求解:___
+
+这里只介绍最优一维搜索算法, 想法比较直观, 即: 使$ \lambda $满足:
+
+$ \nabla f(X^k - \lambda \nabla f(X^k)) = 0 $
+
+也即:
+
+$ \nabla f^T(X^k-\lambda \nabla f(x^k)) \nabla f(X^k) = 0 $
+
+求得的$\lambda$就是负梯度方向上的最佳步长. 此外, 如果$f(X)$具有二阶连续偏导数, 也可在$X^k$做$ f(X^k-\lambda \nabla f(X^k)) $的泰勒展开:
+
+$ f(X^k - \lambda \nabla f(X^k)) \approx f(X^k) - \nabla f^T(X^k)\labnda \nabla f(X^k) + \frac{1}{2}\lambda \nabla f^T(X^k) H(X^k)\lambda \nabla f(X^k) = 0$
+
+得到:
+
+${\lambda}^k = \frac{\nabla f^T(X^k \nabla f(X^k)}{\nabla f^T(X^k H(X^k)\nabla f(X^k}$
+
+假如负梯度方向取的是单位向量$ P^k = -\frac{\nabla f(X^k)}{\left \| \nabla f(X^k) \right \|}$, 那么${\lambda}^k$怎么求呢? 推导如下:
+
+$ \nabla f(X^k + \lambda P^k) \approx f(X^k) + \lambda \nabla f^T(X^k) P^k + \frac{1}{2} \lambda {P^k}^k H(X^k) \lambda P^k = 0$
+
+求得:
+
+$ {\lambda}^k = -\frac{ \nabla f^T(X^k)P^k} { {P^k}^T H(X^k) P^k } $
+
+将上面描述的$ P^k = -\frac{\nabla f(X^k)} {\left \| \nabla f(X^k) \right \|}$带入上式就可得到解:
+
+$ {\lambda}^k = \frac{\nabla f^T(X^k) \nabla f(X^k) \left \| \nabla f(X^k)  \right \|} {\nabla f^T(X^k) H(X^k) \nabla f(X^k)} $
+
+
+___4). 梯度法的计算步骤:___
+
 position_c
+
+
+___5). 草稿手算练习:___
+
+___6). 代码:___
+
+___7). 总结:___
+
 
 
 先对Facial Landmark Detection by Deep Multi-task Learning(2014年的文章)论文做个笔记
