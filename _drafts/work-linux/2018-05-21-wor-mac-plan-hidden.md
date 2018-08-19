@@ -141,96 +141,104 @@ tag: HNotes
 >* 目标检测与跟踪、姿态估计、图像分割涉及的常用算法(cv domain knowkedge)
 >* 搜索C++常用语法技巧
 >* 解决voip源码中的待查
+>*  Vanishing gradient problem. [ref1](https://en.wikipedia.org/wiki/Vanishing_gradient_problem), [ref2](https://www.quora.com/What-is-the-vanishing-gradient-problem)
+>* 内存泄漏分析
+>* 这里要做的一个调研是：ResNet50和VGG19这两个卷积网络的各自优缺点。
+>* [keras中的Embedding和word2vec -> 利用Glove、Google-News以及FastText训练出来的word2Vec模型(pre-trained)以及keras的接口来做任务](http://www.flyml.net/2017/11/26/deepnlp-keras-pre-trained-word2vec-explaination/)。
+>* Dense层的作用
+>* Dropout层的作用
+>* Lambda层的使用以及作用，注意不是python中的那个小写的lambda哦
+>* Activation("tanh")的使用以及作用
+>* 几个优化器的对比`RMSprop`, `Adam`, `Adagrad`, `Adadelta`, 有空手动实现一把
+>* cross entropy的具体算法是什么，即如何利用y_truth和y_predict来计算cross entropy
+>* 最终整理完这份代码后，给自己写出第一份基于keras的框架出来(很重要)
+>* 有了这些直观感受后看一遍keras中文文档
+>* dense graph inference can be approximated by mean field in Conditional Random Fields(CRF)
+>* fully differential inference assuming weighted gaussians as pairwise potentials
+>* messaging passing during inference is a series of learnt convolutions.
+>* soft attention
+>* Rectified Linear Unit operator(ReLU)
+>* 编译、链接问题的搜集(从内部论坛开始，最好自己辅助些代码)
+>* ACK是什么
+>* 为什么atomic也不一定是线程安全的, 以及@synchronized关键字的使用
+>* 如何看ojbdump -h a.out的信息
+>* pimpl模式、桥接模式；思考结构体加字段的问题。
+>*    用pimpl处理这个问题:"把结构体的实现隐藏起来，用一个固定布局的壳对接口进行转发；缺点：多了一次指针访问，多一次内存申请与释放，性能有所损耗, 手工编写plmpl模式代码、枯燥繁重"
+>* C++ 工程实践经验谈-陈硕
+>* 把March里的文档总结在我自己的笔记里
+
 ##### 2018年 7月 6日 星期五 11时43分31秒 CST
+
 >* review singleton代码
 
 ### <a name="Idea"></a>Idea
 
-* 对于实时人脸对齐，能否把/delta x当作attention，形状当作predicate，然后也利用这种转移的思想，同理dynamic MRI能否也利用这个思路。
+>* 对于实时人脸对齐，能否把/delta x当作attention，形状当作predicate，然后也利用这种转移的思想，同理dynamic MRI能否也利用这个思路。
 
 ### <a name="Long-term-plan"></a>长期计划
 
-|    Research               | age |             blog                |
-| ------------              | --- | ------------------------------- |
-| _[Computer Vision](#long-re-cv)_         |  12 | [LearnShare](http://xianbai.me) |
-| __MRI__                   |  32 | [Mike](http://mike.me)          |
-| _Optimization Method_     |  32 | [Mike](http://mike.me)          |
-| __Domain Knowledge __     |  32 | [Mike](http://mike.me)          |
-| _Math_                    |  32 | [Mike](http://mike.me)          |
-| __English__               |  32 | [Mike](http://mike.me)          |
-| _Writing&Blog_            |  32 | [Mike](http://mike.me)          |
+| [Research](#long-research)                | [半年安排](#long-half-year) |             blog                |
+| ------------                              | --- | ------------------------------- |
+| _[Computer Vision](#long-re-cv)_          |  12 | [LearnShare](http://xianbai.me) |
+| __[MRI](#long-re-mri)__                   |  32 | [Mike](http://mike.me)          |
+| _[Optimization Method](#long-re-om)_      |  32 | [Mike](http://mike.me)          |
+| __[Domain Knowledge](#long-re-dk)__       |  32 | [Mike](http://mike.me)          |
+| _[Math](#long-re-math)_                   |  32 | [Mike](http://mike.me)          |
+| __[English](#long-re-eng)__               |  32 | [Mike](http://mike.me)          |
+| _[Writing&Blog](#long-re-wb)_             |  32 | [Mike](http://mike.me)          |
+| __[Other](#long-re-other)__               |  32 | [Mike](http://mike.me)          |
 
-### <a name="long-re-cv"></a>Computer Vision
+### <a name="long-research"></a>Research
 
-* toefl（100以上），GRE至少1300换算现在的分数就是320，最好可以考1500以上
-* 调查mit，斯坦福和宾大的博士课程
-* 调研这几个名校的实验室导师的研究方向，选择后读他们的论文
-* 关注计算机视觉中的顶级会议论文
-* 为发论文做准备
-* 写专利
-* 补数学基础
-* 补计算机基础(编程基础包括:c++，python,matlab语言的学习和信息学的学习;vim、shell、cmake、latex,gdb等工具的使用)
-* 把计算机视觉里的基本书看了，包括：模式识别，机器学习
-*  把非线性规划读透
-*  把自己的笔记，专利，论文等放到个人主页上提高影响力
-*  Vanishing gradient problem. [ref1](https://en.wikipedia.org/wiki/Vanishing_gradient_problem), [ref2](https://www.quora.com/What-is-the-vanishing-gradient-problem)
-*  内存泄漏分析
-*  这里要做的一个调研是：ResNet50和VGG19这两个卷积网络的各自优缺点。
-*  [keras中的Embedding和word2vec -> 利用Glove、Google-News以及FastText训练出来的word2Vec模型(pre-trained)以及keras的接口来做任务](http://www.flyml.net/2017/11/26/deepnlp-keras-pre-trained-word2vec-explaination/)。
-*  Dense层的作用
-*  Dropout层的作用
-*  Lambda层的使用以及作用，注意不是python中的那个小写的lambda哦
-*  Activation("tanh")的使用以及作用
-*  几个优化器的对比`RMSprop`, `Adam`, `Adagrad`, `Adadelta`, 有空手动实现一把
-*  cross entropy的具体算法是什么，即如何利用y_truth和y_predict来计算cross entropy
-*  最终整理完这份代码后，给自己写出第一份基于keras的框架出来(很重要)
-*  有了这些直观感受后看一遍keras中文文档
-*  dense graph inference can be approximated by mean field in Conditional Random Fields(CRF)
-*  fully differential inference assuming weighted gaussians as pairwise potentials
-*  messaging passing during inference is a series of learnt convolutions.
-*  [CRNN用于动态核磁共振成像的论文](https://arxiv.org/pdf/1712.01751.pdf)
-*  soft attention
-*  Rectified Linear Unit operator(ReLU)
-*  编译、链接问题的搜集(从内部论坛开始，最好自己辅助些代码)
-*  ACK是什么
-*  为什么atomic也不一定是线程安全的, 以及@synchronized关键字的使用
-*  如何看ojbdump -h a.out的信息
-*  pimpl模式、桥接模式；思考结构体加字段的问题。
-*     用pimpl处理这个问题:"把结构体的实现隐藏起来，用一个固定布局的壳对接口进行转发；缺点：多了一次指针访问，多一次内存申请与释放，性能有所损耗, 手工编写plmpl模式代码、枯燥繁重"
-*  C++ 工程实践经验谈-陈硕
-*  把March里的文档总结在我自己的笔记里
+#### <a name="long-re-cv"></a>Computer Vision
 
-### <a name="Summary"></a>总结
+>* 关注计算机视觉中的顶级会议论文
+>* OCR
+>* 人脸检测，人脸标记
+#### <a name="long-re-mri"></a> MRI
 
-其实目前我最紧急的任务是: "英语和paper，由于我的成绩特别烂，所以我这两项要突出. 同时把选定导师的论文弄清楚。"
+>* [CRNN用于动态核磁共振成像的论文](https://arxiv.org/pdf/1712.01751.pdf)
 
-___长期任务:___
+#### <a name="long-re-om"></a> Optimization Method
 
-* 博士课程和论文的跟踪，这两点我做的很好的（课程非常熟练，申博前尽量有个初步的新型课题课题）的话，可以较为顺利的进入博士的实验阶段。
-* 我把自己觉得重要的基础，比如：数学、计算机、非线性规划以及模式识别和机器学习相关的基本好书透彻的啃完，那么我就可以全身心专注于我的问题，而不是把大块时间浪费在补充基础上面。
+>* review非线性规划
+>* 与求解相关的理论：__ 凸优化，非线性规划；数值分析
+>* blog上写文章 
 
-___总目标:___
+#### <a name="long-re-dk"></a> Domain Knowledge
 
-* __数学：__ 统计推断，数学分析，矩阵论，测度论＋实分析
-* __与求解相关的理论：__ 凸优化，非线性规划；数值分析
+>* 把计算机视觉里的基本书看了，包括：PR, computer vision
+>* 数字信号处理
+
+#### <a name="long-re-math"></a> Math
+
+>*数学：统计推断，数学分析，矩阵论，测度论＋实分析
+
+#### <a name="long-re-eng"></a> English
+
+>* toefl（100以上），GRE至少1300换算现在的分数就是320，最好可以考1500以上
+
+#### <a name="long-re-wb"></a> Writing& Blog
+
+xxx
+
+#### <a name="long-re-other"></a> Other
+
+>* 调研这几个名校的实验室导师的研究方向，选择后读他们的论文
+>* 调查mit，斯坦福和宾大的博士课程
+
+
 * __tools相关：__ c，c＋＋，opencv；计算机网络；git，shell，vim，linux下的c编程（编译，调试gdb）；makefile的书写；
-* __领域：__ 模式识别，机器学习，人工智能；音视频（数字信号处理）
-* __小领域：__ OCR文字识别，深度学习，VR，AR，人脸检测，人脸标记
-* __学术：__ 跟踪模式识别，机器学习，人工智能的论文；aec相关的文献
-* __英语：__ 六级单词，六级阅读，雅思单词，雅思真题
 
+* 补计算机基础(编程基础包括:c++，python,matlab语言的学习和信息学的学习;vim、shell、cmake、latex,gdb等工具的使用)
 * __音视频__: 数字信号处理，数据通信与网络，语音信号处理，VOIP，webrtc（主要是aec），视频处理（ffmpeg ），图像处理
 * __模式识别、机器学习、人工智能入门知识__: Ng，林轩田的机器学习视频，（周志华的机器学习＋机器学习实战＋统计学习方法），模式分类
 
-___半年安排:___
+### <a name="long-half-year"></a> 半年安排
 
-一、作为面试官, 通常会考察以下几项, 如何评判面试者是否合格, 针对以下各个方面对其提问, 通常会问什么问题? 此外, 什么样的回答是合格, 什么样的回答加分?
+#### <a name="long-hy-cb"></a> 计算机基础
 
-___计算机基础:___
-
-
-___语言 (c/c++)___
-
+___语言 (c/c++):___
 
 >* 位操作，有符号无符号，高低字节（笔试题）
 >* 内存相关（C++不会太问，因为都是自己管理)
@@ -238,8 +246,7 @@ ___语言 (c/c++)___
 >* 虚函数，函数指针
 >* 跨平台、混编，OC上：RN，java：JNI
 
-___操作系统(进程/线程)___ 
-
+___操作系统(进程/线程):___ 
 
 >* runloop机制, C++和OC都有; post_task; 实多进程现无锁化; google：发现死锁的方法
 >* 线程开销
@@ -252,6 +259,7 @@ ___操作系统(进程/线程)___
 
 ___网络(tcp/ip http)___
 
+>* TCP/IP高效编程
 >* 滑窗等理论的细节
 >* 你怎么做长连接
 >* 了解Https协议，了解操作；http协议
@@ -264,7 +272,7 @@ ___性能调优, db___
 >* sql调优
 >* google：ios性能调优工具
 
-___项目相关___
+#### <a name="long-hy-engineer"></a> 项目相关
 
 >* 企业微信框架特点：存储架构、消息架构、UI模型
 >* 客户端整体架构：数据存储、网络请求、中间逻辑有哪几层
@@ -276,12 +284,19 @@ ___项目相关___
 >* 企业微信框架主要做业务的时候带着问题去了解
 >* 客户端最常用设计模式：proxy、observer
 
-___工作方法 ___
+#### <a name="long-hy-work-trick"></a> 工作方法
 
 >* 总体把握，了解各个平台特点，能做些什么，尽量把潜在的问题挖掘出来
 >* 偏向研究的任务: 除了算法本身外业务不熟悉的地方需要及时提出，或者说为了加快进度提出业务资源, 这样做也能更好的给算法确定输入输出边界
 >* 偏向工程的任务多向老员工请教
 >* 在提升综合能力这样的定位下有没有什么高效的执行方法？比如这次我遇到的问题：在算法没完全稳定下来的时候再接入windows平台，里面一个比较小的一个问题都会花费我比较长的时间，甚至里面你有些配置在网络上搜都很难，最后是通过电话沟通才知道怎么操作。windows平台问题最多，但类似的这样的问题在我做其他平台的时候同样会出现.
+
+### <a name="Summary"></a>总结:
+
+以前制定计划多数时候都在闭门造车，对于算法还好，但是在工作中明显吃了亏，所以下半年针对工程经验这一块，结合过来人的经验以及应试制订了半年计划，执行起来很简单，要满足：
+
+>* 每准备一块内容后就要写一篇博文出来，同时以面试题作为应试检验
+>* 博文写好后给有经验的人看一下，然后完善之
 
 <br>
 
