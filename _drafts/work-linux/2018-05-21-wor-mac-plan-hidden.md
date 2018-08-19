@@ -8,7 +8,7 @@ tag: HNotes
 
 ## 介绍
 
-这是作息时间以及计划安排，从读研到现在还不能严格按照时间计划来执行，但还是依然坚持以这种方式来管理自己的学习和工作，第一，起到监督作用，第二，把控方向，第三，提高自律性。
+这是作息时间以及计划安排，从读研到现在还不能严格按照时间计划来执行，但还是依然坚持以这种方式来管理自己的学习和工作，目的在于:第一，起到监督作用，第二，把控方向，第三，提高自律性。
 
 ### 目录
 
@@ -21,42 +21,54 @@ tag: HNotes
 
 ### <a name="This-month"></a>本月安排
 
-*  ___1.___ CNN理论、在face alignment上的应用、在MRI上的应用(7.03~7.08~7.15)
-*  ___2.___ RNN理论、在韵律预测上等相关应用(7.16~7.22)
-*  ___3.___ 对PRML中的非线性方法如: SVM、神经网络完整推倒一遍并做串联(7.23~7.29)
-*  ___4.___ 深度学习相关工程经验：把网络设计与优化、模型压缩与裁剪、之前遇到的问题、前面的笔记, 自己的研究生经历完整的写一篇博文出来(7.30~8.05)
-*  ___5.___ 整理个人主页达到可以对外开放的程度、整理完后制定下一个月的安排(8.06~8.12)
-*  ___6.___ 整理以前做过的题+33道题(8.13~8.15)
+___8.20~.8.27:___
 
+>* 基本求解方法的博文一篇
+>* 阅读C Traps and Pitfalls, 一篇笔记
+>* 阅读Effective C++, 一篇笔记
+>* 初步整理个人站
+>* leetcode 7道题
+>* 计划学习runloop, TCP/IP高效编程
 
-### <a name="Timetable"></a>作息时间1
+___8.28~.9.02:___
 
->*  6:45~7:30-- 起床、英语电台(1-7)
+>* Hessian method, sgd博文一篇
+>* cnn理论、在face alignment上的应用、在MRI上的应用博文初稿一篇
+>* Runloop, tcp/ip笔记,计划阅读源码加深印象
+>* leetcode 7道题, 同时将以前做过的题目进行复习
+>* 搜C++，C的偏门笔试题 
+>* 进一步整理个人站
+
+___9.03~.9.09:___
+
+>* RNN理论、在韵律预测上等相关应用博文一篇
+>* 对PRML中的非线性方法如: SVM、神经网络完整推倒一遍并做串联博文一篇初稿
+>* Runloop, tcp/ip笔记,阅读源码加深印象,找面试题,找博文,记录后归纳总结着手自己博文  
+>* 搜C++，C的偏门笔试题 
+>* leetcode 7道题, 归纳复习
+>* 进一步整理个人站
+>* 调整后15天计划包括不限于下面的条目
+
+___items left:___
+
+>* 深度学习相关工程经验：把网络设计与优化、模型压缩与裁剪、之前遇到的问题、前面的笔记, 自己的研究生经历完整的写一篇博文出来
+>* 整理个人主页达到可以对外开放的程度
+>* 看半年计划，结合前面的完成情况思考接下来的15天怎么实操
+>* 着手文献阅读
+
+### <a name="Timetable"></a>作息时间
+
+>*  7:00~7:30-- 起床、英语电台(1-7)
 >*  7:30~8:00~9:00-- 刷题(两个问题, 一新一旧)[1-7]
 >*  9:00~9:30--吃饭、看邮件、rtx消息[1-7]
->*  9:30~12:10--工作[1-6], 周IDP and 整理消化本周刷的题[7]
->*  12:10~13:10--吃饭、溜达、睡觉[1-7]
->*  13:10~14:10--周IDP[1-7]
->*  14:30~18:00--工作[1-6]、周IDP and 整理消化本周刷的题[7]
->*  18:00~20:00--周IDP[1-7]
->*  20:00~23:00--工作[1-5]，周IDP and 整理消化本周刷的题[6、7]
->*  23:00~23:30--总结今日工作明日任务、清理work_tmp、添加待查和处理待查[1-6]、休息[7]
->*  23:30~00:00--听力(1-6)
->*  00:00~02:30--周IDP(1-6)
-
-作息时间2
-
->*  6:45~7:30-- 起床、英语电台(1-7)
->*  7:30~8:00~9:00-- 刷题(两个问题, 一新一旧)[1-7]
->*  9:00~9:30--吃饭、看邮件、rtx消息[1-7]
->*  9:30~12:10--工作[1-6], 周IDP and 整理消化本周刷的题[7]
+>*  9:30~12:10--工作[1-6], 周plan and 整理消化本周刷的题[7]
 >*  12:10~14:30--吃饭、休息、健身[1-7]
->*  14:30~18:00--工作[1-6]、周IDP and 整理消化本周刷的题[7]
->*  18:00~20:00--周IDP[1-7]
->*  20:00~23:00--工作[1-5]，周IDP and 整理消化本周刷的题[6、7]
->*  23:00~23:30--总结今日工作明日任务、清理work_tmp、添加待查和处理待查[1-6]、休息[7]
+>*  14:30~18:00--工作[1-6]、周plan and 整理消化本周刷的题[7]
+>*  18:00~20:00--周plan[1-7]
+>*  20:00~23:00--工作[1-5]，周plan and 整理消化本周刷的题[6、7]
+>*  23:00~23:30--清理work_tmp、添加问题和处理遗留问题[1-6]、休息[7]
 >*  23:30~00:00--听力(1-6)
->*  00:00~02:30--周IDP(1-6)
+>*  00:00~02:30--周plan(1-6)
 
 ### <a name="Will-search"></a>遗留问题汇总
 
@@ -105,7 +117,7 @@ tag: HNotes
 >* 提代码的时候我把易办的代码冲掉了，调查下原因。
 >* 抓包工具 wireshark
 >* 哥们儿！到底啥是硬解
->* CGI是个啥玩意儿
+>* CGI是啥玩意儿
 >* 为了解决性能问题，现在利用硬编的方式，查询："硬编框架"、"h264 encode"
 >* cpu工具，Time Profile
 >* 保活仍存在问题，就是播放音乐的时候偶尔会保活失败，我要做的事情：a. 能否抢占回来[WXCSysCallback的-(void)handleAudioInterruption:(NSNotification* )notify]
@@ -127,7 +139,9 @@ tag: HNotes
 >*  着手weworkUI界面demo的开发(a. 从头写个最简单的demo, b. 借助storyboard写界面程序)
 >*  Xcode中对项目的配置, 联调
 >*  shell常用操作
+
 ##### Wed Jun 20 23:22:11 CST 2018
+
 >* [刨根问底：对于 self = [super init] 的思考](https://www.jianshu.com/p/9b36e1b636d8)
 >* ios层做 libevent这种等级的操作这么容易, c++应该要写一些代码，一般会用libevent库。所以我的问题就是查libevent是啥玩意, c++怎么实现
 >* ios打点
@@ -139,8 +153,6 @@ tag: HNotes
 >* 机器人平台多传感器标定算法的设计与开发
 >* CUDA/OpenCL优化, FPGA算法开发经验
 >* 目标检测与跟踪、姿态估计、图像分割涉及的常用算法(cv domain knowkedge)
->* 搜索C++常用语法技巧
->* 解决voip源码中的待查
 >*  Vanishing gradient problem. [ref1](https://en.wikipedia.org/wiki/Vanishing_gradient_problem), [ref2](https://www.quora.com/What-is-the-vanishing-gradient-problem)
 >* 内存泄漏分析
 >* 这里要做的一个调研是：ResNet50和VGG19这两个卷积网络的各自优缺点。
@@ -159,11 +171,11 @@ tag: HNotes
 >* soft attention
 >* Rectified Linear Unit operator(ReLU)
 >* 编译、链接问题的搜集(从内部论坛开始，最好自己辅助些代码)
->* ACK是什么
+>* ACK
 >* 为什么atomic也不一定是线程安全的, 以及@synchronized关键字的使用
 >* 如何看ojbdump -h a.out的信息
 >* pimpl模式、桥接模式；思考结构体加字段的问题。
->*    用pimpl处理这个问题:"把结构体的实现隐藏起来，用一个固定布局的壳对接口进行转发；缺点：多了一次指针访问，多一次内存申请与释放，性能有所损耗, 手工编写plmpl模式代码、枯燥繁重"
+>* 用pimpl处理这个问题:"把结构体的实现隐藏起来，用一个固定布局的壳对接口进行转发；缺点：多了一次指针访问，多一次内存申请与释放，性能有所损耗, 手工编写plmpl模式代码、枯燥繁重"
 >* C++ 工程实践经验谈-陈硕
 >* 把March里的文档总结在我自己的笔记里
 
@@ -177,24 +189,26 @@ tag: HNotes
 
 ### <a name="Long-term-plan"></a>长期计划
 
-| [Research](#long-research)                | [半年安排](#long-half-year) |             blog                |
-| ------------                              | --- | ------------------------------- |
-| _[Computer Vision](#long-re-cv)_          |  12 | [LearnShare](http://xianbai.me) |
-| __[MRI](#long-re-mri)__                   |  32 | [Mike](http://mike.me)          |
-| _[Optimization Method](#long-re-om)_      |  32 | [Mike](http://mike.me)          |
-| __[Domain Knowledge](#long-re-dk)__       |  32 | [Mike](http://mike.me)          |
-| _[Math](#long-re-math)_                   |  32 | [Mike](http://mike.me)          |
-| __[English](#long-re-eng)__               |  32 | [Mike](http://mike.me)          |
-| _[Writing&Blog](#long-re-wb)_             |  32 | [Mike](http://mike.me)          |
-| __[Other](#long-re-other)__               |  32 | [Mike](http://mike.me)          |
+| [Research](#long-research)                | [半年安排](#long-half-year)           |
+| ------------                              | ------------------------------        |
+| _[Computer Vision](#long-re-cv)_          | _[计算机基础](#long-hy-cb)_           |
+| __[MRI](#long-re-mri)__                   | __[项目相关](#long-hy-engineer)__     |
+| _[Optimization Method](#long-re-om)_      | _[工作方法](#long-hy-work-trick)_     |
+| __[Domain Knowledge](#long-re-dk)__       | __[]()__                              |
+| _[Math](#long-re-math)_                   | _[]()_                                |
+| __[English](#long-re-eng)__               | __[]()__                              |
+| _[Writing&Blog](#long-re-wb)_             | _[]()_                                |
+| __[Other](#long-re-other)__               | __[]()__                              |
+
 
 ### <a name="long-research"></a>Research
 
 #### <a name="long-re-cv"></a>Computer Vision
 
 >* 关注计算机视觉中的顶级会议论文
->* OCR
 >* 人脸检测，人脸标记
+>* OCR
+
 #### <a name="long-re-mri"></a> MRI
 
 >* [CRNN用于动态核磁共振成像的论文](https://arxiv.org/pdf/1712.01751.pdf)
@@ -202,37 +216,31 @@ tag: HNotes
 #### <a name="long-re-om"></a> Optimization Method
 
 >* review非线性规划
->* 与求解相关的理论：__ 凸优化，非线性规划；数值分析
+>* 与求解相关的理论(凸优化，非线性规划；数值分析)
 >* blog上写文章 
 
 #### <a name="long-re-dk"></a> Domain Knowledge
 
->* 把计算机视觉里的基本书看了，包括：PR, computer vision
->* 数字信号处理
+>* 把计算机视觉里的基本书看了(PR, computer vision)
+>* 数字信号处理教材
 
 #### <a name="long-re-math"></a> Math
 
->*数学：统计推断，数学分析，矩阵论，测度论＋实分析
+>* 数学：统计推断，数学分析，矩阵论，测度论＋实分析
 
 #### <a name="long-re-eng"></a> English
 
->* toefl（100以上），GRE至少1300换算现在的分数就是320，最好可以考1500以上
+>* toefl（100以上），GRE至少1300换算现在的分数就是320，最好1500以上
 
 #### <a name="long-re-wb"></a> Writing& Blog
 
-xxx
+>* all in blog
 
 #### <a name="long-re-other"></a> Other
 
 >* 调研这几个名校的实验室导师的研究方向，选择后读他们的论文
 >* 调查mit，斯坦福和宾大的博士课程
 
-
-* __tools相关：__ c，c＋＋，opencv；计算机网络；git，shell，vim，linux下的c编程（编译，调试gdb）；makefile的书写；
-
-* 补计算机基础(编程基础包括:c++，python,matlab语言的学习和信息学的学习;vim、shell、cmake、latex,gdb等工具的使用)
-* __音视频__: 数字信号处理，数据通信与网络，语音信号处理，VOIP，webrtc（主要是aec），视频处理（ffmpeg ），图像处理
-* __模式识别、机器学习、人工智能入门知识__: Ng，林轩田的机器学习视频，（周志华的机器学习＋机器学习实战＋统计学习方法），模式分类
 
 ### <a name="long-half-year"></a> 半年安排
 
@@ -279,10 +287,11 @@ ___性能调优, db___
 >* UI 到底层，然后再从底层回去，VOIP的信令流程
 >* 企业微信框架特点：存储架构、消息架构、UI模型
 >* 客户端整体架构：数据存储、网络请求、中间逻辑有哪几层
->* UI 到底层，然后再从底层回去，VOIP的信令流程
+>* UI 到底层，然后再从底层回去，VOIP的信令流程, aec
 >* 把投屏的流程： 跨进程通道，如何复用voip协议，把图画出来
 >* 企业微信框架主要做业务的时候带着问题去了解
 >* 客户端最常用设计模式：proxy、observer
+>* 音视频: 数据通信与网络，语音信号处理，视频处理(ffmpeg)
 
 #### <a name="long-hy-work-trick"></a> 工作方法
 
