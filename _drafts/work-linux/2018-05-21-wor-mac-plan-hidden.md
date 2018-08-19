@@ -150,17 +150,20 @@ tag: HNotes
 
 ### <a name="Long-term-plan"></a>长期计划
 
-|    Research  | age |             blog                |
-| ------------ | --- | ------------------------------- |
-| __Computer Vision__       |  12 | [LearnShare](http://xianbai.me) |
-| __MRI__     |  32 | [Mike](http://mike.me)          |
+|    Research               | age |             blog                |
+| ------------              | --- | ------------------------------- |
+| _[Computer Vision](#long-re-cv)_         |  12 | [LearnShare](http://xianbai.me) |
+| __MRI__                   |  32 | [Mike](http://mike.me)          |
+| _Optimization Method_     |  32 | [Mike](http://mike.me)          |
+| __Domain Knowledge __     |  32 | [Mike](http://mike.me)          |
+| _Math_                    |  32 | [Mike](http://mike.me)          |
+| __English__               |  32 | [Mike](http://mike.me)          |
+| _Writing&Blog_            |  32 | [Mike](http://mike.me)          |
 
+### <a name="long-re-cv"></a>Computer Vision
 
-
-我要准备的工作:
-
-* toefl（100以上），GRE至少1300换算现在的分数就是320，最好可以考1500以上, 所以要有计划的开始背托福和GRE的单词
-* 调查mit，斯坦福和宾大的博士课程，学习之
+* toefl（100以上），GRE至少1300换算现在的分数就是320，最好可以考1500以上
+* 调查mit，斯坦福和宾大的博士课程
 * 调研这几个名校的实验室导师的研究方向，选择后读他们的论文
 * 关注计算机视觉中的顶级会议论文
 * 为发论文做准备
