@@ -135,20 +135,340 @@ Rational a, b, c;
 
 ```
 
->* const member function: identify which member functions may be invoked on const objects. 
-1)you know which functions may modify an object and which may not. 2)they make it possi-
-ble to work with const objects. That’s a critical aspect of writing effi-
-cient code, because, as Item 20 explains, one of the fundamental ways
-to improve a C++ program’s performance is to pass objects by refer-
-ence-to- const . That technique is viable only if there are const member
-functions with which to manipulate the resulting const -qualified
-objects. 
+>* const member function: Identify which member functions may be invoked on const objects. 
+1)you know which functions may modify an object and which may not. 2)they make it possible
+to work with const objects. That’s a critical aspect of writing effcient code, because, as
+Item 20 explains, one of the fundamental ways to improve a C++ program’s performance is to
+pass objects by reference-to- const. That technique is viable only if there are const member
+functions with which to manipulate the resulting const-qualified objects. 
 
-position_c: think about it
+>* member functions differing only in their constness can be overloaded, and this is an 
+important feature of C++. 
+>* Compilers insist on bitwise constness. What to do?--- mutable. eg:
 
-#### xxx
+```
+class CTextBlock
+{
+  public:
+    CTextBlock()
+    {
+      text = "Hello";
+    }
 
->* yyy
+    char& operator[](std::size_t position) const
+    {
+      return text[position];
+    }
+
+    std::size_t length() const
+    {
+      if(!len_is_valid)
+      {
+        text_length = strlen(text);
+        len_is_valid = true;
+      }
+
+        return text_length;
+    }
+
+    void print() const
+    {
+      text[0] = 'J';
+      std::cout << text << std::endl;
+    }
+  private:
+    char *text;
+    mutable std::size_t text_length;
+    mutable bool len_is_valid;
+
+};
+
+```
+
+>* non-cast member function call the cast one. 
+
+```
+class TextBlock
+{
+  public:
+    ...
+  const char& operator[](size_t position) const;
+    {
+        ...
+        ...
+        ...
+    }
+  char& operator[](size_t position)
+  {
+    return
+      const_cast<char&>(
+          static_cast<const TextBlock&>(*this)[position]
+          );
+  }
+};
+
+```
+
+>* Declaring something const helps compilers detect usage errors. const can be applied
+to objects at any scope, to function parameters and return types, and to member functions
+as a whole.
+>* Compilers enforce bitwise constness, but you should program using logical constness.
+>* When const and non- const member functions have essentially identical implementations,
+code duplication can be avoided by having the non-const version call the const version. 
+
+___Item 4:___ Make sure that objects are initialized before they’re used. 
+
+>* C++ stipulate that data members of an object are initialized before the 
+body of a constructor is entered. So, it is better to use the member initialization
+list instead of assignments.
+
+```
+
+ABEntry::ABEntry(const std::string& name, const std::string& address,
+const std::list<PhoneNumber>& phones)
+: theName(name),
+theAddress(address),
+// these are now all initializations
+thePhones(phones),
+numTimesConsulted(0)
+{} // the ctor body is now empty
+
+```
+
+Hint: 1). Copy constructor insteads of default constructor with assignments. 2) The  
+The assignment-based version wasted the work of default constructor.
+
+>* No parameter case:
+
+```
+ABEntry::ABEntry()
+: theName(),//call theName’s default ctor;
+theAddress(),//do the same for theAddress and thePhones, but not for numTimesConsulted;
+thePhones(),
+numTimesConsulted(0)
+{}
+
+```
+
+>* A translation unit is the source code giving rise to a single object file. It’s
+basically a single source file, plus all of its #include files. 
+
+>* the relative order of initialization of nonlocal static objects defined in different
+translation units is undefined. How can you be sure that a non-local object will be 
+initialized before another?----Singleton. 
+
+Singleton here realizes that move each non-local static object into its own function,
+where it’s declared static. These functions return references to the objects they contain.
+Clients then call the functions instead of referring to the objects. In other words,
+non-local static objects are replaced with local static objects.
+
+The approach is based on C++’s guarantee that local static objects
+are initialized when the object’s definition is first encountered during
+a call to that function. eg:
+
+```
+class FileSystem { ... };   // as before
+FileSystem& tfs()           // this replaces the tfs object; it could be
+{                           // static in the FileSystem class
+  static FileSystem fs;     // define and initialize a local static object
+  return fs;                // return a reference to it
+}
+
+class Directory { ... };       // as before
+Directory::Directory( params ) // as before, except references to tfs are
+{                              // now to tfs()
+  ...
+  std::size_t disks = tfs().numDisks();
+  ...
+}
+
+Directory& tempDir()    // this replaces the tempDir object; it
+{                       // could be static in the Directory class
+  static Directory td( params ); // define/initialize local static object
+  return td;                     // return reference to it
+}
+
+```
+
+Avoid initialization order problems across translation units by replacing non-local
+static objects with local static objects.
+
+___Item 5:___ Know what functions C++ silently writes and calls. 
+
+>* Compiler will declare copy construcor, copy asignment operator, destructor and default constructor.
+They are public inline.
+
+```
+class Empty{};
+
+```
+
+actually, it is:
+
+```
+class Empty
+{
+  public:
+    Empty(){};//default constructor
+    ~Empty(){};//destructor
+    Empty(const Empty &e){};//copy constructor
+    Empty& operator=(const Empty &e){};//copy assignment operator
+};
+
+```
+
+>* The compiler-generated constructor and copy assignment operator  
+simply copy each non-static data member of the source object over to the target object. 
+>* Explicitly disallow the use of compiler-generated functions you do not want. 
+
+
+```
+class HomeForSale 
+{
+  public:
+      ...
+  private:
+      ...
+      HomeForSale(const HomeForSale&); // declarations only 
+      HomeForSale& operator=(const HomeForSale&);// declarations only 
+};
+
+```
+
+With the above class definition, compilers will thwart client attempts
+to copy HomeForSale objects, and if you inadvertently try to do it in a
+member or a friend function, the linker will complain.
+
+move the link-time error up to compile time:
+
+```
+class Uncopyable 
+{
+  protected:
+    Uncopyable() {}
+    ~Uncopyable() {}
+  private:
+    Uncopyable(const Uncopyable&);
+    Uncopyable& operator=(const Uncopyable&);
+};
+
+class HomeForSale: private Uncopyable // class no longer
+{  // declares copy ctor or
+...// copy assign. operator
+};
+
+
+```
+___Item 7:___ Chapter 2 Declare destructors virtual in polymorphic base classes
+
+
+>* The purpose of virtual functions is to allow customization of derived class implementations 
+>* Any class with virtual functions should almost certainly have a virtual destructor. 
+If a class does not contain virtual functions, that often indicates it is not meant to
+be used as a base class.When a class is not intended to be a base class, making the 
+destructor virtual is usually a bad idea. 
+>* Ensure delete thw whole object. eg:
+
+
+```
+class TimeKeeper {
+public:
+TimeKeeper();
+virtual ~TimeKeeper();//it muset be virtual
+...
+};
+TimeKeeper *ptk = getTimeKeeper();//factory function
+...
+delete ptk;
+// now behaves correctly
+
+```
+
+>* If a class contations a virtual, objects of that type will increase in size. Because
+each class with virtual functions has a virtual table which is an array of function pointers.
+>* Pure virtual functions result in abstract classes---classes that can’t be instantiated 
+(i.e., you can’t create objects of that type).
+>* you must provide a definition for the pure virtual destructor for the way destructors work
+is that the most derived class’s destructor is called first, then the destructor of each
+base class is called. Compilers will generate a call to pure virual destrucor of the abstract
+class from its derived classes’ destructors, so you have to be sure to provide a body for
+the function. If you don’t, the linker will complain.
+>* Polymorphic base classes should declare virtual destructors. If a class has any virtual 
+functions, it should have a virtual destructor. Classes not designed to be base classes or not designed to be used
+polymorphically should not declare virtual destructors. 
+
+
+___Item 8:___ Prevent exceptions from leaving destructors. 
+
+>* Process exception in destructor. Destructors should never emit exceptions. If functions
+called in a destructor may throw, the destructor should catch any exceptions, then swallow
+them or terminate the program. If class clients need to be able to react to exceptions thrown
+during an operation, the class should provide a regular (i.e., non-destructor) function that
+performs the operation. 
+
+Case 1
+
+```
+DBConn::~DBConn()
+{
+  try
+  {
+    db.close();
+  }
+  catch(...)
+  {
+    std::abort();//Terminate the program if close throws
+  }
+}
+
+```
+
+Moving the responsibility for calling close from DBConn ’s destructor to
+DBConn ’s client
+
+```
+
+class DBConn 
+{
+  public:
+  ...
+   void close()
+  {
+   db.close();
+   closed = true;
+  }
+
+   ~DBConn()
+  {
+    if (!closed) 
+    {
+      try 
+      {
+        db.close();
+      }
+      catch (...) 
+      {
+        make log entry that call to close failed;
+        ...
+      }
+    }
+  }
+}
+
+```
+
+___Item 9:___ Never call virtual functions during construction or destruction. 
+
+
+
+position_c: 编译器为NameObject<int> 
+
+#### confuse me
+
+>* pass objects by reference-to-const explained as item 20, and it can be ensured by that
+const member functions manipulate the resulting const-qualified objects.
+>* local static object replace non-local static object by calling function(item 4)
+>* Item6, what are the subtleties of Uncopyable
 
 ### Review:
 
