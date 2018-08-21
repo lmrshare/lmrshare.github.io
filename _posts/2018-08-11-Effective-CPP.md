@@ -461,7 +461,7 @@ ___Item 9:___ Never call virtual functions during construction or destruction.
 
 
 
-position_c: 编译器为NameObject<int> 
+position_c: Never call virtual functions during construction or destruction. 
 
 #### confuse me
 
