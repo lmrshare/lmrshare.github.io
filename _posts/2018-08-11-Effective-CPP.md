@@ -460,8 +460,129 @@ class DBConn
 ___Item 9:___ Never call virtual functions during construction or destruction. 
 
 
+>* Don’t call virtual functions during construction or destruction, because
+such calls will never go to a more derived class than that of the currently
+executing constructor or destructor. 
 
-position_c: Never call virtual functions during construction or destruction. 
+___Item 10:___ Have assignment operators return a reference to *this . 
+
+>* To realize the chain of assignments. this is only a convention.
+
+___Item 11:___ Handle assignment to self in operator= . 
+
+>* Self-asignment-safe, here is a not-safe case
+
+```
+
+class Bitmap{}
+
+class Widget
+{
+  private:
+    Bitmap *pb;
+};
+
+Widget& Widget::operator=(const Widget& rhs)
+{
+  delete pb;//error, you should add identif test: if(this == &rhs) return *this;
+  pb = new Bitmap(*rhs.pb);
+  return *this;
+}
+
+
+```
+
+___Item 12:___ Copy all parts of an object. 
+
+>* Copy functions for derived class
+
+```
+
+PriorityCustomer::PriorityCustomer(const PriorityCustomer& rhs)
+: Customer(rhs), // invoke base class copy ctor
+priority(rhs.priority)
+{
+  logCall("PriorityCustomer copy constructor");
+}
+
+PriorityCustomer& PriorityCustomer::operator=(const PriorityCustomer& rhs)
+{
+  logCall("PriorityCustomer copy assignment operator");
+  Customer::operator=(rhs); // assign base class parts
+  priority = rhs.priority;
+  return *this;
+}
+
+```
+
+>* eliminate code duplication in copy constructors and copy assignment operators: 
+if you find that your copy constructor and copy assignment operator have similar
+code bodies, eliminate the duplication by creating a third member function that
+both call. Such a function is typically private and is often named init. 
+
+
+Chapter 3: Resource management
+
+___Item 13:___ Use objects to manage resources
+
+>* Common resources: memory, file descriptors, mutex locks, fonts and brushes in graphical
+user interfaces (GUIs), database connections, and network sockets. 
+>* Regardless of the resource, it’s important that it be released when you’re finished with it. 
+>* Ensure that resources are released when control leaves that block or function---auto_ptr  
+>* auto_ptr: A pointer-like object (a smart pointer). Its destructor automatically calls delete 
+on what it points to. 
+
+```
+
+std::auto_ptr<Invsetment> pInv(createInvestment());
+
+```
+
+keypoints:
+
+>* Resources are acquired and immediately turned over to resource-managing objects. 
+>* Resource-managing objects use their destructors to ensure that resources are released. 
+>* auto_ptr and RCSP(reference-counting-smart-pointer) 
+>* tr1::shared_ptr is usually the better choice than std::auto_ptr, because its behavior
+when copied is intuitive. Copying an auto_ptr sets it to null. 
+>* A class’s destructor (regardless of whether it is compiler-generated or user-defined)
+automatically invokes the destructors of the class’s non-static data members.  
+
+
+___Item 15:___ Provide access to raw resources in resource-managing classes.
+
+>* get, ->, *
+>* conversion functions
+
+```
+FontHandle get() const { return this->f; } // explicit conversion function
+
+operator FontHandle() const { return this->f; }  // implicit conversion function
+
+```
+
+>* RAII classes exist to ensure that a particular action — resource release — takes place.  
+
+___Item 16:___ Use the same form in corresponding uses of new and delete .
+
+
+>* new: 1. allocate memory, 2. constructor 
+>* delete: 1. destructor 2. deallocate memory
+
+
+___Item 17:___ Store new ed objects in smart pointers in standalone statements.
+
+
+>* tr1::shared_ptr ’s constructor taking a raw pointer is explicit , so there’s 
+no implicit conversion from the raw pointer to the tr1::shared_ptr. 
+>* Although we’re using object-managing resources everywhere here, this call may
+leak resources. 
+
+Chapter 4
+
+
+
+position_c: Chapter4
 
 #### confuse me
 
