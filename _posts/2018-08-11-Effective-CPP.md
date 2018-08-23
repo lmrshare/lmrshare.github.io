@@ -580,6 +580,22 @@ leak resources.
 
 Chapter 4
 
+___Item 18:___ Make interfaces easy to use correctly and hard to use incorrectly.
+
+
+>* Cross-dll-problem: Use custom-deleters supported tr1::shared_ptr to solve the problem.
+>* shared_ptr in Boost
+
+___Item 19:___ Treat class design as type design.
+
+
+>* 12 problems
+
+___Item 20:___ Prefer pass-by-reference-to-const to pass-by-value.
+
+
+
+
 
 
 position_c: Chapter4
