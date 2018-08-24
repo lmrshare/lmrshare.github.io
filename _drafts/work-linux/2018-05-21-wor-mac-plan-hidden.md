@@ -311,6 +311,7 @@ ___性能调优, db___
 ### temp
 
 https://askubuntu.com/questions/779095/install-virtualbox-on-ubuntu-16-04-lts
+https://websiteforstudents.com/install-virtualbox-latest-on-ubuntu-16-04-lts-17-04-17-10/
 
 <br>
 
