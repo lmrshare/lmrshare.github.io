@@ -189,16 +189,16 @@ ___items left:___
 
 ### <a name="Long-term-plan"></a>长期计划
 
-| [Research](#long-research)                | [半年安排](#long-half-year)           |
-| ------------                              | ------------------------------        |
+| [Research](#long-research)                  | [半年安排](#long-half-year)           |
+| ------------                                | ------------------------------        |
 | _[Computer Vision](#long-re-cv)_            | _[计算机基础](#long-hy-cb)_           |
-| __[MRI](#long-re-mri)__                       | __[项目相关](#long-hy-engineer)__     |
+| __[MRI](#long-re-mri)__                     | __[项目相关](#long-hy-engineer)__     |
 | _[Optimization Method](#long-re-om)_        | _[工作方法](#long-hy-work-trick)_     |
-| __[Domain Knowledge](#long-re-dk)__           | __[-]()__                             |
+| __[Domain Knowledge](#long-re-dk)__         | __[-]()__                             |
 | _[Math](#long-re-math)_                     | _[-]()_                               |
-| __[English](#long-re-eng)__                   | __[-]()__                             |
+| __[English](#long-re-eng)__                 | __[-]()__                             |
 | _[Writing&Blog](#long-re-wb)_               | _[-]()_                               |
-| __[Other](#long-re-other)__                   | __[-]()__                             |
+| __[Other](#long-re-other)__                 | __[-]()__                             |
 
 
 ### <a name="long-research"></a>Research
