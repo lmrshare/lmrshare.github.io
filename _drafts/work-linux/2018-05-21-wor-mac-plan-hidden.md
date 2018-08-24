@@ -308,6 +308,10 @@ ___性能调优, db___
 >* 每准备一块内容后就要写一篇博文出来，同时以面试题作为应试检验
 >* 博文写好后给有经验的人看一下，然后完善之
 
+### temp
+
+https://askubuntu.com/questions/779095/install-virtualbox-on-ubuntu-16-04-lts
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
