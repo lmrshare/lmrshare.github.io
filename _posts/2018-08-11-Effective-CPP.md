@@ -594,11 +594,227 @@ ___Item 19:___ Treat class design as type design.
 ___Item 20:___ Prefer pass-by-reference-to-const to pass-by-value.
 
 
+>* If you peek under the hood of a C++ compiler, you’ll find that references
+are typically implemented as pointers, so passing something by reference 
+usually means really passing a pointer.
+>* Built-in types, iterators and function objects of STL---pass-by-value(not by reference)
 
 
+___Item 21:___ Don’t try to return a reference when you must return an object.
+
+___Item 22:___ Declare data members private
 
 
-position_c: Chapter4
+>* From an encapsulation point of view, there are really only two access levels:
+private (which offers encapsulation) and everything else (which doesn’t).
+>* Protected members can be accessed by derived classes.
+
+___Item 23:___ Prefer non-member non-friend functions to member functions.
+
+>* encapsulation, packaging flexibility, and functional extensibility. 
+
+___Item 24:___ Declare non-member functions when type conversions should apply
+to all parameters.
+
+>* non-explicit constructor allow implicit type conversion
+>* To support mixed-mode arithmetic, make operator a non-memeber function. 
+>* If you need type conversions on all parameters to a function (including
+the one that would otherwise be pointed to by the this pointer), the function
+must be a non-member. 
+
+___Item 25:___ Consider support for a non-throwing swap .
+
+>* swap function is a mainstay of exception-safe programming. 
+>* Specialization for function, eg:
+
+```
+template<>
+void swap<Widget>(Widget& lhs, Widget& rhs)
+```
+
+>* Partially specialize a function template: simply add an overload, eg:
+
+```
+namespace std
+{
+  template<typename T>
+    void swap(Widget<T>& lhs, Widget<T>& rhs)//an overloading of std::swap
+    {
+      lhs.swap(rhs);
+    }
+}
+```
+
+>* if you want to have your class-specific version of swap called in as many
+contexts as possible (and you do), you need to write both a non-member version
+in the same namespace as your class and a specialization of std::swap. 
+
+Chapter5 Implementations
+
+___Item 26:___ Postpone variable definitions as long as possible.
+
+>* you’re better off postponing encrypted ’s definition until you know you’ll need it.
+>* replace default contructor and assignemnt with copy constructor
+>* avoid constructing and destructing unneeded objects, and avoid unnecessary default constructions. 
+
+___Item 27:___ Minimize casting
+
+casting syntax:
+
+```
+//(C-style cast)
+(T) expression // cast expression to be of type T
+
+//(Function-style cast)
+T( expression ) // cast expression to be of type T
+
+//(C++-style cast)
+const_cast<T>( expression )             //cast away the constness of objects 
+dynamic_cast<T>( expression )           //safe downcasting
+reinterpret_cast<T>( expression )       //low-level cast(eg int* to int)
+static_cast<T>( expression )            //force implicit conversions, eg: non-const -> const  
+
+```
+
+>* a single object (e.g., an object of type Derived ) might have more than one address
+(e.g., its address when pointed to by a Base* pointer and its address when pointed to by
+a Derived* pointer). That can’t happen in C. It can’t happen in Java. It can’t happen in C#.
+It does happen in C++. 
+
+>* A case: What you might not expect is that it does not invoke that function on the current
+object! Instead, the cast creates a new, temporary copy of the base class part of *this ,
+then invokes onResize on the copy! 
+
+```
+class SpecialWindow: public Window 
+{
+  public:
+    virtual void onResize() 
+    {
+      static_cast<Window>(*this).onResize();
+      ...
+    }
+
+}
+```
+Rectification:
+
+```
+class SpecialWindow: public Window 
+{
+  public:
+    virtual void onResize() 
+    {
+      Window::onResize()  //call Window::onResize on *this
+      ...
+    }
+
+}
+
+```
+>* Prefer C++-style casts to old-style casts.
+
+___Item 28:___ Avoid returning “handles” to object internals.
+
+
+>* case
+
+```
+
+public:
+...
+Point& upperLeft() const { return pData->ulhc; }
+Point& lowerRight() const { return pData->lrhc; }
+...
+
+```
+
+you can modify the points by reference, modify it by
+
+```
+
+public:
+...
+const Point& upperLeft() const { return pData->ulhc; }
+const Point& lowerRight() const { return pData->lrhc; }
+...
+
+```
+
+>* Actually, It doesn’t matter whether the handle is a pointer, a reference, or an iterator.
+It doesn’t matter whether it’s qualified with const. It doesn’t matter whether the member
+function returning the handle is itself const. All that matters is that a handle is being
+returned, because once that’s being done, you run the risk that the handle will outlive
+the object it refers to. 
+
+___Item 29:___ Strive for exception-safe code.
+
+>* Use mutex for concurrency control 
+>* Use Lock class, which is part of resource manage classes, as a way to ensure that mutexes are released.
+>* Exception-safe functions
+>* pimpl idiom
+>* side effects
+>* The strong guarantee can often be implemented via copy-and-swap, but the strong guarantee
+is not practical for all functions.
+>* A function can usually offer a guarantee no stronger than the weakest guarantee of the
+functions it calls---pregnant theory
+
+___Item 30:___ Understand the ins and outs of inlining.
+
+>* The idea behind an inline function is to replace each call of that function with its
+code body. In statistics to see that this is likely to increase the size of your object
+code. 
+>* Even with virtual memory, inline-induced code bloat can lead to additional paging,
+a reduced instruction cache hit rate, and the performance penalties that accompany
+these things. 
+>* Member functions and friend functions in a class are implicitly declared inline.
+
+position_c: Chapter5
+
+___Item 31:___ Minimize compilation dependencies between files.
+
+>* Use forward declaration to split interface and implementation to minimize compilation
+dependencied
+>* make your header files self-sufficient whenever it’s practical, and when it’s not,
+depend on declarations in other files, not definitions. 
+
+Chapter 6 Inheritance and Object-Oriented Design
+
+>* public inheritance means “is-a,” 
+>* a virtual function means “interface must be inherited” 
+>* a non-virtual function means “both interface and implementation must be inherited.” 
+
+___Item 32:___ Make sure public inheritance models “is-a.”
+
+___Item 33:___ Avoid hiding inherited names.
+
+>* scope: derived member function with the same name with base class will hide the member
+function in the base class.
+>* inheritance and name hiding
+* To make hidden names visible again, employ using declarations or forwarding functions. 
+
+___Item 34:___ Differentiate between inheritance of interface and inheritance of implementation.
+
+>* Make a choice among these options: inherit only the interface, inherit interface and implementation with overriding,
+  and inherit interface and implementation withut overriding.
+>* You can not define an object of abstract class, which has pure virtual function.
+>* Pure virtual function: 1. must be redeclared by any concrete class that inherits them
+2. Pure vitual funcions typically have no definition in abstract classes.
+> The purpose of declaring a pure virtual function is to have derived classes inherit a
+function interface only.
+>* virtual functions: The purpose of declaring a simple virtual function is to have derived
+classes inherit a function interface as well as a default implementation. 
+>* non-virtual functions: The purpose of declaring a non-virtual function is to have derived
+classes inherit a function interface as well as a mandatory implementation.
+>* non-virtual functions means invariant.
+>* Under public inheritance, derived classes always inherit base class interfaces. 
+
+___Item 35:___ Consider alternatives to virtual functions.
+
+
+#### TODO
+
+>* Search inline video, and code about item 31
 
 #### confuse me
 
@@ -606,6 +822,15 @@ position_c: Chapter4
 const member functions manipulate the resulting const-qualified objects.
 >* local static object replace non-local static object by calling function(item 4)
 >* Item6, what are the subtleties of Uncopyable
+>* item 21
+>* why const Rational operator*(const Rational& rhs) const;(item 3, 20, 21)
+>* the comparison between member function, friend function and non-member function
+>* pimpl(pointer to implementation)
+>* the trip of using st::swap(), page 132
+>* c++ style cast, especially dynamic_casts
+>* explicit
+>* Use forward to split interface and implementation.
+>* I did not review all details in item 31, next time focus on code and blogs.
 
 ### Review:
 
