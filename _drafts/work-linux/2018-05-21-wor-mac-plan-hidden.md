@@ -189,16 +189,16 @@ ___items left:___
 
 ### <a name="Long-term-plan"></a>长期计划
 
-| [Research](#long-research)                | [半年安排](#long-half-year)           |
-| ------------                              | ------------------------------        |
+| [Research](#long-research)                  | [半年安排](#long-half-year)           |
+| ------------                                | ------------------------------        |
 | _[Computer Vision](#long-re-cv)_            | _[计算机基础](#long-hy-cb)_           |
-| __[MRI](#long-re-mri)__                       | __[项目相关](#long-hy-engineer)__     |
+| __[MRI](#long-re-mri)__                     | __[项目相关](#long-hy-engineer)__     |
 | _[Optimization Method](#long-re-om)_        | _[工作方法](#long-hy-work-trick)_     |
-| __[Domain Knowledge](#long-re-dk)__           | __[-]()__                             |
+| __[Domain Knowledge](#long-re-dk)__         | __[-]()__                             |
 | _[Math](#long-re-math)_                     | _[-]()_                               |
-| __[English](#long-re-eng)__                   | __[-]()__                             |
+| __[English](#long-re-eng)__                 | __[-]()__                             |
 | _[Writing&Blog](#long-re-wb)_               | _[-]()_                               |
-| __[Other](#long-re-other)__                   | __[-]()__                             |
+| __[Other](#long-re-other)__                 | __[-]()__                             |
 
 
 ### <a name="long-research"></a>Research
@@ -307,6 +307,11 @@ ___性能调优, db___
 
 >* 每准备一块内容后就要写一篇博文出来，同时以面试题作为应试检验
 >* 博文写好后给有经验的人看一下，然后完善之
+
+### temp
+
+https://askubuntu.com/questions/779095/install-virtualbox-on-ubuntu-16-04-lts
+https://websiteforstudents.com/install-virtualbox-latest-on-ubuntu-16-04-lts-17-04-17-10/
 
 <br>
 
