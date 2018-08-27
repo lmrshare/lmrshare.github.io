@@ -56,7 +56,7 @@ $ \nabla f^T(X^k-\lambda \nabla f(x^k)) \nabla f(X^k) = 0 $
 
 求得的$\lambda$就是负梯度方向上的最佳步长. 此外, 如果$f(X)$具有二阶连续偏导数, 也可在$X^k$做$ f(X^k-\lambda \nabla f(X^k)) $的泰勒展开:
 
-$ f(X^k - \lambda \nabla f(X^k)) \approx f(X^k) - \nabla f^T(X^k)\labnda \nabla f(X^k) + \frac{1}{2}\lambda \nabla f^T(X^k) H(X^k)\lambda \nabla f(X^k) = 0$
+$ f(X^k - \lambda \nabla f(X^k)) \approx f(X^k) - \nabla f^T(X^k)\lambda \nabla f(X^k) + \frac{1}{2}\lambda \nabla f^T(X^k) H(X^k)\lambda \nabla f(X^k) = 0$
 
 得到:
 
