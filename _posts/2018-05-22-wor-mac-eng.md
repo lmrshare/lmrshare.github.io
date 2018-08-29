@@ -135,6 +135,33 @@ ___The company's management is prepared to sit out the strike rather than agree 
  >* 等待结束、不采取任何行动
  >* 坚持以待结束
 
+### 4. 忽悠我？
+
+___It was a fake-out to make sure that their kids got a spot.___
+
+那就是忽悠咱们的，好让他们自己的孩子有上学的名额.
+
+>* fake sb. out: 通过做一些别人没有意料到的事情，去欺骗，误导，捉弄某个人 eg:
+>* it was a fake-out to make sure that...
+
+___The defender faked me out and then went around me to score an easy goal.___
+
+这个防守队员做了个假动作，把我晃过去了，想轻易进球。
+
+___You really faked me out. I never would have guessed it was you.___
+
+你真是把我骗到了，我真没想到会是你。
+
+>* fake-out: 忽悠、欺骗. eg:
+>* deliberate: adj. 故意的；深思熟虑的；从容的 vt. 仔细考虑；商议
+>* misrepresentation: n. 歪曲；误传
+>* spot: n. 地点、斑点、名额
+
+___My friends faked me out for a whole day, letting me think that they had forgotten my birthday.___
+
+我的那帮朋友骗了我一整天，还让我以为他们早就忘记了我的生日。
+
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 

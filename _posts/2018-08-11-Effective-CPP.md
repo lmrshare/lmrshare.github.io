@@ -809,8 +809,11 @@ classes inherit a function interface as well as a mandatory implementation.
 >* non-virtual functions means invariant.
 >* Under public inheritance, derived classes always inherit base class interfaces. 
 
-___Item 35:___ Consider alternatives to virtual functions.
+___Item 35:___ tr1::function 完成strategy(page: 205).
 
+>* A non-pure virtual function suggests that there is a default implementation
+
+NVI
 
 #### TODO
 
@@ -831,6 +834,7 @@ const member functions manipulate the resulting const-qualified objects.
 >* explicit
 >* Use forward to split interface and implementation.
 >* I did not review all details in item 31, next time focus on code and blogs.
+>* forward declaration
 
 ### Review:
 
