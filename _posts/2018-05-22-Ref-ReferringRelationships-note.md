@@ -3,7 +3,7 @@ layout: post
 title: "Proj-这么多人，AI怎么知道你说的是哪一个"
 date: 2018-4-30
 description: "ReferringRelationship项目笔记1"
-tag: Proj
+tag: Research
 ---
 
 最近看了一篇视觉跟语义结合的文章，感觉比较有意思，同时也想看看涉及到语义的任务做的效果怎么样。接下来会写一系列的笔记把这篇文章的理论、代码整理一下。

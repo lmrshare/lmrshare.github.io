@@ -146,11 +146,11 @@ ___It was a fake-out to make sure that their kids got a spot.___
 
 ___The defender faked me out and then went around me to score an easy goal.___
 
-这个防守队员做了个假动作，把我晃过去了，想轻易进球。
+这个防守队员做了个假动作，把我晃过去了，想轻易进球.
 
 ___You really faked me out. I never would have guessed it was you.___
 
-你真是把我骗到了，我真没想到会是你。
+你真是把我骗到了，我真没想到会是你.
 
 >* fake-out: 忽悠、欺骗. eg:
 >* deliberate: adj. 故意的；深思熟虑的；从容的 vt. 仔细考虑；商议
@@ -159,8 +159,50 @@ ___You really faked me out. I never would have guessed it was you.___
 
 ___My friends faked me out for a whole day, letting me think that they had forgotten my birthday.___
 
-我的那帮朋友骗了我一整天，还让我以为他们早就忘记了我的生日。
+我的那帮朋友骗了我一整天，还让我以为他们早就忘记了我的生日.
 
+### 5. 我真得好好感谢一下你
+
+___I gotta hand it to you, honey. Twenty-four hours without video games, he’s already contributing to society.___ 
+
+亲爱的，这可都是你的功劳啊！24小时没玩游戏，他现在都开始造福社会了.
+
+___I gotta hand it to you, honey.___
+亲爱的，这可都是你的功劳啊.
+亲爱的，你可真棒.
+
+>* hand it to sb 因为某个人做了某事，所以表扬Ta，夸赞Ta
+
+___Still, you have to hand it to Jenny—she sure knows how to throw a party.___
+
+你还是得好好感谢一下Jenny，她确实对举办派对有一套.
+
+___I've got to hand it to you. The company has really turned the corner since you started managing the accounts.___
+
+我真得好好感谢一下你，自从你来管理公司账目之后，公司运营状况确实有改善.
+
+>*turn the corner: to pass a very important point in an illness or a difficult situation and begin to improve(在艰难的境况里，扛过一个关键的时期，开始变好。)
+
+___They cut corners!___
+
+他们抄近路了！
+
+___To be competitive, they paid low wages and cut corners on health and safety.___
+
+为了在市场上更具竞争力，他们把工资压到很低，并且丝毫不考虑员工的健康和安全.
+
+
+___Take your time. Don't cut corners and follow instructions.___
+
+慢慢来别着急，别偷懒走捷径，按照指示一步步来.
+
+___Don't cut corners on this project—it has to be done thoroughly, no matter the cost.___
+
+在这个项目上，可别偷工减料赶进度，必须得认认真真完成，不计代价.
+
+___I won't cut corners just to save money. I put quality first.___
+
+我不会为了省钱而抄近道，我总是把质量放在第一位.
 
 <br>
 

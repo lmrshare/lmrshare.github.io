@@ -769,8 +769,6 @@ a reduced instruction cache hit rate, and the performance penalties that accompa
 these things. 
 >* Member functions and friend functions in a class are implicitly declared inline.
 
-position_c: Chapter5
-
 ___Item 31:___ Minimize compilation dependencies between files.
 
 >* Use forward declaration to split interface and implementation to minimize compilation
@@ -813,7 +811,115 @@ ___Item 35:___ tr1::function 完成strategy(page: 205).
 
 >* A non-pure virtual function suggests that there is a default implementation
 
-NVI
+>* NVI(non-tirtual interface) is a particular manifestation of the Template Method(not the C++ templates). the non-virtual function is called the virtual function's wrapper. 
+>* NVI can provide "do before stuff" and "do after stuff" in the code.
+
+Strategy pattern(pass a function pointer to constructor here)
+
+```
+class GameCharacter 
+{
+	public:
+	typedef int (*HealthCalcFunc)(const GameCharacter&);
+	explicit GameCharacter(HealthCalcFunc hcf = defaultHealthCalc)
+	: healthFunc(hcf )
+	{}
+	int healthValue() const
+	{ return healthFunc(*this); }
+	...
+	private:
+	HealthCalcFunc healthFunc;
+};
+
+```
+The Strategy Pattern via tr1::function
+
+```
+class GameCharacter; // as before
+int defaultHealthCalc(const GameCharacter& gc); // as before
+
+class GameCharacter 
+{
+	public:
+	// HealthCalcFunc is any callable entity that can be called with
+	// anything compatible with a GameCharacter and that returns anything
+	// compatible with an int; see below for details
+	typedef std::tr1::function<int (const GameCharacter&)> HealthCalcFunc;// int (const GameCharacter&) is target signature of this tr1::function instanfiation
+	explicit GameCharacter(HealthCalcFunc hcf = defaultHealthCalc)
+	: healthFunc(hcf )
+	{}
+	int healthValue() const
+	{ return healthFunc(*this); }
+	...
+	private:
+	HealthCalcFunc healthFunc;
+};
+
+```
+
+```
+short calcHealth(const GameCharacter&); // health calculation
+																				// function; note
+																				// non-int return type
+struct HealthCalculator 
+{																							 // class for health
+		int operator()(const GameCharacter&) const // calculation function object
+		{ ... }									
+};
+
+class GameLevel 
+{
+	public:
+	float health(const GameCharacter&) const; // health calculation
+	...																			  // mem function; note
+};																					// non-int return type
+
+class EvilBadGuy: public GameCharacter 
+{ // as before
+...
+};
+
+class EyeCandyCharacter: public GameCharacter 
+{																						// another character
+... 																				// type; assume same
+};  																				// constructor as
+
+// EvilBadGuy
+// character using a health calculation function
+EvilBadGuy ebg1(calcHealth); 
+
+// character using a health calculation function object
+EyeCandyCharacter ecc1(HealthCalculator()); 
+
+// character using a health calculation member function
+GameLevel currentLevel;
+EvilBadGuy ebg2( 
+std::tr1::bind(&GameLevel::health, currentLevel, _1) 
+);
+```
+>* NVI, Template Method, Strategy, tr1::function version Stategy, classic strategy pattern
+
+___Item 36:___ Never redefine an inherited non-virtual function.
+
+>* Virtual functions are dynamically bound.
+>* recall the item 7, which depicts destructor of base class should be virtual. so, it is similar.
+
+___Item 37:___ Never redefine a function's inherited default parameter value.
+
+Recall:
+
+>* Dynamic type indicates how it __will__ behave. Virtual functions are dynamically bound, meaning that the particular function called is determined by the dynamic
+type of the object through which it’s invoked.
+
+>* Never redefine an inherited default parameter value, because default parameter values are statically bound, while virtual functions the only functions you should
+be redefining are dynamically bound.
+
+___Item 38:___ Model “has-a” or “is-implemented-in-termsof” through composition.
+
+>* Composition: means either "has-a" or "is-implemented-in-terms-of"
+
+
+position_c: Item 38 en: 184, ch:216
 
 #### TODO
 
