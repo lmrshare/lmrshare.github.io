@@ -187,8 +187,195 @@ $$
 }$, 显然经过n次迭代即可收敛到$X^{
 T
 }$, 结论得证. 我认为单纯了证明这个定理只需要向量组是向量空间的基即可, 并不需要满足$A$共轭. 然而, 我这个证明相比较教材中的证明是有缺陷的, 即: 没办法给出迭代中${\lambda}^k$的具体
-解法, 而教材的证明既给出了证明, 又给出了${\lambda}^k$的一种解法---最优一维搜索, 而这种解法在"$P^{i}$是$A$共轭的"条件下使得$ \nabla f(X^n)$为0，进而得到了极小值点. 因此教材中的证明
-既给出了理论验证又给出了求解方案.(后续我会给出更详细的解释)
+解法, 而教材的证明既给出了证明, 又给出了${\lambda}^k$的一种解法---最优一维搜索, 而这种解法在"$P^{i}$是$A$共轭的"条件下使得$ \nabla f(X^n)$为0，进而得到了极小值点. 因此教材中的证明既给出了理论验证又给出了求解方案.(对于这个细节我会单独在另外一篇博客里给出更详细的解释) 说到了这, 共轭方向法也算是呼之欲出了, 即: 如果给定任意已知的$A$的共轭向量组$ { \begin{Bmatrix} P^{(0)}, P^{(1)}, ..., P^{(n-1)} \end{Bmatrix} } $, 那么只要按照如下方式迭代就可以求得正定二次函数的极小值:
+
+$$
+\begin{cases}
+X^{(k+1)} = X^{(k)} + \lambda_{k} P^{k}, k = 0, 1, 2, ... ,n-1 \\
+\lambda_{k}: \min_{\lambda} f(X^{(k)} + \lambda P^{(k)}) \text{
+, 最优一维搜索(前面已铺垫)
+}\\
+X^{(n)} =  X^{\star}
+\tag{4}
+\end{cases}
+$$
+
+这就是共轭方向法的内容了, 记住两个关键点即可: 1). 共轭基 2). 用最优一纬搜索求$\lambda$. 当然, 到这里就有了新问题了: 具体怎么获得满足要求的基, 这里只是点明了对基的要求, 而没有明确具体怎么获得这样的基? 而接下来讨论的共轭梯度法就是一种既可求基又可求$\lambda$的可编程实现的方法.
+
+### <a name="Conjugate-Gradient"></a>共轭梯度法(Conjugate-Gradient---CG)
+
+&emsp;&emsp;由前面的描述我们知道共轭梯度法(CG)和共轭方向法(CD)的关系: CG是在CD框架下的一种具体解法, 直白点的描述就是: 前者能写代码, 后者只能看看. 接下来的内容就是给出CG的推导过程. 首先, 回顾下正定二次函数问题的极小值特点: 1. 唯一存在; 2. 其理论解为: $X^{\star} = -A^{-1}B$.(看到这是否有种脱裤子放屁的感觉:"既然都知道解了, 为毛还搞些有的没的". 其实有一丢丢基础的人都清楚: $A^{-1}$是很难求的, 因此也就有人会想到利用稀疏化技术对其简化, 比如我以前做的CS问题就涉及这方面的内容. 不过, 即使知道, 我初学的时候还偶尔会脑抽犯嘀咕.), 因此, 对于这个任务只要按照方向梯度法执行固定的步数(找到极值点)就可以了. 那么CG是如何工作的呢? CG是怎么满足CD的呢? 仍然先把结论抛出来: 在一组正交基中寻找$A$共轭的基, 基找完了算法也就结束了, 我对比了下这里基的找法同拉格姆-施密特正交化的方法类似. 在此, 我给出的助记是: 正交基中找共轭基. 进一步确定个细节: 这里提到的正交基是由每次迭代的近似解$X^k$($k \in \begin{Bmatrix} 1, 2,..., n-1\end{Bmatrix}$)的梯度$\nabla f(X^k)$构成.(我仍然觉得, 如果你的工作重心在建模, 有如上的认识就够了, 因为不太可能自己去写CG. 另外, 这些内容是可以推导出CG的具体求解细节的, 前提是要有点耐心.) 下面进行推导:
+
+首先, 我们回顾下确定$\lambda$的最优一纬搜索的内容:
+
+$$
+\frac{df(X^{
+k+1
+})}{d\lambda}
+=
+\frac{df(X^{
+k
+}+\lambda P^{
+k
+})}{d\lambda
+}
+=
+\nabla f(X^{
+k+1
+})
+P^{
+k
+}
+=
+0
+\tag{
+5
+}
+$$
+
+写近点, 后边方便看. 任取初始近似点$X^{0}$, 初始方向$P^{0} = - \nabla f(X^{0})$. 利用$(5)$的最优一维搜索我们可以依次确定$\lambda^{0}, X^{1}, \nabla f(X^{1})$. 此外, (5)也蕴含着(将$\nabla f(X^{1})$带入$5$式): $\nabla f(X^{1}) \nabla f(X^{0}) = 0$. __duang__, 我们前文描述的正交基向量出来了, 接着就是从中找共轭基向量了. 再次先交代如何找共轭基向量, 即: 共轭条件下的待定系数. 交代完找的方法后小结一下以加深印象: $k$次迭代中做的事情就是: 确定第$k$个正交基向量, 从中找第$k$个共轭基向量. 我把第$k$次迭代具体做的事推导出来, 那么整个求解流程也就讲完了.
+
+进入第$k$次迭代时, 我们有如下已知项:
+
+$$
+\begin{cases}
+X^{k-1}, \text{k-1次迭代的极小值估计} \\
+\nabla f(X^{0}),  \nabla f(X^{1}), ...,  \nabla f(X^{k-1}),  \text{正交向量组} \\
+\nabla P(X^{0}),  \nabla P(X^{1}), ...,  \nabla P(X^{k-1}), \text{共轭向量组}
+\end{cases}
+$$
+
+再次重写下递推关系式:
+
+$$X^{k} = X^{k-1} + \lambda^{k-1} P^{k-1}$$
+
+首先, 通过最优一纬搜索依次确定$\lambda^{k-1}, X^{k}, \nabla f(X^{k}$, 这样就得到了新的正交基向量$\nabla f(X^{k})$,(你可能很好奇为什么这么求就保证了$\nabla f(X^{k})$就是正交基向量,完成推导后会给出解释.) 然后, 用新的正交向量组表示共轭基向量$P^{k}$, 同时又要满足共轭条件, 即:
+
+$$
+\begin{cases}
+P(X^{k}) = -\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0}) \\
+P(X^{k})^TAP(X^{k-1}) = 0 \\
+P(X^{k})^TAP(X^{k-2}) = 0 \\
+... \\
+P(X^{k})^TAP(X^{0}) = 0
+\end{cases}
+\tag{
+6
+}
+$$
+
+我们的目的是把方程组中的${\begin{Bmatrix}\alpha_{k-1}, \alpha_{k-2},..., \alpha_{0}\end{Bmatrix}}$求出来, 解决该问题的一个思路就是 __表示一致__, 具体做法就是将所有的共轭等式的左侧用梯度表示, 因此, 尝试找$AP(X^{i}),  i \in {\begin{Bmatrix} 1, 2, 3 \end{Bmatrix} }$ 的梯度表达, 这里由梯度函数与极小值递推公式可获得我们想要的东西, 由:
+
+$$
+\begin{cases}
+
+\nabla f(X) = AX + B \\
+X^{k} = X^{k-1} + \lambda^{k-1} X^{k-1}
+
+\end{cases}
+$$
+
+得:
+
+$$
+\nabla f(X^{k}) - \nabla f(X^{k-1}) = A(X^{k} - X^{k-1}) = \lambda_{k-1}AP^{k-1}
+\tag{
+7
+}
+$$
+
+这样将$(6)$中的所有共轭条件等式进行梯度表达, 得:
+
+$$
+\begin{cases}
+ \\
+(-\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0}))^TAP^{k-1} = 0 \\
+(-\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0}))^TAP^{k-2} = 0 \\
+... \\
+(-\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0}))^TAP^{0} = 0
+\end{cases}
+\tag{
+8
+}
+$$
+
+再将$(7)$带入$(8)$得:
+
+$$
+\begin{cases}
+ \\
+[-\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0})]^T[\nabla f(X^{k}) - \nabla f(X^{k-1})] = 0 \\
+[-\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0})]^T[\nabla f(X^{k-1}) - \nabla f(X^{k-2})] = 0 \\
+... \\
+[-\nabla f(X^{k}) + \alpha_{k-1} \nabla f(X^{k-1}) +, ..., \alpha_{0} \nabla f(X^{0})]^T[\nabla f(X^{1}) - \nabla f(X^{0})] = 0
+\end{cases}
+\tag{
+9
+}
+$$
+
+利用正交, 整理简化得:
+
+$$
+\begin{cases}
+
+\alpha_{k-1} \nabla f(X^{k-1})^T \nabla f(X^{k-1}) = -\nabla f(X^{k})^T \nabla f(X^{k}) \\
+\alpha_{k-2} \nabla f(X^{k-2})^T \nabla f(X^{k-2}) = \alpha_{k-1} \nabla f(X^{k-1})^T \nabla f(X^{k-1}) \\
+... \\
+\alpha_{0} \nabla f(X^{0})^T \nabla f(X^{0})	= \alpha_{1} \nabla f(X^{1})^T \nabla f(X^{1}) 
+\end{cases}
+\tag{
+10
+}
+$$
+
+玩一波多米诺骨牌, 得:
+
+$$
+\begin{cases}
+\alpha_{k-1} = - \frac{\nabla f(X^{k})^T \nabla f(X^{k})}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \\
+\alpha_{k-2} = - \frac{\nabla f(X^{k})^T \nabla f(X^{k})}{\nabla f(X^{k-2})^T \nabla f(X^{k-2})} \\
+... \\
+\alpha_{0} = - \frac{\nabla f(X^{k})^T \nabla f(X^{k})}{\nabla f(X^{0})^T \nabla f(X^{0})} \\
+\end{cases}
+\tag{11}
+$$
+
+小手抖到这就把待定的系数求出来了, 那我们分析分析这个解吧, 把他的递推分析出来. 先把他的解写出来:
+
+$$
+P(X^k) = -\nabla f(X^k) + \sum_{i=0}^{k-1} -\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
+\tag{
+12
+}
+$$
+
+为了朝递归方向改造, 自然要折腾$\sum$了:
+
+$$
+\begin{matrix}
+P(X^k) = -\nabla f(X^k) + \\
+-\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \nabla f(X^{k-1}) +
+\sum_{i=0}^{k-2} -\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
+\tag{
+13
+}
+\end{matrix}
+$$
+
+整理一下:
+
+$$
+\begin{matrix}
+P(X^k) = -\nabla f(X^k) + \\
+-\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \{-\nabla f(X^{k-1}) +
+\sum_{i=0}^{k-2} \frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
+\}
+\tag{
+13
+}
+\end{matrix}
+$$
 
 <br>
 
