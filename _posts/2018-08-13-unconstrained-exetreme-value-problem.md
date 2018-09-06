@@ -369,7 +369,7 @@ $$
 \begin{matrix}
 P(X^k) = -\nabla f(X^k) + \\
 -\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \{-\nabla f(X^{k-1}) +
-\sum_{i=0}^{k-2} \frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
+\sum_{i=0}^{k-2} -\frac{\nabla f(X^{k-1})^T \nabla f(X^{k-1}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
 \}
 \tag{
 13
