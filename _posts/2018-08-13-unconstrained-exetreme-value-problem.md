@@ -355,7 +355,7 @@ $$
 $$
 \begin{matrix}
 P(X^k) = -\nabla f(X^k) + \\
--\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \nabla f(X^{k-1}) +
+-\frac{\nabla f(X^{k})^T \nabla f(X^{k})}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \nabla f(X^{k-1}) +
 \sum_{i=0}^{k-2} -\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
 \tag{
 13
@@ -368,7 +368,7 @@ $$
 $$
 \begin{matrix}
 P(X^k) = -\nabla f(X^k) + \\
-\frac{\nabla f(X^{k})^T \nabla f(X^{k}))}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \{-\nabla f(X^{k-1}) +
+\frac{\nabla f(X^{k})^T \nabla f(X^{k})}{\nabla f(X^{k-1})^T \nabla f(X^{k-1})} \{-\nabla f(X^{k-1}) +
 \sum_{i=0}^{k-2} -\frac{\nabla f(X^{k-1})^T \nabla f(X^{k-1}))}{\nabla f(X^{i})^T \nabla f(X^{i})} \nabla f(X^{i}) 
 \}
 \tag{
@@ -376,6 +376,41 @@ P(X^k) = -\nabla f(X^k) + \\
 }
 \end{matrix}
 $$
+
+比较$(12)$和$(13)$很容易发现递归式:
+
+$$
+
+\begin{cases}
+P(X^k) = -\nabla f(X^k) + \beta_{k-1} P(X^{k-1}) \\
+
+\beta_{k-1} = 
+\frac{\nabla f(X^{k})^T \nabla f(X^{k})}
+{\nabla f(X^{k-1})^T \nabla f(X^{k-1})}
+
+\end{cases}
+\tag{14}
+$$
+
+这样便完成了一次迭代, 总结下一次迭代中做的事情(k次迭代为例):
+
+$$
+\begin{cases}
+1. 最优秀一维搜索, 确定系数\lambda^{k-1} \\
+2. 更新极小值的近似解X^k \\
+3. 扩充正交基向量组, 即: 求正交基向量\nabla f(X^k) \\
+4. 扩充共轭基向量组, 即: 求共轭基向量P^k
+\end{cases}
+$$
+
+迭代直至共轭基向量组变成共轭基. 从程序设计的角度来看一次迭代,
+其实就做了两件事: 
+
++步骤1、2使得算法向前推进
++3、4起到了循环不变的作用[算法导论里有关于这个概念的介绍, 简单点说就是保持每次进入循环时变量环境是一致的].
+
+到这里我把共轭梯度法讲完了, 建议老老实实推一遍公式, 像我一样nice的总结几个关键点, 然后, 以后再也别看这玩意了, 港真, 做模型的几乎不可能去优化这种底层计算.
+然后就是加深印象的环节了, 老规矩: 手算、伪代码、代码.
 
 <br>
 
