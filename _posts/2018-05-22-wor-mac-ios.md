@@ -1,12 +1,86 @@
 ---
 layout: post
-title: "做iOS项目涉及到的知识点-1"
+title: "iOS项目涉及到的开发知识-1"
 date: 2018-5-10
 description: "初步接触ios项目积累的经验，OC的内容居多"
 tag: IOS
 ---
 
-一些基本的语法知识
+### 0. ios App 配置知识汇总
+
+一些名词:
+
+>* App ID(Prouct ID): 标识一个或一组App, 与Xcode中的Bundle Identifier一致的或匹配的.
+>* CA发布数字证书用以区分通讯各方身份信息.
+>* 数字证书: 包含: 公开秘钥[相当于公章]、名称、数字签名; 具有实效性[只在特定的时间段内有效]
+>* 根证书: 最根上的证书(如户籍证明), 是信任链的起点.
+>* ios证书: 验证App内容是完整、可靠、合法的. 分两类: Development、Production.
+>* Development certificate: 用来开发和调试应用程序.
+>* Production certificate: 用于分发App.
+>* 普通个人开发账号可注册两个Development certificate和两个Development certificate.
+
+ios app开发调试过程中的开发证书:
+
+>* ios app开发证书的根证书是Apple Worldwide Developer Relations Certification Authority, 他们之间的关系好比于身份证之于户籍.
+>* 证书申请: keychain生成CSR[包含开发者身份信息], 同时新增一对public/private key pair. public key随app走, 对app签名进行教研, private key 保存在keychain Access[本地], 以防假冒.
+>* Apple Worldwide Developer Relations Certification Authority使用private key对CSR中的public key和开发者身份信息进行加密签名生成数字证书并记录在案.
+
+证书的安装:
+
+>* 从Apple Member Center下载双击、Xcode添加开发账号自动同步证书和配置文件.
+>* build settings > code signing > 配置开发证书.
+
+Provisioning profile:
+
+>* 打包或真机运行app, 需要: 指明App ID并验证是否于Bundle ID匹配、签名[用证书的私钥签名, 以确定App合法、安全、完整]、确认设备是否授权运行这个app.
+>* 而Provisioning profile(pp)涵盖上面提到的: App ID、签名、设备, 它将这三项打包在一起方便在调试和打包时使用, 因此只要在不同的情况下选择不同的pp就行了.
+>* pp分为: Development和Distribution两类, 后者主要用于提交到App Store, 这里就不指定设备了.
+>* 所有的pp文件被防止在~/Library/MobileDevice/Provisioning Profiles
+
+开发版pp文件中字段的含义:
+
+>* DeveloperCertificates: 必须这个列表里的证书签名, 否则一定codeSign fail.
+>* ProvisionedDevices: 这里配置了设备
+
+Team PP:
+
+>* 每个Apple开发者账号都对应一个唯一的Team ID.
+
+App Group
+
+>* ios8以后出现了App Extension, containing App和Extension之间是独立的二进制包, 不可以互访对方的沙盒, extension是containing app的插件.
+>* 为了实现containing app和extension之间共享数据, ios 8引入了App Group, 让同一group下的所有app共享数据.
+>* extension app ID 于containing app的命名是有规则的.
+>* extension app id以containing app id为前缀.
+>* 公用证书, 公用证书key pair中的private key进行codeSign
+
+证书、签名:
+
+>* code signing identity必须与provisioning profile匹配
+>* code signing identity中配置的certificate必须在本机keychain access中存在对应的public/private key pair, 否则编译会报错.
+>* 上面的合法性验证是WWDRCA.cer完成的.
+>* 证书其实就是公钥, 私钥被用来进行数字签名[数字签名就是用哈希算法生成digest]
+
+真机启动:
+
+>* App在Mac/ios设备上启动时, 会将xcode对其进行的配置与provisioning file(pp)进行匹配校验, 就是看bundle ID是否与app ID匹配, codesign得到的结果是否在pp中, 设备ID是否在pp文件里.
+>* ios/mac设备使用codesign所使用的开发证书(dongzhao)来判断App的合法性: 使用证书公钥解出App的signature以确定App是否来源可信; 再计算下app 二进制的哈希结果以确定App没有被篡改过, 内容完整.
+
+注意:
+
+>* 基于Provisioning Profile校验了CodeSign的一致性；
+>* 基于Certificate校验App的可靠性和完整性；
+>* 启动时，真机的device ID（UUID）必须在Provisioning Profile的ProvisionedDevices授权之列。
+
+多台机器共享开发账户/证书(p12):
+
+>* 在Keychain Access中选中欲导出的certificate或其下private key, 导出p12文件(holds the private key and certificate).
+>* 其他Mac机器上双击Certificates.p12即可安装该共享证书. 有了共享证书之后, 在开发者网站上将欲调试的iOS设备注册到该开发者账号名下, 并下载对应证书授权了iOS调试设备的pp文件, 便可在iOS真机设备上开发调试.
+
+___ref:___
+
+- [1. iOS Provisioning Profile(Certificate)与Code Signing详解](http://blog.sina.com.cn/s/blog_82c8198f0102vy4j.html)
+
 
 ###  1. 属性和实例变量
 
