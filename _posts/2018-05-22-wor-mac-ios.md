@@ -3,10 +3,10 @@ layout: post
 title: "iOS项目涉及到的开发知识-1"
 date: 2018-5-10
 description: "初步接触ios项目积累的经验，OC的内容居多"
-tag: IOS
+tag: Projs
 ---
 
-### 0. ios App 配置知识汇总
+### 0. ios工程配置相关知识
 
 一些名词:
 
