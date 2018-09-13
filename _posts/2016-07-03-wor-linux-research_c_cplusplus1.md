@@ -3,7 +3,7 @@ layout: post
 title: "整理自为知笔记的关于c和c++的(1)"
 date: 2016-07-03
 description: "这是在实习期间做的笔记"
-tag: Bundle
+tag: Computer Basises
 ---
 
 ### C部分

@@ -3,7 +3,7 @@ layout: post
 title: "整理自为知笔记的做Rearch和实习的一些日常笔记(2)"
 date: 2015-06-15
 description: "Common Sense、Internship Experience"
-tag: Bundle
+tag: Projs
 ---
 
 ### 1. FFT

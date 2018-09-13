@@ -3,7 +3,7 @@ layout: post
 title: "TTS初步调研"
 date: 2017-07-26
 description: "NLP"
-tag: NLP
+tag: Research
 ---
 
 ### Convolutional Sequence to Sequence learning

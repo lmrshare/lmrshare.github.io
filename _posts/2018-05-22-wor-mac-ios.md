@@ -120,6 +120,11 @@ ___ref:___
 >* 2. 属性默认会生成带下划线的成员变量;
 >* 3. 但只声明了变量，是不会有属性的
 
+属性中的参数:
+
+@property(nullable, nonatomic, copy)
+@property (class, readonly, strong)
+
 ### 2. extern、static、const
 
 简单总结:
@@ -390,6 +395,11 @@ NSLog(@"impl2 %@ impl3", (impl2 == impl3) ? @"==" : @"!=");
 * __执行`class_addMethod`或者`class_replaceMethod`这种可以改变`IMP`的函数后并不会直接改变`originMethod`所指向的对象(从`impl1 == impl2`可以看出)__
 
 
+### viewDidLoad, viewDidAppear执行顺序
+
+>* viewDidLoad:视图 load进入内存后调用(loadView[创建view]后执行)
+>* viewDidAppear: view显示在屏幕后被调用
+
 ### Singleton与多线程
 
 预备知识:
@@ -441,6 +451,8 @@ ___Ref:___
 
 
 ___注___: 代码见-(void)test_iosfiledir.
+
+### ios消息机制
 
 <br>
 

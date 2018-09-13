@@ -13,6 +13,7 @@ tag: Research
 * [梯度下降(Gradient Descent---GD)](#Gradient-Descent)
 * [共轭方向法(Conjugate Direction---CD)](#Conjugate-Direction)
 * [共轭梯度法(Conjugate Gradient---CG)](#Conjugate-Gradient)
+* [变尺度法(Variable Metric Method---DFP)](#Variable-Metric)
 * [Ref](#will-search)
 
 
@@ -461,8 +462,23 @@ $$
 +  $\nabla f(X^k)$ 跟前面正定二次函数中所求的梯度是不同的, 这里的梯度只是一个近似, 因为其根源在于: 我们是在泰勒级数展开这个近似函数的基础之上求出来的
 +  这里的共轭是:$p^k$与$p^0, p^1,..., p^{k-1}$是关于$H(X^{k-1})$共轭的.
 
-对于第二条, 形象点说: 由于$H(X^*)$是随着迭代而 __变化__ 的, 所以这里的共轭是一种前向共轭.
+对于第二条, 形象点说: 由于$H(X^*)$是随着迭代而 __变化__ 的, 所以这里的共轭是一种前向共轭. 共轭梯度法已整理完, 接下来介绍一种拟牛顿方法.
+
+### <a name="Variable-Metric"></a>共轭梯度法(Variable Metric Method---DFP)
+
+&emsp;&emsp;该方法的两个主要特点是:
+
+$$
+\begin{cases}
+1. 不用计算Hessian-Matrix \\
+2. 比梯度法收敛速度快, 尤其是对高维问题
+\end{cases}
+$$
+
+__1. 基本原理:__
+
+&emsp;&emsp;
 
 <br>
 
-转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
+转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
