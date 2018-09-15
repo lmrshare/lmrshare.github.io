@@ -14,6 +14,7 @@ tag: Research
 * [共轭方向法(Conjugate Direction---CD)](#Conjugate-Direction)
 * [共轭梯度法(Conjugate Gradient---CG)](#Conjugate-Gradient)
 * [变尺度法(Variable Metric Method---DFP)](#Variable-Metric)
+* [总结)](#Review)
 * [Ref](#will-search)
 
 
@@ -477,7 +478,18 @@ $$
 
 __1. 基本原理:__
 
-&emsp;&emsp;
+&emsp;&emsp;从极小值的迭代模型$X^{k+1} = X^k + \lambda^k P^k$来看, 相比于最简单的梯度下降, 变尺度法对更新方向进行了约束. 当然, 也可以将梯度下降理解成是有约束的, 即: 约束矩阵为恒等矩阵. 变尺度法的约束矩阵是二阶导数, 也就是Hessian-Matrix, 但在实际问题中, 由于模型的复杂性, 这个矩阵比较难求或者不能求. 接下来本文会依次讲解: a). 变尺度法的极小值更新模型, b). 更新模型中约束矩阵的近似计算.
+
+___a. 变尺度法的极小值更新模型___
+
+xxx
+
+___b. 更新模型中约束矩阵的近似计算___
+
+xxx
+
+### <a name="Review"></a>总结
+
 
 <br>
 
