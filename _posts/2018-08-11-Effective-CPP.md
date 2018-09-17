@@ -317,8 +317,19 @@ class Empty
 
 ```
 
->* The compiler-generated constructor and copy assignment operator  
-simply copy each non-static data member of the source object over to the target object. 
+>* These functions are generated only if they are needed, but it doesn't take much to need them, the following
+code will cause each function to be genrated.
+
+```
+Empty e1;//default constructor and destructor
+
+Empty e2(e1);//copy constructor
+
+e2 = e1;//copy assignment operator
+```
+>* defalut constructor: Give compilers a place to put "behind the scenes" code such as invocation of constructors of base classes and non-static data members.
+>* defalut destructor: Give compilers a place to put "behind the scenes" code such as invocation of destructor of base classes and non-static data members.
+>* The compiler-generated constructor and copy assignment operator simply copy each non-static data member of the source object over to the target object. 
 >* Explicitly disallow the use of compiler-generated functions you do not want. 
 
 
@@ -361,7 +372,7 @@ class HomeForSale: private Uncopyable // class no longer
 ```
 ___Item 7:___ Chapter 2 Declare destructors virtual in polymorphic base classes
 
-
+>* the generated destructor is non-virtual, unless it's for a class inheriting from a base class that itself declares a virtual destructor.
 >* The purpose of virtual functions is to allow customization of derived class implementations 
 >* Any class with virtual functions should almost certainly have a virtual destructor. 
 If a class does not contain virtual functions, that often indicates it is not meant to

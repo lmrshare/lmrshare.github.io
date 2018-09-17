@@ -6,17 +6,14 @@ description: "Rearch"
 tag: Research
 ---
 
-
 ### 目录
-
 
 * [梯度下降(Gradient Descent---GD)](#Gradient-Descent)
 * [共轭方向法(Conjugate Direction---CD)](#Conjugate-Direction)
 * [共轭梯度法(Conjugate Gradient---CG)](#Conjugate-Gradient)
 * [变尺度法(Variable Metric Method---DFP)](#Variable-Metric)
 * [总结](#Review)
-* [Ref](#Reference)
-
+* [Reference](#Reference)
 
 &emsp;&emsp;本文是关于求解的, 也是自己对求解方面知识的一次总结. 文章主要介绍了无约束极值问题的一些常用方法, 同时也
 是CNN这篇文章中Hessian Free Optimization的补充材料. 本文借助教材<< __运筹学__ >>中 __无约束极值问题的解法__ 完成了
@@ -646,18 +643,16 @@ $$
 
 ### <a name="Review"></a>总结
 
-&emsp;&emsp;回顾本文介绍的梯度下降法(GD)、共轭梯度法(CG)、步长加速法(DFP), 我们发现他们的大体流程基本一致, 主要的区别在于极小值
+&emsp;&emsp;对比本文介绍的梯度下降法(GD)、共轭梯度法(CG)、步长加速法(DFP), 会发现他们的大体流程基本一致, 主要的区别在于极小值
 更新模型中的方向向量, GD选择了负梯度作为方向向量、CG在由梯度张成的空间内选取共轭梯度作为方向向量、DFP利用Hessian-Matrix
-对梯度方向进行校正后作为方向向量. 可见他们都没并且梯度这个梗, 要么直接用、要么在线性空间内选取、要么校正一下.
+对梯度方向进行校正后作为方向向量. 可见他们都跟梯度这个梗有关, 要么直接用、要么在线性空间内选取、要么校正一下. 第一稿就总结到这里了, 
+我觉得这种基础性的东西如果写的不仔细点还不如不写, 因为本身就没多少东西; 另外, 本人对博客是这样理解的: 博客不同于论文, 前者应该承担
+更多的教程角色, 因此, 博客里应该尽可能的少出现"显然..."这样的字样, 同时, 应该给出证明的思路, 所以一定会比论文啰嗦. 最后谈一点个人
+的感受: 看理论的话, 最好自己去证明一下, 意淫下作者的思路, 只有这样, 印象才深刻.
 
-&emsp;&emsp;第一稿就总结到这里了, 我觉得这种基础性的东西如果写的不仔细点还不如不写, 因为本身就没多少东西; 另外, 
-本人对博客是这样理解的: 博客不同于论文, 前者应该承担更多的教程角色, 因此, 博客里应该尽可能的少出现"显然..."这样的字样,
-同时, 应该给出证明的思路, 所以一定会比论文啰嗦. 最后谈一点个人的感受: 看理论的话, 最好自己去证一下, 意淫下作者的思路,
-这样, 印象才深刻.
+### <a name="Reference"></a>Reference
 
-### <a name="Reference"></a>Ref
-
-[运筹学](http://www.tup.tsinghua.edu.cn/bookscenter/book_03892301.html)
+- [1. 运筹学](http://www.tup.tsinghua.edu.cn/bookscenter/book_03892301.html)
 
 <br>
 
