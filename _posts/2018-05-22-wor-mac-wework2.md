@@ -48,6 +48,22 @@ tag: Projs
 
 设置完`https_proxy`后, 浏览器选择socks4之后就可以正确上网了.
 
+### opencv:
+
+>* calib3d: 相机校准，和3D内容相关
+>* core: 非常重要, 矩阵操作, 基础数据类型
+>* dnn: 神经网络相关
+>* feature2d: 图像脚点检测、图像匹配
+>* flann: 和聚类相关的、一些临域算法
+>* highgui: 界面操作相关的
+>* imgcodecs, imgproc: 图像处理相关的
+>* ml: 机器学习模块
+>* photo:  图片的处理
+>* stitching: 图片的拼接
+>* position_cyoutubevideo_v1
+
+### tensorflow:
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
