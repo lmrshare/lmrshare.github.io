@@ -329,8 +329,10 @@ e2 = e1;//copy assignment operator
 ```
 >* defalut constructor: Give compilers a place to put "behind the scenes" code such as invocation of constructors of base classes and non-static data members.
 >* defalut destructor: Give compilers a place to put "behind the scenes" code such as invocation of destructor of base classes and non-static data members.
+>* If a constructor is declared in a class, compilers won’t generate a default constructor.
 >* The compiler-generated constructor and copy assignment operator simply copy each non-static data member of the source object over to the target object. 
 >* Explicitly disallow the use of compiler-generated functions you do not want. 
+>* If you want to support copy assignment in a class containing a reference member, you must define the copy assignment operator yourself.(p37)
 
 
 ```
@@ -477,7 +479,7 @@ executing constructor or destructor.
 
 ___Item 10:___ Have assignment operators return a reference to *this . 
 
->* To realize the chain of assignments. this is only a convention.
+>* To implement that the assignment is right-associative, you should returns a reference to its left-hand argument.(p52)
 
 ___Item 11:___ Handle assignment to self in operator= . 
 
