@@ -64,6 +64,15 @@ tag: Projs
 
 ### tensorflow:
 
+### will trash
+
+当c后就可以讲话了onVoipStartTalk
+
+>* analysis the flow according to the methods of PvUIProxy
+>* analysis the flow according to the methods of WWKWxVoipObserverProxy
+>* analysis the flow according to the methods of WWKVoipServiceProvider
+>* wxvoipsdk::VoipCallMgr::StartSession
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
