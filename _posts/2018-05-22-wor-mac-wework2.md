@@ -64,14 +64,6 @@ tag: Projs
 
 ### tensorflow:
 
-### will trash
-
-当c后就可以讲话了onVoipStartTalk
-
->* analysis the flow according to the methods of PvUIProxy
->* analysis the flow according to the methods of WWKWxVoipObserverProxy
->* analysis the flow according to the methods of WWKVoipServiceProvider
->* wxvoipsdk::VoipCallMgr::StartSession
 
 <br>
 
