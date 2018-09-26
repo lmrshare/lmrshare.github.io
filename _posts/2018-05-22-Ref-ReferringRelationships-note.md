@@ -740,7 +740,6 @@ Sun Apr  8 15:14:13 CST 2018: 我先测试的Visual Genome dataset这个数据�
 &emsp;&emsp;linmengran@imac:~$ ./scripts/create_visualgenome_dataset.sh $LOCATION_OF_VISUAL_GENOME_IMAGES
  ```
 * [***github路径***](https://github.com/StanfordVL/ReferringRelationships)
-* [***virtualenv简明教程***](https://www.jianshu.com/p/08c657bd34f1)
 
 命令:
 ```
