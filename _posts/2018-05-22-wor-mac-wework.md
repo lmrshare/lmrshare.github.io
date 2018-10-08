@@ -76,6 +76,10 @@ mengranlin@imac:~$ find . -name -maxdepth 3 '*spl.x*'-----意义同上，只是�
     grep "\-\->ycyc" tmp.txt
     grep "sent" ~/Documents/console.log | head -5
 
+### 多态和继承
+
+### Theano
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
