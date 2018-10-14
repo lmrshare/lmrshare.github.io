@@ -29,7 +29,7 @@ sss
 - [5. Tutorial: Image deconvolution](http://www.ipam.ucla.edu/abstract/?tid=3804&pcode=invws1)
 - [6. Deconvolution Tutorial](https://www.cv.nrao.edu/~abridle/deconvol/deconvol.html)
 - [7. Deconvolution-wiki](https://en.wikipedia.org/wiki/Deconvolution)
-
+- [8. transposed-convolution-arithmetic](http://deeplearning.net/software/theano_versions/dev/tutorial/conv_arithmetic.html#transposed-convolution-arithmetic)
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
