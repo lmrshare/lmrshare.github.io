@@ -30,6 +30,7 @@ sss
 - [6. Deconvolution Tutorial](https://www.cv.nrao.edu/~abridle/deconvol/deconvol.html)
 - [7. Deconvolution-wiki](https://en.wikipedia.org/wiki/Deconvolution)
 - [8. transposed-convolution-arithmetic](http://deeplearning.net/software/theano_versions/dev/tutorial/conv_arithmetic.html#transposed-convolution-arithmetic)
+- [9. conv_arithmetic](https://github.com/vdumoulin/conv_arithmetic)
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
