@@ -12,86 +12,192 @@ tag: HNotes
 
 ### 目录
 
-* [本月安排](#This-month)
+* [计划](#Long-term-plan)
 * [作息时间](#Timetable)
-* [遗留问题汇总](#Will-search)
 * [Idea](#Idea)
-* [长期计划](#Long-term-plan)
-* [总结](#Summary)
+* [遗留问题汇总](#Will-search)
 
-### <a name="This-month"></a>本月安排
+### <a name="Long-term-plan"></a>计划
 
-___8.20~.8.27:___
+| [Research](#long-research)                  |[计算机基础与工作经验](#cs-work)     |[季度安排](#quarter-plan)                                          |
+| ------------                                |-------------------------------------| ------------------------------------------------------------      |
+| _[Computer Vision](#long-re-cv)_            |  _[计算机基础](#long-hy-cb)_        | _[11月: 博客、刷题、工程资料搜集](#november)_                     |
+| __[MRI](#long-re-mri)__                     |  __[项目相关](#long-hy-engineer)__  | __[12月: 项目、基础、刷题](#december)__                           |
+| _[Optimization Method](#long-re-om)_        |  _[工作方法](#long-hy-work-trick)_  | _[1月: 复习、面试、基础、刷题](#january)_                         |
+| __[Domain Knowledge](#long-re-dk)__         |  __[-]()__                          | __[2月: Research、Unity、面试、季度总结和下季度计划](#february)__ |
+| _[Math](#long-re-math)_                     |  _[-]()_                            | _[-]()_                                                           |
+| __[English](#long-re-eng)__                 |  __[-]()__                          | __[-]()__                                                         |
+| _[Writing&Blog](#long-re-wb)_               |  _[-]()_                            | _[-]()_                                                           |
+| __[Other](#long-re-other)__                 |  __[-]()__                          | __[-]()__                                                         |
 
->* 基本求解方法的博文一篇(undone)
->* 阅读C Traps and Pitfalls, 一篇笔记(done)
->* 阅读Effective C++, 一篇笔记(undone)
->* 初步整理个人站(undone)
->* leetcode 7道题(undone)
->* 计划学习runloop, TCP/IP高效编程(undone)
+[ps: 备注](#remark)
 
-___8.28~.9.02~9.09:___
+### <a name="long-research"></a>Research
 
-周二~周五:
+#### <a name="long-re-cv"></a>___Computer Vision___
 
->* 计算机网络(2h)(3 done half)
->* 阅读Effective C++一个Item(3 done)
->* 阅读项目源码
->* 搜Runloop相关文章(2), 看, 做好笔记(3 done half)
+>* 关注计算机视觉中的顶级会议论文
+>* 人脸检测，人脸标记
+>* OCR
 
-周六~周日:
+#### <a name="long-re-mri"></a> ___MRI___
 
->* 第一篇项目源码笔记
->* 整理runloop笔记, 最好与项目源码笔记合并
->* leetcode 7道题, 把以前做过的题目一并放到博文里
->* 基本求解方法的博文一篇
->* Hessian method, sgd博文一篇
->* cnn理论、在face alignment上的应用、在MRI上的应用博文初稿一篇
->* 定下周计划
->* 整理个人站
+>* [CRNN用于动态核磁共振成像的论文](https://arxiv.org/pdf/1712.01751.pdf)
 
-__总结:__
+#### <a name="long-re-om"></a> ___Optimization Method___
 
->* 周一早起回顾, 确定本周内容: 再做一周
+>* review非线性规划
+>* 与求解相关的理论(凸优化，非线性规划；数值分析)
+>* blog上写文章 
 
-___9.03~.9.09:___
+#### <a name="long-re-dk"></a> ___Domain Knowledge___
 
->* RNN理论、在韵律预测上等相关应用博文一篇
->* 对PRML中的非线性方法如: SVM、神经网络完整推倒一遍并做串联博文一篇初稿
->* Runloop, tcp/ip笔记,阅读源码加深印象,找面试题,找博文,记录后归纳总结着手自己博文  
->* 搜C++，C的偏门笔试题 
->* leetcode 7道题, 归纳复习
->* 进一步整理个人站
->* 调整后15天计划包括不限于下面的条目
+>* 把计算机视觉里的基本书看了(PR, computer vision)
+>* 数字信号处理教材
 
-___items left:___
+#### <a name="long-re-math"></a> ___Math___
 
->* 深度学习相关工程经验：把网络设计与优化、模型压缩与裁剪、之前遇到的问题、前面的笔记, 自己的研究生经历完整的写一篇博文出来
->* 整理个人主页达到可以对外开放的程度
->* 看半年计划，结合前面的完成情况思考接下来的15天怎么实操
->* 着手文献阅读
+>* 数学：统计推断，数学分析，矩阵论，测度论＋实分析
+
+#### <a name="long-re-eng"></a> ___English___
+
+>* toefl（100以上），GRE至少1300换算现在的分数就是320，最好1500以上
+
+#### <a name="long-re-wb"></a> ___Writing& Blog___
+
+>* all in blog
+
+#### <a name="long-re-other"></a> ___Other___
+
+>* 调研几个名校的实验室导师的研究方向，选择后读他们的论文
+>* 调查mit，斯坦福和宾大的博士课程
+
+### <a name="cs-work"></a> 计算机基础与工作经验
+
+#### <a name="long-hy-cb"></a> ___计算机基础___
+
+___语言 (c/c++):___
+
+>* c traps and pitfalls, effective c++(一遍、待复习)
+>* 位操作，有符号无符号，高低字节（笔试题）
+>* 内存相关（C++不会太问，因为都是自己管理)
+>* 程序栈，函数执行的一个过程（查一下）
+>* 虚函数，函数指针
+>* 跨平台、混编，OC上：RN，java：JNI
+
+___操作系统(进程/线程):___
+
+>* runloop机制, C++和OC都有; post_task; 实多进程现无锁化; google：发现死锁的方法
+>* 线程开销
+>* 多进程模型(Android)
+>* IPC, 你为什么这么选型， async socket: 因为数据量大，unix socket好多都这么用的比如chrome
+>* 多线性，多进程的选型（PC， android）
+>* WKWebview, 跨进程的(IOS)
+>* 好好理解企业微信移动端（企业微信做的很好），先看下runloop，然后看一个service，看网络，db的安排，connection favorivate service
+>* 企业微信怎么做长连接和短连接的，这里企业微信做的還不錯
+
+___网络(tcp/ip http)___
+
+>* TCP/IP高效编程
+>* 滑窗等理论的细节
+>* 你怎么做长连接
+>* 了解Https协议，了解操作；http协议
+>* udp: 视频动画、VoIP；用udp实现可靠的连接，udp打洞
+>* ios怎么抓包
+>* 网络调优，特别是移动端（移动端容易断）、心跳、接入点变化（WIFi to 4G），在km上搜移动端网络调优
+
+___性能调优, db___
+
+>* sql调优
+>* google：ios性能调优工具
+
+#### <a name="long-hy-engineer"></a> ___项目相关___
+
+>* 企业微信框架特点：存储架构、消息架构、UI模型
+>* 客户端整体架构：数据存储、网络请求、中间逻辑有哪几层
+>* UI 到底层，然后再从底层回去，VOIP的信令流程
+>* 企业微信框架特点：存储架构、消息架构、UI模型
+>* 客户端整体架构：数据存储、网络请求、中间逻辑有哪几层
+>* UI 到底层，然后再从底层回去，VOIP的信令流程, aec
+>* 把投屏的流程： 跨进程通道，如何复用voip协议，把图画出来
+>* 企业微信框架主要做业务的时候带着问题去了解
+>* 客户端最常用设计模式：proxy、observer
+>* 音视频: 数据通信与网络，语音信号处理，视频处理(ffmpeg)
+
+#### <a name="long-hy-work-trick"></a> ___工作方法___
+
+>* 总体把握，了解各个平台特点，能做些什么，尽量把潜在的问题挖掘出来
+>* 偏向研究的任务: 除了算法本身外业务不熟悉的地方需要及时提出，或者说为了加快进度提出业务资源, 这样做也能更好的给算法确定输入输出边界
+>* 偏向工程的任务多向老员工请教
+>* 在提升综合能力这样的定位下有没有什么高效的执行方法？比如这次我遇到的问题：在算法没完全稳定下来的时候再接入windows平台，里面一个比较小的一个问题都会花费我比较长的时间，甚至里面有些配置在网络上搜都很难，最后是通过电话沟通才知道怎么操作。windows平台问题最多，但类似的这样的问题在我做其他平台的时候同样会出现.
+
+### <a name="quarter-plan"></a> 季度安排
+
+#### <a name="november"></a> ___11月: 博客、刷题、工程资料搜集___
+
+&emsp;&emsp;__这个月主要集中突击一把，侧重点在于22号的时候个人站可以po到linked上, 同时别忘了英语面试的准备工作.__
+
+___11.09~.11.18:___
+
+>* 基本求解方法的博文补齐, 把leetcode做过的题目整理, 牛客100道面试题(1day)
+>* crf11,15成文, 刷leetcode题, 牛客复习昨天的题、新题50道(2days)
+>* ADMM-net MRI和CNN SR, 刷leetcode题, 计算机视觉面试题1套(1day)
+>* TTS初步调研, 刷leetcode题, 牛客复习昨天的题、新题50道(1day)
+>* 人脸对齐dlib, 刷leetcode题, 计算机视觉面试题1套(1day)
+>* 整理个人站, 确定接下来的博文, 计算机视觉面试题1套, 刷leetcode题, 牛客复习昨天的题、新题50道, 制定后几天的计划(1day, 11.15)
+
+ps:
+
+>* 回家之前整理工程资料(every day, tensorflow, caffe, 以及他们的predict调优, 服务器部署流程以及注意事项)
+>* 调研面试google的技巧以及外企面试需要的英语材料
+
+___7天总结:___
+
+>* xxxxxx
+
+#### <a name="december"></a> ___12月: 项目、基础、刷题___
+
+&emsp;&emsp;__这个月侧重与计算机基础，丰富个人站，以及深度学习项目的主流开发工具(tensorflow, caffe, 以及他们的predict调优, 服务器部署流程以及注意事项)__
+
+#### <a name="january"></a> ___1月: 复习、面试、基础、刷题___
+
+&emsp;&emsp;__希望这个月以复习为主，个人站比较完善、漂亮. 可达到随时可面试的程度__
+
+#### <a name="february"></a> ___2月: Research、Unity、面试、总结调整___
+
+&emsp;&emsp;__随时可面试，准备Unity的学习, 以及榫卯app的开发准备__
+
+#### <a name="remark"></a> ___备注:___
+
+&emsp;&emsp;__以前制定计划多数时候都在闭门造车，对于算法还好，但是在工作中明显吃了亏，所以下半年针对工程经验这一块，结合过来人的经验以及应试制订了半年计划，执行起来很简单，要满足：__
+
+>* 每准备一块内容后就要写一篇博文出来，同时以面试题作为应试检验
+>* 博文写好后给有经验的人看一下，然后完善之
 
 ### <a name="Timetable"></a>作息时间
 
->*  6:40~7:00-- 起床、英语电台(1-7)
->*  7:00~9:00-- 周plan)[1-7]
->*  9:00~9:30--吃饭、看邮件、rtx消息[1-7]
->*  9:30~11:50--工作[1-6], 周plan[7]
->*  12:30~14:30--吃饭、休息、健身[1-7]
->*  14:30~18:00--工作[1-6]、周plan[7]
->*  18:30~20:00--周plan[1-7]
->*  20:00~23:00--工作[1-5]，周plan[6、7]
->*  23:00~23:30--清理work_tmp、添加问题和处理遗留问题[1-6]、休息[7]
->*  23:30~00:00--听力(1-6)
->*  00:00~02:00--周plan(1-6)
+
+| 时间                  | 安排                     |   周期     |
+| ------------          | ---------------          |------------|
+| _6:30~7:00_           | _起床、洗漱_             | _[1-7]_    |
+| __7:00~10:00__        | __写博客__               | __[1-7]__  |
+| _10:00~12:30_         | _写博客or工作;下周计划_  | _[1-6;7]_  |
+| __12:30~14:00__       | __吃饭、休息、健身__     | __[1-7]__  |
+| _14:00~18:30_         | _写博客or工作_           | _[1-7]_    |
+| __18:30~19:00__       | __吃饭、休息__           | __[1-7]__  |
+| _19:00~00:00_         | _刷题or工作_             | _[1-7]_    |
+| __00:00~01:00__       | __背面试口语材料__       | __[1-7]__  |
+
+### <a name="Idea"></a>Idea
+
+>* 对于实时人脸对齐，能否把/delta x当作attention，形状当作predicate，然后也利用这种转移的思想，同理dynamic MRI能否也利用这个思路。
+>* 我想做个榫卯vr app
 
 ### <a name="Will-search"></a>遗留问题汇总
 
 >* 单例, 在"做iOS项目涉及到的知识点-1"ios中写笔记(done, 代码已写完, 在proj-experience里)
-
 >* [iOS 文件目录](https://www.jianshu.com/p/572edba1ff9d)(还没看完，下次直接到"做ios项目涉及...."记笔记看帖)
 >* C、C++的封装，用C实现C++的封装，C的函数指针模拟多态(笔记记录在today中)
-
 >* #define bzero(s, n) memset((s), 0, (n));
 >* 动态链接库
 >* C、C++如何调用私有api
@@ -193,140 +299,8 @@ ___items left:___
 >* 用pimpl处理这个问题:"把结构体的实现隐藏起来，用一个固定布局的壳对接口进行转发；缺点：多了一次指针访问，多一次内存申请与释放，性能有所损耗, 手工编写plmpl模式代码、枯燥繁重"
 >* C++ 工程实践经验谈-陈硕
 >* 把March里的文档总结在我自己的笔记里
-
-##### 2018年 7月 6日 星期五 11时43分31秒 CST
-
 >* review singleton代码
-
-### <a name="Idea"></a>Idea
-
->* 对于实时人脸对齐，能否把/delta x当作attention，形状当作predicate，然后也利用这种转移的思想，同理dynamic MRI能否也利用这个思路。
-
-### <a name="Long-term-plan"></a>长期计划
-
-| [Research](#long-research)                  | [半年安排](#long-half-year)           |
-| ------------                                | ------------------------------        |
-| _[Computer Vision](#long-re-cv)_            | _[计算机基础](#long-hy-cb)_           |
-| __[MRI](#long-re-mri)__                     | __[项目相关](#long-hy-engineer)__     |
-| _[Optimization Method](#long-re-om)_        | _[工作方法](#long-hy-work-trick)_     |
-| __[Domain Knowledge](#long-re-dk)__         | __[-]()__                             |
-| _[Math](#long-re-math)_                     | _[-]()_                               |
-| __[English](#long-re-eng)__                 | __[-]()__                             |
-| _[Writing&Blog](#long-re-wb)_               | _[-]()_                               |
-| __[Other](#long-re-other)__                 | __[-]()__                             |
-
-
-### <a name="long-research"></a>Research
-
-#### <a name="long-re-cv"></a>Computer Vision
-
->* 关注计算机视觉中的顶级会议论文
->* 人脸检测，人脸标记
->* OCR
-
-#### <a name="long-re-mri"></a> MRI
-
->* [CRNN用于动态核磁共振成像的论文](https://arxiv.org/pdf/1712.01751.pdf)
-
-#### <a name="long-re-om"></a> Optimization Method
-
->* review非线性规划
->* 与求解相关的理论(凸优化，非线性规划；数值分析)
->* blog上写文章 
-
-#### <a name="long-re-dk"></a> Domain Knowledge
-
->* 把计算机视觉里的基本书看了(PR, computer vision)
->* 数字信号处理教材
-
-#### <a name="long-re-math"></a> Math
-
->* 数学：统计推断，数学分析，矩阵论，测度论＋实分析
-
-#### <a name="long-re-eng"></a> English
-
->* toefl（100以上），GRE至少1300换算现在的分数就是320，最好1500以上
-
-#### <a name="long-re-wb"></a> Writing& Blog
-
->* all in blog
-
-#### <a name="long-re-other"></a> Other
-
->* 调研几个名校的实验室导师的研究方向，选择后读他们的论文
->* 调查mit，斯坦福和宾大的博士课程
-
-
-### <a name="long-half-year"></a> 半年安排
-
-#### <a name="long-hy-cb"></a> 计算机基础
-
-___语言 (c/c++):___
-
->* c traps and pitfalls, effective c++
->* 位操作，有符号无符号，高低字节（笔试题）
->* 内存相关（C++不会太问，因为都是自己管理)
->* 程序栈，函数执行的一个过程（查一下）
->* 虚函数，函数指针
->* 跨平台、混编，OC上：RN，java：JNI
-
-___操作系统(进程/线程):___ 
-
->* runloop机制, C++和OC都有; post_task; 实多进程现无锁化; google：发现死锁的方法
->* 线程开销
->* 多进程模型(Android)
->* IPC, 你为什么这么选型， async socket: 因为数据量大，unix socket好多都这么用的比如chrome
->* 多线性，多进程的选型（PC， android）
->* WKWebview, 跨进程的(IOS)
->* 好好理解企业微信移动端（企业微信做的很好），先看下runloop，然后看一个service，看网络，db的安排，connection favorivate service
->* 企业微信怎么做长连接和短连接的，这里企业微信做的還不錯
-
-___网络(tcp/ip http)___
-
->* TCP/IP高效编程
->* 滑窗等理论的细节
->* 你怎么做长连接
->* 了解Https协议，了解操作；http协议
->* udp: 视频动画、VoIP；用udp实现可靠的连接，udp打洞
->* ios怎么抓包
->* 网络调优，特别是移动端（移动端容易断）、心跳、接入点变化（WIFi to 4G），在km上搜移动端网络调优
-
-___性能调优, db___
-
->* sql调优
->* google：ios性能调优工具
-
-#### <a name="long-hy-engineer"></a> 项目相关
-
->* 企业微信框架特点：存储架构、消息架构、UI模型
->* 客户端整体架构：数据存储、网络请求、中间逻辑有哪几层
->* UI 到底层，然后再从底层回去，VOIP的信令流程
->* 企业微信框架特点：存储架构、消息架构、UI模型
->* 客户端整体架构：数据存储、网络请求、中间逻辑有哪几层
->* UI 到底层，然后再从底层回去，VOIP的信令流程, aec
->* 把投屏的流程： 跨进程通道，如何复用voip协议，把图画出来
->* 企业微信框架主要做业务的时候带着问题去了解
->* 客户端最常用设计模式：proxy、observer
->* 音视频: 数据通信与网络，语音信号处理，视频处理(ffmpeg)
-
-#### <a name="long-hy-work-trick"></a> 工作方法
-
->* 总体把握，了解各个平台特点，能做些什么，尽量把潜在的问题挖掘出来
->* 偏向研究的任务: 除了算法本身外业务不熟悉的地方需要及时提出，或者说为了加快进度提出业务资源, 这样做也能更好的给算法确定输入输出边界
->* 偏向工程的任务多向老员工请教
->* 在提升综合能力这样的定位下有没有什么高效的执行方法？比如这次我遇到的问题：在算法没完全稳定下来的时候再接入windows平台，里面一个比较小的一个问题都会花费我比较长的时间，甚至里面有些配置在网络上搜都很难，最后是通过电话沟通才知道怎么操作。windows平台问题最多，但类似的这样的问题在我做其他平台的时候同样会出现.
-
-### <a name="Summary"></a>总结:
-
-&emsp;&emsp;以前制定计划多数时候都在闭门造车，对于算法还好，但是在工作中明显吃了亏，所以下半年针对工程经验这一块，结合过来人的经验以及应试制订了半年计划，执行起来很简单，要满足：
-
->* 每准备一块内容后就要写一篇博文出来，同时以面试题作为应试检验
->* 博文写好后给有经验的人看一下，然后完善之
-
-### temp
-
-https://askubuntu.com/questions/779095/install-virtualbox-on-ubuntu-16-04-lts
-https://websiteforstudents.com/install-virtualbox-latest-on-ubuntu-16-04-lts-17-04-17-10/
+>* tensorflow predict加速
 
 <br>
 
