@@ -240,7 +240,7 @@ $$图9 crf-rnn网络结构(图片引自原始论文)$$
 
 ### <a name= "review"></a> 总结
 
-&emsp;&emsp;图像语义分类的EFC-CRF传统方法和CRF-RNN总结完了, 个人认为这两个方法的数学模型一致，可以认为后者是神经网络版的crf, 只不过有些局部的改进, 如: 标签的关系模型不再用___Potts model,___ , 对标签间的关系做了更细致的建模. 此外, 这里的
+&emsp;&emsp;图像语义分类的EFC-CRF传统方法和CRF-RNN总结完了, 个人认为这两个方法的数学模型一致，可以认为后者是神经网络版的crf, 只不过有些局部的改进, 如: 标签的关系模型不再用 ___Potts model___, 对标签间的关系做了更细致的建模. 此外, 这里的
 Unary Potential提供的分类结果很重要, 所以CRF-RNN中用了效果比较好的fcn-8s-pascal.caffemodel作为Unary potential, 我对Unary potential和CRF-RNN的理解是: 前者提供基础能力, 后者加强图像的语义结果.
 
 ### <a name= "will-review"></a> 待复习
