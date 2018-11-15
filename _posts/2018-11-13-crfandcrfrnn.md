@@ -14,7 +14,7 @@ tag: Research
 * [从EFC-CRF到 CRF-RNN](#CRF-RNN)
 * [存疑点](#doubt)
 * [总结](#review)
-* [待复习](#will-review)
+* [待梳理](#will-review)
 * [Reference](#reference)
 
 ### <a name= "EFC-CRF"></a> EFC-CRF
@@ -252,9 +252,9 @@ $$图10 竞争能力$$
 ### <a name= "review"></a> 总结
 
 &emsp;&emsp;图像语义分类的EFC-CRF传统方法和CRF-RNN总结完了, 个人认为这两个方法的数学模型一致，可以认为后者是神经网络版的crf, 只不过有些局部的改进, 如: 标签的关系模型不再用 ___Potts model___, 对标签间的关系做了更细致的建模. 此外, 这里的
-Unary Potential提供的分类结果很重要, 所以CRF-RNN中用了效果比较好的fcn-8s-pascal.caffemodel作为Unary potential, 我对Unary potential和CRF-RNN的理解是: 前者提供基础能力, 后者加强图像的语义结果.
+Unary Potential提供的分类结果很重要, 所以CRF-RNN中用了效果比较好的fcn-8s-pascal.caffemodel作为Unary potential, 我对Unary potential和CRF-RNN的理解是: 前者提供基础能力, 后者加强图像的语义结果. 另外, CRF-RNN对神经网络模型的建模方式同我之前写的一篇[博文](https://lmrshare.github.io/2018/10/mri/)里介绍的ADMM-net-CS-MRI建模方式类似.
 
-### <a name= "will-review"></a> 待复习
+### <a name= "will-review"></a> 待梳理
 
 + <font color="ff0000">permutohedral lattice</font>
 
