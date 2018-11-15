@@ -11,7 +11,7 @@ tag: Research
 ### 目录
 
 * [EFC-CRF](#EFC-CRF)
-* [从EFC-CRF到 CRF-RNN()](#CRF-RNN)
+* [从EFC-CRF到 CRF-RNN](#CRF-RNN)
 * [存疑点](#doubt)
 * [总结](#review)
 * [待复习](#will-review)
