@@ -6,13 +6,15 @@ description: "Rearch"
 tag: Research
 ---
 
+&emsp;&emsp;本文对人脸对齐涉及到的一些方法进行总结, 并在最后介绍我在这个任务上的一些工作.
+
 ### 目录
 
 * [CNN在人脸对齐上的应用](#cnn-face-alignment)
+* [我的工作](#my-work)
 * [待查](#will-search)
 * [Reference](#Reference)
 
-&emsp;&emsp;本文对人脸对齐涉及到的一些方法进行总结, 并在最后介绍我在这个任务上的一些工作.
 
 ### <a name="cnn-face-alignment"></a>CNN在人脸对齐上的应用
 
@@ -191,6 +193,8 @@ position_c1: 找这篇文章以及人脸的代码, 配合文章读代码; 把bac
 ___常见求解方法:___
 
 position_c: 找这篇文章以及人脸的代码, 配合文章读代码; 把backpropagation推导一遍.
+
+### <a name="my-work"></a>我的工作
 
 ### <a name="will-search"></a>待查
 
