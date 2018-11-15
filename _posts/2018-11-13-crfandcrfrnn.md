@@ -238,6 +238,16 @@ $$图8 传统计算单元的layer化$$
 
 $$图9 crf-rnn网络结构(图片引自原始论文)$$
 
+### <a name= "doubt"></a> 存疑点
+
+&emsp;&emsp;我对EFC-CRF中的模型对于smoothness kernel有一点疑问, 原文提到这项约束可以去除孤立点, 仔细分析下, 我觉得目前的模型只是可能去除孤立点, 理由如下: 像素$i$的标签$l$概率由其他像素的$l$标签概率和权重共同决定, 而smooth kernel约束了图的权重, 从而模型上支持去除孤立区. 然而, 图权重对任意标签具有同等约束作用. 我想了下, 如果不优化原有模型, 就要看各个标签概率在同样约束下的最终竞争能力了. 举例说明: 要看图中黄色临域(smoothness kernel控制)内黑白标签在同等权重下的竞争能力, 如图所示:
+
+<div align="center">
+	<img src="/images/posts/efccrf-crfrnn/competition.png" height="400" width="400">
+</div>
+
+$$图10 竞争能力$$
+
 ### <a name= "review"></a> 总结
 
 &emsp;&emsp;图像语义分类的EFC-CRF传统方法和CRF-RNN总结完了, 个人认为这两个方法的数学模型一致，可以认为后者是神经网络版的crf, 只不过有些局部的改进, 如: 标签的关系模型不再用 ___Potts model___, 对标签间的关系做了更细致的建模. 此外, 这里的
