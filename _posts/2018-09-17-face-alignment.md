@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "人脸对齐方法总结(草稿)"
+title: "人脸对齐方法总结"
 date: 2018-09-17
 description: "Rearch"
 tag: Research
@@ -18,19 +18,9 @@ tag: Research
 
 ### <a name="cnn-face-alignment"></a>CNN在人脸对齐上的应用
 
-先对Facial Landmark Detection by Deep Multi-task Learning(2014年的文章)论文做个笔记
-
 #### Facial Landmark Detection by Deep Multi-task Learning(TCDCN)
 
-TCDCN将人脸标记点检测任务与其他相关任务(related tasks)联合起来一起优化. TCDCN构造了一个task-constrained loss function来使related task的error得以反响传播来改善标记点检测任务.
-为了调和不同难度、不同收敛速率的任务, 专门设计了任务级的(task-wise)停止规则来加速收敛。
-
-TCDCN从raw pixels中学习feature representation而不是预定义的HOG 人脸描述子. 
-
-知识点：
-
->* regularization term的作用就是惩罚weights的complexity
->* 通常的MTL最大化所有任务的性能, 而TCDCN希望在相关任务的辅助下最大化主要任务的性能, 即人脸标记点检测.
+&emsp;&emsp;TCDCN将人脸标记点检测任务与其他相关任务(related tasks)联合起来一起优化. TCDCN构造了一个task-constrained loss function来使related task的error得以反响传播来改善标记点检测任务. 为了调和不同难度、不同收敛速率的任务, 专门设计了任务级的(task-wise)停止规则来加速收敛. TCDCN从raw pixels中学习feature representation而不是预定义的HOG 人脸描述子. 
 
 SGD对于单一任务的学习是有效的, 但是对于多任务的学习却没那么容易, 原因在于: 不同任务具有不同的收敛速率. 现有的解决这个问题的方案为: 利用任务之间的相关性, 例如: 学习一个所有任务权重的协方差矩阵. 然而, 这个方法的局限在于需要要求所有任务的loss function是相同的, 可见对于具有不同loss function的多任务系统显然是不适用的. 此外, 当weight向量的维度很高时, 计算协方差矩阵的代价是很高的.
 

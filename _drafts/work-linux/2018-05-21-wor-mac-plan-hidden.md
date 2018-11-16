@@ -48,7 +48,7 @@ tag: HNotes
 
 >* review非线性规划
 >* 与求解相关的理论(凸优化，非线性规划；数值分析)
->* blog上写文章 
+>* blog上写文章
 
 #### <a name="long-re-dk"></a> ___Domain Knowledge___
 
