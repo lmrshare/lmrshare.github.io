@@ -93,6 +93,16 @@ $$图3(b). 池化层和全连接层$$
 
 考虑到实时性的问题, 我以One millisecond face alignment with an ensemble of regression trees(ESR)为基础设计了可以捕捉时域信息的模型, 然后, 再通过常规的一些后处理策略加强跟踪效果, 同时, 针对跟踪问题固有的fitting现象, 加了reboot机制. 细节可参考[我的论文](https://github.com/lmrshare/fgr_publish2017/blob/master/paper4fg/FG2018_latex_template/fgr_2018.pdf).
 
+<div align="center">
+	<img src="/images/posts/cnn-blog/optimization.png" height="800" width="800">
+</div>
+
+
+$$图4. 优化效果$$
+
+
+其中, 红色代表优化后的效果, 绿色代表优化前的效果. 我们的方法对于大角度转动、夸张表情的标记都比优化前有了较大的提高. 另外, 从视频里的跟踪表现来看, 抖动情况也明显减少, 运动的平滑性也提高了. 但仍有不足的地方, 比如精细化的表情, 如眯眼、微动嘴角.
+
 ### <a name="will-review"></a>待梳理
 
 + <font color="ff0000">怎样将论文中的辅助任务整合到普通模型中(仔细回顾下TCDCN)</font>
