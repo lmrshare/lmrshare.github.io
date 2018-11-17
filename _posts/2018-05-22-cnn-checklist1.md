@@ -21,8 +21,6 @@ tag: Domain Knowledge
 * [R-CNN(2013)、Fast R-CNN(2015)、Faster R-CNN(2015)](#r-cnn-fast-rcnn-faster-rcnn)
 * [Generative Adversarial Networks 2014](#GAN)
 * [Generating Image Descriptions](#GID)
-* [Alignment Model](#alignment-model)
-* [Generation Model](#generation-model)
 * [Hessian Free Optimization](#hessian-free-optimization)
 * [待添加](#will-search)
 * [Reference](#reference)
@@ -132,7 +130,7 @@ _ __实现细节:__ 这部分看的不是很明白，后续看原文(undone)
 
 ### <a name="vggnet"></a>[VGG Net(2014)](https://arxiv.org/pdf/1409.1556v6.pdf)
 
-19层CNN并且严格限制了滤波的大小为3x3，stride为1，在CNN的后面接了2x2的maxpooling，其中stride为2。VGG Net的特点是__简单__、__深__。
+19层CNN并且严格限制了滤波的大小为3x3，stride为1，在CNN的后面接了2x2的maxpooling，其中stride为2。VGG Net的特点是 __简单__、__深__。
 
 总结：
 
@@ -197,6 +195,8 @@ $$图2. residual block(图片引自原文)$$
 
 ### <a name="r-cnn-fast-rcnn-faster-rcnn"></a>[R-CNN(2013)](https://arxiv.org/pdf/1311.2524v5.pdf)、[Fast R-CNN(2015)](https://arxiv.org/pdf/1504.08083.pdf)、[Faster R-CNN(2015)](https://arxiv.org/pdf/1506.01497v3.pdf)
 
+#### R-CNN
+
 R-CNN是解决object detection任务的, 引用率挺高的. R-CNN在做检测任务的时候通常分为成两个步骤: 感兴趣区域提取(region proposal)、分类(classification). 对于第一步, RCNN使用了[Selective Search](https://ivi.fnwi.uva.nl/isis/publications/2013/UijlingsIJCV2013/UijlingsIJCV2013.pdf)，这个算法可以生成2000个最有可能包含object的区域。获取到这些region后，将其规范到图像尺寸，然后将这些图像作为input喂给训练好的CNN(如AlexNet)，这样就会为每个region image提取feature vector。最后利用linear SVMs(事先为每个class训练好的一个个SVM)对这些feature vector进行分类。补充一点，处于精细化的考虑，还会将这些vector传递给bounding box regressor来获得更精确的box.
 
 #### Fast R-CNN
@@ -217,11 +217,11 @@ LeCun在Quora中[提到](https://www.quora.com/What-are-some-recent-and-potentia
 
 当CNNs和RNNs结合的时候会发生什么? Fei-Fei Li和Andrej Karpathy两位结合了CNN和RNN为图像的不同区域生成了自然语言描述. 一般情况下, 我们喂给CNN的数据都是image+比较简单清晰的标签, 而在这个任务里, 标签是一句话, 其中句子的每个segment和图像的一部分区域对应, 这叫做weak label. 利用这样的训练数据会训练出可以把segment和图像region对应(alignment)起来的深度神经网络, 这个网络叫做Alignment Model. 此外, 另外一个神经网络会将一副图像作为输入, 然后生成一句文本描述. 接下来分别介绍这两个模型: Alignment 和 Generation.
 
-### <a name="alignment-model"></a>Alignment Model
+#### Alignment Model
 
 这个模型的作用就是把视觉和文本数据对应起来，该模型将图像和句子作为输入, 并输出得分来评价匹配的好坏程度. 接下来我们首先考虑图像表示: 第一步，将图像喂给R-CNN来检测出一个个独立的object. R-CNN是在imagenet上训练出来的. 包括原图在内共有20个区域被嵌入在500-d的sapce内，因此每个图像有20个500-d的向量，这样我们就有了图像信息，接下来是获取句子信息的内容了。这篇论文利用了RNN来将words/segements映射到同样的多模空间内，这样image和sentence就都在同样的多模空间内了，这也就意味我们可以通过计算他们的inner-product来对他们的相似性金星度量。
 
-### <a name="generation-model"></a>Generation Model
+#### Generation Model
 
 对齐模型的作用是构建由图像区域和文本描述子组成的数据集, 然后生成模型从这个数据集中进行学习来获得可以为图像生成描述子的能力.
 

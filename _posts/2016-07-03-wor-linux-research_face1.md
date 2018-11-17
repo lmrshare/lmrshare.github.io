@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "整理自为知笔记的关于人脸对齐的(1)"
+title: "人脸对齐notes"
 date: 2016-07-03
 description: "这是在学校期间做的调研"
 tag: Research
