@@ -100,7 +100,6 @@ $$图3(b). 池化层和全连接层$$
 
 $$图4. 优化效果$$
 
-
 其中, 红色代表优化后的效果, 绿色代表优化前的效果. 我们的方法对于大角度转动、夸张表情的标记都比优化前有了较大的提高. 另外, 从视频里的跟踪表现来看, 抖动情况也明显减少, 运动的平滑性也提高了. 但仍有不足的地方, 比如精细化的表情, 如眯眼、微动嘴角, 此外, 抗遮挡的能力也较差.
 
 ### <a name="will-review"></a>待梳理
@@ -110,26 +109,29 @@ $$图4. 优化效果$$
 
 ### <a name="Reference"></a>Reference
 
+Source:
+
+- [1. train](https://github.com/luoyetx/deep-landmark)
+- [2. test](https://github.com/luoyetx/mini-caffe/tree/master)
+- [3. Cascaded CNN 方法寻找人脸关键点](https://www.zybuluo.com/nrailgun/note/177447)
+- [4. 实践总结](https://blog.csdn.net/XZZPPP/article/details/74933489)
+- [5. source code(TCDCN) by one reader](https://github.com/flyingzhao/tfTCDCN)
+- [6. 香港中文大学多媒体实验室](http://mmlab.ie.cuhk.edu.hk/publications.html)
+
 Papers:
 
 - [1. 2013-cvpr-Deep Convolutional Network Cascade for Facial Point Detection(cascade CNN)](https://ieeexplore.ieee.org/document/6619290)
 - [2. 2014-eccv-Facial Landmark Detection by Deep Multi-task Learning(TCDCN)](http://mmlab.ie.cuhk.edu.hk/projects/TCDCN.html)
 - [3. 2014-cvpr-One millisecond face alignment with an ensemble of regression trees](https://ieeexplore.ieee.org/document/6909637)
-- [4. An Efficient Method Utilizing Temporal Correlationship for Real-time Face Alignment](https://github.com/lmrshare/fgr_publish2017/blob/master/paper4fg/FG2018_latex_template/fgr_2018.pdf)
+- [4. 2015-cvpr-Face Alignment by Coarse-to_fine Shape Searching](http://personal.ie.cuhk.edu.hk/~ccloy/files/cvpr_2015_alignment.pdf)
+- [5. 2018-mine-An Efficient Method Utilizing Temporal Correlationship for Real-time Face Alignment](https://github.com/lmrshare/fgr_publish2017/blob/master/paper4fg/FG2018_latex_template/fgr_2018.pdf)
 
-2014 TCDCN:
-- [1. source code by one reader](https://github.com/flyingzhao/tfTCDCN)
-- [2. and his blog](https://blog.csdn.net/tinyzhao/article/details/52730553)
-- [3. TCDCN blog](http://mmlab.ie.cuhk.edu.hk/projects/TCDCN.html)
-- [4. 读后小记](https://blog.csdn.net/xiaomeng_marina/article/details/39897773)
+Blogs:
 
-2013 Cascaded CNN相关的一些代码资源和帖子:
-
-- [1. 做人脸同行的博文](https://luoyetx.github.io/)
-- [2. train](https://github.com/luoyetx/deep-landmark)
-- [3. test](https://github.com/luoyetx/mini-caffe/tree/master)
-- [4. Cascaded CNN 方法寻找人脸关键点](https://www.zybuluo.com/nrailgun/note/177447)
-- [5. 实践总结](https://blog.csdn.net/XZZPPP/article/details/74933489)
+- [1. 人脸特征点检测: TCDCN](https://blog.csdn.net/tinyzhao/article/details/52730553)
+- [2. TCDCN homepage](http://mmlab.ie.cuhk.edu.hk/projects/TCDCN.html)
+- [3. 读后小记](https://blog.csdn.net/xiaomeng_marina/article/details/39897773)
+- [4. Jie Zhang(做人脸的)的主页](https://luoyetx.github.io/)
 
 <br>
 
