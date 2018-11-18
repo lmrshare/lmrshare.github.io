@@ -103,7 +103,7 @@ $$图1. mean-field \ approximation求解伪代码$$
 
 &emsp;&emsp;我对于CRF-RNN的理解就是: 将mean-field approximation的一次迭代中的计算步骤定义成相应的layer, 如: 卷积层, 反卷积层. 由这些layer构成一个神经元或者说一个计算block, 然后, 将这些神经元recurrent后就形成了RNN神经网络. 为了对次描述有更深刻的认识, 下面我会用比较多的图来解释mean-field approximation的计算过程, 这个清楚了, 对CRF-RNN的网络细节也就清楚了.
 
-#### 像素关系
+#### ___像素关系___
 
 任意像素$i$为某标签$l$的概率由图像所有像素为$l$的概率共同决定, "共同决定"涉及到加权和, 加权的方式由pairwise potential中的kernel 个数$m$决定, 在EFC-CRF和CRF-RNN有两种加权方式: Appearance kernel, Smoothness Kernel, 个人觉得kernel就像是某种特定的视角. 像素之间的关系如图2(a-c)所示:
 
@@ -127,7 +127,7 @@ $$图2(c) 像素N与其他所有像素的关系.$$
 
 注意, $k_{ij}^{m}$中的下标代表$i, j$像素的关系, $m$代表具体的关系(视角), 如: 是Appearance kernel还是Smoothness kernel.
 
-#### 计算(Message Passing、Weighting Filter Outputs)
+#### ___计算(Message Passing、Weighting Filter Outputs)___
 
 这里给出具体的像素标签概率Message Passing和Weighting Filter Outputs的计算流程, 如图3-5(a-c)所示:
 
@@ -188,7 +188,7 @@ $$图5(c) 像素N标签L.$$
 
 注意: 像素之间的关系权重$k_{ij}^{m}$只于图像相关于标签没关系. 图看到这里我们需要知道图像中的像素是如何将标签$l$的概率传导给目标像素的.
 
-#### 计算(Compatibility Transform、Add unary Potentials、Normalization)
+#### ___计算(Compatibility Transform、Add unary Potentials、Normalization)___
 
 这部分计算内容相对容易, 也比较直观: 经过Message Passing和Weighting Filter后(结合了图像特征, 体现着后验), 再通过卷积(这里的卷积核体现标签的关系或者说兼容性)进一步更新目标像素各个标签的概率, 然后整合Unary potential, 最后进行归一化, 这样
 就更新了概率分布.
@@ -199,7 +199,7 @@ $$图5(c) 像素N标签L.$$
 
 $$图6 兼容变换、Unary\ Potential、Normalization$$
 
-#### Mean-field approximation流程图
+#### ___Mean-field approximation流程图___
 
 把上面提到的计算流程拼接起来, 看下整体的流程:
 
@@ -221,7 +221,7 @@ $$图7(b) 像素2的mean-field approximation(一次迭代)$$
 
 $$图7(c) 像素N的mean-field approximation(一次迭代)$$
 
-#### mean-field(一次迭代)与RNN神经元的对应
+#### ___mean-field(一次迭代)与RNN神经元的对应___
 
 <div align="center">
 	<img src="/images/posts/efccrf-crfrnn/parallelism.png" height="400" width="800">
@@ -229,7 +229,7 @@ $$图7(c) 像素N的mean-field approximation(一次迭代)$$
 
 $$图8 传统计算单元的layer化$$
 
-#### CRF-RNN网络
+#### ___CRF-RNN网络___
 
 把图8中的CNN layers作为一个神经元进行recurrent后就构成了CRF-RNN这篇论文的网络结构:
 
