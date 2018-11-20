@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "机器视觉(未完成)"
+title: "机器视觉"
 date: 2018-09-01 
 description: "Notes about Robot vision"
 tag: Domain Knowledge
