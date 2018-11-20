@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "not process"
+title: "sr-mri-paper-notes"
 date: 2009-01-01
 description: "还没处理"
 tag: HNotes
@@ -13,10 +13,6 @@ tag: HNotes
 * [CNN在超分辨率上的应用---CNN=SR](#cnn-sr)
 * [MRI与SR问题的异同](#mrisr-compare)
 * [总结](#review)
-* [Reference](#Reference)
-* [Virtualenv and anaconda](#vir-environment)
-* [Lasagne](#Lasagne-config)
-* [Reference](#Reference)
 
 ### <a name="dc-cnn-dmri"></a>深度级联CNN在动态核磁共振成像上的应用---DCCNN-DMRI
 
@@ -144,121 +140,6 @@ requires dozens of iterations of dictionary learning and sparse coding steps
 >* [CNN-based MR image reconstruction2](unfound:Accelerating magnetic resonance imaging via deep learning)
 >* [DCCNN-DMRI](https://github.com/js3611/Deep-MRI-Reconstruction)
 >* [mridata](http://mridata.org/)
-
-### <a name="vir-environment"></a>virtualenv and anaconda
-
->* conda: 可对Python、R、Ruby、Lua、Scala、Java、Javascript、C/C++、FORTRAN的包、依赖、环境进行管理(即在conda环境中管理这些语言的包)
->* pip: 允许你在任何环境中安装pthon包, 关注python
->* conda和virtualenv最好独立使用, 尽量避免嵌套安装, 这样会和pip有更好的兼容性
->* wheel没有conda的依赖处理能力
->* virtualenv: 构建独立的python环境, 解决包之间的依赖、版本、权限的问题(只针对python)
-
-总结: conda虚拟环境容易迁移, 可以在有外网的电脑生成后打包上传到无网的服务器上使用. pip是个包管理器、virtualenv是环境管理器、而conda两者兼顾.
-
-
-#### conda
-
-conda目录结构:
-
->* ROOT_DIR: Anaconda或Miniconda的安装位置
->* PKGS_DIR或/pkgs: 解压位置, 每个包位于二级目录; 用于在conda环境里进行link
->* /envs: conda环境的系统路径
-
-conda环境:
-
->* 一个环境就是一个目录, 这个目录包含一些特定的(版本)conda包
->* 可以在各个环境中自由切换
->* 可以通过发给别人一个environment.yaml来共享你的conda环境
-
-conda包以及安装:
-
->* 一个conda包就是一个tarball文件(可能包含系统级库、Python或者其他模块、可执行文件)
->* conda包从remote channels(conda包的URL)下载、更新
->* conda命令会默认搜索一些remote channels, 另外, 默认搜索行为是可以更改的, 也就是说你可以自己指定一批默认URL
->* 所有平台的包格式是一致的, 即: *.tar.bz2
->* conda install [packagename]: 包的安装命令
->* info/: 包里会有一个这样的路径, 里面是metadata
->* 安装原理: 文件(info/里的文件除外)被提取到有install前缀的路径里; 安装conda包到conda环境就是解压缩、放到环境/路径里(同样的方式处理其依赖)
-
-conda创建独立的环境:
-
->* 创建环境、并安装包、启用、查询
-
-```
-#snowflakes是环境名, biopython是包名
-conda create --name snowflakes biopython
-#启用
-source activate snowflakes
-# 查询有哪些环境
-conda info --envs
-# 对python的管理
-conda create --name snakes python=3.5
-```
-
-包管理:
-
->* 查询、安装
-
-```
-
-#查询包, 可以输入一部分名字, 然后会列出与之相关的包名以供选择安装
-conda search xxx
-#安装
-conda install xxx
-#列出当前环境所有安装的包
-conda list
-```
-
->* 在有其他python或包的环境下安装conda: 不需要卸载已有安装, 正常安装即可
-
-conda的静默安装:
-
->* -b选项: 不会修改~/.bash_profile
->* 启动的时候需要export PATH="$HOME/miniconda/bin:$PATH"、source $HOME/miniconda/bin/activate
-
-```
-wget https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b -p $HOME/miniconda
-```
-
-position_c: [Configuration](https://conda.io/docs/user-guide/configuration/index.html)
-
-卸载conda:
-
-```
-rm -rf ~/miniconda
-```
-
-others:
-
->* conda search –canonical \| grep -v ‘py\d\d’: 找出不是 pip和virtualenv可以管理的python包
-
-### <a name="Lasagne-config"></a>Lasagne
-
-特点:
-
->* 简洁已用、易扩展
->* 没有隐藏Theano, 直接处理返回Theano expression或python/numpy data types
->* 功能实用
->* Do one thing and do it well
-
-安装:
-
-### <a name="Review-code"></a>Review code
-
->* 输入: 零填充图像的实部、虚部
->* 输出: 重建图像也就是de-aliasing后的图像
-
-position_c: print('Start Training...')
-
-### <a name="Reference"></a>Reference
-
-- [0. A Deep Cascade of Convolutional Neural Networks for Dynamic MR Image Reconstruction](https://arxiv.org/pdf/1704.02422.pdf)
-- [1. Lasagne](https://github.com/Lasagne/Lasagne)
-- [2. virtualenv](https://www.jianshu.com/p/08c657bd34f1)
-- [3. conda and virtualenv](http://nooverfit.com/wp/%E5%85%B3%E4%BA%8Econda%E5%92%8Canaconda%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84%E4%BA%8B%E5%AE%9E%E5%92%8C%E8%AF%AF%E8%A7%A3-conda%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/)
-- [4. 环境隔离](https://orianna-zzo.github.io/blog/2018-01/%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%BB%BA%E7%AB%8Bpython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/)
-
 
 <br>
 
