@@ -6,11 +6,17 @@ description: "Notes about Effective C++"
 tag: Computer Basises
 ---
 
-### Effective C++
-
 Here is my notes about the book Effective C++.
 
-#### Introduction
+### Effective C++
+
+* [Introduction](#introduction)
+* [Accustoming Yourself to C++](#Accustoming-Yourself-to-cpp)
+* [TODO](#todo)
+* [confuse me](#confuse-me)
+* [Review](#review)
+
+### <a name="introduction"></a>Introduction
 
 >* Declaration:tells compilers about the name and type of something, but it omits certain details.
 >* size_t: the type size_t in namespace std . That namespace is where virtually everything in C++’s standard library is located.size_t , by the way, is just a typedef for some unsigned type that C++
@@ -25,7 +31,7 @@ though they may still be used for explicit type conversions
 important function, because it defines how an object is passed by value. Pass-by-value means call the copy constructor.
 >* copy assignment operator: copy the value from one object to another of the same type. 
 
-#### Accustoming Yourself to C++ 
+### <a name="Accustoming-Yourself-to-cpp"></a>Accustoming Yourself to C++ 
 
 ___Item 1:___
 
@@ -934,11 +940,11 @@ ___Item 38:___ Model “has-a” or “is-implemented-in-termsof” through comp
 
 position_c: Item 38 en: 184, ch:216
 
-#### TODO
+### <a name="todo"></a>TODO
 
 >* Search inline video, and code about item 31
 
-#### confuse me
+### <a name="confuse-me"></a>confuse me
 
 >* pass objects by reference-to-const explained as item 20, and it can be ensured by that
 const member functions manipulate the resulting const-qualified objects.
@@ -955,7 +961,7 @@ const member functions manipulate the resulting const-qualified objects.
 >* I did not review all details in item 31, next time focus on code and blogs.
 >* forward declaration
 
-### Review:
+### <a name="review"></a>Review
 
 There are too many details I did not care befor, and I will review them frequently from now on.
 

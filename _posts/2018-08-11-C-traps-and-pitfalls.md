@@ -6,25 +6,34 @@ description: "Notes about C traps and pitfalls."
 tag: Computer Basises
 ---
 
-### C traps and pitfalls
-
 Here is my notes about the book ___C traps and pitfalls____.
 
+### C traps and pitfalls
+
+* [Token](#token)
+* [Declarations](#Declarations)
+* [Linkage](#Linkage)
+* [Semantic Pitfalls](#Semantic-Pitfalls)
+* [Library Functions](#Library-Functions)
+* [The Preprocessor](#The-Preprocessor)
+* [Portability Pitfalls](#Portability-Pitfalls)
+* [Good cases for me](#good-cases-for-me)
+* [Review](#review)
+
+### <a name="token"></a>Token
 
 Lexical
 
-#### Token
-
-_>* += are two tokens. 
+>* += are two tokens. 
 >* A _string enclosed in double quotes, on the other hand, is a short-hand way of writing a pointer to a nameless arrays.
 >**** writing ’yes’ instead of "yes" may well go undetected. The latter means ‘‘the address of the first of four consecutive memory locations containing y,
 e, s, and a null character, respectively.’’ The former means ‘‘an integer that is composed of the values of
 the characters y, e, and s in some implementation-defined manner.’’ Any similarity between these two
 quantities is purely coincidental. 
 
-Syntactic
+### <a name="Declarations"></a>Declarations
 
-#### Declarations
+Syntactic
 
 >* declaration has two parts: a ___type___ and a list of stylized ___expressions___ that are expected to evaluate to that type.
 >* writting a cast for that type:___remove___ the ___variable name and the semicolon___ from the declaration and ___enclose___ the whole thing in parentheses. 
@@ -38,16 +47,16 @@ a = b = c means the same as b = c; a = b;
 >* Lowest of all is the comma operator. 
 >* The Dangling else Problem.: Here is the rule that an else is always associated with the closest unmatched if. 
 
-#### Linkage
+### <a name="Linkage"></a>Linkage
 
 >* You Must Check External Types Yourself:  
 >* Although arrays and pointers behave very similarly in some contexts, ___they are not the same___. 
 >* Although using the name of ___an array of characters___ will generate a pointer to the first element of that array, that pointer is generated as needed and not actually kept around. 
 >* char filename[] = "/etc/passwd"; char *filename;: The two declarations of filename use storage in different ways; they cannot coexist.  
 
-#### Semantic Pitfalls 
+### <a name="Semantic-Pitfalls"></a>Semantic Pitfalls 
 
->* Expression Evaluation Sequence: Only the four C operators &&, ||, ?:, and , specify an order of evaluation. All other C operators evaluate their operands in undefined order. 
+>* Expression Evaluation Sequence: Only the four C operators &&, \|\|, ?:, and , specify an order of evaluation. All other C operators evaluate their operands in undefined order. 
 >* the assignment operators do not make any guarantees about evaluation order. 
 >* Integer Overflow: If either operand is unsigned, the result is unsigned, and is defined to be modulo 2^n, where n is the word size. If both operands are signed, the result is undefined.   
 >* Shift Operators: In a right shift, If the item being shifted is ___unsigned___, zeroes are shifted in. If the item is signed, the implementation is permitted to fill
@@ -55,14 +64,14 @@ vacated bit positions either with zeroes or with copies of the sign bit. If you 
 right shift, declare the variable in question as unsigned. You are then entitled to assume that vacated bits
 will be set to zero. 
 
-#### Library Functions 
+### <a name="Library-Functions"></a>Library Functions 
 
 >* setbuf (stdout, buf): it tells the I/O library that all output written to stdout should henceforth use buf as an output buffer, and that
 output directed to stdout should not actually be written until buf becomes full or until the programmer
 directs it to be written by calling fflush. The appropriate size for such a buffer is defined as BUFSIZ in
 "stdio.h"
 
-#### The Preprocessor
+### <a name="The-Preprocessor"></a>The Preprocessor
 
 >* The programs we run are not the programs we write: they are first transformed by the C preprocessor. 
 >* Macros: we may want to define things that appear to be functions but do not have the execution over-
@@ -70,7 +79,7 @@ head normally associated with a function call
 >* Macros are not Functions: Be careful for ___an operand that is used mul-times may be evaluated mul-times___, especially for operator such as xx[i++], *xx++.
 >* Macros are not Functions:
 
-#### Portability Pitfalls 
+### <a name="Portability-Pitfalls"></a>Portability Pitfalls 
 
 >* C compilers usually produce object programs that must then be processed by loaders in order to be able to access library subroutines. Loaders, in turn, often impose
 their own ___restrictions___ on the kinds of names they can handle. 
@@ -110,7 +119,7 @@ to watch out for when moving a C program to another implementation.
 
 position_c: [Portability Pitfalls]
 
-#### Good cases for me
+### <a name="good-cases-for-me"></a>Good cases for me
 
 >** case1: the following way of copying the first n elements of array x to array y doesn’t work
 
@@ -216,7 +225,7 @@ void printneg (n, p)
 
 ```
 
-### Review:
+### <a name="review"></a>Review:
 
 There are too many details I did not care befor, and I will review them frequently from now on.
 
