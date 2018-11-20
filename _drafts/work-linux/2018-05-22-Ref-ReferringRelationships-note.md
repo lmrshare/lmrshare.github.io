@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Proj-这么多人，AI怎么知道你说的是哪一个"
+title: <font color="ff0000">Proj-这么多人，AI怎么知道你说的是哪一个</font>
 date: 2018-4-30
 description: "ReferringRelationship项目笔记1"
 tag: Projs

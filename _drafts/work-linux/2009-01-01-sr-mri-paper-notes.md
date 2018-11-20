@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "sr-mri-paper-notes"
+title: <font color="ff0000">sr-mri-paper-notes</font>
 date: 2009-01-01
 description: "还没处理"
 tag: Projs

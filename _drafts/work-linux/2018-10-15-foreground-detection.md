@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "前景提取调研(未完成)"
+title: <font color="ff0000">前景提取调研(未完成)</font>
 date: 2018-10-15
 description: "Foreground Detection"
 tag: Research

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "频域水印文献调研"
+title: <font color="ff0000">频域水印文献调研</font>
 date: 2018-10-09
 description: "Frequency-Watermark papers"
 tag: Research
