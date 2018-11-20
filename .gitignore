@@ -5,6 +5,7 @@ _site/
 *.swp
 .Trashes
 _drafts/work-mac/
+_drafts/work-mac2/
 images/drafts/
 Gemfile.lock
 .gitignore
