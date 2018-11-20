@@ -3,7 +3,7 @@ layout: post
 title: "sr-mri-paper-notes"
 date: 2009-01-01
 description: "还没处理"
-tag: HNotes
+tag: Projs
 ---
 
 * [inverse-problem](#ip)
