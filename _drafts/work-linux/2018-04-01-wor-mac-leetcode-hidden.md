@@ -13,6 +13,7 @@ tag: HNotes
 * [正则表达式匹配](#Regular-Expression-Matching)
 * [通配符匹配](#Wildcard-Matching)
 * [Longest Common Prefix](#Longest-Common-Prefix)
+* [搜索](#search)
 
 
 ### <a name="Longest-Palindromic-substring"></a>最长回文子串
@@ -197,6 +198,12 @@ trie 用于检索一个字符串集合中的任意一个字符串, 可应用于�
 
 
 position_c: [implement trie(prefix tree----Another reason why trie outperforms hash table, is that as hash table increase...](https://leetcode.com/articles/implement-trie-prefix-tree/) (ps: 理解trie算法, 掌握如何从[S_1,..., S_n]中构建一个trie, 然后实现优化的LCP query
+
+### <a name="search"></a>搜索
+
+___广度搜索:___
+
++ 寻找每个状态的所有下一个可能性, 停止规则就是找到目标了立马停止
 
 <br>
 
