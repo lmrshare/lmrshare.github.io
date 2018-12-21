@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "Leetcode"
+title: <font color="ff0000">Leetcode</font>
 date: 2018-4-01
 description: "Leetcode notes"
 tag: HNotes
 ---
-
 
 ### 目录
 
@@ -14,6 +13,7 @@ tag: HNotes
 * [通配符匹配](#Wildcard-Matching)
 * [Longest Common Prefix](#Longest-Common-Prefix)
 * [搜索](#search)
+* [经验](#experience)
 
 
 ### <a name="Longest-Palindromic-substring"></a>最长回文子串
@@ -204,6 +204,44 @@ position_c: [implement trie(prefix tree----Another reason why trie outperforms h
 ___广度搜索:___
 
 + 寻找每个状态的所有下一个可能性, 停止规则就是找到目标了立马停止
+
+### <a name="experience"></a>经验
+
+题型: 线性结构、树形结构、图形结构、高级算法
+
++ 技巧1: 每天循环上面的类型
+
+note1:
+
++ idea: 手算、拨洋葱(拆成相同的子问题)
++ 前、中、后序遍历的通用解法: 定义op为vist和print, 也就是压栈的时候压(节点和操作类型)
++ rotate image: 一圈圈的转
+
+动态规划
+
++ 倒推, eg: 3158(312. Burst Balloons)
+
+时间短、任务急刷这个list:
+
++ leetcode 697. Degree of an array
++ leetcode 611: valid triangle number, tip: 最小两边大于第三边. 1. 枚举, 2. 如何O(n^2)
++ leetcode 592: Fraction Addition and Subtraction, tip: 约分公式
++ leetcode 454: 4sum, tip: O(n^4) to O(n^2), hash
++ leetcode 412: Fizz Buzz
++ leetcode 398: Random Pick Index, tip: 水塘抽验, 终局思维(不理解)
++ leetcode 395: Longest substring with At least K repeating characters
++ leetcode 放气球, tip: 终局思想
++ leetcode 会议室开会: tip: 贪心
++ leetcode n: xxx
+
+生长学习法:
+
++ 还原事物从无到有的过程, 想清楚每个环节的why
++ 如何想到的(不懵，把每一步手算、抽象)
++ 手算、抽象
++ 终局思维: 终
++ 线性表里stack的题比较难, tip: 一步步走, 总结各种case局的时候是什么情况, 然后忘前推
+
 
 <br>
 
