@@ -242,6 +242,14 @@ note1:
 + 终局思维: 终
 + 线性表里stack的题比较难, tip: 一步步走, 总结各种case局的时候是什么情况, 然后忘前推
 
+动态规划:
+
++ 确定子问题、边界
++ 确定递推式子
+
+resource:
+
++ [Wildcard-Matching](http://www.mamicode.com/info-detail-986984.html)
 
 <br>
 
