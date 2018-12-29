@@ -248,7 +248,7 @@ note1:
 + 确定递推式子
 
 
-Sat Dec 29 09:24:54 CST 2018:
+Sat Dec 29 09:24:54 CST 2018(dynamic-programming):
 
 + 64
 + 72
