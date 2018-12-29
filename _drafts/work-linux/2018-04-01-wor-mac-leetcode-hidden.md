@@ -247,10 +247,41 @@ note1:
 + 确定子问题、边界
 + 确定递推式子
 
+
+Sat Dec 29 09:24:54 CST 2018:
+
++ 64
++ 72
++ 85(dp[i][j] = max(dp[i-1][j], d[i][j-1], S[i][j]))
++ 87(3d-dp,[i, j, n])
++ 91(focus on the '0', it is a priority with me)
++ 95(m思路: 从小往大生成，新来一数，肯定比现有的节点都大 那么n可以成为现在所有树的父节点，并且他们都是n的左子树 第二步就是沿着现有子树的右侧尝试不断插入。 如果插入以后，n还有子树，那么这些子树都是n的左子树)
++ 96(列出所有的子问题, it is a priority with me)
++ 97(m思路: dp[i][j]: 代表子问题[a_1, ..., a_i]和[b_1, ..., b_j]是否可以拼成[c_1, ..., c_i+j], 遍历[c_i+j+n-1,...,c_i+j] && dp[i-*][j-*], 其中n满足[1, i+j])
++ 115[it is a priority with me](m思路： dp[i][j]: 代表子问题[a_1, ..., a_i]和[b_1, ..., b_j]，分两种情况. case1: a_i != b_j, 此时递归式为: dp[i][j] = dp[i-1][j](意味着a_i一定要剔除); case 2: a_i == b_j, 此时递归式为: dp[i][j] = dp[i-1][j] + dp[i-1][j-1](前者代表删除了a_i, 后者代表保留a_i).)
++ 123(2d-dp[hard], local and global, not very clear, it is a priority with me)
++ 132(m思路: dp[i][j]代表[a_i,...,a_j]的最小切割次数, 则递推式为dp[i][j]=min(dp[i][i+m]+dp[i+m+1][j]))
++ 139(m思路: dp[i]represents the subproblem[a_i,...,a_n], so the relationship is: dp[i] = s[a_i,...,a_j] && dp[j+1])
++ 140(hard, funny, it is a priority for me. m思路: 思路同139差不多, 用dp[i]代表[a_i,...,a_n]的结果(<i, vector<string> >), 则对于dp[i]: if(s[a_i,...,a_j]) for s:dp[j+1] res.push_back(s[a_i,...,a_j] + s). 最后返回dp[1]就可以了.)
++ 152(medium, it is a priority for me. m思路: dp[i]代表[a_i,...a_n]之间的子序列的最大乘积, s[i]代表以a[i]打头的最大乘积, 则递推式为: dp[i] = max(s[i], dp[i+1])
++ 174(hard, it is a priority for me. m思路: dp[i][j]代表所需要的最小血量, s[i][j]为相应的剩余血量. dp[i][j] = min{func(dp[i-1][j], s[i-1][j], d[i][j]), func(dp[i][j-1], s[i][j-1], d[i][j])}, 然后, 再确定相应的剩余血量.)
++ 188(it is similar to 123)
++ 198(m思路: dp[i]代表[a_i,...,a_n]被偷的最大金额, 则递归式易知: dp[i]=max(a_i+dp[i+2], dp[i+1]).ps: 前面代表a_i被偷, 后面代表a_i没被偷.)
++ 213(m思路: 这道题的思路同上一个类似, 需要分情况讨论： case1： a_1抢, a_2不抢, a_n抢, 则[a_3,...,a_n-1]就是198所处理的问题; case2: a_1不抢, 【a_2,...,a_n]就是198所处理的问题, 然后max一下就行了.)
++ 221(medium, it is a priority for me. m思路: dp[i][j]代表矩形里的最大正方形面积, 递推式: dp[i][j] = max{dp[i-1][j], dp[i][j-1], m[i][j]开头的最大正方形面积}, m[i][j]仍然可以拆分成子问题)
++ 256(need to buy)
+
+
++ summary1: 编辑距离这道题在看到题解后发现我的问题：1. 确定不出子问题 2. 递推式写不出来。我发现, dp的子问题拆分都差不多, 我将其称作索引话. 递推式的写法, 要考虑到所有的子问题的情况, 以及他们之间的关系.
++ summary2: 87 is a 3d-dp problem.
+
 resource:
 
 + [Wildcard-Matching](http://www.mamicode.com/info-detail-986984.html)
-
++ [Edit Distance](https://www.dreamxu.com/books/dsa/dp/edit-distance.html)
++ [Scramble String---recursion](http://www.shilei.club/index.php/2018/08/15/article13/)
++ [Scramble String---non-recursion)](http://www.lisite.top/author/lisite/page/5)
++ [Best Time to Buy and Sell Stock III](https://blog.csdn.net/linhuanmars/article/details/23236995)
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
