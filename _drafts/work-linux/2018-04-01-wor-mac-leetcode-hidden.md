@@ -298,6 +298,12 @@ Sun Dec 30 09:56:06 CST 2018(tree)
 + 时间戳: 着色为灰时d[v], v的邻接表被完全检索后(着色为黑)记为f[v]
 + 定点u在d[u]前为白色，[d[u], f[u]]之间为灰色, f[u]以后为黑色
 
+inorder、preorder、postorder的几个关键点:
+
++ preorder最简单, 用一个stack一直压进去就可以了, 注意要先压右子节点
++ inorder和postorder大体差不多, 先用stack一路将p(当前所访问的节点)到叶子节点入栈, 然后处理根和右子树. inorder要先访问根然后将右子树给p(人为实现的递归过程), 而postorder则要先确定右子树是否访问了, 访问了则访问根, 没访问就要把右子树给p(人为实现的递归过程)
++ inorder需要一个p来指示当前访问的节点, postorder除了需要p以外, 还需要visited来标示p的子树的访问情况
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
