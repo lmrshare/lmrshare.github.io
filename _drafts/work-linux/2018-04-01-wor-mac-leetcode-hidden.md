@@ -282,6 +282,22 @@ resource:
 + [Scramble String---recursion](http://www.shilei.club/index.php/2018/08/15/article13/)
 + [Scramble String---non-recursion)](http://www.lisite.top/author/lisite/page/5)
 + [Best Time to Buy and Sell Stock III](https://blog.csdn.net/linhuanmars/article/details/23236995)
+
+
+Sun Dec 30 09:56:06 CST 2018(tree)
+
+广度优先:
+
++ 将已发现和未发现的顶点沿着广度的方向进行扩展
++ 白色: 未发现; 顶点被发现了变成非白色(灰色、黑色)
++ $(u, v) \in E$, 如果u是黑色的, 那么v一定是非白色(已经被发现);
++ 广度优先搜索构造了一颗广度优先树 
+
+深度优先:
+
++ 时间戳: 着色为灰时d[v], v的邻接表被完全检索后(着色为黑)记为f[v]
++ 定点u在d[u]前为白色，[d[u], f[u]]之间为灰色, f[u]以后为黑色
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
