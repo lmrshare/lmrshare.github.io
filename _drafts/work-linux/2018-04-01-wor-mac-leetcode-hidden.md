@@ -248,7 +248,7 @@ note1:
 + 确定递推式子
 
 
-Sat Dec 29 09:24:54 CST 2018(dynamic-programming):
+___Sat Dec 29 09:24:54 CST 2018(dynamic-programming):___
 
 + 64
 + 72
@@ -284,7 +284,7 @@ resource:
 + [Best Time to Buy and Sell Stock III](https://blog.csdn.net/linhuanmars/article/details/23236995)
 
 
-Sun Dec 30 09:56:06 CST 2018(tree)
+___Sun Dec 30 09:56:06 CST 2018(tree):___
 
 广度优先:
 
@@ -303,6 +303,12 @@ inorder、preorder、postorder的几个关键点:
 + preorder最简单, 用一个stack一直压进去就可以了, 注意要先压右子节点
 + inorder和postorder大体差不多, 先用stack一路将p(当前所访问的节点)到叶子节点入栈, 然后处理根和右子树. inorder要先访问根然后将右子树给p(人为实现的递归过程), 而postorder则要先确定右子树是否访问了, 访问了则访问根, 没访问就要把右子树给p(人为实现的递归过程)
 + inorder需要一个p来指示当前访问的节点, postorder除了需要p以外, 还需要visited来标示p的子树的访问情况
+
+___Mon Dec 31 09:20:41 CST 2018(tree):___
+
++ 思考1: 仰视图, 考虑遮挡问题
++ 思考2: print_tree
+
 
 <br>
 
