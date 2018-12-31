@@ -306,7 +306,9 @@ inorder、preorder、postorder的几个关键点:
 
 ___Mon Dec 31 09:20:41 CST 2018(tree):___
 
-+ 思考: 仰视图, 考虑遮挡问题
++ 思考1: 仰视图, 考虑遮挡问题
++ 思考2: print_tree
+
 
 <br>
 
