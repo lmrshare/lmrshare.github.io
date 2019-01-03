@@ -316,6 +316,11 @@ summary:
 + 后序遍历也是可以做的, 就是稍稍麻烦一点, 思路就是用后序模拟中序, 即在进入右子树开始的那个时刻先和根判断一下
 
 
+___Thu Jan  3 15:37:56 CST 2019:___
+
++ 根据inorder和preorder构造二叉树的非递归代码怎么写, 借鉴下算法导论里的去尾部递归的伪代码
+
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
