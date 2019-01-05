@@ -321,6 +321,11 @@ ___Tue Jan  1 10:55:55 CST 2019:___
 + lcc100:随便用个遍历去做就行了
 + lcc101的递归解法挺有意思的, 是基于BFS的. 思路为: 每次都插入一对[e1, e2](开始的时候为[root, root]), 然后, 对e1和e2进行判断, 并将这两个节点的子节点镜像插入队列. 
 
+___Thu Jan  3 15:37:56 CST 2019:___
+
++ 根据inorder和preorder构造二叉树的非递归代码怎么写, 借鉴下算法导论里的去尾部递归的伪代码
+
+
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/)
