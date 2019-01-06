@@ -325,6 +325,12 @@ ___Thu Jan  3 15:37:56 CST 2019:___
 
 + 根据inorder和preorder构造二叉树的非递归代码怎么写, 借鉴下算法导论里的去尾部递归的伪代码
 
+___Sun Jan  6 10:17:18 CST 2019:___
+
++ 新位置pIndex+1(主元)和待交换位置的元素nums[i]交换后, {nums[i+1],...,nums[pIndex]}和nums[pIndex+1](值为交换前的nums[i])的顺序是可能需要调整的
++ 交换后pIndex为i+1
++ partion返回主元的位置
++ 如果序列原本就是有序的, partion后返回最后一个元素的位置
 
 <br>
 
