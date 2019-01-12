@@ -11,6 +11,8 @@ tag: Research
 * [Unsupervised learning](#un-su-lea)
 * [Word Embedding](#word-embedding)
 * [Neighbor Embedding](#neighbor-embedding)
+* [Deep Auto-encoder](#deep-auto-encoder)
+* [Deep Generation Model](#deep-generation-model)
 
 ### <a name="un-su-lea"></a>Unsupervised learning
 
@@ -208,6 +210,75 @@ $$图1. word\ embedding(源于lhy视频)$$
 
 $$图1. Neighbor\ embedding(源于lhy视频)$$
 
+### <a name="deep-auto-encoder"></a>Deep Auto-encoder
+
++ auto-encoder: 跟pca想法有相似的地方
++ Greedy Layer-wise Pre-training: 这个方法现在不怎么用的, 但如果有大量的un-label data少量label data的时候还是有用
++ auto-encoder还可以做降噪
++ Auto-encoder for CNN
++ keras里的un-polling就是做repeat
++ Deconvolution: 就是convolution
++ decoder的妙用: 根据code画image
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae1.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae2.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae3.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae4.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae5.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae6.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae7.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae8.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae9.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae10.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae11.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dae12.png" height="300" width="600">
+</div>
+
+$$图1. Deep\ Auto-encoder(源于lhy视频)$$
+
+### <a name="deep-generation-model"></a>Deep Generation Model
+
++ xxx
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/xxx.png" height="300" width="600">
+</div>
+
+$$图1. Deep\ Generation\ Model(源于lhy视频)$$
 
 <br>
 
