@@ -9,6 +9,8 @@ tag: Research
 ### 目录
 
 * [Unsupervised learning](#un-su-lea)
+* [Word Embedding](#word-embedding)
+* [Neighbor Embedding](#neighbor-embedding)
 
 ### <a name="un-su-lea"></a>Unsupervised learning
 
@@ -71,7 +73,104 @@ ___Dimension Reduction:___
 	<img src="/images/drafts/lhy-video/dr9.png" height="300" width="600">
 </div>
 
+$$另外的角度讲PCA$$
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr10.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr11.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr12.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr13.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr14.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr15.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr16.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/dr17.png" height="300" width="600">
+</div>
+
 $$图2. Dimension\ Reduction(源于lhy视频)$$
+
+### <a name="word-embedding"></a>Word Embedding
+
++ word embedding(un-supervised propose)是dimension reduction的一个广为人知的应用
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we1.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we2.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we3.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we4.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we5.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we6.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we7.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we8.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we9.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we10.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/we11.png" height="300" width="600">
+</div>
+
+$$图1. word\ embedding(源于lhy视频)$$
+
+### <a name="neighbor-embedding"></a>Neighbor Embedding
+
++ tsne
++ 降维
++ manifold learning
++ Localy Linear Embedding(LLE)
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne1.png" height="300" width="600">
+</div>
+
+$$图1. Neighbor\ embedding(源于lhy视频)$$
 
 
 <br>
