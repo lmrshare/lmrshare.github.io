@@ -161,13 +161,49 @@ $$图1. word\ embedding(源于lhy视频)$$
 
 ### <a name="neighbor-embedding"></a>Neighbor Embedding
 
-+ tsne
++ t-SNE
 + 降维
 + manifold learning
 + Localy Linear Embedding(LLE)
 
 <div align="center">
 	<img src="/images/drafts/lhy-video/ne1.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne2.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne3.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne4.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne5.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne6.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne7.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne8.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne9.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/ne10.png" height="300" width="600">
 </div>
 
 $$图1. Neighbor\ embedding(源于lhy视频)$$
