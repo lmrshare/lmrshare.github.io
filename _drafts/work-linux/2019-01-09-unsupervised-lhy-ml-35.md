@@ -272,13 +272,163 @@ $$图1. Deep\ Auto-encoder(源于lhy视频)$$
 
 ### <a name="deep-generation-model"></a>Deep Generation Model
 
-+ xxx
++ 比较好的科普文章(generative model)
 
 <div align="center">
-	<img src="/images/drafts/lhy-video/xxx.png" height="300" width="600">
+	<img src="/images/drafts/lhy-video/gm1.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/gm2.png" height="300" width="600">
 </div>
 
 $$图1. Deep\ Generation\ Model(源于lhy视频)$$
+
++ pixelRNN: 每次画一个像素出来(un-supervised model), 也可以做语音合成
++ 一个可以练习的demo
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p1.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p2.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p3.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p4.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p5.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p6.png" height="300" width="600">
+</div>
+
+$$图2. PixelRNN(源于lhy视频)$$
+
++ Varitional Autoencoder(VAE): 在code上面加上一些noise, 也就是给code上加了一个range, 然后这个range可以construct同样的东西
++ VAE写诗
++ VAE: estimate 概率分布(Gaussian Mixture Model). 用神经网络生成高斯分布的参数(Maximizing the likelihood).
++ VAE: maximizing中关于散度的讲解不错
++ Conditional VAE: 可以根据一个digit生成跟它类似style的digit
++ VAE的问题: 从来没有真的产生以假乱真的iamge, 往往都是数据库中的图像linear combination, 也就是说仅仅是模仿
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p7.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p8.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p9.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p10.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p11.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p12.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p13.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p14.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p15.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p16.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p17.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p18.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p19.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p20.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p21.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p22.png" height="300" width="600">
+</div>
+
+$$图3. VAE(源于lhy视频)$$
+
++ Generative Adversarial Network(GAN): 真正的生成新东西, 像是拟态的演化.
++ generator从没有看过真正的image, 因此可以产生database里从来没有的东西; 而discriminator可以看真正的image长什么样.
++ generator生成个东西骗过discriminator使其接近1
++ GAN比较难训练, 要非常小心调参数. 现在GAN生成的结果还很难骗过人.(感觉好玩啊, 魂淡)
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p23.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p24.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p25.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p26.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p27.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p28.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p29.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p30.png" height="300" width="600">
+</div>
+
+<div align="center">
+	<img src="/images/drafts/lhy-video/p31.png" height="300" width="600">
+</div>
+
+$$图4. GAN(源于lhy视频)$$
+
 
 <br>
 
