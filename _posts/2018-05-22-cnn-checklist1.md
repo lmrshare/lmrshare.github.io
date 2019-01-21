@@ -22,6 +22,7 @@ tag: Domain Knowledge
 * [Generative Adversarial Networks 2014](#GAN)
 * [Generating Image Descriptions](#GID)
 * [Hessian Free Optimization](#hessian-free-optimization)
+* [模型压缩](#optimize-model)
 * [待添加](#will-search)
 * [Reference](#reference)
 
@@ -314,6 +315,14 @@ $$
 
 - [<font color="ff0000">未写完</font>](http://andrew.gibiansky.com/blog/machine-learning/hessian-free-optimization/)
 
+### <a name="optimize-model"></a>模型压缩
+
+模型压缩
+
++ CNN、RNN模型存在着大量的参数冗余
++ D-S-D训练流程就是利用稀疏约束来进行模型压缩的
++ 既然神经网络的层参数有冗余, 一个直观的想法就是将参数分组, 然后对组内参数进行parameter sharing. 基于这个思路就会产生一个新问题: 如何分组.
+
 ### <a name="will-search"></a>待添加
 
 + <font color="ff0000">Hinge loss</font>
@@ -327,7 +336,7 @@ $$
 - [3. a good blog about deep learning](http://andrew.gibiansky.com/archive.html)
 - [4. ImageNet Classification with Deep Convolutional Neural Networks 2012](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 - [5. 论文列表](https://github.com/lmrshare/lmrshare.github.io/tree/master/papers/cnn-mri-papers-tmpfile)
-
+- [6. DSD: Regularizing Deep Neural Networks withDense-Sparse-Dense Training Flow](https://arxiv.org/pdf/1607.04381v1.pdf)
 <br>
 
 转载请注明：[Mengranlin](https://lmrshare.github.io) » [点击阅读原文](https://lmrshare.github.io/2015/09/iOS9_Note/) 
