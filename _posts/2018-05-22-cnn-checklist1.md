@@ -320,7 +320,9 @@ $$
 模型压缩
 
 + CNN、RNN模型存在着大量的参数冗余
-+ D-S-D训练流程就是利用稀疏约束来进行模型压缩的
++ D-S-D(dense-sparse-dense)训练流程就是利用稀疏约束来进行模型压缩的: 对于第一个dense step, 训练一个dense network以知道哪些连接是重要的; 在sparse step, 通过pruning的方式来达到正则化的目的, 然后在稀疏约束下进行retrain; 最后一个dense network, 通过去除稀疏约束, 重新初始化pruning以后的参数, retrain一个dense network来增强模型的能力.
++ D-S-D的关键在于如何做sparse, 流程比较直观: 对前层参数做排序, 然后根据稀疏度生成一个binary mask(vector), 将这个mask和参数进行点乘更新参数
++ 对于D-S-D, 这种方式有一个问题: 稀疏程度是参差不齐的, 因此是否可以考虑加一个线性变换, 比如傅立叶变换, 这主要基于这个考虑: 频谱的稀疏程度可能好于原始信号(my idea)
 + 既然神经网络的层参数有冗余, 一个直观的想法就是将参数分组, 然后对组内参数进行parameter sharing. 基于这个思路就会产生一个新问题: 如何分组.
 
 ### <a name="will-search"></a>待添加
