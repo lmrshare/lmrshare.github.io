@@ -31,7 +31,13 @@ tag: Domain Knowledge
 
 sparse interactions描述的是每个output unit和所有的input units之间的关系, 这个关系又叫做sparse connectivity or sparse weights.
 sparse interactions的好处是可以缩减模型的存储需求同时改善模型的统计有效性(statistic efficiency). 此外, sparse interactions也意味着
-计算输出需要更少的操作.
+计算输出需要更少的操作. sparse connectivity与matrix-multiplication connectivity的区别: 1). 前者的每一个input unit会影响部分output units(稀疏度决定或者说kernel size决定), 后者的每一个input unit会影响所有的output units;
+2). 前者的每一个output unit(ou)受部分iunput units(这部分units叫做ou的感受域--receptive field)的影响, 后者的output unit受到所有input units的影响;
+3). 在卷积网络中深层的感受域要比浅层的感受域大, 这意味着, 在卷积网络中即使direct连接是sparse的, 但是深层次的in-direct却具有很大的覆盖范围.
+
+在传统的神经网络中, 参数矩阵中的每一个参数都只用了一次; 在卷积网络中, 使用了parameter sharing, 也称作tied weights(即同一个weight paramter在使用时值是相同的). 对于描述同一个线性关系, 由于卷积的parameter sharing性质, 相较于传统的矩阵相乘会非常的节省空间以及减少计算量.
+卷积的参数共享使层具有平移同变性的特点(equivariance to translation). 所谓的同变意味着: 输入改变, 输出以同样的方式改变. 具体来说, 如果满足$f(g(.)) = g(f(.))$, 那么函数$f(.)$对于另一个函数$g(.)$是同变的. 以卷积为例, 让$g(.)$代表对变量的shift, 那么卷积函数对于$g(.)$来说是同变的. 套用同变的定义的解释可以这样描述:
+对input先做shift后做卷积, 等价于对input先做卷积再做shift. 参数共享的好处之一是可以检测同一模式(eg: 同样的边缘可能在一副图像上出现多次, 而parameter sharing可以保证这个边缘特征多次同变出现). 卷积对于尺度获旋转不具有同变性.
 
 #### ___3. pooling:___
 
