@@ -41,7 +41,12 @@ sparse interactions的好处是可以缩减模型的存储需求同时改善模�
 
 #### ___3. pooling:___
 
+卷积层主要包含三个阶段: 阶段一: 并行的执行几个卷积; 阶段二: 非线性化, 即每个output unit经过activation function, 这个阶段也叫做detector stage; 阶段三: 使用pooling函数修改输出, 如: max pooling.
+pooling的作用是: 对于小的input变化具有不变性(invariant), 换句话说, 对input做一个小的平移, pooling后的结果保持不变. 如果我们关心的是某些特征是否存在而不是它的确切位置, 那么不变性这个性质就尤为重要.
+从另一个角度来看, 不变性在一定程度上可以维持特征的位置.
 
+使用pooling相当于使用了这样的先验知识: 如果layer学到的function对于small translation具有不变性. 假如这个假设成立, 那么pooling可以改善网络的统计有效性(statistic efficiency).
+除了直接在空间域使用pooling, 还可以在多通道之间使用pooling, 从而学习对输入的其他变换的不变性(如: 旋转不变性). 另外, pooling的好处还可以减小计算量.
 
 #### ___4. 卷积和pooling:___
 
