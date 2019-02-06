@@ -19,7 +19,7 @@ tag: Domain Knowledge
 
 #### ___1. 卷积是什么:___
 
-卷积: 其中一个函数做mirror, 然后平移t后与另一个函数相乘后做积分. 在实际应用场景, 我们处理的往往是离散信号, 因此积分要换成求和, 此外, filter往往是带限信号, 通过这种方式可以利用finite个元素的和实现infinite summation.
+卷积: 对其中一个函数做mirror, 然后平移t后与另一个函数相乘后做积分. 在实际应用场景, 我们处理的往往是离散信号, 因此积分要换成求和, 此外, filter往往是带限信号, 通过这种方式可以利用finite个元素的和实现infinite summation.
 
 卷积定义中之所以要对其中一个函数翻转是为了使卷积具有 __交换律__. 这个性质可以通过画图来说明, 做法提醒: 分别翻转函数后又移, 与之做对比的做法为不翻转函数直接做右移. 另外, 与卷积相似的一个操作是互相关(cross-correlation), 该函数没有翻转而是直接右移(官方定义为左移第一个函数). 值得注意的是: 很多机器学习库将互相关叫做卷积. 在本文, 我们按照惯例也将卷积和互相关都称作卷积, 而在具体使用中明确声明是否对kernel进行翻转.
 
@@ -47,6 +47,20 @@ pooling的作用是: 对于小的input变化具有不变性(invariant), 换句�
 
 使用pooling相当于使用了这样的先验知识: 如果layer学到的function对于small translation具有不变性. 假如这个假设成立, 那么pooling可以改善网络的统计有效性(statistic efficiency).
 除了直接在空间域使用pooling, 还可以在多通道之间使用pooling, 从而学习对输入的其他变换的不变性(如: 旋转不变性). 另外, pooling的好处还可以减小计算量.
+
+pooling对解决许多任务中的尺寸各异的input问题都是必要的, 以分类尺寸各异的图片为例: 在分类层, 我们一定要提供一个固定尺寸的input以供分类, 这通常要通过动态pooling的方式做到(调节pooling region之间的offset). 这就涉及到了如下几个话题:
+
++ 在不同的情形如何选择不同的pooling(<font color="ff0000">Boureau et al., 2010</font>)
++ 如何动态的pool feature together, eg: 将聚类算法应用在感兴趣的特征(<font color="ff0000">Boureau et al., 2011</font>), 学习一个单一的pool 结构, 然后应用到所有图像上(<font color="ff0000">Jia et al., 2012</font>)
+
+pooling可以使一些利用了top-down信息的神经网络结构(如: Boltzmann machines或autoencoders)变得复杂, 这些话题会在 <font color="ff0000">part III中讨论, 在20.6中讨论如何poolingconvolutional Boltzmann machines; 20.10.6讨论了一些可微网络所需要的逆pooling操作(在pooling unit上执行inverse-like operation).</font>
+图9.11讨论了几个使用了卷积和pooling的卷积网络结构.
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/3cnn-structures.png" height="300" width="600">
+</div>
+
+$$图9.11 几个cnn结构(源于deep\ learning教材)$$
 
 #### ___4. 卷积和pooling:___
 
