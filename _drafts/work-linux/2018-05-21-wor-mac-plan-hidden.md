@@ -300,6 +300,8 @@ tools:
 
 面试:
 
++ [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
++ [技术面试必备基础知识](https://github.com/CyC2018/CS-Notes)
 + [假期快乐！超强面试资源等你Pick，先收藏](https://mp.weixin.qq.com/s/KatYnzpNF8lH0aqM1ns7gA)
 + [掌握这几点，2个月拿下春招30W+offer](https://mp.weixin.qq.com/s/_LE566Hw_w4xJahnKsaTUg)
 + [阿里电话面试(算法工程师)](https://mp.weixin.qq.com/s?__biz=MjM5MDAxNjkyMA==&mid=2650739651&amp;idx=1&amp;sn=ba5dd12f9d2f17cdbb398632c960792f&source=41#wechat_redirect)
