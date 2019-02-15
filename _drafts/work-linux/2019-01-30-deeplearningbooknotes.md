@@ -145,7 +145,13 @@ $$图9.17 Recurrent\ convolutional\ network.(源于deep\ learning教材)$$
 
 #### ___7. 几个高效的卷积算法:___
 
-making convolution efficient
+如果units个数众多, 比如超过一百万, 那么利用并行计算单元来加速卷积是必要的; 然而, 在许多情况下, 仅仅通过选择合适的卷积算法就可以达到加速的目的.
+
+利用傅立叶变换性质, 先转到频域, 然后做点乘再反变换回来在某些问题里要比直接利用卷积快.
+
+issue undone
+
++ depthwise separable convolution(深度可分离卷积结构)
 
 + random or unsupervised features
 

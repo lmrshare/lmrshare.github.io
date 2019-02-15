@@ -232,7 +232,94 @@ done
 
 #### <a name="january"></a> ___2月: 复习、面试、基础、刷题___
 
-___2.07~.2.10:___
+___2.15:___
+
+papers:
+
++ [机器学习 TOP 10 必读论文](https://mp.weixin.qq.com/s/dpb-gAFWhs4YMvGcEBZdqA)
++ [人脸识别技术全面总结：从传统方法到深度学习](https://mp.weixin.qq.com/s/HteNoL3hkjNgUTbGguMflQ)
++ [如何走近深度学习人脸识别？你需要这篇超长综述](https://mp.weixin.qq.com/s/eZ78biXN-mVw3s9Ky_LBZg)
++ [FAIR&MIT提出知识蒸馏新方法：数据集蒸馏](https://mp.weixin.qq.com/s/mFuxCl0Mzv5hmDFewWZkrw)
++ [COLING 2018 最佳论文解读：序列标注经典模型复现](https://mp.weixin.qq.com/s/VCeEz5QhGqQ5TF0lkCk40A)
++ [何恺明大神的「Focal Loss」，如何更好地理解](https://mp.weixin.qq.com/s/Duouc-ErqGqO4aTNA0NiyA)
++ [就喜欢看综述论文：情感分析中的深度学习](https://mp.weixin.qq.com/s/MHxxBgfiQt1Fzkpco3Uoig)
++ [基线系统需要受到更多关注：基于词向量的简单模型 ACL 2018论文解读](https://mp.weixin.qq.com/s/BHA-tFCQjvhf1Tj53SBEaw)
++ [CVPR 2018 最佳论文解读：探秘任务迁移学习](https://mp.weixin.qq.com/s/yhSCa_4GwrG0dnjJPFk2FQ)
++ [顶会论文轮番炸场，本周哪些论文最值得读](https://mp.weixin.qq.com/s/2kpwRzoL96saubV6p7istw)
++ [漫谈深度网络的泛化，从Loss Surface到Deep Image Prior](https://mp.weixin.qq.com/s/X2UbOO_dm-at5qbZPMhjzg)
++ [机器学习5年大跃进，可能是个错觉](https://mp.weixin.qq.com/s/r143qYj8bziu_N-27RWRRw)
++ [近期有哪些值得读的QA论文？专题论文解读](https://mp.weixin.qq.com/s/XFovumX2PZ0cEpEsRCTE9w)
++ [深度森林第三弹：周志华组提出可做表征学习的多层梯度提升决策树](https://mp.weixin.qq.com/s/bE9BZQ6wCICvrgomdySDuw)
++ [自然语言处理(3)之词频-逆文本词频（TF-IDF）详解](https://mp.weixin.qq.com/s/QsmEdCqAjiEhkFJl2ad2Aw)
++ [还在熬夜憋思路？这12篇最新论文打包送给你](https://mp.weixin.qq.com/s/7gFA_KfCdjCNlMNCccbX3g)
+
+python and deep learning:
+
++ [最全 Python3 函数知识点大全](https://mp.weixin.qq.com/s/B-0guaWa8_9LC8mH6E955Q)
++ [一份鲜为人知的Python特性](https://mp.weixin.qq.com/s/zUXlULqTdczxJPXgM-Lqog)
++ [学习Python，怎能不懂点PEP呢？](https://mp.weixin.qq.com/s/Wh6RvMyb19Yg3b14xaPITw)
++ [教你用 Cython 自己造轮子](https://mp.weixin.qq.com/s/M0qDLibbM9-c1fw6wQNvFA)
++ [TensorFlow 程序员的自我修养](https://mp.weixin.qq.com/s/BKCj21AQ2OOXVGGrkR5ZwQ)
++ [据说这篇总结覆盖了一般Python开发面试中可能会问到的大部分问](https://mp.weixin.qq.com/s/OiCYxJXbLaYM53N6wnoLzA)
++ [302页吴恩达Deeplearning.ai课程笔记，详记基础知识与作业代码](https://mp.weixin.qq.com/s/qBRw5ZPERKWfjC49k4_Ngg)
++ [吴恩达deeplearning.ai第5课开课了：敲黑板序列模型](https://mp.weixin.qq.com/s/H3LBRROH4W3xX5QFZAyk3w)
++ [吴恩达Deeplearning.ai课程学习全体验：深度学习必备课程(已获证书)](https://mp.weixin.qq.com/s/SFSn1zplMmJAYf85EBxBkg)
++ [不吹不擂，你想要的Python面试都在这里了【315+道题】](https://mp.weixin.qq.com/s/mme6OPNM-QvOwuojwmU40g)
++ [Python黑魔法：元类](https://mp.weixin.qq.com/s/Ipy_P6Uoaj6h3Kdg5U9dbA)
++ [GPU编程入门课程：使用CUDA C/C++进行并行计算加速](https://mp.weixin.qq.com/s/SAB0MTwSczrS17uuZsEYKw)
+
+
+英语:
+
++ [英语不好的同学千万不要盲目刷题，你的症结在这里](https://mp.weixin.qq.com/s/IdWQTEp1NEIDksVTc5vZmw)
+
+cs基础:
+
++ [计算机科学中最重要的 32 个算法](https://mp.weixin.qq.com/s/izVt4O-qm-Y9ZrYQFrrLaA)
++ [176条DevOps人员常用的linux命令速查表](https://mp.weixin.qq.com/s/Z0dsHroFvoqG-rX9a-_SJw)
++ [黑客常用linux入侵常用命令，有你不知道的没](https://mp.weixin.qq.com/s/PKYbkkqltHy5AaDRiE4Y_Q)
++ [Linux 新手必会的21条命令合集](https://mp.weixin.qq.com/s/L5rmy0LLBVoiyMjDrFH2BA)
+
+tools:
+
++ [写给新手的十一条 Docker 守则](https://mp.weixin.qq.com/s/h69P9QHrqO7Lpl1uhbW7aQ)
++ [把docker镜像当作桌面系统来用](https://mp.weixin.qq.com/s/xSeAGQn8UZqVlrtS3dfSiA)
++ [能当主力，能入虚拟机，还能随时打包带走，Linux 就是这么强大](https://mp.weixin.qq.com/s/sSAyJ3r2zgNRleOzfqPXfA)
++ [作为一个有追求的科研党，电脑上必备哪些软件](https://mp.weixin.qq.com/s/PIBGo3hHpXNxjJa5sJVlvw)
++ [Linux架构之HA配置](https://mp.weixin.qq.com/s/ILnyHnWSabAgkWf2w_Gbuw)
++ [练了一年再来总结的 Vim 使用技巧](https://mp.weixin.qq.com/s/K6bDZf2w_G16T1RxzlRBfw)
+
+资源:
+
++ [深度学习资源一网打尽！论文、数据集、框架、课程、图书等应有尽有](https://mp.weixin.qq.com/s/P5p1h3x_ovWjYQsVTK1eug)深度学习的hao123
++ [斯坦福CS230官方指南：CNN、RNN及使用技巧速查（打印收藏)](https://mp.weixin.qq.com/s/nL5_tF7WkL9YMjNAagc_eg)
++ [资源-机器学习标准教科书PRML的Python实现](https://mp.weixin.qq.com/s/-UqoGXbQqewYs2IyuED6Iw)
++ [PaddleFluid和TensorFlow基本使用概念对比 PaddlePaddle专栏](https://mp.weixin.qq.com/s/G8hUNK5hyZPDHt9JRROMKw)
++ [书单, 计算机视觉的修炼秘笈](https://mp.weixin.qq.com/s/6Oo2w-AZEf09I_QNRV154w)
++ [书单, NLP秘笈，从入门到进阶](https://mp.weixin.qq.com/s/7m90zihmoGZABP7Ib4aYIA)
+
+面试:
+
++ [假期快乐！超强面试资源等你Pick，先收藏](https://mp.weixin.qq.com/s/KatYnzpNF8lH0aqM1ns7gA)
++ [掌握这几点，2个月拿下春招30W+offer](https://mp.weixin.qq.com/s/_LE566Hw_w4xJahnKsaTUg)
++ [阿里电话面试(算法工程师)](https://mp.weixin.qq.com/s?__biz=MjM5MDAxNjkyMA==&mid=2650739651&amp;idx=1&amp;sn=ba5dd12f9d2f17cdbb398632c960792f&source=41#wechat_redirect)
++ [图像处理笔试面试题](https://mp.weixin.qq.com/s/xa30KbIgG63isqH-HooreA)
++ [机器学习岗面试，这些是基础！(ML,DL,SL相关知识整理)](https://mp.weixin.qq.com/s/nHM5wB3N9Igb6gM2HumejA)
+
+research:
+
++ [我的八年博士生涯——CMU王赟写在入职Facebook之前](https://mp.weixin.qq.com/s/TrDYumRxdwWvYS9oc5xGqA)
++ [求生之路：博士生涯的17条简单生存法则](https://mp.weixin.qq.com/s/x44ZoYj1IU1PfF4BN-ZV5g)
++ [苏步青谈读书与做题](https://mp.weixin.qq.com/s/rjbfB9FMUkPz-Pa1rvkZjA)
+
+
+___2.16~.2.17:___
+
+>* 看房, 租房
+
+___2.18~.2.22:___
+
+>* 整理博客, 浏览器, 定计划
 
 >* 刷题4x7道(上午)
 >* 卷积教材, km文章(下午)
