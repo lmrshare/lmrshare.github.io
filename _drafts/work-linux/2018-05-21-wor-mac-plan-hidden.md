@@ -252,6 +252,31 @@ papers:
 + [深度森林第三弹：周志华组提出可做表征学习的多层梯度提升决策树](https://mp.weixin.qq.com/s/bE9BZQ6wCICvrgomdySDuw)
 + [自然语言处理(3)之词频-逆文本词频（TF-IDF）详解](https://mp.weixin.qq.com/s/QsmEdCqAjiEhkFJl2ad2Aw)
 + [还在熬夜憋思路？这12篇最新论文打包送给你](https://mp.weixin.qq.com/s/7gFA_KfCdjCNlMNCccbX3g)
++ [一文看懂虚假新闻检测（附数据集 & 论文推荐)](https://mp.weixin.qq.com/s/Emlzfgoo99T9xAsTKJRQXg)
++ [GitHub标星3600：最会编故事的OpenAI语言模型，现已加入PyTorch BERT豪华阵容](https://mp.weixin.qq.com/s/W9n96-yw4n0NzBmiObsX4g)
++ [人工智能：长相越「娘」颜值越高](https://mp.weixin.qq.com/s/5ifqvZCyx-mLEEZD90NS9A)
++ [机器学习中如何处理不平衡数据](https://mp.weixin.qq.com/s/x48Ctb0_Eu1kcSGTYLt5BQ)
++ [这份攻略帮你「稳住」反复无常的 GAN](https://mp.weixin.qq.com/s/I7mpy5P7LFFkop618ANLtA)
++ [Science：人工智能的发展离不开神经科学，先天结构或是下一个方向](https://mp.weixin.qq.com/s/cZNtUwpXQudFaM3dN1UOaw)
++ [152页简明《计算机视觉》入门教程下载，带你回顾CV发展脉络](https://mp.weixin.qq.com/s/eRoZ2309KaPKbhMZZzsWTA)
++ [深度学习中 Pooling 运算汇总](https://mp.weixin.qq.com/s/ISvHyUrXpxGTCMVib-ptnw)
++ [逆天的GPT-2居然还能写代码（但OpenAI却被无情吐槽）](https://mp.weixin.qq.com/s/zBd-EEdGd1F4rcclwhPmhQ)
++ [刷新一次，生成一张逼真假脸：用英伟达StyleGAN做的网站，生出了灵异事件](https://mp.weixin.qq.com/s/Rgi6Yxy-kS5y8ui20aU3vg)
++ [从此再无真「相」！这些人全部是AI生成的](https://mp.weixin.qq.com/s/Um7rDXxhhfzkWpuyhoTRJA)
++ [结合人工智能的高性能医学：现状、挑战与未来](https://mp.weixin.qq.com/s/u-taX_kQXX2sBW8sT6ZZYg)
++ [如何利用深度学习模型实现多任务学习？这里有三点经验](https://mp.weixin.qq.com/s/MPhKUosKZbLtVjJ1XYGXYA)
++ [AI自动识别移动应用代码bug：详解Facebook Infer](https://mp.weixin.qq.com/s/0SnD7yDGlXAjnWCuzSdGRA)
++ [效率提高50倍！谷歌提出从图像中学习世界的强化学习新方法](https://mp.weixin.qq.com/s/dlOFM7LuOF2npDP_EaITvg)
++ [一份nlp入门精选资料](https://mp.weixin.qq.com/s/E_p0JWAE1hX1njZRgv6AJg)
++ [深度学习计算机视觉极限将至，我们该如何找到突破口](https://mp.weixin.qq.com/s/jcIaNnT9KHdfLujqppEXAQ)
++ [CV元老、霍金弟子：三大瓶颈扼住深度学习咽喉，破局要靠这两招](https://mp.weixin.qq.com/s/5kFLIOIbK24u0O6m_5jlLg)
++ [常用机器学习实践技巧](https://mp.weixin.qq.com/s/zvhnUiDEvMKiSu3Q_fY7BQ)
++ [详解GAN的谱归一化（Spectral Normalization）](https://mp.weixin.qq.com/s/tWaKMFZ4dQX7kZlT3tiDAQ)
++ [FSRNet：端到端深度可训练人脸超分辨网络](https://mp.weixin.qq.com/s/M8gCrQDtjT1lszsxV2QQKg)
++ [李沐等将目标检测绝对精度提升 5%，不牺牲推理速度](https://mp.weixin.qq.com/s/flXzhQ-Ypf3fwTqLelLzOQ)
++ [迄今最大模型？OpenAI发布参数量高达15亿的通用语言模型GPT-2](https://mp.weixin.qq.com/s/ZitIqX-9MNk6L1mAC_AwBQ)
++ [逆天的语言AI模型来了！编故事以假乱真，问答翻译写摘要都行，横扫各大语言建模任务](https://mp.weixin.qq.com/s/Viyc66ywVBsrnQUdYvK8ow)
++ [资源|152页简明《计算机视觉》入门教程，带你回顾CV发展脉络](https://mp.weixin.qq.com/s/HHZLPe8O_JsC9mBOEbn9Ug)
 
 python and deep learning:
 
@@ -267,6 +292,10 @@ python and deep learning:
 + [不吹不擂，你想要的Python面试都在这里了【315+道题】](https://mp.weixin.qq.com/s/mme6OPNM-QvOwuojwmU40g)
 + [Python黑魔法：元类](https://mp.weixin.qq.com/s/Ipy_P6Uoaj6h3Kdg5U9dbA)
 + [GPU编程入门课程：使用CUDA C/C++进行并行计算加速](https://mp.weixin.qq.com/s/SAB0MTwSczrS17uuZsEYKw)
++ [请快点粘贴复制，这是一份好用的TensorFlow代码集](https://mp.weixin.qq.com/s/ggfrhp8R6rIPWgY0BPHNWA)
++ [Python面试攻略之基础概念篇](https://mp.weixin.qq.com/s/TtJyeCZ27fI1dyd18kCl-Q)
++ [强推！《PyTorch中文手册》开源！附资源下载链接](https://mp.weixin.qq.com/s/U3gDLs19dvPesa3f_bfmng)
++ [浏览器上跑：TensorFlow发布实时人物分割模型，秒速25帧，24个部位](https://mp.weixin.qq.com/s/vjpMr3TsF3Lui8Q0IstQxw)
 
 
 英语:
@@ -279,6 +308,7 @@ cs基础:
 + [176条DevOps人员常用的linux命令速查表](https://mp.weixin.qq.com/s/Z0dsHroFvoqG-rX9a-_SJw)
 + [黑客常用linux入侵常用命令，有你不知道的没](https://mp.weixin.qq.com/s/PKYbkkqltHy5AaDRiE4Y_Q)
 + [Linux 新手必会的21条命令合集](https://mp.weixin.qq.com/s/L5rmy0LLBVoiyMjDrFH2BA)
++ [最全的常用正则表达式大全](https://mp.weixin.qq.com/s/sLYRGDn0lCEG_TCL2N6gXA)
 
 tools:
 
@@ -297,6 +327,7 @@ tools:
 + [PaddleFluid和TensorFlow基本使用概念对比 PaddlePaddle专栏](https://mp.weixin.qq.com/s/G8hUNK5hyZPDHt9JRROMKw)
 + [书单, 计算机视觉的修炼秘笈](https://mp.weixin.qq.com/s/6Oo2w-AZEf09I_QNRV154w)
 + [书单, NLP秘笈，从入门到进阶](https://mp.weixin.qq.com/s/7m90zihmoGZABP7Ib4aYIA)
++ [150多万张“不可描述”照片数据集新鲜出炉，这次一定不要在办公室打开](https://mp.weixin.qq.com/s/7DDrIi0nL4n70r54KsgzUw)
 
 面试:
 
@@ -307,13 +338,23 @@ tools:
 + [阿里电话面试(算法工程师)](https://mp.weixin.qq.com/s?__biz=MjM5MDAxNjkyMA==&mid=2650739651&amp;idx=1&amp;sn=ba5dd12f9d2f17cdbb398632c960792f&source=41#wechat_redirect)
 + [图像处理笔试面试题](https://mp.weixin.qq.com/s/xa30KbIgG63isqH-HooreA)
 + [机器学习岗面试，这些是基础！(ML,DL,SL相关知识整理)](https://mp.weixin.qq.com/s/nHM5wB3N9Igb6gM2HumejA)
++ [我是如何一步一步拿下Google offer的](https://mp.weixin.qq.com/s/MBEszLMzSFtG-ZijIsjwqA)
++ [头条 Python 工程师面经分享：一年经验也能进大公司](https://mp.weixin.qq.com/s/TU-Cr3UkACg2J-Dh7iuUbw)
 
 research:
 
 + [我的八年博士生涯——CMU王赟写在入职Facebook之前](https://mp.weixin.qq.com/s/TrDYumRxdwWvYS9oc5xGqA)
 + [求生之路：博士生涯的17条简单生存法则](https://mp.weixin.qq.com/s/x44ZoYj1IU1PfF4BN-ZV5g)
 + [苏步青谈读书与做题](https://mp.weixin.qq.com/s/rjbfB9FMUkPz-Pa1rvkZjA)
++ [解决做好一个机器学习项目的3个问题](https://mp.weixin.qq.com/s/yvPWxVz1pL2OoBstd7HlbQ)
 
+news:
+
++ [华为82位博士离职](https://mp.weixin.qq.com/s/3wml2IhCNnLPRZ4P9CDbkg)
++ [AI大牛LeCun：Python该过时了！深度学习需要新编程语言](https://mp.weixin.qq.com/s/t5MsHY6cAvncmkd_Xq8AtQ)
++ [Yann LeCun：未来的AI芯片应该这样做](https://mp.weixin.qq.com/s/Y5zcKTlYctWNk1KW35yNDw)
++ [阿里巴巴达摩院发布2019十大科技趋势](https://mp.weixin.qq.com/s/Bp-vkWZW0YdWECxQ5dYACA)
++ [一位 70 后程序员的 26 个职场感悟](https://mp.weixin.qq.com/s/pbeFN8ZfN-jCvAfbvnus3Q)
 
 ___2.16~.2.17:___
 
