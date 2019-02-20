@@ -276,7 +276,6 @@ papers:
 + [李沐等将目标检测绝对精度提升 5%，不牺牲推理速度](https://mp.weixin.qq.com/s/flXzhQ-Ypf3fwTqLelLzOQ)
 + [迄今最大模型？OpenAI发布参数量高达15亿的通用语言模型GPT-2](https://mp.weixin.qq.com/s/ZitIqX-9MNk6L1mAC_AwBQ)
 + [逆天的语言AI模型来了！编故事以假乱真，问答翻译写摘要都行，横扫各大语言建模任务](https://mp.weixin.qq.com/s/Viyc66ywVBsrnQUdYvK8ow)
-+ [资源|152页简明《计算机视觉》入门教程，带你回顾CV发展脉络](https://mp.weixin.qq.com/s/HHZLPe8O_JsC9mBOEbn9Ug)
 
 python and deep learning:
 
