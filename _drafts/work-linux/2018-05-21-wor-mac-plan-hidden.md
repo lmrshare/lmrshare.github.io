@@ -234,7 +234,9 @@ done
 
 ___2.15:___
 
-papers:
+[1. papers](#papers) &emsp;&emsp;[2. python and deep learning](#python-and-dl)&emsp;&emsp;[3. cs基础](#cs-basis)&emsp;&emsp;[4. tools](#tools)&emsp;&emsp;[5. 资源](#resources)&emsp;&emsp;[6. 面试](#interview)&emsp;&emsp;[7. research](#research2)&emsp;&emsp;[8. news](#news)
+
+<a name="papers"></a>papers:
 
 + [机器学习 TOP 10 必读论文](https://mp.weixin.qq.com/s/dpb-gAFWhs4YMvGcEBZdqA)
 + [人脸识别技术全面总结：从传统方法到深度学习](https://mp.weixin.qq.com/s/HteNoL3hkjNgUTbGguMflQ)
@@ -276,8 +278,12 @@ papers:
 + [李沐等将目标检测绝对精度提升 5%，不牺牲推理速度](https://mp.weixin.qq.com/s/flXzhQ-Ypf3fwTqLelLzOQ)
 + [迄今最大模型？OpenAI发布参数量高达15亿的通用语言模型GPT-2](https://mp.weixin.qq.com/s/ZitIqX-9MNk6L1mAC_AwBQ)
 + [逆天的语言AI模型来了！编故事以假乱真，问答翻译写摘要都行，横扫各大语言建模任务](https://mp.weixin.qq.com/s/Viyc66ywVBsrnQUdYvK8ow)
++ [朴素贝叶斯算法的优缺点](https://mp.weixin.qq.com/s/Oxfa6Xvqx5BCO46CMGZB-w)
++ [AAAI 2019教程—361页PPT带你回顾最新词句Embedding技术和应用](https://mp.weixin.qq.com/s/XyWjmDUIgiuiX5YBPVFDEA)
++ [能量视角下的GAN模型（二）：GAN＝“分析”＋“采样”](https://mp.weixin.qq.com/s/uGuywTY33SrYERDO522N1Q)
 
-python and deep learning:
+
+<a name="python-and-dl"></a>python and deep learning:
 
 + [最全 Python3 函数知识点大全](https://mp.weixin.qq.com/s/B-0guaWa8_9LC8mH6E955Q)
 + [一份鲜为人知的Python特性](https://mp.weixin.qq.com/s/zUXlULqTdczxJPXgM-Lqog)
@@ -296,12 +302,7 @@ python and deep learning:
 + [强推！《PyTorch中文手册》开源！附资源下载链接](https://mp.weixin.qq.com/s/U3gDLs19dvPesa3f_bfmng)
 + [浏览器上跑：TensorFlow发布实时人物分割模型，秒速25帧，24个部位](https://mp.weixin.qq.com/s/vjpMr3TsF3Lui8Q0IstQxw)
 
-
-英语:
-
-+ [英语不好的同学千万不要盲目刷题，你的症结在这里](https://mp.weixin.qq.com/s/IdWQTEp1NEIDksVTc5vZmw)
-
-cs基础:
+<a name="cs-basis"></a>cs基础:
 
 + [计算机科学中最重要的 32 个算法](https://mp.weixin.qq.com/s/izVt4O-qm-Y9ZrYQFrrLaA)
 + [176条DevOps人员常用的linux命令速查表](https://mp.weixin.qq.com/s/Z0dsHroFvoqG-rX9a-_SJw)
@@ -309,7 +310,7 @@ cs基础:
 + [Linux 新手必会的21条命令合集](https://mp.weixin.qq.com/s/L5rmy0LLBVoiyMjDrFH2BA)
 + [最全的常用正则表达式大全](https://mp.weixin.qq.com/s/sLYRGDn0lCEG_TCL2N6gXA)
 
-tools:
+<a name="tools"></a>tools:
 
 + [写给新手的十一条 Docker 守则](https://mp.weixin.qq.com/s/h69P9QHrqO7Lpl1uhbW7aQ)
 + [把docker镜像当作桌面系统来用](https://mp.weixin.qq.com/s/xSeAGQn8UZqVlrtS3dfSiA)
@@ -318,7 +319,7 @@ tools:
 + [Linux架构之HA配置](https://mp.weixin.qq.com/s/ILnyHnWSabAgkWf2w_Gbuw)
 + [练了一年再来总结的 Vim 使用技巧](https://mp.weixin.qq.com/s/K6bDZf2w_G16T1RxzlRBfw)
 
-资源:
+<a name="resources"></a>资源:
 
 + [深度学习资源一网打尽！论文、数据集、框架、课程、图书等应有尽有](https://mp.weixin.qq.com/s/P5p1h3x_ovWjYQsVTK1eug)深度学习的hao123
 + [斯坦福CS230官方指南：CNN、RNN及使用技巧速查（打印收藏)](https://mp.weixin.qq.com/s/nL5_tF7WkL9YMjNAagc_eg)
@@ -327,8 +328,9 @@ tools:
 + [书单, 计算机视觉的修炼秘笈](https://mp.weixin.qq.com/s/6Oo2w-AZEf09I_QNRV154w)
 + [书单, NLP秘笈，从入门到进阶](https://mp.weixin.qq.com/s/7m90zihmoGZABP7Ib4aYIA)
 + [150多万张“不可描述”照片数据集新鲜出炉，这次一定不要在办公室打开](https://mp.weixin.qq.com/s/7DDrIi0nL4n70r54KsgzUw)
++ [李宏毅: 286页的《一天搞懂深度学习》下载](https://mp.weixin.qq.com/s/5DBCzR4fBq-AvVDnv2xzYw)
 
-面试:
+<a name="interview"></a>面试:
 
 + [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
 + [技术面试必备基础知识](https://github.com/CyC2018/CS-Notes)
@@ -340,14 +342,14 @@ tools:
 + [我是如何一步一步拿下Google offer的](https://mp.weixin.qq.com/s/MBEszLMzSFtG-ZijIsjwqA)
 + [头条 Python 工程师面经分享：一年经验也能进大公司](https://mp.weixin.qq.com/s/TU-Cr3UkACg2J-Dh7iuUbw)
 
-research:
+<a name="research2"></a>research:
 
 + [我的八年博士生涯——CMU王赟写在入职Facebook之前](https://mp.weixin.qq.com/s/TrDYumRxdwWvYS9oc5xGqA)
 + [求生之路：博士生涯的17条简单生存法则](https://mp.weixin.qq.com/s/x44ZoYj1IU1PfF4BN-ZV5g)
 + [苏步青谈读书与做题](https://mp.weixin.qq.com/s/rjbfB9FMUkPz-Pa1rvkZjA)
 + [解决做好一个机器学习项目的3个问题](https://mp.weixin.qq.com/s/yvPWxVz1pL2OoBstd7HlbQ)
 
-news:
+<a name="news"></a>news:
 
 + [华为82位博士离职](https://mp.weixin.qq.com/s/3wml2IhCNnLPRZ4P9CDbkg)
 + [AI大牛LeCun：Python该过时了！深度学习需要新编程语言](https://mp.weixin.qq.com/s/t5MsHY6cAvncmkd_Xq8AtQ)
@@ -355,18 +357,12 @@ news:
 + [阿里巴巴达摩院发布2019十大科技趋势](https://mp.weixin.qq.com/s/Bp-vkWZW0YdWECxQ5dYACA)
 + [一位 70 后程序员的 26 个职场感悟](https://mp.weixin.qq.com/s/pbeFN8ZfN-jCvAfbvnus3Q)
 
-___2.16~.2.17:___
+___2.22~.2.28:___
 
->* 看房, 租房
-
-___2.18~.2.22:___
-
->* 整理博客, 浏览器, 定计划
-
->* 刷题4x7道(上午)
->* 卷积教材, km文章(下午)
->* 复习博客(晚上)
->* 牛客100道面试题以C++为主,(晚上)
+>* 上四天(白:图书馆, 下班去地铁站, 吃完饭去那间; 夜:图书馆, 那间); 休四天(那间一直到十点)
+>* 把卷积和rnn的教材看了并整理笔记, 复习
+>* 复习做过的题和博客(先围绕简历)
+>* 28号投简历
 
 未安排和待处理问题列表:
 
