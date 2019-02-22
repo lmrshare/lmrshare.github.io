@@ -6,12 +6,14 @@ description: "notes"
 tag: Domain Knowledge
 ---
 
-教材<<[deeplearning](http://www.deeplearningbook.org/)>>的读书笔记.
+教材<<[deeplearning](http://www.deeplearningbook.org/)>>的读书笔记. 
+
++ 对于Chapter 9, 除了做笔记外, 还对部分地方做了扩展, 如: 在 [__卷积函数的几个变体__](#conv-variant) 中补充了分组卷积, 混洗分组卷积, 逐点分组卷积, 但笔记的整体结构仍然和教材对应, 最后, 单独做了一节Chapter 9 supplementary materials来对Chapter 9的笔记做一个补充.
 
 ### 目录
 
 * [Chapter 9. Convolutional Networks](#cnn)
-* [some details about chapter 9](#cnn-details)
+* [Chapter 9 supplementary materials](#cnn-details)
 * [Reference](#reference)
 
 ### <a name="cnn"></a>Chapter 9. Convolutional Networks
@@ -76,7 +78,7 @@ $$图9.11 几个cnn结构(源于deep\ learning教材)$$
 
 当然, 以强prior的全连接网络来实现卷积网络肯定是不划算的, 但是以这种方式来思考卷积网络可以帮助我们洞察其是如何工作的: underfitting, 简而言之, 当强prior的假设不成立的时候就会引起underfitting.
 
-#### ___5. 卷积函数的几个变体:___
+#### <a name="conv-variant"></a> ___5. 卷积函数的几个变体:___
 
 在神经网络里提到的卷积在应用层面上是有别于数学上的卷积的, 这主要体现在以下几个方面:
 
@@ -112,7 +114,9 @@ $$
 
 注意, W与K差不多, 只不过多了j, k两维用以区分input各个pixel的weight(也就是说pixel之间不再sharing parameter了). locally connected layers适用于: 我们仅假设特征由局部input space决定, 而不能假设特征是位置无关的, eg: 如果我们想要知道一张image是否是人脸image, 我们仅需要在图像的下半部分寻找嘴巴.
 
-此外, 为了进一步的缩减参数, 还可以减少每个kernel的规模, 这意味着仅利用input的几个channel而不是原来的所有channel, 一种标准实现就是: 将input的channel和kernels分同样的组, 然后组内采用卷积或者locally connected layers.
+此外, 为了进一步的缩减参数, 还可以减少每个kernel的规模, 这意味着仅利用input的几个channel而不是原来的所有channel, 一种标准实现就是: 将input的channel和kernels分同样的组, 然后组内采用卷积或者locally connected layers. 对于组内采用卷积的这种操作又叫做 __分组卷积__.
+
+_接下来插入一些分组卷积的补充材料: 分组卷积, 混洗分组卷积和逐点分组卷积, 当然, 可以将这部分扩展跳过去阅读_.
 
 在locally connected layer和convolutional layer之间我们可以很自然的想到一种中间模式, 即: 将input划分成一定规模的region, 然后region里执行locally connection, 而各个region进行parameter sharing, 这种方式称作tiled convolution(region内权重各异, region间共享参数). 图9.16对比了locally connected layers, tiled convolution, and standard convolution.
 
@@ -240,9 +244,9 @@ $$
 
 一种中间策略是, 仍然学习特征, 但是在参数更新的时候不需要对整个网络跑完forward和back propagation. 类似于多层感知机, 使用layer级别的贪婪策略来单独训练每一层, 也就是说单独训练第一层, 然后依据第一层训练得到的特征再训练第二层, 以此类推. Part III对第八章的supervised greedy layer-wise pretraining进行扩展, 探讨了用unsupervised 的方式来做greedy layer-wise pretraining. greedy layer-wise pretraing应用于卷积网络比较具有代表性的工作是<font color="ff0000">Lee et al</font>在2009提出的convolutional deep belief network. 卷积网络给了我们使用pretrain的机会, 比如: Coates et al在2011利用k-means对small image patch进行聚类, 然后利用这个patch-based model定义卷积网络的kernel, 这也就意味着可以利用unsupervised的方式来训练卷积网络, 利用这个策略会训练出非常大的模型同时使inference的时间增加(<font color="ff0000">Ranzato et al., 2007b; Jarrett et al., 2009; Kavukcuoglu et al., 2010; Coates et al., 2013</font>). 这个策略在2007～2013比较流行, 尤其在标签数据集比较少以及算力有限制的情况下. 如今, 通常采取纯粹的监督学习方式来训练整个卷积网络.
 
-### <a name="cnn-details"></a>some details about chapter 9
+### <a name="cnn-details"></a>Chapter 9 supplementary materials
 
-[1. 3D卷积](#3d-conv), [2. 1x1卷积](#1x1conv), [3. 转置卷积(反卷积)](#de-convolution)
+[1. 3D卷积](#3d-conv), [2. 1x1卷积](#1x1conv), [3. 转置卷积(反卷积)](#de-convolution), [4. 空洞卷积](#dilated-convolution)
 
 <a name="3d-conv"></a>___1. 3D卷积___
 
@@ -277,6 +281,27 @@ $$1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波�
 
 通过上面两个步骤就可以实现一种转置卷积操作. 此外, 从矩阵乘法的角度来看, 卷积和转置卷积所对应的矩阵乘法中参数矩阵(卷积核构成的)从矩阵形态(并不是数值哦)来看是转置的关系, 这就是转置卷积中转置的由来, 当然也可以看出叫反卷积似乎不是很合理. 
 
+棋盘效应(checkerboard artifacts)是研究人员在使用转置卷积时可以观察到的现象, 如图所示. 造成棋盘效应的原因是: 转置卷积的不均匀重叠(uneven overlap)使图像的某个部位的颜色比其他位置的深[5], 对于详细分析可以看[5]. 在应用转置卷积时, 可以做两件事情来减轻这种效应: 第一, 确认使用的过滤器的大小是能够被卷积步长整除的, 从而来避免重叠问题; 第二, 可以采用卷积步长为1的转置卷积来减轻棋盘效应. 然而, 正如在最近许多模型中所看到的, 这种效益依旧可能会显露出来[2]. 这篇论文进一步提出了一个更好的上采样方法: 首先调整图像大小(使用最近邻域内插法(Nearest Neighbor interpolation)和双向性内插法(bilinear interpolation)), 然后制作一个卷积层, 通过这样做, 论文作者成功避免了这一棋盘效应.
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/checkerboard-artifact.png" height="350" width="600">
+</div>
+
+$$棋盘效应(源于paper[5])$$
+
+<a name="dilated-convolution"></a>___4. 空洞卷积(扩张卷积)___
+
+空洞卷积(Dilated Convolution)又叫做扩张卷积(Atrous Convolution), 所谓的空洞指的是input感受域不再是连续的, 而是有一定的间距, 当然, 间距为0的时候, 空洞卷积就会退化成标准的卷积, [2]关于这部分内容有一个比较好的动图, 可以看一下.
+
+直观上, 空洞卷积通过在卷积核部分之间插入空间让卷积核膨胀, 这个增加的参数l(空洞率)表明了我们想要将卷积核放宽到多大. 虽然各实现是不同的, 但是在卷积核部分通常插入l-1空间. 下图显示了当l-1, 2 ,4 时的卷积核大小[2]. 在图像中, 3x3的红点表明经过卷积后的输出图像的像素是3x3. 虽然三次空洞卷积都得出了相同维度的输出图像, 但是模型观察到的感受野(receptive field)是大不相同的. l=1时, 感受野为3x3; l=2 时, 感受野是7x7; l=3 时, 感受野增至15x15. 有趣的是, 伴随这些操作的参数数量本质上是相同的, 不需要增加参数运算成本就能观察大的感受野. 正因为此, 空洞卷积常被用以低成本地增加输出单元上的感受野, 同时还不需要增加卷积核大小, 当多个空洞卷积一个接一个堆叠在一起时, 这种方式是非常有效的[2].
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/3receptive-field.png" height="250" width="600">
+</div>
+
+$$空洞卷积(源于博客[2])$$
+
+
 ### <a name="reference"></a>Reference
 
 - [1. deeplearning](http://www.deeplearningbook.org/)
@@ -286,6 +311,15 @@ $$1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波�
 
 - [3. 最早提出使用1x1卷积的论文](https://arxiv.org/abs/1312.4400)
 - [4. 谷歌的Inception论文, 文中大量利用了1x1卷积](https://arxiv.org/abs/1409.4842)
+
+Checkerboard artifacts
+
+- [5. Deconvolution and Checkerboard Artifacts](https://distill.pub/2016/deconv-checkerboard/)
+
+空洞卷积
+
+- [6. 使用深度卷积网络和全连接CRF做语义图像分割](https://arxiv.org/abs/1412.7062)
+- [7. 通过空洞卷积做多规模的上下文聚合](https://arxiv.org/abs/1511.07122)
 
 <br>
 
