@@ -11,6 +11,7 @@ tag: Domain Knowledge
 ### 目录
 
 * [Chapter 9. Convolutional Networks](#cnn)
+* [some details about chapter 9](#cnn-details)
 * [Reference](#reference)
 
 ### <a name="cnn"></a>Chapter 9. Convolutional Networks
@@ -90,7 +91,7 @@ Z_{i, j, k} = \sum_{l, m, n} V_{l, j+m-1, k+n-1} K_{i, l, m, n}
 \tag{1}
 $$
 
-如果考虑到$s$stride的情形(即每个维度都每s个值来一发), 则有
+如果考虑到$s$ stride的情形(即每个维度都每s个值来一发, 换个说法就是每滑动一次就移动了$s$ 个像素), 则有
 
 $$
 
@@ -239,10 +240,45 @@ $$
 
 一种中间策略是, 仍然学习特征, 但是在参数更新的时候不需要对整个网络跑完forward和back propagation. 类似于多层感知机, 使用layer级别的贪婪策略来单独训练每一层, 也就是说单独训练第一层, 然后依据第一层训练得到的特征再训练第二层, 以此类推. Part III对第八章的supervised greedy layer-wise pretraining进行扩展, 探讨了用unsupervised 的方式来做greedy layer-wise pretraining. greedy layer-wise pretraing应用于卷积网络比较具有代表性的工作是<font color="ff0000">Lee et al</font>在2009提出的convolutional deep belief network. 卷积网络给了我们使用pretrain的机会, 比如: Coates et al在2011利用k-means对small image patch进行聚类, 然后利用这个patch-based model定义卷积网络的kernel, 这也就意味着可以利用unsupervised的方式来训练卷积网络, 利用这个策略会训练出非常大的模型同时使inference的时间增加(<font color="ff0000">Ranzato et al., 2007b; Jarrett et al., 2009; Kavukcuoglu et al., 2010; Coates et al., 2013</font>). 这个策略在2007～2013比较流行, 尤其在标签数据集比较少以及算力有限制的情况下. 如今, 通常采取纯粹的监督学习方式来训练整个卷积网络.
 
+### <a name="cnn-details"></a>some details about chapter 9
+
+[1. 3D卷积](#3d-conv), [2. 1x1卷积](#1x1conv), [3. 转置卷积(反卷积)](#de-convolution)
+
+<a name="3d-conv"></a>___1. 3D卷积___
+
+3D卷积就是3D卷积的一般化, 也就是filter的深度要小于input的深度, 运算的时候filter会沿着三个方向移动. 和对2D区域中目标的空间关系进行解码的2D卷积相似, 3D卷积也可以描述3D空间中目标的空间关系, 对于一些应用来说, 这种3D关系很重要, 例如在CT和MRI等生物医学图像的3D分割/重建中, 这些图像的目标如血管都是蜿蜒分布在3D空间中的[2].
+
+<a name="1x1conv"></a>___2. 1x1卷积___
+
+计算方式如图:
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/1x1conv.png" height="300" width="600">
+</div>
+
+$$1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波器$$
+
+1x1卷积的好处有:
+
++ 降维
++ 对原特征进行有效的低纬嵌入
++ 卷积以后反复应用非线性特征
+
+扩展材料见[1x1卷积](#1x1conv-extension).
+
+<a name="de-convolution"></a>___3. 转置卷积(反卷积)___
+
+
+
 ### <a name="reference"></a>Reference
 
 - [1. deeplearning](http://www.deeplearningbook.org/)
 - [2. 万字长文带你看尽深度学习中的各种卷积网络](https://mp.weixin.qq.com/s/1gBC-bp4Q4dPr0XMYPStXA)
+
+<a name="1x1conv-extension"></a>1x1卷积
+
+- [3. 最早提出使用1x1卷积的论文](https://arxiv.org/abs/1312.4400)
+- [4. 谷歌的Inception论文, 文中大量利用了1x1卷积](https://arxiv.org/abs/1409.4842)
 
 <br>
 
