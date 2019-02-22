@@ -11,6 +11,7 @@ tag: Domain Knowledge
 ### 目录
 
 * [Chapter 9. Convolutional Networks](#cnn)
+* [Reference](#reference)
 
 ### <a name="cnn"></a>Chapter 9. Convolutional Networks
 
@@ -147,7 +148,7 @@ $$图9.17 Recurrent\ convolutional\ network.(源于deep\ learning教材)$$
 
 如果units个数众多, 比如超过一百万, 那么利用并行计算单元来加速卷积是必要的; 然而, 在许多情况下, 仅仅通过选择合适的卷积算法就可以达到加速的目的. 利用傅立叶变换性质, 先转到频域, 然后做点乘再反变换回来在某些问题里要比直接利用卷积快.
 
-+ 空间可分离卷积
++ 空间可分离卷积(spatially separable convolution)
 
 这里讨论一下kernel是separable的情况, 教材是针对d-dimensional kernel进行阐述的, 为了便于理解, 举一个空间可分离卷积在2D图像上的应用: 假设卷积核为mxm的, 图像为NxN的, 在0填充情况下进行卷积, 常规做法需要的乘法运算次数为:
 
@@ -171,7 +172,35 @@ $$
 
 当$N\gg m$时, 比例就变成了$2/m$, 这就意味着在渐进意义下, 空间可分离卷积与常规卷积的运算次数的比例为$2/m$, 虽然空间可分离卷积可以减少计算成本, 但很少应用于深度学习, 一个主要原因是: 并不是所有的卷积核都是separable. 此外, 对于2D可分离卷积的证明可以看这篇博客[Proof of Separable Convolution 2D](http://songho.ca/dsp/convolution/convolution2d_separable.html).(<font color="ff0000">本小结关键字: performing convolution or approximate convolution without harming the accuracy of the model</font> ).
 
-+ <font color="ff0000">depthwise separable convolution(深度可分离卷积结构)</font>
++ 深度可分离卷积(depthwise separable convolution)
+
+相对于前者, 深度可分离卷积的应用较为普遍, 比如MobileNet和Xception. 深度可分离卷积分为两步:1. __深度卷积__, 也就是单通道卷积; 2. __扩大深度__, 深度指的是output channels的个数, 此处用d, 那么扩大深度指的是做d次1x1卷积, 卷积核为1x1xnum\_of\_input\_channels. 整个过程如图所示:
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn1.png" height="200" width="600">
+</div>
+
+$$step1\ 深度卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn2.png" height="200" width="600">
+</div>
+
+$$step2.1\ 1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn3.png" height="200" width="600">
+</div>
+
+$$step2.2\ d次1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn4.png" height="200" width="600">
+</div>
+
+$$深度可分离卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
+
+接下来对比下计算成本, 
 
 + random or unsupervised features
 
@@ -182,6 +211,11 @@ $$
 随机滤波(Random filter)在卷积网络中往往会惊人的好(<font color="ff0000">Jarrett et al., 2009; Saxe et al., 2011; Pinto et al., 2011; Cox and Pinto, 2011</font>). <font color="ff0000">Saxe et al. (2011)</font>表明: 在设定随机权重后, layers(卷积+pooling)会具有频率选择(frequency selective)不变性和平移不变性. 他们认为Random fiter提供了一种低开销的方式来选择卷积网络, 可以这样理解该说法: 如果是人工选择的话, 我们会只训练几个卷积网络的最后一层, 然后把表现最好的网络单拎出来, 然后再对该网络的网络结构进行整体的训练.
 
 一种中间策略是, 仍然学习特征, 但是在参数更新的时候不需要对整个网络跑完forward和back propagation. 类似于多层感知机, 使用layer级别的贪婪策略来单独训练每一层, 也就是说单独训练第一层, 然后依据第一层训练得到的特征再训练第二层, 以此类推. Part III对第八章的supervised greedy layer-wise pretraining进行扩展, 探讨了用unsupervised 的方式来做greedy layer-wise pretraining. greedy layer-wise pretraing应用于卷积网络比较具有代表性的工作是<font color="ff0000">Lee et al</font>在2009提出的convolutional deep belief network. 卷积网络给了我们使用pretrain的机会, 比如: Coates et al在2011利用k-means对small image patch进行聚类, 然后利用这个patch-based model定义卷积网络的kernel, 这也就意味着可以利用unsupervised的方式来训练卷积网络, 利用这个策略会训练出非常大的模型同时使inference的时间增加(<font color="ff0000">Ranzato et al., 2007b; Jarrett et al., 2009; Kavukcuoglu et al., 2010; Coates et al., 2013</font>). 这个策略在2007～2013比较流行, 尤其在标签数据集比较少以及算力有限制的情况下. 如今, 通常采取纯粹的监督学习方式来训练整个卷积网络.
+
+### <a name="reference"></a>Reference
+
+- [1. deeplearning](http://www.deeplearningbook.org/)
+- [2. 万字长文带你看尽深度学习中的各种卷积网络](https://mp.weixin.qq.com/s/1gBC-bp4Q4dPr0XMYPStXA)
 
 <br>
 
