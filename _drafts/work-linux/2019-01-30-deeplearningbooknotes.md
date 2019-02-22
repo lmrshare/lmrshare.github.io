@@ -200,7 +200,28 @@ $$step2.2\ d次1\times 1卷积(源于万字长文带你看尽深度学习中的�
 
 $$深度可分离卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
 
-接下来对比下计算成本, 
+接下来对比下计算成本, 假如输入图像为$H\times W\times d$, 卷积核为$h\times h\times d$, 个数为$Nc$. 对于常规卷积, 所需要的乘法次数为:
+
+$$
+(H-h+1)\times(W-h+1)\times h\times h\times d \times Nc
+\tag{7}
+$$
+
+而深度可分离卷积的乘法次数为:
+
+$$
+(H-h+1)\times (W-h+1)\times d\times h\times h + (H-h+1)\times (W-h+1)\times d\times Nc
+\tag{8}
+$$
+
+公式8除以公式7得到比例:
+
+$$
+\frac{1}{Nc} + \frac{1}{h^2}
+\tag{9}
+$$
+
+在实际应用中, Nc通常是成百上千的, 当$Nc \gg h$时, 上面的比例会变成$\frac{1}{h^2}$, 因此2D卷积的kernel为$3\tiems 3$时, 深度可分离卷积是常规卷积的$\frac{1}{9}$, 当kernel为$5\times 5$时, 这个比例为$\frac{1}{25}$. 由于深度可分离卷积会减少参数个数, 所以该方法可能会损害模型的性能, 尤其是小模型.
 
 + random or unsupervised features
 
