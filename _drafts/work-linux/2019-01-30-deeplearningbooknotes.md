@@ -246,7 +246,7 @@ $$
 
 ### <a name="cnn-details"></a>Chapter 9 supplementary materials
 
-[1. 3D卷积](#3d-conv), [2. 1x1卷积](#1x1conv), [3. 转置卷积(反卷积)](#de-convolution), [4. 空洞卷积](#dilated-convolution)
+[1. 3D卷积](#3d-conv), [2. 1x1卷积](#1x1conv), [3. 转置卷积(反卷积)](#de-convolution), [4. 空洞卷积](#dilated-convolution), [5. 扁平化卷积](#flattened-cnn)
 
 <a name="3d-conv"></a>___1. 3D卷积___
 
@@ -301,6 +301,17 @@ $$棋盘效应(源于paper[5])$$
 
 $$空洞卷积(源于博客[2])$$
 
+<a name="flattened-cnn"></a>___5. 扁平化卷积___
+
+扁平化卷积(Flattened convolution)与空间可分离卷积类似, 即: 应用filter分离, 将标准的filter拆分为3个1D filters, 扁平化卷积与标准卷积的对比图如下:
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/flatten-conv-compare-conv.png" height="250" width="600">
+</div>
+
+$$标准卷积与扁平化卷积的对比(源于paper[8])$$
+
+如果filter的rank是1, 那么便可以拆分成3个1D的filter的外积(注意扁平化卷积就是教材中提到的filter是separable, 只不过扁平化卷积指的是3D的情况). 但是在现实应用中, rank为1往往是不能被满足的. [8]指出随着分类问题的难度增加, 解决该问题还需要更多的关键部分. 深度网络中学习filter具有分布的特征值, 并且将分离直接用于过滤器会导致明显的信息丢失. 为了减轻这类问题, [8]限制了感受野的关系从而让模型可以根据训练学习1D分离的filter. 通过使用由连续的1Dfilter组成的扁平化网络在3D空间的所有方向上训练模型, 能够提供的性能与标准卷积网络相当, 不过由于学习参数的显著减少, 其计算成本要更低得多.
 
 ### <a name="reference"></a>Reference
 
@@ -320,6 +331,10 @@ Checkerboard artifacts
 
 - [6. 使用深度卷积网络和全连接CRF做语义图像分割](https://arxiv.org/abs/1412.7062)
 - [7. 通过空洞卷积做多规模的上下文聚合](https://arxiv.org/abs/1511.07122)
+
+Flattened convolutions
+
+- [8. Flattened convolutional neural networks for feedforward acceleration](https://arxiv.org/abs/1412.5474)
 
 <br>
 
