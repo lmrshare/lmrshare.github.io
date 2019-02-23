@@ -14,6 +14,7 @@ tag: Domain Knowledge
 
 * [Chapter 9. Convolutional Networks](#cnn)
 * [Chapter 9 supplementary materials](#cnn-details)
+* [Chapter 10. Sequence Modeling: Recurrent and Recursive Nets](#rnn)
 * [Reference](#reference)
 
 ### <a name="cnn"></a>Chapter 9. Convolutional Networks
@@ -332,6 +333,14 @@ $$空洞卷积(源于博客[2])$$
 $$标准卷积与扁平化卷积的对比(源于paper[8])$$
 
 如果filter的rank是1, 那么便可以拆分成3个1D的filter的外积(注意扁平化卷积就是教材中提到的filter是separable, 只不过扁平化卷积指的是3D的情况). 但是在现实应用中, rank为1往往是不能被满足的. [8]指出随着分类问题的难度增加, 解决该问题还需要更多的关键部分. 深度网络中学习filter具有分布的特征值, 并且将分离直接用于过滤器会导致明显的信息丢失. 为了减轻这类问题, [8]限制了感受野的关系从而让模型可以根据训练学习1D分离的filter. 通过使用由连续的1Dfilter组成的扁平化网络在3D空间的所有方向上训练模型, 能够提供的性能与标准卷积网络相当, 不过由于学习参数的显著减少, 其计算成本要更低得多.
+
+### <a name="rnn"></a>Chapter 10. Sequence Modeling: Recurrent and Recursive Nets
+
+Recurrent and Recursive Nets(RNNs) 是一族专门处理序列数据的神经网络, 就像CNNs是专门处理图像数据一样, RNNs专门处理$x^1, x^2, .. x^\tau$这样的序列数据; 另外, 如CNNs可以很容易的处理大尺寸或者变尺寸图像一样, RNNs可以处理长序列或者变长序列数据.
+
+#### 10.2 Recurrent Neual Networks
+
+首先, 10.1节介绍了两个基本的idea: 展开计算图、参数共享, 借助于这两个idea, 便可以设计大量的RNNs
 
 ### <a name="reference"></a>Reference
 
