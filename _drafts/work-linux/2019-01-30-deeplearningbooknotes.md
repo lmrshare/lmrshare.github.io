@@ -8,7 +8,7 @@ tag: Domain Knowledge
 
 教材<<[deeplearning](http://www.deeplearningbook.org/)>>的读书笔记. 
 
-+ 对于Chapter 9, 除了做笔记外, 还对部分地方做了扩展, 如: 在 [__卷积函数的几个变体__](#conv-variant) 中补充了分组卷积, 混洗分组卷积, 逐点分组卷积, 但笔记的整体结构仍然和教材对应, 最后, 单独做了一节Chapter 9 supplementary materials来对Chapter 9的笔记做一个补充.
++ 对于Chapter 9, 除了做笔记外, 还对部分地方做了扩展(主要来自于博客[[2](#reference)]), 如: 在 [__卷积函数的几个变体__](#conv-variant) 中补充了分组卷积, 混洗分组卷积, 逐点分组卷积, 但笔记的整体结构仍然和教材对应, 最后, 单独做了一节Chapter 9 supplementary materials来对Chapter 9的笔记做一个补充.
 
 ### 目录
 
@@ -117,6 +117,26 @@ $$
 此外, 为了进一步的缩减参数, 还可以减少每个kernel的规模, 这意味着仅利用input的几个channel而不是原来的所有channel, 一种标准实现就是: 将input的channel和kernels分同样的组, 然后组内采用卷积或者locally connected layers. 对于组内采用卷积的这种操作又叫做 __分组卷积__.
 
 _接下来插入一些分组卷积的补充材料: 分组卷积, 混洗分组卷积和逐点分组卷积, 当然, 可以将这部分扩展跳过去阅读_.
+
+_2012年的AlexNet[9]对分组卷积进行了介绍, 分组卷积在上面的教材笔记上已经介绍了, 这里做个总结: 在分组卷积中, 过滤器被拆分为不同的组, 每一个组都负责具有一定深度的传统2D卷积的工作. 分组卷积的优势为:_
+
++ _训练高效: 由于卷积被拆分到几条路线中, 每条路线都由不同的GPU分别进行处理. 这一过程就允许模型以平行的方式在多个GPU 上进行训练. 对于训练非常深度的神经网络，分组卷积变得很重要._
++ _模型高效: 当过滤器组数增加时, 模型参数就会减少; 在标准的2D卷积中, 过滤器有$h \times w \times Din \times Dout$ 个参数, 而在拆分为2个过滤器组的分组卷积中, 过滤器仅有$h \times w \times Din/2 \times Dout/2 \times 2$ 个参数, 参数数量减少了一半._
++ _分组卷积能提供比标准 2D 卷积更好的模型: 过滤器组似乎将学习的过滤器拆分成了两个不同的组: 黑白滤镜和彩色滤镜(有一篇不错的博客[[10](#gc-papers)]详细阐述了这一点)_
+
+_混洗分组卷积(Shuffled grouped convolution, 旷世提出的[11])背后的思路与分组卷积(应用于MobileNet、ResNet等网络)以及深度可分离卷积(应用于Xception)背后的思路相关, 总的来说, 混洗分组卷积包括分组卷积和通道混洗(channel shuffling)[2], 所谓的通道混洗就是通道混洗的思路就是混合来自不同过滤器组的信息, 如图所示:_.
+
+<div align="center">
+	<img src="/images/drafts/deep-learning-booknotes/channel-shuffling.png" height="300" width="600">
+</div>
+
+$$混洗分组-通道混洗(源于[2])$$
+
+_在应用有3个过滤器组的第一个分组卷积GConv1后得到了feature map, 然后, 先将每个组中的通道拆分为几个小组, 再混合这些小组. 经过通道混洗, 我们再接着如常执行第二个分组卷积GConv._
+
+_逐点分组卷积(Pointwise grouped convolution)是针对1x1卷积进行分组操作, 该操作与分组卷积的相同[11]._
+
+_旷世的ShuffleNet[[11](#Grouped convolution)]使用了: 1. 混洗分组卷积; 2. 逐点分组卷积; 3. 深度可分离卷积. 该架构设计能明显地减少计算量同时还能保持准确性, 在实际的移动设备上, ShuffleNet的分类错误与AlexNet的相当. 然而, 从使用AlexNet的720 MFLOPs到使用ShuffleNet的40–140 MFLOPs, 计算成本明显下降. 在面向移动设备的卷积神经网络领域, ShuffleNe 以相对较小的计算成本以及良好的模型性能广受欢迎.[2]_
 
 在locally connected layer和convolutional layer之间我们可以很自然的想到一种中间模式, 即: 将input划分成一定规模的region, 然后region里执行locally connection, 而各个region进行parameter sharing, 这种方式称作tiled convolution(region内权重各异, region间共享参数). 图9.16对比了locally connected layers, tiled convolution, and standard convolution.
 
@@ -335,6 +355,12 @@ Checkerboard artifacts
 Flattened convolutions
 
 - [8. Flattened convolutional neural networks for feedforward acceleration](https://arxiv.org/abs/1412.5474)
+
+<a name="gc-papers"></a>Grouped convolution
+
+- [9. ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+- [10. A Tutorial on Filter Groups (Grouped Convolution)](https://blog.yani.io/filter-group-tutorial/)
+- [11. ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](https://arxiv.org/abs/1707.01083)
 
 <br>
 
