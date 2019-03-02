@@ -29,7 +29,7 @@ tag: Domain Knowledge
 卷积定义中之所以要对其中一个函数翻转是为了使卷积具有 __交换律__. 这个性质可以通过画图来说明, 做法提醒: 分别翻转函数后又移, 与之做对比的做法为不翻转函数直接做右移. 另外, 与卷积相似的一个操作是互相关(cross-correlation), 该函数没有翻转而是直接右移(官方定义为左移第一个函数). 值得注意的是: 很多机器学习库将互相关叫做卷积. 在本文, 我们按照惯例也将卷积和互相关都称作卷积, 而在具体使用中明确声明是否对kernel进行翻转. 二者的区别如图所示:
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/con-cros-corre.png" height="300" width="600">
+	<img src="/images/posts/deep-learning-booknotes/con-cros-corre.png" height="300" width="600">
 </div>
 
 $$Convolution\ and\ Cross-correlation(源于wiki\ convolution)$$
@@ -68,7 +68,7 @@ pooling可以使一些利用了top-down信息的神经网络结构(如: Boltzman
 图9.11讨论了几个使用了卷积和pooling的卷积网络结构.
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/3cnn-structures.png" height="300" width="600">
+	<img src="/images/posts/deep-learning-booknotes/3cnn-structures.png" height="300" width="600">
 </div>
 
 $$图9.11 几个cnn结构(源于deep\ learning教材)$$
@@ -128,7 +128,7 @@ _2012年的AlexNet[9]对分组卷积进行了介绍, 分组卷积在上面的教
 _混洗分组卷积(Shuffled grouped convolution, 旷世提出的[11])背后的思路与分组卷积(应用于MobileNet、ResNet等网络)以及深度可分离卷积(应用于Xception)背后的思路相关, 总的来说, 混洗分组卷积包括分组卷积和通道混洗(channel shuffling)[2], 所谓的通道混洗就是通道混洗的思路就是混合来自不同过滤器组的信息, 如图所示:_.
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/channel-shuffling.png" height="300" width="600">
+	<img src="/images/posts/deep-learning-booknotes/channel-shuffling.png" height="300" width="600">
 </div>
 
 $$混洗分组-通道混洗(源于[2])$$
@@ -142,7 +142,7 @@ _旷世的ShuffleNet[[11](#Grouped convolution)]使用了: 1. 混洗分组卷积
 在locally connected layer和convolutional layer之间我们可以很自然的想到一种中间模式, 即: 将input划分成一定规模的region, 然后region里执行locally connection, 而各个region进行parameter sharing, 这种方式称作tiled convolution(region内权重各异, region间共享参数). 图9.16对比了locally connected layers, tiled convolution, and standard convolution.
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/comparison-lcl-tc-sc.png" height="300" width="600">
+	<img src="/images/posts/deep-learning-booknotes/comparison-lcl-tc-sc.png" height="300" width="600">
 </div>
 
 $$图9.16 A\ comparison\ of\ locally\ connected\ layers,\ tiled\ convolution,\ and\ standard\ convolution.(源于deep\ learning教材)$$
@@ -162,7 +162,7 @@ tiled convolution的kernel与标准卷积的kernel还是差不多, 只要加两�
 举个图像语义分割的例子, 一种策略为: 首先产生像素-label的概率分布, 然后利用近邻像素(涉及到具体的建模)通过数次迭代来对这个概率分布进行refine, 在每一个步骤都会使用一些卷积操作, 这种策略叫做recurrent convolutional network, 如图:
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/rcn.png" height="300" width="600">
+	<img src="/images/posts/deep-learning-booknotes/rcn.png" height="300" width="600">
 </div>
 
 $$图9.17 Recurrent\ convolutional\ network.(源于deep\ learning教材)$$
@@ -209,25 +209,25 @@ $$
 相对于前者, 深度可分离卷积的应用较为普遍, 比如MobileNet和Xception. 深度可分离卷积分为两步:1. __深度卷积__, 也就是单通道卷积; 2. __扩大深度__, 深度指的是output channels的个数, 此处用d, 那么扩大深度指的是做d次1x1卷积, 卷积核为1x1xnum\_of\_input\_channels. 整个过程如图所示:
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn1.png" height="200" width="600">
+	<img src="/images/posts/deep-learning-booknotes/deep-wise-separable-cnn1.png" height="200" width="600">
 </div>
 
 $$step1\ 深度卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn2.png" height="200" width="600">
+	<img src="/images/posts/deep-learning-booknotes/deep-wise-separable-cnn2.png" height="200" width="600">
 </div>
 
 $$step2.1\ 1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn3.png" height="200" width="600">
+	<img src="/images/posts/deep-learning-booknotes/deep-wise-separable-cnn3.png" height="200" width="600">
 </div>
 
 $$step2.2\ d次1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/deep-wise-separable-cnn4.png" height="200" width="600">
+	<img src="/images/posts/deep-learning-booknotes/deep-wise-separable-cnn4.png" height="200" width="600">
 </div>
 
 $$深度可分离卷积(源于万字长文带你看尽深度学习中的各种滤波器)$$
@@ -278,7 +278,7 @@ $$
 计算方式如图:
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/1x1conv.png" height="300" width="600">
+	<img src="/images/posts/deep-learning-booknotes/1x1conv.png" height="300" width="600">
 </div>
 
 $$1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波器$$
@@ -305,7 +305,7 @@ $$1\times 1卷积(源于万字长文带你看尽深度学习中的各种滤波�
 棋盘效应(checkerboard artifacts)是研究人员在使用转置卷积时可以观察到的现象, 如图所示. 造成棋盘效应的原因是: 转置卷积的不均匀重叠(uneven overlap)使图像的某个部位的颜色比其他位置的深[5], 对于详细分析可以看[5]. 在应用转置卷积时, 可以做两件事情来减轻这种效应: 第一, 确认使用的过滤器的大小是能够被卷积步长整除的, 从而来避免重叠问题; 第二, 可以采用卷积步长为1的转置卷积来减轻棋盘效应. 然而, 正如在最近许多模型中所看到的, 这种效益依旧可能会显露出来[2]. 这篇论文进一步提出了一个更好的上采样方法: 首先调整图像大小(使用最近邻域内插法(Nearest Neighbor interpolation)和双向性内插法(bilinear interpolation)), 然后制作一个卷积层, 通过这样做, 论文作者成功避免了这一棋盘效应.
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/checkerboard-artifact.png" height="350" width="600">
+	<img src="/images/posts/deep-learning-booknotes/checkerboard-artifact.png" height="350" width="600">
 </div>
 
 $$棋盘效应(源于paper[5])$$
@@ -317,7 +317,7 @@ $$棋盘效应(源于paper[5])$$
 直观上, 空洞卷积通过在卷积核部分之间插入空间让卷积核膨胀, 这个增加的参数l(空洞率)表明了我们想要将卷积核放宽到多大. 虽然各实现是不同的, 但是在卷积核部分通常插入l-1空间. 下图显示了当l-1, 2 ,4 时的卷积核大小[2]. 在图像中, 3x3的红点表明经过卷积后的输出图像的像素是3x3. 虽然三次空洞卷积都得出了相同维度的输出图像, 但是模型观察到的感受野(receptive field)是大不相同的. l=1时, 感受野为3x3; l=2 时, 感受野是7x7; l=3 时, 感受野增至15x15. 有趣的是, 伴随这些操作的参数数量本质上是相同的, 不需要增加参数运算成本就能观察大的感受野. 正因为此, 空洞卷积常被用以低成本地增加输出单元上的感受野, 同时还不需要增加卷积核大小, 当多个空洞卷积一个接一个堆叠在一起时, 这种方式是非常有效的[2].
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/3receptive-field.png" height="250" width="600">
+	<img src="/images/posts/deep-learning-booknotes/3receptive-field.png" height="250" width="600">
 </div>
 
 $$空洞卷积(源于博客[2])$$
@@ -327,7 +327,7 @@ $$空洞卷积(源于博客[2])$$
 扁平化卷积(Flattened convolution)与空间可分离卷积类似, 即: 应用filter分离, 将标准的filter拆分为3个1D filters, 扁平化卷积与标准卷积的对比图如下:
 
 <div align="center">
-	<img src="/images/drafts/deep-learning-booknotes/flatten-conv-compare-conv.png" height="250" width="600">
+	<img src="/images/posts/deep-learning-booknotes/flatten-conv-compare-conv.png" height="250" width="600">
 </div>
 
 $$标准卷积与扁平化卷积的对比(源于paper[8])$$
