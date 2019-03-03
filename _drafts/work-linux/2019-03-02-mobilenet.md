@@ -39,6 +39,66 @@ tag: Domain Knowledge
 + 还有一个训练小模型的方法是蒸馏(distillation)[9], 蒸馏使用大昂落来训练小网络
 + 另外一个工程策略是low bit网络[4, 22, 11]
 
+#### ___3. MobileNet Architecture___
+
+首先介绍MobileNet的核心layer, 即深度可分离卷积(depth separable convolution), 然后介绍MobileNet的网络结构, 最后介绍MobileNet的两个超参数: width multiplier和resolution multiplier.
+
+__3.1 Depthwise Separable Convolution(DSC)__
+
++ DSC: 将标准的卷积分解成, 深度卷积和1x1的pointwise卷积. 具体的工作原理为, 先对input的每一个通道单独进行卷积(depthwise卷积), 然后对这些通道输出做1x1的pointwise卷积, 得到最终的卷积结果. DSC的这种工作方式可以有效的减少计算量以及模型大小
++ Figure 2显示了DSC的工作原理: 2(a)是标准卷积, 2(b)是depthwise卷积, 2(c)是1x1pointwise卷积
+
+<div align="center">
+	<img src="/images/drafts/mobilenet/figure2.png" height="500" width="300">
+</div>
+
+$$Figure2\ DSC的工作原理(图片源自MobileNet论文)$$
+
+__3.2 Network Structure and Training__
+
+网络结构
+
++ Network Structure: 第一层是full convolution, 然后接batchnorm[13]和ReLU; 中间层是, depthwise卷积+BN+ReLU+1x1卷积+BN+ReLU; 最后是, average pooling+全连接层+softmax层
++ 在第一层的full卷积和其他层的深度可分离中的depthwise卷积, 通过stride为2实现下采样
++ average pooling使空间分辨率为1
+
+MobileNest的计算特点
+
++ MobileNets中几乎所有的计算时间都集中在1x1卷积(差不多95%的计算时间), 而1x1卷积可以通过高效的矩阵乘法(general matrix multiply, GEMM)实现.
++ 通常为了用GEMM, 首先要在内存中做im2col(caffe就是这样做的), 而1x1卷积不需要im2col, 直接可以用GEMM
++ MobileNets的参数中, 差不多75%的参数是1x1卷积参数, 剩余的参数差不多都是全连接层的
+
+训练
+
++ MobileNets与Inception V3类似使用RMSprop来训练
++ 与训练大模型相反, 训练MobileNets这样的小模型比较少的使用正则化和数据扩充技术, 因为小模型比较不容易出现overfitting
+
+__3.3 Width Multiplier: Thinner Models__
+
++ 这个参数就是调节输入和输出通道个数的, $\alpha$. 比如, 原来的input有M个通道, 超参控制后为$\alpha M$, 同样的output的通道变成$\alpha N$.$\alpha = 1$就是baseline MobileNet, $\alpha < 1$是reduced MobileNet
+
+__3.4 Resolution Multiplier: Reduced Representation__
+
++ 将该超参数$\rho$设置在输入图像上, 这样网络每一层输出的空间分辨率都会降低. 通过设置输入图像的分辨率而隐式设置$\rho$(简单理解就是图像弄小点)
+
+#### ___4. Experiments___
+
+__4.1 Model Choices__
+
+__4.2. Model Shrinking Hyperparameters__
+
+__4.3. Fine Grained Recognition__
+
+__4.4. Large Scale Geolocalizaton__
+
+__4.5. Face Attributes__
+
+__4.6. Object Detecti__
+
+__4.7. Face Embeddings__
+
+#### ___5. Conclusion___
+
 ### <a name="reference"></a>Reference
 
 Preparing the datasets, Downloading and converting to TFRecord format, Pre-trained Models, Training a model from scratch, Fine-tuning a model from an existing checkpoint(undone, 下次从An automated script for processing ImageNet data开始)
