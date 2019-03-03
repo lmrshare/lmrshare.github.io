@@ -83,6 +83,11 @@ __3.4 Resolution Multiplier: Reduced Representation__
 
 #### ___4. Experiments___
 
++ a. 深度可分离卷积同full卷积的对比
++ b. 参数实验: width multiplier和Resolution multiplier
++ c. MobileNets同popular models的对比
++ d. MobileNets在不同applications上的应用
+
 __4.1 Model Choices__
 
 __4.2. Model Shrinking Hyperparameters__
