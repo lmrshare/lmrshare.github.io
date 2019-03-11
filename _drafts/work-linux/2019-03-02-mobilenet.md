@@ -83,26 +83,56 @@ __3.4 Resolution Multiplier: Reduced Representation__
 
 #### ___4. Experiments___
 
-+ a. 深度可分离卷积同full卷积的对比
++ a. 深度可分离卷积同常规卷积的对比
 + b. 参数实验: width multiplier和Resolution multiplier
 + c. MobileNets同popular models的对比
 + d. MobileNets在不同applications上的应用
 
 __4.1 Model Choices__
 
++ Table4为常规卷积MobileNet和深度可分离卷积MobileNet的对比实验, 结果表明: 在精度损失一个百分点的前提下, 参数量以及乘加运算次数都减少了很多
++ Table5为width参数控制的瘦模型和浅层模型的对比, 结果表明: 在相似的计算量以及参数的前提下, 瘦网络表现的比浅层网络好
+
 __4.2. Model Shrinking Hyperparameters__
+
++ Table 6为width multiplier$\alpha$参数实验, 具体显示了模型压缩与参数量和计算量的关系
++ Table 7为resolution multiplier参数实验, 具体显示了由不同分辨率图像训练的不同大小的模型与参数量和计算量的关系
++ 图4显示了计算量与精度之间的关系, 有一点要注意: 这里用到的16个模型由两个参数控制: width multiplier和resolution multiplier, 并遵循单变量控制原则
++ 图5显示了参数量与精度之间的关系, 有一点要注意: 该实验用到的模型同图4的模型获取方式是一样的, 另外, 不能说模型就是一样的
++ <font color="ff0000">对于图4和图5我有一个疑问, 为什么图4的结果没有呈现出图5的特点</font>
++ Table 8为full MobileNet与GoogleNet和VGG16的对比实验, MobileNet的精度与VGG16精度相当, 但参数量与计算量均呈现1个数量级的减小; 对比GoogleNet优势更为明显, 无论参数、参数量还是计算量均有提升. 当然, 这只是作者的说法, 从表中精度数据来看并没有他说的那样
++ Table 9为reduced MobileNet同Squeezenet和AlexNet的对比实验, 从表中数据来看, 结果确实明显好于对比模型
 
 __4.3. Fine Grained Recognition__
 
++ 基于Stanford Dogs Datasets的细粒度识别实验, 实验结果如Table 10. 训练: 根据一定的方法构造一个数据集, 根据该数据集预训练一个模型, 然后, 利用Stanford Dogs对模型进行fine tune
+
 __4.4. Large Scale Geolocalizaton__
+
++ 定位图片地理位置的任务, 对比方法为PlaNet(基于Inception V3体系结构)和Im2GPS, 作者根据MobileNet体系结构训练了PlaNet
 
 __4.5. Face Attributes__
 
-__4.6. Object Detecti__
++ [9]阐述了MobileNet同distillation之间的关系
++ 用MobileNet压缩人脸属性分类任务中的大模型, 即: 用MobileNet结构来蒸馏一个人脸分类器
++ Distillation是这样工作的: 训练一个模型以模拟仿真目标大模型, 也就是说ground-truth是目标大模型的输出
+
+__4.6. Object Detection__
+
++ 用MobileNet做目标检测, 目标数据集为COCO dataset, 对比方法为: VGG, 基于Faster-RCNN和SSD框架的Inception V2
 
 __4.7. Face Embeddings__
 
++ 目前[25]的FaceNet是state of the art的人脸识别模型, FaceNet使用trplet loss来构建face embeddings
++ 作者使用distilation来训练MobileNet(minimizing同FaceNet之间的loss)
+
 #### ___5. Conclusion___
+
+作者基于深度可分离卷积提出了新的模型体系, MobileNet. 在经过对现有的一些重要设计原则后, 作者阐述了如何通过width multipier和resolution multipiler在牺牲一定精度的前提下来训练又小又快的模型. 然后, 作者同popular model做了对比实验, 此外, 又展示了MobileNets在众多应用中的表现. 作者的下一步工作是在tensorflow中将MobileNet发布出来.
+
+#### ___6. 待办___
+
++ <font color="ff0000">3节里的模型部分仔细看一下, 在算一下, 把超参数部分也算一下</font>
 
 ### <a name="reference"></a>Reference
 
