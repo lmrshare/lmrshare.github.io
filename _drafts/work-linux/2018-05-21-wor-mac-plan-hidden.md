@@ -21,7 +21,7 @@ tag: HNotes
 
 | [Research](#long-research)                  |[计算机基础与工作经验](#cs-work)      |[月安排](#month-plan)                                          |
 | ------------                                |--------------------------------------|------------------------------------------------------------      |
-| _[Computer Vision](#long-re-cv)_            |  _[计算机基础](#long-hy-cb)_         | _[4月: 现有算法原理、硬件、博客、刷题](#april)_                   |
+| _[Computer Vision](#long-re-cv)_            |  _[计算机基础](#long-hy-cb)_         | _[9月: 现有算法原理、硬件、博客、刷题](#april)_                   |
 | __[MRI](#long-re-mri)__                     |  __[项目相关](#long-hy-engineer)__   | __[-]()__                                                         |
 | _[Optimization Method](#long-re-om)_        |  _[公众号资源](#wechat-resource)_    | _[-]()_                                                            |
 | __[Domain Knowledge](#long-re-dk)__         |  __[工作方法](#long-hy-work-trick)__ | __[-]()__                                                          |
@@ -241,9 +241,15 @@ ___网络(tcp/ip http)___
 
 ### <a name="month-plan"></a> 月安排
 
-#### <a name="april"></a> ___4月: 现有算法原理、硬件、博客、刷题___
+#### <a name="april"></a> ___9月:___
 
-___以前未完成的工作:___
+___重点:___
+
++ pytorch、论文、硬件知识
++ 计算机基础
++ tmux
+
+___tracking:___
 
 + 看Hnotes中红贴和archive1(中c++部分)帖子
 + 虚函数和纯虚函数的区别, 应用场景
@@ -254,17 +260,6 @@ ___以前未完成的工作:___
 + 8.6涉及到的C++字符串语法熟悉下
 + 工银亚洲、港澳通行证
 + [看一下: 明无梦-books](https://www.dreamxu.com/books/)
-
-___这个月的工作重点是现有工作的原理以及理论知识、同时要安排好其他工作的开展.___
-
-4.22~.4.30:
-
-+ xxx
-+ xxx
-
-9天总结:
-
-+ xxxxxx
 
 ### <a name="Timetable"></a>作息时间
 
