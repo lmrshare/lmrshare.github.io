@@ -247,7 +247,7 @@ ___重点:___
 
 + pytorch、论文、硬件知识
 + 计算机基础
-+ tmux
++ conda常用命令, tmux
 
 ___tracking:___
 
