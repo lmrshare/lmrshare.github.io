@@ -8,27 +8,38 @@ tag: HNotes
 
 ## 介绍
 
-&emsp;&emsp;这是作息时间以及计划安排，从读研到现在还不能严格按照时间计划来执行，但还是依然坚持以这种方式来管理自己的学习和工作，目的在于:第一，起到监督作用，第二，把控方向，第三，提高自律。
+&emsp;&emsp;作息时间以及计划安排，从读研到现在还不能严格按照时间计划来执行，但还是依然坚持以这种方式来管理自己的学习和工作，目的在于:第一，起到监督作用，第二，把控方向，第三，提高自律。
 
-### 目录
+### 概览
 
-* [计划](#Long-term-plan)
+* [表格目录](#table-catalog)
 * [作息时间](#Timetable)
 * [Idea](#Idea)
 * [遗留问题汇总](#Will-search)
 
-### <a name="Long-term-plan"></a>计划
+### <a name="table-catalog"></a>表格目录
 
-| [Research](#long-research)                  |[计算机基础与工作经验](#cs-work)      |[月安排](#month-plan)                                          |
-| ------------                                |--------------------------------------|------------------------------------------------------------      |
-| _[Computer Vision](#long-re-cv)_            |  _[计算机基础](#long-hy-cb)_         | _[9月: 现有算法原理、硬件、博客、刷题](#april)_                   |
-| __[MRI](#long-re-mri)__                     |  __[项目相关](#long-hy-engineer)__   | __[-]()__                                                         |
-| _[Optimization Method](#long-re-om)_        |  _[公众号资源](#wechat-resource)_    | _[-]()_                                                            |
-| __[Domain Knowledge](#long-re-dk)__         |  __[工作方法](#long-hy-work-trick)__ | __[-]()__                                                          |
-| _[Math](#long-re-math)_                     |  _[-]()_                             | _[-]()_                                                           |
-| __[English](#long-re-eng)__                 |  __[-]()__                           | __[-]()__                                                         |
-| _[Writing&Blog](#long-re-wb)_               |  _[-]()_                             | _[-]()_                                                           |
-| __[Other](#long-re-other)__                 |  __[-]()__                           | __[-]()__                                                         |
+| [Research](#long-research)                  |[计算机基础与工作经验](#cs-work)      |
+| ------------                                |--------------------------------------|
+| _[Computer Vision](#long-re-cv)_            |  _[计算机基础](#long-hy-cb)_         |
+| __[MRI](#long-re-mri)__                     |  __[项目相关](#long-hy-engineer)__   |
+| _[Optimization Method](#long-re-om)_        |  _[公众号资源](#wechat-resource)_    |
+| __[Domain Knowledge](#long-re-dk)__         |  __[工作方法](#long-hy-work-trick)__ |
+| _[Math](#long-re-math)_                     |  _[ISP](#isp-pipeline-knowledge)_    |
+| __[English](#long-re-eng)__                 |  __[-]()__                           |
+| _[Writing&Blog](#long-re-wb)_               |  _[-]()_                             |
+| __[Other](#long-re-other)__                 |  __[-]()__                           |
+
+|[2020(主旋律：ISP、3A、刷题、C++、CLI)](#month-plan)           |
+|------------------------------------------------------------   |
+| _[1月: 制定学习计划、作息时间、ISP、c++、刷题、复习刷题](#january)_     |
+| __[-]()__                                                     |
+| _[-]()_                                                       |
+| __[-]()__                                                     |
+| _[-]()_                                                       |
+| __[-]()__                                                     |
+| _[-]()_                                                       |
+| __[-]()__                                                     |
 
 ### <a name="long-research"></a>Research
 
@@ -239,27 +250,10 @@ ___网络(tcp/ip http)___
 + 偏向工程的任务多向开发人员请教
 + 在提升综合能力这样的定位下有没有什么高效的执行方法？比如这次我遇到的问题：在算法没完全稳定下来的时候再接入windows平台，里面一个比较小的一个问题都会花费我比较长的时间，甚至里面有些配置在网络上搜都很难，最后是通过电话沟通才知道怎么操作。windows平台问题最多，但类似的这样的问题在我做其他平台的时候同样会出现.
 
-### <a name="month-plan"></a> 月安排
+#### <a name="isp-pipeline-knowledge"></a> ___ISP___
 
-#### <a name="april"></a> ___9月:___
+TODO
 
-___重点:___
-
-+ pytorch、论文、硬件知识
-+ 计算机基础
-+ conda常用命令, tmux
-
-___tracking:___
-
-+ 看Hnotes中红贴和archive1(中c++部分)帖子
-+ 虚函数和纯虚函数的区别, 应用场景
-+ 人脸对齐方法总结(option:人脸对齐dlib)
-+ TTS初步调研
-+ 把卷积和rnn的教材看了并整理笔记, 复习
-+ 把8.4Permutations II的有重复元素的全排列代码中涉及的c++愈发知识熟悉下
-+ 8.6涉及到的C++字符串语法熟悉下
-+ 工银亚洲、港澳通行证
-+ [看一下: 明无梦-books](https://www.dreamxu.com/books/)
 
 ### <a name="Timetable"></a>作息时间
 
@@ -346,6 +340,26 @@ ___tracking:___
 >* 把March里的文档总结在我自己的笔记里
 >* review singleton代码
 >* tensorflow predict加速
+
+### <a name="month-plan"></a> 2020(主旋律：ISP、3A、刷题、C++、CLI)
+
+#### <a name="january"></a> ___1月:___
+
+___0116~0119___
+
++ ___0116:___ 整理本文档
+
+___TODO:___
+
++ 看Hnotes中红贴和archive1(中c++部分)帖子
++ 虚函数和纯虚函数的区别, 应用场景
++ 人脸对齐方法总结(option:人脸对齐dlib)
++ TTS初步调研
++ 把卷积和rnn的教材看了并整理笔记, 复习
++ 把8.4Permutations II的有重复元素的全排列代码中涉及的c++愈发知识熟悉下
++ 8.6涉及到的C++字符串语法熟悉下
++ 工银亚洲、港澳通行证
++ [看一下: 明无梦-books](https://www.dreamxu.com/books/)
 
 <br>
 
