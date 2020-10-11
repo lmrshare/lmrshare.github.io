@@ -105,7 +105,7 @@ ___[0116~0119:]___
 
 ___[长期]___
 
-+ ISP: ISP书的7-9章的算法部分、10章为PQ部分、5-6为硬件部分
++ ISP: ISP书的7-9章算法部分、10章PQ部分、5-6硬件部分
 + 刷题：每天一道题，复习与新题同时进行
 + 英语：每周两课(开言)
 
@@ -116,11 +116,17 @@ ___[拓展]___
 + 李宏毅DL课程
 + 勾搭喵子
 
+___[done:]___
+
++ ISP: None
++ 刷题：None
++ 英语：Is that the smoke alarm
+
 ___[active:]___
 
 + ISP: ISP书的7章
 + 刷题：[无重复字符的最长子串](https://github.com/lmrshare/is-practice/tree/master/apri_prac/hwlcc3)
-+ 英语：is that the smoke alarm
++ 英语：Getting a membership card
 
 
 ___[遗留:]___
