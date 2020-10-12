@@ -118,9 +118,9 @@ ___[拓展]___
 
 ___[done:]___
 
-+ ISP: None
++ ISP: 看了色彩空间部分，遗留color difference
 + 刷题：None
-+ 英语：Is that the smoke alarm
++ 英语：Is that the smoke alarm(part1、part2)
 
 ___[active:]___
 
