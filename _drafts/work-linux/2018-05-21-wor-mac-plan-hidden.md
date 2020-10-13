@@ -118,9 +118,9 @@ ___[拓展]___
 
 ___[done:]___
 
-+ ISP: 看了色彩空间部分，遗留color difference
-+ 刷题：None
-+ 英语：Is that the smoke alarm(part1、part2)
++ ISP: 看了色彩空间部分，color difference done，接下来看色调和色温
++ 刷题：无重复字符的最长子串的思路
++ 英语：Is that the smoke alarm(part1-4)、Getting a membership card(part1-4)
 
 ___[active:]___
 
