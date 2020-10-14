@@ -120,7 +120,7 @@ ___[done:]___
 
 + ISP: 看了色彩空间部分，color difference done，接下来看色调和色温
 + 刷题：无重复字符的最长子串的思路
-+ 英语：Is that the smoke alarm(part1-4)、Getting a membership card(part1-4)
++ 英语：Is that the smoke alarm(part1-4)、Getting a membership card(part1-4)、Going to the eye doctor(part1-2)
 
 ___[active:]___
 
