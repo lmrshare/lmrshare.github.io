@@ -118,13 +118,13 @@ ___[拓展]___
 
 ___[done:]___
 
-+ ISP: 看了色彩空间部分，color difference done
++ ISP: 看了色彩空间部分，color difference done，看完色彩基础博文
 + 刷题：无重复字符的最长子串的思路
-+ 英语：Is that the smoke alarm(part1-4)、Getting a membership card(part1-4)、Going to the eye doctor(part1-4)、That dog bit me(part1-2)
++ 英语：Is that the smoke alarm(part1-4)、Getting a membership card(part1-4)、Going to the eye doctor(part1-4)、That dog bit me(part1-3)
 
 ___[active:]___
 
-+ ISP: ISP书的7章，接下来看刘斯宁关于色调和色温和awb的博文
++ ISP: ISP书的7章，awb博文、色彩基础知识总结
 + 刷题：[无重复字符的最长子串](https://github.com/lmrshare/is-practice/tree/master/apri_prac/hwlcc3)的思路部分
 + 英语：That dog bit me
 
